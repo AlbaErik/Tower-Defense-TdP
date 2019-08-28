@@ -1,4 +1,5 @@
-Diseño del Juego--> El juego va a tener una tematica de Samurais vs Vikingos.
+Diseño del Juego--> El juego va a tener una tematica de Samurais vs Samurais.(Unos defienden la dinastia actual mientras que
+                                                                              los otros tratan de derrocarlos)
 
                   1.Dimension Minima requerida[10x6]
                   2.Sistema de puntos y compra de objetos
@@ -7,10 +8,11 @@ Diseño del Juego--> El juego va a tener una tematica de Samurais vs Vikingos.
                     -Temporal[Barro]
                     -Con vida[Piedra]
                   5.Personajes y Objetos
-                    -Del Jugador:El ejercito samurai contara con 6 clases(por ahora)
+                    -Del Jugador:El ejercito samurai defensor contara con 6 clases(por ahora)
                      [Ninja,Espadachin,Lancero,Arquero,Emperador,Samurai].
                                                                                                                 
-                    -Del Enemigo:El ejercito vikingo contara con 6 clases[...].
+                    -Del Enemigo:El ejercito samurai atacante contara con 6 clases(por ahora)
+                     [Arquero,Espadachin,Emperador,Necromante,Ejecutor,Ninja].
                     
                     -Objetos:Contara con 4 objetos(por ahora) 2 con vida[barricada de madera,cañon] y 
                      2 temporales[lluvia de flechas,ataque de caballeria]
