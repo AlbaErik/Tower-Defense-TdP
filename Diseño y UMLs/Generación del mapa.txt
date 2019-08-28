@@ -1,0 +1,15 @@
+Generación del mapa
+
+El mapa es una matriz de NxM, cada celda de la matriz es una posición la cual solo puede ocupar una entidad. El premio y un obstáculo son las únicas entidades que pueden compartir su celda con otra.
+
+En el extremo izquierdo se encuentra la base a defender y en el opuesto estan los Boombers. Los Boombers son objetos que generan enemigos de manera aleatoria y en tandas. En medio de las tandas, los Boombers van a lanzar obstáculos al campo de batalla para perjudicar a los enemigos, estos obstáculos solo pueden caer en celdas vacías.
+
+
+
+
+Movimiento:
+Cada enemigo/atacante se mueve gracias a su inteligencia. La inteligencia determina hacia qué lado ir, y las acciones que debe tomar si se encuentra con algo en el camino.
+
+Inteligencia:
+Ni bien el atacante es lanzado al campo de juego, inteligencia se comunica con el mapa para saber en que posición está y la posición de la entidad que lo lanzo (Boomber) que inevitablemente está en una celda adyacente. Con estas 2 posiciones dirige el movimiento del atacante en dirección opuesta a su respectivo Boomber.
+En todo momento Inteligencia se comunica con el mapa para saber si en la proxima posición tiene una celda habilitada.
