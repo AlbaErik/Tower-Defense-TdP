@@ -30,3 +30,4 @@ Diseño del Juego--> El juego va a tener una tematica de Samurais vs Samurais.(Un
                     
                     
 
+Clase Lógica: guarda las monedas del jugador, carga los niveles e inicializa el juego.
