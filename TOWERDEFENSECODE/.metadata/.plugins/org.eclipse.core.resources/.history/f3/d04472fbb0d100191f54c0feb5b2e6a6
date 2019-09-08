@@ -1,0 +1,14 @@
+package Clases;
+
+
+public abstract class Personaje extends Entidad {
+	protected int Damage;
+	protected int Range;
+	protected int AttackSpeed;
+	
+	public abstract int getDamage();
+	
+	public abstract int getRange();
+	
+	public abstract int getAttackSpeed();
+}

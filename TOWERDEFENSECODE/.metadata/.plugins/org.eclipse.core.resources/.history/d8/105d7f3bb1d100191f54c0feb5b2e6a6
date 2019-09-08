@@ -1,0 +1,75 @@
+package Clases;
+
+import Clases.Defensor;
+
+public class Espadachin_Elite extends Defensor {
+	
+	public Espadachin_Elite() {
+		this.LifePoints=300;
+		this.Damage=50;
+		this.AttackSpeed=2;
+		this.Range=1;
+		this.Cost=30;
+	}
+
+	@Override
+	public int getCost() {
+		// TODO Auto-generated method stub
+		return this.Cost;
+	}
+
+	@Override
+	public void setCost(int c) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int getDamage() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setDamage(int d) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int getRange() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setRange() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int getAttackSpeed() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setAttackSpeed(int as) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int getLifePoints() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setLifePoints(int lp) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
