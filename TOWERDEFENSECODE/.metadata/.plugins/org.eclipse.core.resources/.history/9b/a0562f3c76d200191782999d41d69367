@@ -1,0 +1,24 @@
+package Personajes;
+
+public class Celda {
+	private int x,y;
+	
+	public Celda(int x,int y) {
+		this.x=x;
+		this.y=y;
+	}
+	
+	public int getx() {
+		return x;
+	}
+	public void setx(int x) {
+		this.x=x;
+	}
+	public int gety() {
+		return y;
+	}
+	public void sety(int y) {
+		this.y=y;
+	}
+
+}
