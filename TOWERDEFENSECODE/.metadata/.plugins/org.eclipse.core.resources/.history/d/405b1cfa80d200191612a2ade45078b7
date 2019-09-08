@@ -1,5 +1,5 @@
 package GUI;
-import Logica.Juego;
+import Logica;
 
 import java.awt.EventQueue;
 
@@ -37,8 +37,6 @@ public class Gui extends JFrame {
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panel);
 		panel.setLayout(null);
-		
-		
 		
 	}
 

@@ -38,8 +38,6 @@ public class Gui extends JFrame {
 		setContentPane(panel);
 		panel.setLayout(null);
 		
-		
-		
 	}
 
 }

@@ -1,5 +1,4 @@
 package GUI;
-import Logica.Juego;
 
 import java.awt.EventQueue;
 
@@ -8,8 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 public class Gui extends JFrame {
-	private JPanel panel;
-	private Juego juego;
+	private JPanel Panel;
 	
 	public static void main(String[] a) {
 		EventQueue.invokeLater(new Runnable() {
@@ -32,13 +30,11 @@ public class Gui extends JFrame {
 		getContentPane().setLayout(null);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 2000, 2000);
-		panel = new JPanel();
-		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(panel);
-		panel.setLayout(null);
-		
-		
+		setBounds(100, 100, 3200, 2000);
+		Panel = new JPanel();
+		Panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(Panel);
+		Panel.setLayout(null);
 		
 	}
 

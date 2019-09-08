@@ -9,7 +9,6 @@ public class Mapa{
 	private MapaGrafico mGrafico;
 	
 	public Mapa(int a,int l) {
-		mGrafico = new MapaGrafico();
 		ancho=a;
 		largo=l;
 		

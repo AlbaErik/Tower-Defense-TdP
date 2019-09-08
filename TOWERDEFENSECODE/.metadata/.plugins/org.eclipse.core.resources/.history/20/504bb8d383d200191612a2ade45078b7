@@ -1,0 +1,13 @@
+package GUI;
+
+import java.awt.Image;
+
+import javax.swing.JPanel;
+
+public class PanelConFondo extends JPanel{
+	private Image img = null;
+	public PanelConFondo(final Image i) {
+		img = i;
+	}
+
+}
