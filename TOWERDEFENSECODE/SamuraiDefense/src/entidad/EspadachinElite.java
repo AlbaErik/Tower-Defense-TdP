@@ -1,4 +1,4 @@
-package Clases;
+package entidad;
 
 public class EspadachinElite extends Defensor {
 	

@@ -1,4 +1,4 @@
-package Clases;
+package entidad;
 
 public abstract class Entidad {
 	protected int Life,x,y;

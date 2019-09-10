@@ -1,5 +1,6 @@
 package GUI;
 import Logica.Juego;
+import Mapa.Mapa;
 
 import java.awt.EventQueue;
 
@@ -10,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 public class Gui extends JFrame {
 	private JPanel panel;
 	private Juego juego;
+	private Mapa mapa;
 	
 	public static void main(String[] a) {
 		EventQueue.invokeLater(new Runnable() {
@@ -20,10 +22,7 @@ public class Gui extends JFrame {
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
-			}
-			
-			
-			
+			}			
 		});
 			
 	}
@@ -38,7 +37,11 @@ public class Gui extends JFrame {
 		setContentPane(panel);
 		panel.setLayout(null);
 		
-		
+		mapa = new Mapa(1000,1000);
+		this.add(mapa.getMapaGrafico().getGrafica());
+		getContentPane().add(mapa.getMapaGrafico().getGrafica());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(1, 1, 4500, 5500);
 		
 	}
 

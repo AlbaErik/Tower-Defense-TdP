@@ -1,4 +1,4 @@
-package Clases;
+package entidad;
 
 public abstract class Defensor extends Personaje {
 	protected int Cost;
