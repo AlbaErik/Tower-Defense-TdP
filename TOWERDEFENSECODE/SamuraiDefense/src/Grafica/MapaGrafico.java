@@ -22,7 +22,7 @@ public class MapaGrafico {
 	private void crearFondo() {
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("Acantilado.jpg"));
+			img = ImageIO.read(new File("src\\Imagenes\\Acantilado.jpg"));
 			
 		}catch(IOException e) {
 			e.printStackTrace();

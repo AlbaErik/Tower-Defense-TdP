@@ -15,10 +15,11 @@ public class PanelConFondo extends JPanel{
 	}
 	
 	public void paintComponent(final Graphics g) {
-		super.paintComponent(g);
 		if(img != null) {
 			g.drawImage(img, 0, 0, null);
 		}
+		super.paintComponent(g);
+
 	}
 
 }
