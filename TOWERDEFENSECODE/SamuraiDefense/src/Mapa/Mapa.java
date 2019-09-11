@@ -1,36 +1,32 @@
 package Mapa;
 
-import Grafica.MapaGrafico;
 
 public class Mapa{
+	private Celda[][] mapa;
+	private static final int filas=6;
+	private static final int columnas=10;
 	
-	int altoCelda = 100;
-	int anchoCelda = 100;
-	
-	private Celda mapa[][];
-	private int ancho,largo;
-	
-	//AGREGAR FUNCION GETINFORMACION ASI EL MAPA NOS DEVUELVE ARREGLO DE 3 CELDAS, ADELANTE,MEDIO,ATRAS;
-	private MapaGrafico mGrafico;
-	
-	public Mapa(int a,int l) {
-		mGrafico = new MapaGrafico();
-		ancho=a;
-		largo=l;
-		mapa = new Celda[a][l];
-		
-		for(int i=0; i < largo; i++) {
-			for(int j=0; j < ancho; j++) {
-				mapa[i][j]= new Celda(this, i, j, anchoCelda, altoCelda);
+	public Mapa() {
+		mapa=new Celda[filas][columnas];
+		for(int i=0;i<filas;i++) {
+			for(int j=0;j<columnas;j++) {
+				mapa[i][j]=new Celda();
 			}
-		}
+		}	
 	}
-	
-	public MapaGrafico getMapaGrafico() {
-		return mGrafico;
+	/**
+	 * Devuelve el ancho del mapa
+	 * @return cantidad de filas del mapa
+	 */
+	public int getFilas() {
+		return filas;
 	}
-	
-	
-	
+	/**
+	 * Devuelve el largo del mapa
+	 * @return cantidad de columnas del mapa
+	 */
+	public int getColumnas() {
+		return columnas;
+	}
 
 }
