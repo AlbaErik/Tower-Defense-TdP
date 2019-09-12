@@ -21,7 +21,7 @@ import Logica.Juego;
 import Mapa.Celda;
 import Mapa.Mapa;
 
-public class GUI extends JFrame{
+public class Gui extends JFrame{
 	protected PanelConFondoStage panelSup;
 	protected PanelConFondoTienda panelInf;
 	protected JPanel panelArena;
@@ -33,7 +33,7 @@ public class GUI extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						GUI frame = new GUI();
+						Gui frame = new Gui();
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -42,7 +42,7 @@ public class GUI extends JFrame{
 			});
 		}
 	
-	public GUI() {
+	public Gui() {
 		
 		this.setLayout(new BorderLayout());
 		this.setSize(1000,500);
@@ -65,7 +65,7 @@ public class GUI extends JFrame{
 		Mapa mapa=juego.getMapa();
 		arena=new Button[mapa.getFilas()][mapa.getColumnas()];//Creo un arreglo de JButton con n filas y m columnas
 		panelArena=new JPanel(new GridLayout(mapa.getFilas(),mapa.getColumnas()));//Creo un nuevo panel que tiene n filas y m columnas
-		
+		//panelArena.setBackground(new Color(0,0,0,64));
 		for(int i=0;i<mapa.getFilas();i++) {//Inicializo los botones del panel arena
 			for(int j=0;j<mapa.getColumnas();j++) {
 				arena[i][j]=new Button();
@@ -83,7 +83,7 @@ public class GUI extends JFrame{
 		panelArena.setMinimumSize(new Dimension(700,250));
 		panelArena.setMaximumSize(new Dimension(700,250));
 		panelArena.setVisible(true);
-		panelSup.add(panelArena,c);//Agrega panelArena a panelSup
+		panelSup.add(panelArena,c);//Agrega panelArena a panelSup*
 		
 		this.getContentPane().add(panelSup,BorderLayout.CENTER);
 		this.getContentPane().add(panelInf,BorderLayout.SOUTH);
