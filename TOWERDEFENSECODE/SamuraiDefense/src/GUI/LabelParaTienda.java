@@ -8,10 +8,25 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class LabelParaTienda extends JLabel {
+	 
+	protected MouseEvent eventoTemp=null;
 	
 	public LabelParaTienda(ImageIcon img){
 		this.setIcon(img);
-	
+		this.addMouseListener(new EventoMouseLabel());    
 	}
 	
+	public void setEventoNull() {
+		eventoTemp=null;
+	}
+	
+private class EventoMouseLabel extends MouseAdapter{
+	
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("Es un label");
+		eventoTemp=e;
+	}
+	
+
+}
 }
