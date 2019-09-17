@@ -12,7 +12,7 @@ public class Celda {
 	 * Devuelve true si la celda esta ocupada
 	 * @return true si la celda esta ocupada
 	 */
-	public boolean CeldaOcupada() {
+	public boolean celdaOcupada() {
 		return entidad!=null;
 	}
 	/**
