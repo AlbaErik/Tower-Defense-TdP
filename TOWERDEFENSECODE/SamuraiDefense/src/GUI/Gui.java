@@ -17,9 +17,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-import Logica.Juego;
-import Mapa.Celda;
-import Mapa.Mapa;
+import GUI.Paneles.PanelConFondoStage;
+import GUI.Paneles.PanelConFondoTienda;
+import GUI.Paneles.ObjetosPaneles.Button;
+import Logica.Juego.Juego;
+import Logica.Mapa.Celda;
+import Logica.Mapa.Mapa;
 
 public class Gui extends JFrame{
 	protected PanelConFondoStage panelSup;

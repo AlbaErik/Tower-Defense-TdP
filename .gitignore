@@ -61,3 +61,6 @@ hs_err_pid*
 
 .recommenders/
 .metadata/
+*.class
+*.class
+TOWERDEFENSECODE/SamuraiDefense/bin/GUI/LabelParaTienda.class
