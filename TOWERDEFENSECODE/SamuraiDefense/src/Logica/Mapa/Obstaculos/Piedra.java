@@ -1,11 +1,11 @@
 package Logica.Mapa.Obstaculos;
 
 import Logica.Entidades.Entidad;
-import Logica.Mapa.Celda;
+import Logica.Mapa.Posicion;
 
 public class Piedra extends Entidad{
 
-	public Piedra(Celda c) {
+	public Piedra(Posicion c) {
 		super(c);
 		// TODO Auto-generated constructor stub
 	}

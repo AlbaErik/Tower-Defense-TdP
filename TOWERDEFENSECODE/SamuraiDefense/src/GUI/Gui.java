@@ -21,7 +21,6 @@ import GUI.Paneles.PanelConFondoStage;
 import GUI.Paneles.PanelConFondoTienda;
 import GUI.Paneles.ObjetosPaneles.Button;
 import Logica.Juego.Juego;
-import Logica.Mapa.Celda;
 import Logica.Mapa.Mapa;
 
 public class Gui extends JFrame{

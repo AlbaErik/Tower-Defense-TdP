@@ -1,17 +1,15 @@
 package Logica.Mapa;
+import java.util.LinkedList;
 
+import Logica.Entidades.*;
 public class Mapa{
-	private Celda[][] mapa;
+	
 	private static final int filas=6;
 	private static final int columnas=10;
+	private LinkedList<Entidad> misEntidades;
 	
 	public Mapa() {
-		mapa=new Celda[filas][columnas];
-		for(int i=0;i<filas;i++) {
-			for(int j=0;j<columnas;j++) {
-				mapa[i][j]=new Celda();
-			}
-		}	
+		misEntidades = new LinkedList<Entidad>();
 	}
 	/**
 	 * Devuelve el ancho del mapa

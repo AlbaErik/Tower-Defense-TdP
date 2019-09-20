@@ -1,10 +1,10 @@
 package Logica.Entidades.Defensores;
 
-import Logica.Mapa.Celda;
+import Logica.Mapa.Posicion;
 
 public class EspadachinElite extends Defensor {
 	
-	public EspadachinElite(Celda c) {
+	public EspadachinElite(Posicion c) {
 		super(c);
 		this.life=300;
 		this.damage=50;

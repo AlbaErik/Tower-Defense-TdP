@@ -1,24 +1,24 @@
 package Logica.Entidades;
 
 import Grafica.Entidades.EntidadGrafica;
-import Logica.Mapa.Celda;
+import Logica.Mapa.Posicion;
 
 public abstract class Entidad {
 	protected int life;
-	protected Celda miCelda;
+	protected Posicion miCelda;
 	protected EntidadGrafica grafico;
 	
-	public Entidad(Celda c) {
+	public Entidad(Posicion c) {
 		miCelda=c;
 		grafico=null;
 	}
 	
 	public abstract int getLife();
 	public abstract void setLife(int lp);
-	public Celda getCelda() {
+	public Posicion getPos() {
 		return miCelda;
 	}
-	public void setCelda(Celda c) {
+	public void setPos(Posicion c) {
 		miCelda=c;
 	}
 

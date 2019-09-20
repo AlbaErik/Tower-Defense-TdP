@@ -1,6 +1,6 @@
 package Logica.Entidades;
 
-import Logica.Mapa.Celda;
+import Logica.Mapa.Posicion;
 
 public abstract class Personaje extends Entidad {
 	protected int damage;
@@ -8,7 +8,7 @@ public abstract class Personaje extends Entidad {
 	protected int attackSpeed;
 	//protected Arma Weapon;
 	
-	public Personaje(Celda c) {
+	public Personaje(Posicion c) {
 		super(c);
 	}
 
