@@ -5,8 +5,8 @@ import Logica.Mapa.Posicion;
 
 public class Piedra extends Entidad{
 
-	public Piedra(Posicion c) {
-		super(c);
+	public Piedra() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

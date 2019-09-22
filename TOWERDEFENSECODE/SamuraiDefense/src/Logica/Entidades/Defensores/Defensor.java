@@ -7,8 +7,8 @@ public abstract class Defensor extends Personaje {
 	protected int cost;
 	//protected IntelDef
 	
-	public Defensor(Posicion c) {
-		super(c);
+	public Defensor() {
+		super();
 	}
 	
 	public abstract int getCost();

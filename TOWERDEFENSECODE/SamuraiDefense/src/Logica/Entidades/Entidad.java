@@ -8,8 +8,7 @@ public abstract class Entidad {
 	protected Posicion miCelda;
 	protected EntidadGrafica grafico;
 	
-	public Entidad(Posicion c) {
-		miCelda=c;
+	public Entidad() {
 		grafico=null;
 	}
 	

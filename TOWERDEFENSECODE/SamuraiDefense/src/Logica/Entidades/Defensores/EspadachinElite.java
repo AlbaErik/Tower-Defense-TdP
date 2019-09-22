@@ -4,8 +4,9 @@ import Logica.Mapa.Posicion;
 
 public class EspadachinElite extends Defensor {
 	
-	public EspadachinElite(Posicion c) {
-		super(c);
+	
+	public EspadachinElite() {
+		super();
 		this.life=300;
 		this.damage=50;
 		this.attackSpeed=2;

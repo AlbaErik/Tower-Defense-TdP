@@ -1,19 +1,45 @@
 package Logica.Juego;
 
-import Logica.Mapa.Mapa;
+import GUI.Paneles.PanelJuego;
+import Logica.Mapa.Niveles.Nivel;
+import Logica.Tienda.Tienda;
 
 public class Juego{
-	protected Mapa mapa;
+	private PanelJuego Gui;
+	//private int tiempo;
+	private Tienda tienda;
+	private Nivel nivel;
 	
-	public Juego() {
-		mapa=new Mapa();
-	}
 	/**
-	 * Devuelve el mapa del juego
-	 * @return el mapa del juego
+	 * Se inicializa el juego en el Nivel 1
+	 * @param g
 	 */
-	public Mapa getMapa() {
-		return mapa;
+	public Juego(PanelJuego g) {
+		Gui=g;
+		tienda=new Tienda(this);
+		//tiempo=0;
+		
+	}
+	
+	/**public void aumentarTiempo() {
+		tiempo++;
+		Gui.getPanelStats().actualizarTiempo();
+	}**/
+
+	public void iniciar() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void reanudar() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public Tienda getTienda() {
+		return tienda;
+	}
+	public PanelJuego getPanelJuego() {
+		return Gui;
 	}
 	
 

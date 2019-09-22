@@ -8,8 +8,8 @@ public abstract class Personaje extends Entidad {
 	protected int attackSpeed;
 	//protected Arma Weapon;
 	
-	public Personaje(Posicion c) {
-		super(c);
+	public Personaje() {
+		super();
 	}
 
 		

@@ -2,7 +2,7 @@ package Logica;
 
 import Logica.Entidades.Personaje;
 
-public abstract class FabricaEntidades {
+public abstract class FabricaPersonajes {
 	
 	public abstract Personaje crearNinja();
 	public abstract Personaje crearArquero();
@@ -10,6 +10,5 @@ public abstract class FabricaEntidades {
 	public abstract Personaje crearEspadachin();
 	public abstract Personaje crearEmperador();
 	public abstract Personaje crearSamurai();
-	public abstract Personaje crarLluviaDeFlechas();
 	
 }

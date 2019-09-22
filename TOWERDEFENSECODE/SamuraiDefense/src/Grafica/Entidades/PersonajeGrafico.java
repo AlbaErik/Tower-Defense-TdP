@@ -1,20 +1,15 @@
 package Grafica.Entidades;
 
-import java.awt.Point;
+import java.awt.Image;
 
-
-public class PersonajeGrafico{
-	protected final int ancho=32;
-	protected final int alto=32;
-	
-	protected Point pos;
-	
+public class PersonajeGrafico extends EntidadGrafica{	
+	protected Image ImagenTienda;	
 	protected PersonajeGrafico(int x,int y) {
-		pos=new Point(x*ancho,y*alto);
+		super(x,y);
 	}
 	
-	public Point getPos() {
-		return pos;
+	public Image getImagenTienda() {
+		return ImagenTienda;
 	}
 
 }

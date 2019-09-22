@@ -4,8 +4,8 @@ import Logica.Mapa.Posicion;
 
 public class Barro extends Entidad{
 
-	public Barro(Posicion c) {
-		super(c);
+	public Barro() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
