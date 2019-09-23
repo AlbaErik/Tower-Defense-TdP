@@ -1,15 +1,21 @@
 package Logica.Mapa;
 import java.util.LinkedList;
 
+import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.*;
+import Logica.Mapa.Niveles.Nivel;
 public class Mapa{
 	
 	private static final int filas=6;
 	private static final int columnas=10;
 	private LinkedList<Entidad> misEntidades;
+	private PanelMapa mapagrafico;
+	private Nivel nivel;
 	
-	public Mapa() {
+	public Mapa(Nivel n) {
+		nivel=n;
 		misEntidades = new LinkedList<Entidad>();
+		mapagrafico=new PanelMapa(this);
 	}
 	/**
 	 * Devuelve el ancho del mapa
@@ -24,6 +30,10 @@ public class Mapa{
 	 */
 	public int getColumnas() {
 		return columnas;
+	}
+	
+	public PanelMapa getPanelMapa() {
+		return mapagrafico;
 	}
 
 }

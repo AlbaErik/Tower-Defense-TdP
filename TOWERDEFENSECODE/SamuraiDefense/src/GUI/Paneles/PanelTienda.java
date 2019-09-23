@@ -18,12 +18,10 @@ public class PanelTienda extends JPanel {
 	private Tienda tienda;
 	private Juego juego;
 	private JButton colocables[];
-	private JButton colocable;
-	private String palabra="EspadachinElite";
+	private String palabra[]= {"EspadachinElite","ArqueroElite"};
 	private String palabras[]= {"NinjaElite","EspadachinElite","ArqueroElite","LanceroElite","EmperadorReal","SamuraiElite"};
 	private JLabel fondo;
 
-	private JButton Esp;
 	
 	public PanelTienda(Tienda t){
 		tienda=t;
@@ -41,15 +39,49 @@ public class PanelTienda extends JPanel {
 	}
 	
 	public void crearBotones() {
-		colocable=new JButton();
-		colocable.setBorder(null);
-		colocable.setBorderPainted(false);
-		colocable.setContentAreaFilled(false);
-		colocable.setIcon(new ImageIcon("Sprites/Boton"+palabra+".png"));
-		colocable.setRolloverIcon(new ImageIcon("Sprites/Boton"+palabra+"Entered.png"));
-		colocable.setFocusable(false);
-		colocable.setBounds(25,25,50,50);
-		this.add(colocable);
+		colocables=new JButton[palabras.length];
+		for(int i=0;i<palabras.length;i++) {
+		colocables[i]=new JButton();
+		colocables[i].setBorder(null);
+		colocables[i].setBorderPainted(false);
+		colocables[i].setContentAreaFilled(false);
+		colocables[i].setIcon(new ImageIcon("Sprites/Boton"+palabras[i]+".png"));
+		colocables[i].setRolloverIcon(new ImageIcon("Sprites/Boton"+palabras[i]+"Entered.png"));
+		colocables[i].setFocusable(false);
+		this.add(colocables[i]);
+		}
+		int j=0;
+		int x=0;
+		int y=0;
+		int medida=70;
+		int cont=0;
+		while(j<2) {
+			x=20*(cont+1)+70*cont;
+			y=20;
+			colocables[j].setBounds(x, y, medida, medida);
+			j++;
+			cont++;
+		}
+		cont=0;
+		while(j<4) {
+			x=20*(cont+1)+70*cont;
+			y=110;
+			colocables[j].setBounds(x, y, medida, medida);
+			j++;
+			cont++;
+		}
+		cont=0;
+		while(j<6) {
+			x=20*(cont+1)+70*cont;
+			y=200;
+			colocables[j].setBounds(x, y, medida, medida);
+			j++;
+			cont++;
+		}
+	}
+	
+	public Tienda getTienda() {
+		return tienda;
 	}
 
 

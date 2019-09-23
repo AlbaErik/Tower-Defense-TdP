@@ -1,13 +1,27 @@
 package GUI;
 
-
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
+
 import GUI.Paneles.PanelTienda;
 import GUI.Paneles.PanelInicio;
 import GUI.Paneles.PanelJuego;
-
+import GUI.Paneles.PanelStats;
 
 
 

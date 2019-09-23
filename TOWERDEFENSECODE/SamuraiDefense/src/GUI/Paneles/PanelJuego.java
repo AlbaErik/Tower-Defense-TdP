@@ -32,6 +32,7 @@ public class PanelJuego extends JPanel {
 			panelStats=new PanelStats(AnchoVentana,AltoVentana,this);
 			this.add(panelStats);
 			this.add(juego.getTienda().getPanelTienda());
+			this.add(juego.getNivel().getMapa().getPanelMapa());
 			//juego.iniciar();
 		}//else {
 			//juego.reanudar();
