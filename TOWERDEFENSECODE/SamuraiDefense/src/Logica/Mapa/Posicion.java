@@ -1,10 +1,23 @@
 package Logica.Mapa;
 
+import java.awt.Point;
+import java.awt.Rectangle;
+
 public class Posicion {
-	private int x, y;
 	
-	public Posicion() {
+	private int ancho = 100, alto = 65;
+	private Point punto;
+	private Rectangle rectangulo;
+	
+	public Posicion(int x, int y) {
 		
+		punto = new Point(x,y);
+		rectangulo = new Rectangle(punto);
+		rectangulo.setSize(ancho, alto);
+	}
+	
+	public void setPos(int x, int y) {
+		punto.setLocation(x, y);
 	}
 
 }
