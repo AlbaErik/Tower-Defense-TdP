@@ -1,6 +1,7 @@
 package Logica.Entidades;
 
-import Logica.Mapa.Posicion;
+import Logica.Mapa.Mapa;
+
 
 public abstract class Personaje extends Entidad {
 	protected int damage;
@@ -8,14 +9,19 @@ public abstract class Personaje extends Entidad {
 	protected int attackSpeed;
 	//protected Arma Weapon;
 	
-	public Personaje() {
-		super();
+	public Personaje(int x,int y, Mapa m) {
+		super(x,y,m);
 	}
-
-		
-	public abstract int getDamage();
 	
-	public abstract int getRange();
+	public  int getDamage() {
+		return damage;
+	}
 	
-	public abstract int getAttackSpeed();
+	public  int getRange() {
+		return range;
+	}
+	
+	public  int getAttackSpeed() {
+		return attackSpeed;
+	}
 }

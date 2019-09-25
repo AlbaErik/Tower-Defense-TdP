@@ -19,5 +19,15 @@ public class Posicion {
 	public void setPos(int x, int y) {
 		punto.setLocation(x, y);
 	}
+	public Point getPunto() {
+		return punto;
+	}
+	
+	public int getAncho() {
+		return ancho;
+	}
+	public int getAlto() {
+		return alto;
+	}
 
 }

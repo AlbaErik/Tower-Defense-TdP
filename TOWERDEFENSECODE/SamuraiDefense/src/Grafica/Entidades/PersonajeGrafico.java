@@ -1,16 +1,14 @@
 package Grafica.Entidades;
 
-import java.awt.Image;
+
+import Grafica.Mapa.PanelMapa;
 
 public class PersonajeGrafico extends EntidadGrafica{	
-	protected Image ImagenTienda;	
-	protected PersonajeGrafico(int x,int y) {
-		super(x,y);
-	}
 	
-	public Image getImagenTienda() {
-		return ImagenTienda;
+	protected PersonajeGrafico(int x,int y, PanelMapa m) {
+		super(x,y,m);
 	}
+
 
 }
 

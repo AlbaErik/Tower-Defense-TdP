@@ -24,7 +24,7 @@ public class PanelStats extends JPanel {
 		this.setBounds(0, 0, AnchoVentana, 50);//Seteo espacio para el panel
 		
 		oro=new JLabel();
-		oro.setIcon(new ImageIcon("Sprites/Monedas.png"));
+		oro.setIcon(new ImageIcon("Sprites/Otros/Monedas.png"));
 		oro.setBounds(AnchoVentana-360,0,400,50);
 		oro.setText("0");//Gui.getJuego().getPuntaje()
 		oro.setVerticalTextPosition(JLabel.TOP);//Deja alineado el texto con la imagen
@@ -33,9 +33,10 @@ public class PanelStats extends JPanel {
 		oro.setForeground(Color.BLACK);
 		oro.setFont(new Font("Arial",Font.BOLD,40));
 		
-		JLabel fondo=new JLabel(new ImageIcon("Sprites/FondoPanelStats.png"));
+		JLabel fondo=new JLabel(new ImageIcon("Sprites/Fondos/FondoPanelStats.png"));
 		fondo.setBounds(0, 0, AnchoVentana,50);
 		
+		eliminarNinja();
 		pauseButton();
 		add(oro);
 		add(fondo);
@@ -56,13 +57,23 @@ public class PanelStats extends JPanel {
 			}
 		});
 		pause.setBounds(10, 0,70,50);
-		pause.setIcon(new ImageIcon("Sprites/BotonPausa.png"));
-		pause.setRolloverIcon(new ImageIcon("Sprites/BotonPausaEntered.png"));
+		pause.setIcon(new ImageIcon("Sprites/Botones/BotonPausa.png"));
+		pause.setRolloverIcon(new ImageIcon("Sprites/Botones/BotonPausaEntered.png"));
 		add(pause);	
 	}
 	
-	public void actualizarOro() {
-		
+	public void eliminarNinja() {
+		JButton eliminarNinja=new JButton();
+		eliminarNinja.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {//HAY QUE COMPLETAR CON LO QUE VA A HACER EL BOTON DE PAUSA
+				Gui.getJuego().getNivel().getMapa().getPanelMapa().eliminar();
+				actualizarOro(30);
+		}});
+		eliminarNinja.setBounds(100, 0,70,50);
+		add(eliminarNinja);	
 	}
-
+	
+	public void actualizarOro(int o) {
+		oro.setText(""+o);
+	}
 }

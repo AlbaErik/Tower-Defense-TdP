@@ -3,6 +3,7 @@ package GUI.Paneles;
 import javax.swing.JPanel;
 
 import GUI.VentanaInicial;
+import Grafica.Mapa.PanelMapa;
 import Logica.Juego.Juego;
 
 public class PanelJuego extends JPanel {
@@ -11,6 +12,7 @@ public class PanelJuego extends JPanel {
 	private VentanaInicial vInicial;
 	private Juego juego;
 	private PanelStats panelStats;
+	private PanelMapa mapag;
 	
 	
 	public PanelJuego(VentanaInicial v) {
@@ -32,8 +34,10 @@ public class PanelJuego extends JPanel {
 			panelStats=new PanelStats(AnchoVentana,AltoVentana,this);
 			this.add(panelStats);
 			this.add(juego.getTienda().getPanelTienda());
-			this.add(juego.getNivel().getMapa().getPanelMapa());
-			//juego.iniciar();
+			mapag=juego.getNivel().getMapa().getPanelMapa();
+			this.add(mapag);
+			
+			juego.iniciar();
 		}//else {
 			//juego.reanudar();
 		//}
@@ -61,6 +65,9 @@ public class PanelJuego extends JPanel {
 	}
 	public int getAlto() {
 		return AltoVentana;
+	}
+	public PanelMapa getPanelMapa() {
+		return mapag;
 	}
 	
 

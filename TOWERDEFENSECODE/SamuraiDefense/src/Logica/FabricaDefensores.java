@@ -23,7 +23,7 @@ public class FabricaDefensores extends FabricaPersonajes {
 
 	@Override
 	public Personaje crearEspadachin() {
-		return new EspadachinElite();
+		return null;
 	}
 
 	@Override

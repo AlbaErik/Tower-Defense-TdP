@@ -1,6 +1,7 @@
 package Logica.Juego;
 
 import GUI.Paneles.PanelJuego;
+import Logica.Hilos.HiloMovimientoEnemigo;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;
 import Logica.Tienda.Tienda;
@@ -10,6 +11,7 @@ public class Juego{
 	//private int tiempo;
 	private Tienda tienda;
 	private Nivel nivel;
+	private HiloMovimientoEnemigo hiloEnem;
 	
 	/**
 	 * Se inicializa el juego en el Nivel 1
@@ -29,8 +31,9 @@ public class Juego{
 	}**/
 
 	public void iniciar() {
-		// TODO Auto-generated method stub
-		
+		hiloEnem=new HiloMovimientoEnemigo();
+		//hiloEnem.agregarEnemigo(Gui.getPanelMapa().getNinja());	
+		//hiloEnem.run();Si lo usamos se rompe todo
 	}
 	public void reanudar() {
 		// TODO Auto-generated method stub

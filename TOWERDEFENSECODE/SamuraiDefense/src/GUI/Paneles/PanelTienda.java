@@ -18,7 +18,6 @@ public class PanelTienda extends JPanel {
 	private Tienda tienda;
 	private Juego juego;
 	private JButton colocables[];
-	private String palabra[]= {"EspadachinElite","ArqueroElite"};
 	private String palabras[]= {"NinjaElite","EspadachinElite","ArqueroElite","LanceroElite","EmperadorReal","SamuraiElite"};
 	private JLabel fondo;
 
@@ -33,7 +32,7 @@ public class PanelTienda extends JPanel {
 		
 		crearBotones();
 		fondo=new JLabel();
-		fondo.setIcon(new ImageIcon("Sprites/FondoPanelTienda.png"));
+		fondo.setIcon(new ImageIcon("Sprites/Fondos/FondoPanelTienda.png"));
 		fondo.setBounds(0,0, ancho-1000, alto-50);
 		this.add(fondo);	
 	}
@@ -45,8 +44,8 @@ public class PanelTienda extends JPanel {
 		colocables[i].setBorder(null);
 		colocables[i].setBorderPainted(false);
 		colocables[i].setContentAreaFilled(false);
-		colocables[i].setIcon(new ImageIcon("Sprites/Boton"+palabras[i]+".png"));
-		colocables[i].setRolloverIcon(new ImageIcon("Sprites/Boton"+palabras[i]+"Entered.png"));
+		colocables[i].setIcon(new ImageIcon("Sprites/Botones/Boton"+palabras[i]+".png"));
+		colocables[i].setRolloverIcon(new ImageIcon("Sprites/Botones/Boton"+palabras[i]+"Entered.png"));
 		colocables[i].setFocusable(false);
 		this.add(colocables[i]);
 		}

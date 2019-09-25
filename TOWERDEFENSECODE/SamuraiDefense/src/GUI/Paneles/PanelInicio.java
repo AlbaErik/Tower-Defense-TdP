@@ -23,7 +23,7 @@ public class PanelInicio extends JPanel {
 		this.setLayout(null);
 		this.setBounds(0, 0,v.getAncho(),v.getAlto());
 		
-		fondo=new JLabel(new ImageIcon("Sprites/FondoInicio.jpg"));
+		fondo=new JLabel(new ImageIcon("Sprites/Fondos/FondoInicio.jpg"));
 		fondo.setBounds(0, 0,v.getAncho(),v.getAlto());
 		armarBotones();
 		this.add(fondo);
@@ -42,8 +42,8 @@ public class PanelInicio extends JPanel {
 			botones[i].setActionCommand(palabras[i]);
 			botones[i].setBounds(30,(i+1)*50,250 ,50);
 			botones[i].addActionListener(oyenteB);
-			botones[i].setIcon(new ImageIcon("Sprites/BotonInicio"+palabras[i]+".png"));
-			botones[i].setRolloverIcon(new ImageIcon("Sprites/BotonInicio"+palabras[i]+"Entered.png"));
+			botones[i].setIcon(new ImageIcon("Sprites/Botones/BotonInicio"+palabras[i]+".png"));
+			botones[i].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonInicio"+palabras[i]+"Entered.png"));
 			add(botones[i]);
 		}
 

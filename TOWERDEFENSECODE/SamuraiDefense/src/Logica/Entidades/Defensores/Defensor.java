@@ -1,15 +1,17 @@
 package Logica.Entidades.Defensores;
 
 import Logica.Entidades.Personaje;
-import Logica.Mapa.Posicion;
+import Logica.Mapa.Mapa;
 
 public abstract class Defensor extends Personaje {
 	protected int cost;
 	//protected IntelDef
 	
-	public Defensor() {
-		super();
+	public Defensor(int x,int y,Mapa m) {
+		super(x,y,m);
 	}
 	
-	public abstract int getCost();
+	public int getCost() {
+		return cost;
+	}
 }

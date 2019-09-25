@@ -2,12 +2,18 @@ package Grafica.Entidades.Defensores;
 
 import javax.swing.ImageIcon;
 
+import Grafica.Mapa.PanelMapa;
+
 public class EspadachinEliteGrafico extends DefensorGrafico{
+	private String palabras[]= {"EspadachinStanding","EspadachinAttacking","EspadachinDying"};
 
-	protected EspadachinEliteGrafico(int x, int y) {
-		super(x, y);
-		this.img[0]=new ImageIcon(this.getClass().getResource("/Sprites/EspadachinWalking.gif"));
-		this.img[1]=new ImageIcon(this.getClass().getResource("/Sprites/EspadachinStanding.gif"));
+	public EspadachinEliteGrafico(int x, int y,PanelMapa m) {
+		super(x, y,m);
+		graficos=new ImageIcon[3];
+		
+		for(int i=0;i<palabras.length;i++) {
+			graficos[i]=new ImageIcon("Sprites/"+ palabras[i]+".gif");
+		}
+		setGraficoInicio();
 	}
-
 }
