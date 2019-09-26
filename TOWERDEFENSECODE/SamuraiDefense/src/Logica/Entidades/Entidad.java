@@ -13,7 +13,7 @@ public abstract class Entidad {
 	public Entidad(int x,int y,Mapa m) {
 		mapa=m;
 		miCelda=new Posicion(x,y);
-		grafico=new EntidadGrafica(x,y,m.getPanelMapa());
+		grafico=new EntidadGrafica(x,y,m.getPanelMapa(),this);
 	}
 	
 	public int getLife() {

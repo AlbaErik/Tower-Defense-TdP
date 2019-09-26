@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
@@ -21,6 +22,7 @@ public class PanelMapa extends JPanel {
 	private JLabel fondomapa;
 	private Posicion pos;
 	private JLabel ninja;
+	private Entidad entidad;
 	private Mapa mapa;
 	
 	public PanelMapa(Mapa m) {
@@ -29,7 +31,8 @@ public class PanelMapa extends JPanel {
 		this.setBounds(200,50,1000,650);
 		this.addMouseListener(new OyenteMouse());
 		
-		ninja=new Ninja(800,200,mapa).getGrafico().getGraficoActual();
+		entidad=new Ninja(800,200,mapa);
+		ninja=entidad.getGrafico().getGraficoActual();
 		this.add(ninja);
 	
 	}
@@ -37,6 +40,14 @@ public class PanelMapa extends JPanel {
 	public void eliminar() {
 		ninja.setVisible(false);
 		this.remove(ninja);
+	}
+	
+	public void ninja(JLabel n) {
+		ninja=n;
+	}
+	
+	public Entidad getEntidadMapa() {
+		return entidad;
 	}
 	
 	

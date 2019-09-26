@@ -20,12 +20,12 @@ public class HiloMovimientoEnemigo extends Thread {
 	}
 	
 	public void run() {
-		while(ejecutar) {
-			int x=toExecute.size();
-			for(int i=0;i<x;i++) {
-				toExecute.get(i).mover();
-			}
+		Atacante ninja=toExecute.get(0);
+		int y=ninja.getPos().getPunto().y;
+		for(int i=800;i>0;i--) {
+			ninja.getGrafico().cambiarPos(i, y);		
 		}
+		
 	}
-	
 }
+	

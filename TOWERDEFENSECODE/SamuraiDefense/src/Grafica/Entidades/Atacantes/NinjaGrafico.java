@@ -4,12 +4,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import Grafica.Mapa.PanelMapa;
+import Logica.Entidades.Entidad;
 
 public class NinjaGrafico extends AtacanteGrafico{
 private String palabras[]= {"NinjaRunning","NinjaAttacking","NinjaDying"};
 
-	public NinjaGrafico(int x, int y, PanelMapa m) {
-		super(x, y, m);
+	public NinjaGrafico(int x, int y, PanelMapa m,Entidad e) {
+		super(x, y, m,e);
 		graficos=new ImageIcon[3];
 		
 		for(int i=0;i<palabras.length;i++) {
@@ -26,5 +27,6 @@ private String palabras[]= {"NinjaRunning","NinjaAttacking","NinjaDying"};
 		graficoActual.setIcon(graficos[0]);
 		graficoActual.setBounds(x, y, ancho, alto);
 	}
+	
 
 }

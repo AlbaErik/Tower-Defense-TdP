@@ -14,7 +14,7 @@ public class EspadachinElite extends Defensor {
 		this.attackSpeed=2;
 		this.range=1;
 		this.cost=30;
-		this.grafico=new EspadachinEliteGrafico(x,y,m.getPanelMapa());
+		this.grafico=new EspadachinEliteGrafico(x,y,m.getPanelMapa(),this);
 	}
 
 	@Override
