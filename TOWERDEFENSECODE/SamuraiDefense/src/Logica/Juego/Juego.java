@@ -34,7 +34,9 @@ public class Juego{
 	public void iniciar() {
 		hiloEnem=new HiloMovimientoEnemigo();
 		hiloEnem.agregarEnemigo((Atacante)Gui.getPanelMapa().getEntidadMapa());	
-		hiloEnem.run();//Si lo usamos se rompe todo
+		hiloEnem.start();
+		
+		//Si lo usamos se rompe todo
 	}
 	public void reanudar() {
 		// TODO Auto-generated method stub

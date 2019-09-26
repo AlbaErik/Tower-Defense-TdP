@@ -37,7 +37,7 @@ public class PanelJuego extends JPanel {
 			mapag=juego.getNivel().getMapa().getPanelMapa();
 			this.add(mapag);
 			
-			//juego.iniciar();
+			juego.iniciar();
 		}//else {
 			//juego.reanudar();
 		//}
