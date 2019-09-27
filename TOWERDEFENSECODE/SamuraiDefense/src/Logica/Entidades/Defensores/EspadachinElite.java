@@ -28,4 +28,5 @@ public class EspadachinElite extends Defensor {
 		return grafico;
 	}
 
+
 }

@@ -3,6 +3,8 @@ package GUI.Paneles;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
@@ -39,16 +41,28 @@ public class PanelTienda extends JPanel {
 	
 	public void crearBotones() {
 		colocables=new JButton[palabras.length];
+		OyenteB oyente=new OyenteB();
 		for(int i=0;i<palabras.length;i++) {
+			crearBoton(i,oyente);
+		}
+		acomodarBotones();
+		
+	}
+	
+	private void crearBoton(int i,OyenteB oyente) {
 		colocables[i]=new JButton();
 		colocables[i].setBorder(null);
 		colocables[i].setBorderPainted(false);
 		colocables[i].setContentAreaFilled(false);
+		colocables[i].setActionCommand(palabras[i]);
 		colocables[i].setIcon(new ImageIcon("Sprites/Botones/Boton"+palabras[i]+".png"));
 		colocables[i].setRolloverIcon(new ImageIcon("Sprites/Botones/Boton"+palabras[i]+"Entered.png"));
 		colocables[i].setFocusable(false);
+		colocables[i].addActionListener(oyente);
 		this.add(colocables[i]);
-		}
+	}
+	
+	private void acomodarBotones() {
 		int j=0;
 		int x=0;
 		int y=0;
@@ -82,6 +96,45 @@ public class PanelTienda extends JPanel {
 	public Tienda getTienda() {
 		return tienda;
 	}
+	
+ private class OyenteB implements ActionListener{
+	public void actionPerformed(ActionEvent e) {
+		String s=e.getActionCommand();
+		switch(s) {
+		case("NinjaElite"):{
+			System.out.println("Pase por el boton Ninja");
+			break;
+		}
+		case("EspadachinElite"):{
+			tienda.setPersonajeActual(tienda.getFabrica().crearEspadachinElite(juego.getNivel().getMapa()));
+			System.out.println("Pase por el boton Espadachin");
+			break;
+		}
+		case("ArqueroElite"):{
+			System.out.println("Pase por el boton Arquero");
+			break;
+		}
+		case("LanceroElite"):{
+			System.out.println("Pase por el boton Lancero");
+			break;
+		}
+		case("EmperadorReal"):{
+			System.out.println("Pase por el boton Emperador");
+			break;
+		}
+		case("SamuraiElite"):{
+			System.out.println("Pase por el boton Samurai");
+			break;
+		}
+		
+		
+		
+		
+		}
+		
+	}
+	 
+ }
 
 
 }

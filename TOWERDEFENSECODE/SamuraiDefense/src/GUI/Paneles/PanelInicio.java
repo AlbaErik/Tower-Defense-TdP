@@ -16,6 +16,7 @@ public class PanelInicio extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JButton botones[];
 	private JLabel fondo;
+	private String[] palabras= {"Juego","Salir"};
 	private VentanaInicial vInicial;
 	
 	public PanelInicio(VentanaInicial v) {
@@ -30,7 +31,6 @@ public class PanelInicio extends JPanel {
 	}
 	
 	private void armarBotones() {
-		String[] palabras= {"Juego","Salir"};
 		botones=new JButton[palabras.length];
 		OyenteBotones oyenteB=new OyenteBotones();
 		

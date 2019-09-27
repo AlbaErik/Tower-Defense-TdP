@@ -16,6 +16,10 @@ public abstract class Entidad {
 		grafico=new EntidadGrafica(x,y,m.getPanelMapa(),this);
 	}
 	
+	public Entidad() {
+		
+	}
+
 	public int getLife() {
 		return life;
 	}
@@ -29,5 +33,15 @@ public abstract class Entidad {
 	}
 	
 	public abstract EntidadGrafica getGrafico();
+	
+	public void setX(int x) {
+		grafico.setX(x);
+		miCelda.getPunto().x=x;
+	}
+	
+	public void setY(int y) {
+		grafico.setY(y);
+		miCelda.getPunto().y=y;
+	}
 
 }

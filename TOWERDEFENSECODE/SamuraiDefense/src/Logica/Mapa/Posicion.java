@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 
 public class Posicion {
 	
-	private int ancho = 100, alto = 65;
+	private int ancho = 100, alto = 66;
 	private Point punto;
 	private Rectangle rectangulo;
 	

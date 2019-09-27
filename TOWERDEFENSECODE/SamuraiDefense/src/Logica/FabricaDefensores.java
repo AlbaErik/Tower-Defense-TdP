@@ -2,39 +2,34 @@ package Logica;
 
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Defensores.EspadachinElite;
+import Logica.Mapa.Mapa;
 
-public class FabricaDefensores extends FabricaPersonajes {
+public class FabricaDefensores{
+	
+	public FabricaDefensores() {
+	}
 
 	public Personaje crearNinja() {
-		return null;
+		return null ;
 	}
 
-	@Override
 	public Personaje crearArquero() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public Personaje crearLancero() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public Personaje crearEspadachin() {
-		return null;
+	public Personaje crearEspadachinElite(Mapa m) {
+		return new EspadachinElite(0,0,m);
 	}
 
-	@Override
 	public Personaje crearEmperador() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public Personaje crearSamurai() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

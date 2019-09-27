@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Mapa.Mapa;
@@ -73,8 +75,25 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			System.out.println("X: "+ e.getX());
-			System.out.println("Y: "+ e.getY());
+			System.out.println("X: "+ e.getX()+","+"Y: "+ e.getY());
+			int x=(e.getX()/100)*100+50; //Lo posiciona en el eje x
+			int y=0;
+			if(e.getY()>250) {
+				y=((e.getY()/66)-4)*66 + 33 +250;//Lo posiciona en el eje y
+			}
+			System.out.println("X: "+x+" , "+"Y: "+y);
+			
+			if(y!=0 && mapa.getTienda().getPersonajeActual()!=null) {
+				mapa.getTienda().getPersonajeActual().setX(x);
+				mapa.getTienda().getPersonajeActual().setY(y);
+				mapa.setDefensor(mapa.getTienda().getPersonajeActual());
+				JLabel nuevo=mapa.getDefensor().getGrafico().getGraficoActual();
+				int ancho=mapa.getDefensor().getGrafico().getEntidad().getPos().getAncho();
+				int alto=mapa.getDefensor().getGrafico().getEntidad().getPos().getAlto();
+				nuevo.setBounds(x, y,ancho, alto);
+				add(nuevo);
+			}
+			
 		}
 
 		@Override

@@ -32,11 +32,9 @@ public class Juego{
 	}**/
 
 	public void iniciar() {
-		hiloEnem=new HiloMovimientoEnemigo();
-		hiloEnem.agregarEnemigo((Atacante)Gui.getPanelMapa().getEntidadMapa());	
-		hiloEnem.start();
-		
-		//Si lo usamos se rompe todo
+		hiloEnem=new HiloMovimientoEnemigo();//Crea el hilo
+		hiloEnem.agregarEnemigo((Atacante)Gui.getPanelMapa().getEntidadMapa());	//Agrega la entidad al hilo
+		hiloEnem.start();//Inicia el hilo del movimiento de enemigos
 	}
 	public void reanudar() {
 		// TODO Auto-generated method stub

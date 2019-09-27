@@ -10,7 +10,6 @@ public abstract class Defensor extends Personaje {
 	public Defensor(int x,int y,Mapa m) {
 		super(x,y,m);
 	}
-	
 	public int getCost() {
 		return cost;
 	}

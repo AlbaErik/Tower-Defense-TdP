@@ -46,4 +46,12 @@ public class EntidadGrafica{
 		return pos;
 	}
 
+	public void setX(int x) {
+		pos.x=x;
+	}
+
+	public void setY(int y) {
+		pos.y=y;
+	}
+
 }
