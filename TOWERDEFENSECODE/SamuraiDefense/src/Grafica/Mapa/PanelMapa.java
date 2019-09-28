@@ -3,6 +3,7 @@ package Grafica.Mapa;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -13,6 +14,7 @@ import javax.swing.JPanel;
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
@@ -76,22 +78,21 @@ public class PanelMapa extends JPanel {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			System.out.println("X: "+ e.getX()+","+"Y: "+ e.getY());
-			int x=(e.getX()/100)*100+50; //Lo posiciona en el eje x
+			int x=0;
 			int y=0;
-			if(e.getY()>250) {
-				y=((e.getY()/66)-4)*66 + 33 +250;//Lo posiciona en el eje y
+			if(e.getY()>200 && e.getY()<590 && e.getX()<600) {
+				System.out.println("Y ES IGUAL A : "+ ((e.getY()/66)-3));
+				x=(e.getX()/100)*100; //Lo posiciona en el eje x
+				y=((e.getY()/66)-3)*66 +200;//Lo posiciona en el eje y	
 			}
 			System.out.println("X: "+x+" , "+"Y: "+y);
-			
-			if(y!=0 && mapa.getTienda().getPersonajeActual()!=null) {
-				mapa.getTienda().getPersonajeActual().setX(x);
-				mapa.getTienda().getPersonajeActual().setY(y);
-				mapa.setDefensor(mapa.getTienda().getPersonajeActual());
-				JLabel nuevo=mapa.getDefensor().getGrafico().getGraficoActual();
-				int ancho=mapa.getDefensor().getGrafico().getEntidad().getPos().getAncho();
-				int alto=mapa.getDefensor().getGrafico().getEntidad().getPos().getAlto();
-				nuevo.setBounds(x, y,ancho, alto);
+			Personaje aColocar=mapa.getTienda().getPersonajeActual();
+			if(y!=0 && aColocar!=null) {
+				aColocar.cambiarPosLogica(x, y);
+				mapa.setDefensor(aColocar);
+				JLabel nuevo=aColocar.getGrafico().getGraficoActual();
 				add(nuevo);
+				repaint();
 			}
 			
 		}

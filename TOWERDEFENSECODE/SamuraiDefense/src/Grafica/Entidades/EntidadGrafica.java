@@ -34,13 +34,14 @@ public class EntidadGrafica{
 		return graficoActual;
 	}
 	
-	public void setGraficoInicio() {
+	public void setGraficoInicio(int x,int y) {
 		graficoActual.setIcon(graficos[0]);
+		graficoActual.setBounds(x, y, ancho, alto);
 	}
 	
 	public void cambiarPos(int x,int y) {
 		pos.setLocation(x,y);
-		graficoActual.setBounds(x,y, ancho, alto);
+		graficoActual.setBounds(x,y, ancho, alto);	
 	}
 	public Point getPosGrafica() {
 		return pos;

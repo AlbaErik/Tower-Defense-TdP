@@ -66,7 +66,7 @@ public class PanelStats extends JPanel {
 		JButton eliminarNinja=new JButton();
 		eliminarNinja.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {//HAY QUE COMPLETAR CON LO QUE VA A HACER EL BOTON DE PAUSA
-				Gui.getJuego().getNivel().getMapa().getPanelMapa().eliminar();
+				Gui.getJuego().getMapa().getPanelMapa().eliminar();
 				actualizarOro(30);
 		}});
 		eliminarNinja.setBounds(100, 0,70,50);

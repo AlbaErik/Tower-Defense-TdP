@@ -3,6 +3,7 @@ import java.util.LinkedList;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.*;
+import Logica.Juego.Juego;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Tienda.Tienda;
 public class Mapa{
@@ -13,13 +14,16 @@ public class Mapa{
 	private LinkedList<Personaje> misDefensores;
 	private PanelMapa mapagrafico;
 	private Nivel nivel;
+	private Juego juego;
 	private Tienda tienda;
 	
-	public Mapa(Nivel n) {
-		nivel=n;
+	public Mapa(Juego j) {
+		juego=j;
+		nivel=j.getNivel();
 		misEntidades = new LinkedList<Entidad>();
 		misDefensores= new LinkedList<Personaje>();
 		mapagrafico=new PanelMapa(this);
+		tienda=j.getTienda();
 	}
 	/**
 	 * Devuelve el ancho del mapa

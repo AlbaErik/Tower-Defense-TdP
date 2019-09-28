@@ -4,7 +4,6 @@ import Logica.Juego.Juego;
 import Logica.Mapa.Mapa;
 
 public abstract class Nivel {
-  private Mapa mapa;
   private int presupuesto;
   private Horda[] horda;
   private Nivel siguiente;
@@ -16,15 +15,11 @@ public abstract class Nivel {
 	  for(int i=0;i<horda.length;i++) {
 		  horda[i]=new Horda();
 	  }
-	  mapa=new Mapa(this);
-	  juego.getPanelJuego().getVentanaInicial().add(mapa.getPanelMapa());	  
+	  juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());	  
   }
   
   public abstract void crearHorda();
   
-  public Mapa getMapa() {
-	  return mapa;
-  }
   public abstract void getSigNivel();
   
   public Juego getJuego() {

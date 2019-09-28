@@ -32,6 +32,10 @@ public abstract class Entidad {
 		miCelda=c;
 	}
 	
+	public void cambiarPosLogica(int x,int y) {
+		miCelda.setPos(x, y);
+		grafico.cambiarPos(x, y);
+	}
 	public abstract EntidadGrafica getGrafico();
 	
 	public void setX(int x) {

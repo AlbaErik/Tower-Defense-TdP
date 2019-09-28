@@ -3,6 +3,7 @@ package Logica.Juego;
 import GUI.Paneles.PanelJuego;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Hilos.HiloMovimientoEnemigo;
+import Logica.Mapa.Mapa;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;
 import Logica.Tienda.Tienda;
@@ -12,6 +13,7 @@ public class Juego{
 	//private int tiempo;
 	private Tienda tienda;
 	private Nivel nivel;
+	private Mapa mapa;
 	private HiloMovimientoEnemigo hiloEnem;
 	
 	/**
@@ -21,7 +23,8 @@ public class Juego{
 	public Juego(PanelJuego g) {
 		Gui=g;
 		tienda=new Tienda(this);
-		nivel=new Nivel1(this);
+		mapa=new Mapa(this);
+		nivel=new Nivel1(this);	
 		//tiempo=0;
 		
 	}
@@ -52,5 +55,8 @@ public class Juego{
 		return nivel;
 	}
 	
+	public Mapa getMapa() {
+		return mapa;
+	}
 
 }

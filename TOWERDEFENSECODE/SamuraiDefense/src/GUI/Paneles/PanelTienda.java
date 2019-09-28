@@ -106,7 +106,7 @@ public class PanelTienda extends JPanel {
 			break;
 		}
 		case("EspadachinElite"):{
-			tienda.setPersonajeActual(tienda.getFabrica().crearEspadachinElite(juego.getNivel().getMapa()));
+			tienda.setPersonajeActual(tienda.getFabrica().crearEspadachinElite(juego.getMapa()));
 			System.out.println("Pase por el boton Espadachin");
 			break;
 		}
