@@ -1,10 +1,13 @@
 package Logica.Entidades;
 
+import Logica.Colisionadores.*;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
 
 public abstract class Entidad {
+	
+	protected Colisionador col;
 	protected int life;
 	protected Posicion miCelda;
 	protected Mapa mapa;
@@ -14,6 +17,7 @@ public abstract class Entidad {
 		mapa=m;
 		miCelda=new Posicion(x,y);
 		grafico=new EntidadGrafica(x,y,m.getPanelMapa(),this);
+		
 	}
 	
 	public Entidad() {

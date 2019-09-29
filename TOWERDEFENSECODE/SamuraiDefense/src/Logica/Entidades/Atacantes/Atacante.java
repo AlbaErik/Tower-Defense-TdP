@@ -10,6 +10,7 @@ public abstract class Atacante extends Personaje {
 	public Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
 		sepuedemover=true;
+		
 	}
 	
 	
