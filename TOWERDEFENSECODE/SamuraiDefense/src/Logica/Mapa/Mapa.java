@@ -3,6 +3,7 @@ import java.util.LinkedList;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.*;
+import Logica.Entidades.Defensores.Defensor;
 import Logica.Juego.Juego;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Tienda.Tienda;
@@ -11,7 +12,7 @@ public class Mapa{
 	private static final int filas=6;
 	private static final int columnas=10;
 	private LinkedList<Entidad> misEntidades;
-	private LinkedList<Personaje> misDefensores;
+	private LinkedList<Defensor> misDefensores;
 	private PanelMapa mapagrafico;
 	private Nivel nivel;
 	private Juego juego;
@@ -21,7 +22,7 @@ public class Mapa{
 		juego=j;
 		nivel=j.getNivel();
 		misEntidades = new LinkedList<Entidad>();
-		misDefensores= new LinkedList<Personaje>();
+		misDefensores= new LinkedList<Defensor>();
 		mapagrafico=new PanelMapa(this);
 		tienda=j.getTienda();
 	}
@@ -43,16 +44,31 @@ public class Mapa{
 	public PanelMapa getPanelMapa() {
 		return mapagrafico;
 	}
-	
+	public Nivel getNivel() {
+		return nivel;
+	}
+	public Juego getJuego() {
+		return juego;
+	}
 	public Tienda getTienda() {
 		return tienda;
 	}
 	
-	public void setDefensor(Personaje p) {
-		misDefensores.addFirst(p);
+	public void setEntidad(Entidad d) {
+		misEntidades.addFirst(d);
+		d.setLugarEnMapa(misEntidades.lastIndexOf(misEntidades.getFirst()));
 	}
-	public Personaje getDefensor() {
-		return misDefensores.getFirst();
+	public Entidad getEntidad() {
+		return misEntidades.getFirst();
+	}
+	
+	public void eliminarEntidad(int i) {//Elimina al defensor de la lista de defensores
+		misEntidades.remove(i);
+		
+	}
+	
+	public boolean hayEntidades() {
+		return !misEntidades.isEmpty();
 	}
 
 }

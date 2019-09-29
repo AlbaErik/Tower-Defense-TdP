@@ -1,11 +1,8 @@
 package GUI.Paneles;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Image;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -102,27 +99,56 @@ public class PanelTienda extends JPanel {
 		String s=e.getActionCommand();
 		switch(s) {
 		case("NinjaElite"):{
+			if(tienda.getJuego().getMapa().hayEntidades()) {
+			    tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
+			}
+				
+			tienda.setPersonajeActual(tienda.getFabrica().crearNinjaElite(juego.getMapa()));
 			System.out.println("Pase por el boton Ninja");
 			break;
 		}
 		case("EspadachinElite"):{
-			tienda.setPersonajeActual(tienda.getFabrica().crearEspadachinElite(juego.getMapa()));
+			if(tienda.getJuego().getMapa().hayEntidades()) {
+			tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
+			}
+			
+			tienda.setPersonajeActual(tienda.getFabrica().crearEspadachinElite(juego.getMapa()));	
 			System.out.println("Pase por el boton Espadachin");
 			break;
 		}
 		case("ArqueroElite"):{
+			if(tienda.getJuego().getMapa().hayEntidades()) {
+				tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
+			}
+				
+			tienda.setPersonajeActual(tienda.getFabrica().crearArqueroElite(juego.getMapa()));
 			System.out.println("Pase por el boton Arquero");
 			break;
 		}
 		case("LanceroElite"):{
+			if(tienda.getJuego().getMapa().hayEntidades()) {
+				tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
+			}
+				
+			tienda.setPersonajeActual(tienda.getFabrica().crearLanceroElite(juego.getMapa()));
 			System.out.println("Pase por el boton Lancero");
 			break;
 		}
 		case("EmperadorReal"):{
+			if(tienda.getJuego().getMapa().hayEntidades()) {
+				tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
+			}
+				
+			tienda.setPersonajeActual(tienda.getFabrica().crearEmperadorReal(juego.getMapa()));
 			System.out.println("Pase por el boton Emperador");
 			break;
 		}
 		case("SamuraiElite"):{
+			if(tienda.getJuego().getMapa().hayEntidades()) {
+				tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
+			}
+				
+			tienda.setPersonajeActual(tienda.getFabrica().crearSamuraiElite(juego.getMapa()));
 			System.out.println("Pase por el boton Samurai");
 			break;
 		}

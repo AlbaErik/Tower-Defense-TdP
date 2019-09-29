@@ -9,9 +9,5 @@ public class AtacanteGrafico extends PersonajeGrafico {
 	public AtacanteGrafico(int x, int y, PanelMapa m,Entidad e) {
 		super(x, y, m, e);
 	}
-	
-	public void avanzar() {
-		this.getGraficoActual().setIcon(graficos[0]);
-	}
 
 }

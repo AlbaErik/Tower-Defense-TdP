@@ -10,6 +10,7 @@ public class DefensorGrafico extends PersonajeGrafico {
 	protected DefensorGrafico(int x,int y, PanelMapa m,Entidad e) {
 		super(x,y,m,e);
 	}
+
 	
 	
 

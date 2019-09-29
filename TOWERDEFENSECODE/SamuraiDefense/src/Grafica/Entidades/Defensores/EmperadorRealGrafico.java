@@ -5,10 +5,10 @@ import javax.swing.ImageIcon;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
-public class EspadachinEliteGrafico extends DefensorGrafico{
-	private String palabras[]= {"EspadachinEliteStanding","EspadachinEliteAttacking","EspadachinEliteDying"};
+public class EmperadorRealGrafico extends DefensorGrafico {
+	private String palabras[]= {"EmperadorRealStanding","EmperadorRealAttacking","EmperadorRealEliteDying"};
 
-	public EspadachinEliteGrafico(int x, int y,PanelMapa m,Entidad e) {
+	public EmperadorRealGrafico(int x, int y,PanelMapa m,Entidad e) {
 		super(x,y,m,e);
 		graficos=new ImageIcon[3];
 		
@@ -41,5 +41,5 @@ public class EspadachinEliteGrafico extends DefensorGrafico{
 		mapaPanel.getMapa().eliminarEntidad(mientidad.getLugarEnMapa());
 		mapaPanel.eliminarDefensorG(this.graficoActual);
 	}
-	
+
 }

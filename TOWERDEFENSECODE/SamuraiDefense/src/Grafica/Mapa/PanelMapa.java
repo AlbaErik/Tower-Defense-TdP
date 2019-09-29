@@ -3,7 +3,6 @@ package Grafica.Mapa;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -11,20 +10,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Grafica.Entidades.EntidadGrafica;
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Ninja;
+import Logica.Entidades.Defensores.Defensor;
 import Logica.Mapa.Mapa;
-import Logica.Mapa.Posicion;
+//import Logica.Mapa.Posicion;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Image fondo=new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
-	private Image fondocongrilla;
-	private JLabel fondomapa;
-	private Posicion pos;
+	//private Image fondocongrilla;
+	//private JLabel fondomapa;
+	//private Posicion pos;
 	private JLabel ninja;
 	private Entidad entidad;
 	private Mapa mapa;
@@ -52,6 +49,14 @@ public class PanelMapa extends JPanel {
 	
 	public Entidad getEntidadMapa() {
 		return entidad;
+	}
+	public Mapa getMapa() {
+		return mapa;
+	}
+	
+	public void eliminarDefensorG(JLabel d) {
+		this.remove(d);
+		repaint();
 	}
 	
 	
@@ -86,10 +91,10 @@ public class PanelMapa extends JPanel {
 				y=((e.getY()/66)-3)*66 +200;//Lo posiciona en el eje y	
 			}
 			System.out.println("X: "+x+" , "+"Y: "+y);
-			Personaje aColocar=mapa.getTienda().getPersonajeActual();
+			Defensor aColocar=mapa.getTienda().getPersonajeActual();
 			if(y!=0 && aColocar!=null) {
 				aColocar.cambiarPosLogica(x, y);
-				mapa.setDefensor(aColocar);
+				mapa.setEntidad(aColocar);
 				JLabel nuevo=aColocar.getGrafico().getGraficoActual();
 				add(nuevo);
 				repaint();

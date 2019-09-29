@@ -5,12 +5,12 @@ import javax.swing.ImageIcon;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
-public class EspadachinEliteGrafico extends DefensorGrafico{
-	private String palabras[]= {"EspadachinEliteStanding","EspadachinEliteAttacking","EspadachinEliteDying"};
+public class NinjaEliteGrafico extends DefensorGrafico {
+	private String palabras[]= {"NinjaEliteStanding","NinjaEliteAttacking","NinjaEliteDying"};
 
-	public EspadachinEliteGrafico(int x, int y,PanelMapa m,Entidad e) {
-		super(x,y,m,e);
-		graficos=new ImageIcon[3];
+	public NinjaEliteGrafico(int x, int y, PanelMapa m, Entidad e) {
+		super(x, y, m, e);
+        graficos=new ImageIcon[3];
 		
 		for(int i=0;i<palabras.length;i++) {
 			graficos[i]=new ImageIcon("Sprites/Personajes/Defensores/"+ palabras[i]+".gif");
@@ -41,5 +41,4 @@ public class EspadachinEliteGrafico extends DefensorGrafico{
 		mapaPanel.getMapa().eliminarEntidad(mientidad.getLugarEnMapa());
 		mapaPanel.eliminarDefensorG(this.graficoActual);
 	}
-	
 }

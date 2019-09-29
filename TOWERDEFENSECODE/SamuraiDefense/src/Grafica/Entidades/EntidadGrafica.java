@@ -8,11 +8,10 @@ import javax.swing.JLabel;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
-import Logica.Mapa.Posicion;
 
 
 public class EntidadGrafica{
-	protected PanelMapa mapa;
+	protected PanelMapa mapaPanel;
 	protected ImageIcon graficos[];
 	protected JLabel graficoActual;
 	protected Point pos;
@@ -21,7 +20,7 @@ public class EntidadGrafica{
 	
 	public EntidadGrafica(int x,int y,PanelMapa m,Entidad e) {
 		mientidad=e;
-		mapa=m;
+		mapaPanel=m;
 		pos=new Point(x,y);
 		graficos=new ImageIcon[3];
 		graficoActual=new JLabel();
@@ -54,5 +53,16 @@ public class EntidadGrafica{
 	public void setY(int y) {
 		pos.y=y;
 	}
+	public void posicionInicial() {
+		this.getGraficoActual().setIcon(graficos[0]);
+	}
+	public void atacar() {
+		this.getGraficoActual().setIcon(graficos[1]);
+	}
+	public void morir() {
+		this.getGraficoActual().setIcon(graficos[2]);
+	}
+
+	
 
 }

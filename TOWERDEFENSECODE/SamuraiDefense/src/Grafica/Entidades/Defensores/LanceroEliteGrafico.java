@@ -5,10 +5,10 @@ import javax.swing.ImageIcon;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
-public class EspadachinEliteGrafico extends DefensorGrafico{
-	private String palabras[]= {"EspadachinEliteStanding","EspadachinEliteAttacking","EspadachinEliteDying"};
+public class LanceroEliteGrafico extends DefensorGrafico{
+	private String palabras[]= {"LanceroEliteStanding","LanceroEliteAttacking","LanceroEliteDying"};
 
-	public EspadachinEliteGrafico(int x, int y,PanelMapa m,Entidad e) {
+	public LanceroEliteGrafico(int x, int y,PanelMapa m,Entidad e) {
 		super(x,y,m,e);
 		graficos=new ImageIcon[3];
 		
@@ -42,4 +42,5 @@ public class EspadachinEliteGrafico extends DefensorGrafico{
 		mapaPanel.eliminarDefensorG(this.graficoActual);
 	}
 	
+
 }

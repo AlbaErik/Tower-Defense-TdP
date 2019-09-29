@@ -2,13 +2,13 @@ package Logica.Tienda;
 
 import GUI.Paneles.PanelTienda;
 import Logica.FabricaDefensores;
-import Logica.Entidades.Personaje;
+import Logica.Entidades.Defensores.Defensor;
 import Logica.Juego.Juego;
 
 public class Tienda{
 	private PanelTienda tienda;
 	private Juego juego;
-	private Personaje personajeActual;
+	private Defensor personajeActual;
 	private FabricaDefensores fabrica;
 	
 	public Tienda(Juego j) {
@@ -25,12 +25,12 @@ public class Tienda{
 		return juego;
 	}
 	
-	public void setPersonajeActual(Personaje e) {
-		personajeActual=e;
+	public void setPersonajeActual(Defensor d) {
+		personajeActual=d;
 	}
 	
-	public Personaje getPersonajeActual() {
-		Personaje toret=personajeActual;
+	public Defensor getPersonajeActual() {
+		Defensor toret=personajeActual;
 		personajeActual=null;
 		return toret;
 	}
