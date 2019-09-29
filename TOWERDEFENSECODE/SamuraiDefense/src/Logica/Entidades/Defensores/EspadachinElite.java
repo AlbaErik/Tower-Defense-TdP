@@ -1,7 +1,5 @@
 package Logica.Entidades.Defensores;
 
-import Logica.Colisionadores.*;
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Defensores.EspadachinEliteGrafico;
 import Logica.Mapa.Mapa;
 
@@ -16,19 +14,6 @@ public class EspadachinElite extends Defensor {
 		this.range=1;
 		this.cost=30;
 		this.grafico=new EspadachinEliteGrafico(x,y,m.getPanelMapa(),this);
-		
-		super.col = new ColisionadorDefensor(this);
-	}
-
-	@Override
-	public void setLife(int lp) {
-		life=life-lp;
-		
-	}
-
-	@Override
-	public EntidadGrafica getGrafico() {
-		return grafico;
 	}
 
 

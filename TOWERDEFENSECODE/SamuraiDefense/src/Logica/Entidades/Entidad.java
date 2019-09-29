@@ -1,34 +1,29 @@
 package Logica.Entidades;
 
-import Logica.Colisionadores.*;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
 
 public abstract class Entidad {
-	
-	protected Colisionador col;
 	protected int life;
 	protected Posicion miCelda;
 	protected Mapa mapa;
 	protected EntidadGrafica grafico;
+	protected int lugarEnMapa;
 	
 	public Entidad(int x,int y,Mapa m) {
 		mapa=m;
 		miCelda=new Posicion(x,y);
 		grafico=new EntidadGrafica(x,y,m.getPanelMapa(),this);
-		
 	}
 	
-	public Entidad() {
-		
-	}
-
 	public int getLife() {
 		return life;
 	}
 	
-	public abstract void setLife(int lp);
+	public void setLife(int lp) {
+		life=life-lp;
+	}
 	public Posicion getPos() {
 		return miCelda;
 	}
@@ -40,7 +35,10 @@ public abstract class Entidad {
 		miCelda.setPos(x, y);
 		grafico.cambiarPos(x, y);
 	}
-	public abstract EntidadGrafica getGrafico();
+	
+	public EntidadGrafica getGrafico() {
+		return grafico;
+	}
 	
 	public void setX(int x) {
 		grafico.setX(x);
@@ -50,6 +48,13 @@ public abstract class Entidad {
 	public void setY(int y) {
 		grafico.setY(y);
 		miCelda.getPunto().y=y;
+	}
+	
+	public void setLugarEnMapa(int i) {
+		lugarEnMapa=i;
+	}
+	public int getLugarEnMapa() {
+		return lugarEnMapa;
 	}
 
 }

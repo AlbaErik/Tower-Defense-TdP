@@ -1,6 +1,5 @@
 package Logica.Entidades.Atacantes;
 
-import Logica.Colisionadores.*;
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
 import Logica.Mapa.Mapa;
@@ -15,8 +14,6 @@ public class Ninja extends Atacante {
 		this.movementSpeed=2;
 		this.range=3;
 		this.grafico=new NinjaGrafico(x,y,m.getPanelMapa(),this);
-		
-		super.col = new ColisionadorAtacante(this);
 	}
 
 	@Override

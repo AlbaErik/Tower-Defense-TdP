@@ -1,25 +1,14 @@
 package Logica.Entidades.Defensores;
 
-import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Defensores.NinjaEliteGrafico;
 import Logica.Mapa.Mapa;
 
-public class NinjaElite extends Defensor{
+public class NinjaElite extends Defensor {
 
-	public NinjaElite(int x, int y, Mapa m) {
+	public NinjaElite(int x, int y, Mapa m) {//Agregar valores a los atributos
 		super(x, y, m);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public void setLife(int lp) {
-		// TODO Auto-generated method stub
+		this.grafico=new NinjaEliteGrafico(x,y,m.getPanelMapa(),this);
 		
-	}
-
-	@Override
-	public EntidadGrafica getGrafico() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
