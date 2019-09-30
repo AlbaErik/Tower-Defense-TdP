@@ -19,6 +19,11 @@ public class Posicion {
 	public void setPos(int x, int y) {
 		punto.setLocation(x, y);
 	}
+	
+	public Rectangle getRectangle() {
+		return rectangulo;
+	}
+	
 	public Point getPunto() {
 		return punto;
 	}
@@ -28,6 +33,26 @@ public class Posicion {
 	}
 	public int getAlto() {
 		return alto;
+	}
+	
+	public double getMaxX() {
+		return punto.getX()+ ancho/2;
+	}
+	
+	public double getMinX() {
+		return punto.getX()- ancho/2;
+	}
+	
+	public double getMaxY() {
+		return punto.getY()+ alto/2;
+	}
+	
+	public double getMinY() {
+		return punto.getY()- alto/2;
+	}
+	
+	public void tostring() {
+		System.out.println("UBICACION DEL PUNTO X:"+punto.getX()+"Y:"+punto.getY());
 	}
 
 }

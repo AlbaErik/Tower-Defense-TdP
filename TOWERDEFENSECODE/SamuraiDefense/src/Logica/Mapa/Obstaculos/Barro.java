@@ -21,5 +21,10 @@ public class Barro extends Entidad{
 		return grafico;
 	}
 
+	@Override
+	public void chocar(Entidad e) {
+		e.getColisionador().serChocado(this);		
+	}
+
 
 }

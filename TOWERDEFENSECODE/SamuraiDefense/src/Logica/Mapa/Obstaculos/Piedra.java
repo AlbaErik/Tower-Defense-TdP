@@ -21,4 +21,9 @@ public class Piedra extends Entidad{
 		return grafico;
 	}
 
+	@Override
+	public void chocar(Entidad e) {
+		e.getColisionador().serChocado(this);
+	}
+
 }

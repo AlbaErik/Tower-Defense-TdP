@@ -65,7 +65,18 @@ public class Mapa{
 	
 	public void eliminarEntidad(int i) {//Elimina al defensor de la lista de defensores
 		misEntidades.remove(i);
-		
+	}
+	
+	public LinkedList<Entidad> getCol(){
+		return misEntidades;
+	}
+	
+	public LinkedList<Entidad> getColeccion(){
+		LinkedList<Entidad> nueva = new LinkedList<Entidad>();
+		for(Entidad e : misEntidades) {
+			nueva.addFirst(e);
+		}
+		return nueva;
 	}
 	
 	public boolean hayEntidades() {

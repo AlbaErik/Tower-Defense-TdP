@@ -2,6 +2,7 @@ package Logica.Entidades.Atacantes;
 
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
+import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
 
 public class Ninja extends Atacante {
@@ -25,6 +26,11 @@ public class Ninja extends Atacante {
 	@Override
 	public EntidadGrafica getGrafico() {
 		return grafico;
+	}
+
+	@Override
+	public void chocar(Entidad e) {
+		e.getColisionador().serChocado(this);		
 	}
 
 }
