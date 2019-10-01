@@ -1,5 +1,6 @@
-package Logica.Colisionadores;
+package Logica.Colisionadores.ColisionadoresPremio;
 
+import Logica.Colisionadores.Colisionador;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Entidades.Defensores.ArqueroElite;
 import Logica.Entidades.Defensores.EmperadorReal;
@@ -10,7 +11,7 @@ import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Mapa.Obstaculos.Barro;
 import Logica.Mapa.Obstaculos.Piedra;
 
-public class ColisionadorObstaculo extends Colisionador{
+public class ColisionadorPremio extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {
@@ -65,7 +66,5 @@ public class ColisionadorObstaculo extends Colisionador{
 		// TODO Auto-generated method stub
 		
 	}
-
-	
 
 }
