@@ -90,7 +90,7 @@ public class PanelMapa extends JPanel {
 			}
 			System.out.println("X: " + x + " , " + "Y: " + y);
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
-			if (y != 0 && aColocar != null) {
+			if (y != 0 && aColocar != null && !mapa.hayEnPos(x,y)) {
 				aColocar.cambiarPosLogica(x, y);
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();

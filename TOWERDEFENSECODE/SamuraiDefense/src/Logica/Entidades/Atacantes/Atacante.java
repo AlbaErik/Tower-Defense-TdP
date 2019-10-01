@@ -9,17 +9,15 @@ public abstract class Atacante extends Personaje {
 
 	public Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
-		sepuedemover=true;
+		sepuedemover = true;
 	}
-	
-	
+
 	public void mover() {
-		int x=(int)miCelda.getPunto().getX();
-		if((x-1>=0) && sepuedemover){
-			int aux=(x-1)*miCelda.getAncho();
-			grafico.cambiarPos(grafico.getPosGrafica().x-movementSpeed,grafico.getPosGrafica().y);
-			
-			
+		int x = (int) miCelda.getPunto().getX();
+		if ((x - 1 >= 0) && sepuedemover) {
+			int aux = (x - 1) * miCelda.getAncho();
+			grafico.cambiarPos(grafico.getPosGrafica().x - movementSpeed, grafico.getPosGrafica().y);
+
 		}
 	}
 

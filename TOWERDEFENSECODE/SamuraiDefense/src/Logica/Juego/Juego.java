@@ -42,7 +42,7 @@ public class Juego {
 		hiloEnem.agregarEnemigo((Atacante) Gui.getPanelMapa().getEntidadMapa()); // Agrega la entidad al hilo
 		hiloEnem.start();// Inicia el hilo del movimiento de enemigos
 
-		controlador = new Control(mapa.getCol());
+		controlador = new Control(mapa.getColeccion());
 		controlador.start();
 	}
 
