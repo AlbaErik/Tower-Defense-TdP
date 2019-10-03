@@ -3,6 +3,7 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.EspadachinEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Ninja;
 import Logica.Mapa.Mapa;
 
 public class EspadachinElite extends Defensor {
@@ -21,6 +22,17 @@ public class EspadachinElite extends Defensor {
 	@Override
 	public void chocar(Entidad e) {
 		e.getColisionador().serChocado(this);
+	}
+
+	@Override
+	public Entidad copyEntidad() {
+		EspadachinElite ret = new EspadachinElite( cost, cost, mapa);
+		try {
+			ret = (EspadachinElite)super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return ret;
 	}
 
 }

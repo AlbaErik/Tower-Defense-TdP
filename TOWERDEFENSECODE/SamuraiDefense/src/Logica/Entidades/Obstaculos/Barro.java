@@ -1,4 +1,4 @@
-package Logica.Mapa.Obstaculos;
+package Logica.Entidades.Obstaculos;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
@@ -24,6 +24,12 @@ public class Barro extends Entidad{
 	@Override
 	public void chocar(Entidad e) {
 		e.getColisionador().serChocado(this);		
+	}
+
+	@Override
+	public Entidad copyEntidad() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

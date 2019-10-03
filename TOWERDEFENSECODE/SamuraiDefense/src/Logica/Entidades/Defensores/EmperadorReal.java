@@ -3,6 +3,7 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.EmperadorRealGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Ninja;
 import Logica.Mapa.Mapa;
 
 public class EmperadorReal extends Defensor {
@@ -16,6 +17,17 @@ public class EmperadorReal extends Defensor {
 	@Override
 	public void chocar(Entidad e) {
 		e.getColisionador().serChocado(this);
+	}
+
+	@Override
+	public Entidad copyEntidad() {
+		EmperadorReal ret = new EmperadorReal( cost, cost, mapa);
+		try {
+			ret = (EmperadorReal)super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return ret;
 	}
 
 }

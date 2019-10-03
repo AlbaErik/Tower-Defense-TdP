@@ -1,11 +1,13 @@
 package Logica.Entidades;
 
+import java.awt.Point;
+
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
 
-public abstract class Entidad {
+public abstract class Entidad implements Prototype{
 	protected int life;
 	protected Posicion miCelda;
 	protected Mapa mapa;
@@ -50,12 +52,14 @@ public abstract class Entidad {
 
 	public void setX(int x) {
 		grafico.setX(x);
-		miCelda.getPunto().x = x;
+		Point p = miCelda.getPunto();
+		p.setLocation(x, p.getY());
 	}
 
 	public void setY(int y) {
 		grafico.setY(y);
-		miCelda.getPunto().y = y;
+		Point p = miCelda.getPunto();
+		p.setLocation(p.getX(), y);
 	}
 
 	public void setLugarEnMapa(int i) {

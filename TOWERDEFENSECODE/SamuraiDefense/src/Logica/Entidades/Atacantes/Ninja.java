@@ -35,4 +35,15 @@ public class Ninja extends Atacante {
 		e.getColisionador().serChocado(this);
 	}
 
+	@Override
+	public Entidad copyEntidad() {
+		Ninja ret = new Ninja(movementSpeed, movementSpeed, mapa);
+		try {
+			ret = (Ninja)super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return ret;
+	}
+
 }
