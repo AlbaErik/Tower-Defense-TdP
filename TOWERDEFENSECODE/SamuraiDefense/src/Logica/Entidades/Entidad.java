@@ -50,18 +50,6 @@ public abstract class Entidad implements Prototype{
 		return grafico;
 	}
 
-	public void setX(int x) {
-		grafico.setX(x);
-		Point p = miCelda.getPunto();
-		p.setLocation(x, p.getY());
-	}
-
-	public void setY(int y) {
-		grafico.setY(y);
-		Point p = miCelda.getPunto();
-		p.setLocation(p.getX(), y);
-	}
-
 	public void setLugarEnMapa(int i) {
 		lugarEnMapa = i;
 	}

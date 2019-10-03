@@ -41,10 +41,10 @@ public class Juego {
 
 	public void iniciar() {
 		hiloEnem = new HiloMovimientoEnemigo();// Crea el hilo
-		hiloEnem.agregarEnemigo((Atacante) Gui.getPanelMapa().getEntidadMapa()); // Agrega la entidad al hilo
-		hiloEnem.start();// Inicia el hilo del movimiento de enemigos
+		//hiloEnem.agregarEnemigo((Atacante) Gui.getPanelMapa().getEntidadMapa()); // Agrega la entidad al hilo
+		//hiloEnem.start();// Inicia el hilo del movimiento de enemigos
 
-		controlador = new Control(mapa.getColeccion());
+		controlador = new Control(mapa);
 		controlador.start();
 	}
 

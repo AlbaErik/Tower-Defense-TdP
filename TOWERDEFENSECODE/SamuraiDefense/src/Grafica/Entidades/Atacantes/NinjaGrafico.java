@@ -19,13 +19,15 @@ public class NinjaGrafico extends AtacanteGrafico {
 		setGraficoInicio(x, y);
 	}
 
-	public JLabel getGraficoActual() {
-		return graficoActual;
-	}
 
 	public void setGraficoInicio(int x, int y) {
 		graficoActual.setIcon(graficos[0]);
-		graficoActual.setBounds(x, y, ancho, alto);
+		graficoActual.setBounds(x, y, ancho, 65);
+	}
+	
+	public void cambiarPos(int x,int y) {//Tiene que estar si o si en cada clase
+		pos.setLocation(x,y);
+		graficoActual.setBounds(x,y, ancho, 65);//80	
 	}
 
 }

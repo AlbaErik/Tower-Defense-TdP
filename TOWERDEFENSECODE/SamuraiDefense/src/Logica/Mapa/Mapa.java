@@ -97,8 +97,8 @@ public class Mapa {
 		boolean toret = false;
 		
 		for (int i = 0; i < misEntidades.size(); i++) {
-			double X = misEntidades.get(i).getPos().getPunto().getX();
-			double Y = misEntidades.get(i).getPos().getPunto().getY();
+			double X = misEntidades.get(i).getPos().getX();
+			double Y = misEntidades.get(i).getPos().getY();
 
 			if ((X == (double) x) && (Y == (double) y))
 				toret = true;

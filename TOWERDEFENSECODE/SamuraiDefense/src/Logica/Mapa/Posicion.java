@@ -24,10 +24,14 @@ public class Posicion {
 		return rectangulo;
 	}
 	
-	public Point getPunto() {
-		return punto;
+	public double getX() {
+		return punto.getX();
 	}
 	
+	public double getY() {
+		return punto.getY();
+	}
+		
 	public int getAncho() {
 		return ancho;
 	}

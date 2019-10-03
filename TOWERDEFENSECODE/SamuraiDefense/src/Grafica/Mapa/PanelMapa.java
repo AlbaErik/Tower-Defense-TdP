@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -31,9 +32,9 @@ public class PanelMapa extends JPanel {
 		this.setBounds(200, 50, 1000, 650);
 		this.addMouseListener(new OyenteMouse());
 
-		entidad = new Ninja(800, 200, mapa);
-		ninja = entidad.getGrafico().getGraficoActual();
-		this.add(ninja);
+		//entidad = new Ninja(1000, 200, mapa);
+		//ninja = entidad.getGrafico().getGraficoActual();
+		//this.add(ninja);
 
 	}
 
@@ -54,9 +55,22 @@ public class PanelMapa extends JPanel {
 		return mapa;
 	}
 
-	public void eliminarDefensorG(JLabel d) {
+	public void eliminarDefensorG(Entidad e) {
+		JLabel d = e.getGrafico().getGraficoActual();
 		this.remove(d);
 		repaint();
+	}
+	
+	public void agregarEntidad(Entidad e) {
+		Random rand = new Random();
+		int fila = rand.nextInt(5);
+		fila = fila  * 66 + 200;// Lo posiciona en el eje y
+		int x = 1000;
+		e.cambiarPosLogica(x, fila);
+		mapa.setEntidad(e);
+		JLabel nuevo = e.getGrafico().getGraficoActual();
+		add(nuevo);
+		repaint();			
 	}
 
 	private class OyenteMouse implements MouseListener {
@@ -80,15 +94,12 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			System.out.println("X: " + e.getX() + "," + "Y: " + e.getY());
 			int x = 0;
 			int y = 0;
 			if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
-				System.out.println("Y ES IGUAL A : " + ((e.getY() / 66) - 3));
 				x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 				y = ((e.getY() / 66) - 3) * 66 + 200;// Lo posiciona en el eje y
 			}
-			System.out.println("X: " + x + " , " + "Y: " + y);
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
 			if (y != 0 && aColocar != null && !mapa.hayEnPos(x,y)) {
 				aColocar.cambiarPosLogica(x, y);

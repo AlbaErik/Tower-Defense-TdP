@@ -5,7 +5,6 @@ import java.util.Random;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Mapa.Mapa;
-import Logica.Mapa.Posicion;
 
 public class Horda {
 	protected ClonadorEntidades clonador;

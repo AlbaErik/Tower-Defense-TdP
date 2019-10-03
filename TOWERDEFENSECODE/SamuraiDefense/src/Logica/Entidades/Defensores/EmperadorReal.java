@@ -21,7 +21,7 @@ public class EmperadorReal extends Defensor {
 
 	@Override
 	public Entidad copyEntidad() {
-		EmperadorReal ret = new EmperadorReal( cost, cost, mapa);
+		EmperadorReal ret = new EmperadorReal( 0, 0, mapa);
 		try {
 			ret = (EmperadorReal)super.clone();
 		} catch (CloneNotSupportedException e) {

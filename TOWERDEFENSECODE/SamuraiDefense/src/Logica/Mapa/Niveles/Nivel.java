@@ -4,17 +4,17 @@ import Logica.Juego.Juego;
 import Logica.Mapa.Mapa;
 
 public abstract class Nivel {
+	
+	//AGREGAR FONDO
+	
 	private int presupuesto;
-	private Horda[] horda;
+	protected Horda horda;
 	private Nivel siguiente;
-	private Juego juego;
+	protected Juego juego;
 
 	public Nivel(Juego j) {
 		juego = j;
-		horda = new Horda[3];
-		for (int i = 0; i < horda.length; i++) {
-			horda[i] = new Horda(juego.getMapa());
-		}
+		horda = new Horda(juego.getMapa());
 		juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 	}
 

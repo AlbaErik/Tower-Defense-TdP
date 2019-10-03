@@ -20,17 +20,6 @@ public class Ninja extends Atacante {
 	}
 
 	@Override
-	public void setLife(int lp) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public EntidadGrafica getGrafico() {
-		return grafico;
-	}
-
-	@Override
 	public void chocar(Entidad e) {
 		e.getColisionador().serChocado(this);
 	}
@@ -39,7 +28,7 @@ public class Ninja extends Atacante {
 	public Entidad copyEntidad() {
 		Ninja ret = new Ninja(movementSpeed, movementSpeed, mapa);
 		try {
-			ret = (Ninja)super.clone();
+			ret = (Ninja) super.clone();
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}

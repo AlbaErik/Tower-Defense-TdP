@@ -21,9 +21,9 @@ public class HiloMovimientoEnemigo extends Thread {
 
 	public void run() {
 		Atacante ninja = toExecute.get(0);
-		int y = ninja.getPos().getPunto().y;
+		int y = (int) ninja.getPos().getY();
 		for (int i = 800; i > 0; i = i - 3) {
-			ninja.getGrafico().cambiarPos(i, y);
+			ninja.cambiarPosLogica(i, y);
 			try {
 				sleep(50);
 			} catch (InterruptedException e) {

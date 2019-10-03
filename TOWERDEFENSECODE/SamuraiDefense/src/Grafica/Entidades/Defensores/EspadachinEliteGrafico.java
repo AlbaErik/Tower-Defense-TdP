@@ -42,7 +42,7 @@ public class EspadachinEliteGrafico extends DefensorGrafico {
 		this.getGraficoActual().setIcon(graficos[2]);
 		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
 		mapaPanel.getMapa().eliminarEntidad(mientidad.getLugarEnMapa());
-		mapaPanel.eliminarDefensorG(this.graficoActual);
+		mapaPanel.eliminarDefensorG(this.getEntidad());
 	}
 
 }
