@@ -5,6 +5,7 @@ import Logica.Entidades.Atacantes.Atacante;
 import Logica.Hilos.Control;
 import Logica.Hilos.HiloMovimientoEnemigo;
 import Logica.Mapa.Mapa;
+import Logica.Mapa.Niveles.Horda;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;
 import Logica.Tienda.Tienda;
@@ -28,6 +29,7 @@ public class Juego {
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
 		nivel = new Nivel1(this);
+		//Horda horda = new Horda(mapa);
 		// tiempo=0;
 
 	}
