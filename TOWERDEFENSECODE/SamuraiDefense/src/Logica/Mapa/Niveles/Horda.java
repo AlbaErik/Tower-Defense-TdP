@@ -22,7 +22,7 @@ public class Horda {
 		crearEnemigos();
 	}
 	
-	public LinkedList<Entidad> getAtacantes(){
+	public LinkedList<Entidad> crearAtacantes(){
 		LinkedList<Entidad> ret = new LinkedList<Entidad>();
 		for(Entidad e : atacantes)
 			ret.add(e);
@@ -41,10 +41,11 @@ public class Horda {
 		lista.add(new Ninja(870, 350, mapa)); 
 		lista.add(new Ninja(0, 0, mapa)); 
 	}
-	public Entidad crearAtacante(){
+	
+	private Entidad crearAtacante(){
 		int ent = lista.size();
 		int i = rand.nextInt(ent);
 		return lista.get(i).copyEntidad();
 	}
-
+	
 }

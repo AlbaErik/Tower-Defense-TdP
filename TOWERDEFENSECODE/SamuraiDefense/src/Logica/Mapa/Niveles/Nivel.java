@@ -3,6 +3,10 @@ package Logica.Mapa.Niveles;
 import Logica.Juego.Juego;
 import Logica.Mapa.Mapa;
 
+import java.util.LinkedList;
+
+import Logica.Entidades.*;
+
 public abstract class Nivel {
 	
 	//AGREGAR FONDO

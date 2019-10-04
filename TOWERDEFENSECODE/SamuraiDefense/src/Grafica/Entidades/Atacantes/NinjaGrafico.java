@@ -21,12 +21,12 @@ public class NinjaGrafico extends AtacanteGrafico {
 
 	public void setGraficoInicio(int x, int y) {// Tiene que estar si o si en cada clase
 		graficoActual.setIcon(graficos[0]);
-		graficoActual.setBounds(x, y, ancho, 65);
+		graficoActual.setBounds(x, y, 100, 65);
 	}
 
 	public void cambiarPos(int x, int y) {// Tiene que estar si o si en cada clase
 		pos.setLocation(x, y);
-		graficoActual.setBounds(x, y, ancho, 65);// 80
+		graficoActual.setBounds(x, y, 100, 65);// 80
 	}
 
 }

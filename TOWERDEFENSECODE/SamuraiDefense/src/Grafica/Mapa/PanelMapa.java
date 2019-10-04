@@ -63,7 +63,7 @@ public class PanelMapa extends JPanel {
 		repaint();
 	}
 
-	public void agregarEntidad(Entidad e) {
+	public void agregarEntidad(Entidad e, JLabel graficoActual) {
 		System.out.println("Se agregan Entidades al mapa graficamente");
 		Random rand = new Random();
 		int fila = rand.nextInt(5);
@@ -73,13 +73,13 @@ public class PanelMapa extends JPanel {
 		// e.getGrafico().cambiarPos(x, fila);
 		mapa.setEntidad(e);
 		System.out.println("El grafico es: " + e.getGrafico().getGraficoActual());
-		JLabel novo = e.getGrafico().getGraficoActual();
-		System.out.println("Hash code JLabel 'nuevo': " + novo);
+		//JLabel novo = e.getGrafico().getGraficoActual();
+		System.out.println("Hash code JLabel 'nuevo': " + graficoActual.hashCode());
 
-		add(novo); // No lo puedo agregar
+		add(graficoActual); // No lo puedo agregar
 		repaint();
 
-		System.out.println("En la pos " + x + " e " + fila + " hay: " + getComponentAt(x, fila));
+		System.out.println("En la pos (" + x + " ; " + fila + ") hay: " + getComponentAt(x, fila));
 	}
 
 	private class OyenteMouse implements MouseListener {
