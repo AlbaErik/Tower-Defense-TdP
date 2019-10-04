@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import GUI.VentanaInicial;
 import Grafica.Mapa.PanelMapa;
+import Logica.Hilos.Game;
 import Logica.Juego.Juego;
 
 public class PanelJuego extends JPanel {
@@ -13,10 +14,10 @@ public class PanelJuego extends JPanel {
 	private Juego juego;
 	private PanelStats panelStats;
 	private PanelMapa mapag;
+	private Game game;
 
 	public PanelJuego(VentanaInicial v) {
 		vInicial = v;
-		juego = null;
 		AnchoVentana = v.getAncho();
 		AltoVentana = v.getAlto();
 		this.setLayout(null);
@@ -36,7 +37,11 @@ public class PanelJuego extends JPanel {
 			mapag = juego.getMapa().getPanelMapa();
 			this.add(mapag);
 
-			juego.iniciar();
+			//juego.iniciar();
+			game = new Game(juego);
+
+			game.start();
+			
 		} // else {
 			// juego.reanudar();
 			// }
@@ -49,10 +54,6 @@ public class PanelJuego extends JPanel {
 	 * }
 	 * 
 	 **/
-
-	public Juego getJuego() {
-		return juego;
-	}
 
 	public VentanaInicial getVentanaInicial() {
 		return vInicial;
