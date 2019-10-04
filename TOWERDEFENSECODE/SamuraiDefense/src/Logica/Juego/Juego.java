@@ -25,13 +25,14 @@ public class Juego {
 	 * @param g
 	 */
 	public Juego(PanelJuego g) {
+		System.out.println("Se creo un Juego Nuevo");
 		Gui = g;
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
+	}
+	
+	public void crearNivel() {
 		nivel = new Nivel1(this);
-		//Horda horda = new Horda(mapa);
-		// tiempo=0;
-
 	}
 
 	/**
@@ -46,6 +47,8 @@ public class Juego {
 
 		controlador = new Control(mapa);
 		controlador.start();
+		System.out.println("El juego se inicializo");
+
 	}
 	
 	public void reanudar() {
