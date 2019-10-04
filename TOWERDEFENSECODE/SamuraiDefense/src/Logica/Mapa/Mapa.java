@@ -67,6 +67,7 @@ public class Mapa {
 		misEntidades.addFirst(d);
 		d.setLugarEnMapa(misEntidades.lastIndexOf(misEntidades.getFirst()));
 		System.out.println("Tamaño de Lista: " + misEntidades.size());
+		System.out.println("Ultima entidad agregada: "+ misEntidades.getFirst().getClass());
 	}
 
 	public Entidad getEntidad() {

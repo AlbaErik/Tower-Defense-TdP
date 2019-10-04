@@ -20,6 +20,8 @@ public class Horda {
 		inicializarHorda();
 		Entidad ent = crearAtacante();
 		System.out.println("HashCode de la entidad: " + ent.hashCode());
+		System.out.println("Se creo la horda");
+
 		
 	}
 	

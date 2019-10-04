@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Mapa.Mapa;
@@ -18,13 +19,13 @@ import Logica.Mapa.Mapa;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
+	protected Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
 	// private Image fondocongrilla;
 	// private JLabel fondomapa;
 	// private Posicion pos;
-	private JLabel ninja;
-	private Entidad entidad;
-	private Mapa mapa;
+	protected JLabel ninja;
+	protected Entidad entidad;
+	protected Mapa mapa;
 
 	public PanelMapa(Mapa m) {
 		mapa = m;
@@ -35,6 +36,7 @@ public class PanelMapa extends JPanel {
 		//entidad = new Ninja(1000, 200, mapa);
 		//ninja = entidad.getGrafico().getGraficoActual();
 		//this.add(ninja);
+		System.out.println("Se creo el panelMapa");
 
 	}
 
@@ -67,10 +69,15 @@ public class PanelMapa extends JPanel {
 		fila = fila  * 66 + 200;// Lo posiciona en el eje y
 		int x = 1000;
 		e.cambiarPosLogica(x, fila);
+		e.getGrafico().cambiarPos(x, fila);
 		mapa.setEntidad(e);
+		System.out.println("El grafico es: "+ e.getGrafico().getGraficoActual());
 		JLabel nuevo = e.getGrafico().getGraficoActual();
-		add(nuevo);
-		repaint();			
+		
+		this.add(nuevo); //No lo puedo agregar
+		this.repaint();
+		
+	    System.out.println("En la pos "+x+" e "+fila+"hay: "+ this.getComponentAt(x, fila));
 	}
 
 	private class OyenteMouse implements MouseListener {
@@ -106,6 +113,7 @@ public class PanelMapa extends JPanel {
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 				add(nuevo);
+				//System.out.println("En la pos "+x+" e "+y+"hay: "+ getComponentAt(x, y));	 
 				repaint();
 			}
 

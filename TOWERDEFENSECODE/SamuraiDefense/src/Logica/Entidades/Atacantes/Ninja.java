@@ -26,7 +26,7 @@ public class Ninja extends Atacante {
 
 	@Override
 	public Entidad copyEntidad() {
-		Ninja ret = new Ninja(movementSpeed, movementSpeed, mapa);
+		Ninja ret = new Ninja(0,0, mapa);
 		try {
 			ret = (Ninja) super.clone();
 		} catch (CloneNotSupportedException e) {

@@ -1,6 +1,7 @@
 package Logica.Mapa.Niveles;
 
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Juego.Juego;
 
 public class Nivel1 extends Nivel {
