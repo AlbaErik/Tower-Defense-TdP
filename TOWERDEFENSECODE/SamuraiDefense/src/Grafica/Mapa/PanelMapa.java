@@ -33,9 +33,9 @@ public class PanelMapa extends JPanel {
 		this.setBounds(200, 50, 1000, 650);
 		this.addMouseListener(new OyenteMouse());
 
-		//entidad = new Ninja(1000, 200, mapa);
-		//ninja = entidad.getGrafico().getGraficoActual();
-		//this.add(ninja);
+		// entidad = new Ninja(1000, 200, mapa);
+		// ninja = entidad.getGrafico().getGraficoActual();
+		// this.add(ninja);
 		System.out.println("Se creo el panelMapa");
 
 	}
@@ -62,22 +62,23 @@ public class PanelMapa extends JPanel {
 		this.remove(d);
 		repaint();
 	}
-	
+
 	public void agregarEntidad(Entidad e) {
 		Random rand = new Random();
 		int fila = rand.nextInt(5);
-		fila = fila  * 66 + 200;// Lo posiciona en el eje y
+		fila = fila * 66 + 200;// Lo posiciona en el eje y
 		int x = 1000;
 		e.cambiarPosLogica(x, fila);
-		e.getGrafico().cambiarPos(x, fila);
+		// e.getGrafico().cambiarPos(x, fila);
 		mapa.setEntidad(e);
-		System.out.println("El grafico es: "+ e.getGrafico().getGraficoActual());
-		JLabel nuevo = e.getGrafico().getGraficoActual();
-		
-		this.add(nuevo); //No lo puedo agregar
-		this.repaint();
-		
-	    System.out.println("En la pos "+x+" e "+fila+"hay: "+ this.getComponentAt(x, fila));
+		System.out.println("El grafico es: " + e.getGrafico().getGraficoActual());
+		JLabel novo = e.getGrafico().getGraficoActual();
+		System.out.println("Hash code JLabel 'nuevo': " + novo);
+
+		add(novo); // No lo puedo agregar
+		repaint();
+
+		System.out.println("En la pos " + x + " e " + fila + " hay: " + getComponentAt(x, fila));
 	}
 
 	private class OyenteMouse implements MouseListener {
@@ -108,12 +109,12 @@ public class PanelMapa extends JPanel {
 				y = ((e.getY() / 66) - 3) * 66 + 200;// Lo posiciona en el eje y
 			}
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
-			if (y != 0 && aColocar != null && !mapa.hayEnPos(x,y)) {
+			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 				aColocar.cambiarPosLogica(x, y);
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 				add(nuevo);
-				//System.out.println("En la pos "+x+" e "+y+"hay: "+ getComponentAt(x, y));	 
+				//System.out.println("En la pos " + x + " e " + y + " hay: " + getComponentAt(x, y));
 				repaint();
 			}
 

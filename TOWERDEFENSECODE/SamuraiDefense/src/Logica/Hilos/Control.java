@@ -15,9 +15,9 @@ public class Control extends Thread {
 		lista = m.getColeccion();
 	}
 
-	public void run() {
+	public void run() {		
 		while (true) {
-			try {
+			try {				
 				lista = map.getColeccion();
 				sleep(80);
 				for (Entidad ent1 : lista) {

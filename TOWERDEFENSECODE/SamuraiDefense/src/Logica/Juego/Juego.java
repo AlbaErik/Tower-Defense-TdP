@@ -47,7 +47,7 @@ public class Juego {
 		controlador = new Control(mapa);
 		controlador.start();
 	}
-
+	
 	public void reanudar() {
 		// TODO Auto-generated method stub
 
