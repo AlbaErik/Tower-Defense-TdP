@@ -51,6 +51,11 @@ public class Juego {
 
 	}
 	
+	public void inicializarHorda() {
+		nivel.crearHorda();
+		
+	}
+	
 	public void reanudar() {
 		// TODO Auto-generated method stub
 

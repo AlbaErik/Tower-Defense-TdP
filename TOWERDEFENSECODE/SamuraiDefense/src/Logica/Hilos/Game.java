@@ -16,6 +16,7 @@ public class Game extends Thread{
 	public void run() {
 		System.out.println("run()/n juego.iniciar()");
 		juego.iniciar();
+		juego.inicializarHorda();
 		while(true) {
 			
 		}

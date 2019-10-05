@@ -15,7 +15,10 @@ public class Nivel1 extends Nivel {
 
 	@Override
 	public void crearHorda() {
-		horda.crearAtacantes();
+		LinkedList<Entidad> lista = horda.crearAtacantes();
+		for(Entidad e : lista) {
+			juego.getMapa().agregarEntidadAlCampo(e);
+		}
 	}
 
 	@Override
