@@ -3,6 +3,7 @@ package Logica.Entidades.Obstaculos;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Ninja;
+import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 
 public class Piedra extends Entidad{
@@ -37,6 +38,12 @@ public class Piedra extends Entidad{
 			e.printStackTrace();
 		}
 		return ret;
+	}
+
+	@Override
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

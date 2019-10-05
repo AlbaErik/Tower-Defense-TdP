@@ -4,6 +4,8 @@ import Grafica.Entidades.Defensores.NinjaEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Ninja;
+import Logica.Inteligencia.Inteligencia;
+import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
 
 public class NinjaElite extends Defensor {
@@ -12,6 +14,7 @@ public class NinjaElite extends Defensor {
 		super(x, y, m);
 		this.grafico=new NinjaEliteGrafico(x,y,m.getPanelMapa(),this);
 		super.col = new ColisionadorDefensor(this);
+		intel = new InteligenciaDefensor(this);
 	}
 
 	@Override
@@ -29,6 +32,12 @@ public class NinjaElite extends Defensor {
 			e.printStackTrace();
 		}
 		return ret;
+	}
+
+	@Override
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return intel;
 	}
 
 }

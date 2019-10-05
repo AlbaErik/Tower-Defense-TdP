@@ -35,11 +35,18 @@ public class Horda {
 		for(int i = 0; i < cantEnemigos; i++) {
 			atacantes.add(crearAtacante());
 		}
+		
+		for(Entidad e : atacantes) {
+			System.out.println("HORDA entidad HASHCODE: " + e.hashCode());
+			System.out.println("HORDA entidad grafica HASHCODE: " + e.getGrafico().hashCode());
+			System.out.println("HORDA entidad GRAFICO ACTUAL HASHCODE: " + e.getGrafico().getGraficoActual().hashCode());
+			System.out.println();
+		}
+		
 	}
 	
 	private void inicializarHorda() {
 		lista.add(new Ninja(870, 350, mapa)); 
-		lista.add(new Ninja(0, 0, mapa)); 
 	}
 	
 	private Entidad crearAtacante(){

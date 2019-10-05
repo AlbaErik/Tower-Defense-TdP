@@ -22,7 +22,7 @@ public abstract class Nivel {
 		juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 	}
 
-	public abstract void crearHorda();
+	public abstract LinkedList<Entidad> crearHorda();
 
 	public abstract void getSigNivel();
 

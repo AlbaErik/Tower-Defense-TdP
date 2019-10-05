@@ -21,8 +21,7 @@ public class ColisionadorAtacante extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
 	}
 
 	@Override

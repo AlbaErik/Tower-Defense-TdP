@@ -1,6 +1,7 @@
 package Logica.Entidades.Obstaculos;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Entidades.Entidad;
+import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 
 public class Barro extends Entidad{
@@ -28,6 +29,12 @@ public class Barro extends Entidad{
 
 	@Override
 	public Entidad copyEntidad() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return null;
 	}
