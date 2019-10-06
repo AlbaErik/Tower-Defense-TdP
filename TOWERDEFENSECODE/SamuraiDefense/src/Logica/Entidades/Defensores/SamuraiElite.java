@@ -3,7 +3,8 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.SamuraiEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Ninja;
+import Logica.Inteligencia.Inteligencia;
+import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
 
 public class SamuraiElite extends Defensor {
@@ -12,6 +13,7 @@ public class SamuraiElite extends Defensor {
 		super(x,y,m);
 		super.col = new ColisionadorDefensor(this);
 		this.grafico=new SamuraiEliteGrafico(x,y,m.getPanelMapa(),this);
+		intel = new InteligenciaDefensor(this);
 	}
 
 	@Override
@@ -20,15 +22,9 @@ public class SamuraiElite extends Defensor {
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		SamuraiElite ret = new SamuraiElite(cost, cost, mapa);
-		try {
-			ret = (SamuraiElite)super.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ret;
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return intel;
 	}
 
 }

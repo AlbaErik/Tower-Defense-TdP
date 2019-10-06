@@ -28,6 +28,10 @@ public class Mapa {
 		mapagrafico = new PanelMapa(this);
 		tienda = j.getTienda();
 	}
+	
+	public void agregarEntidadAlCampo(Entidad e) {
+		mapagrafico.agregarEntidad(e);
+	}
 
 	/**
 	 * Devuelve el ancho del mapa
@@ -66,8 +70,7 @@ public class Mapa {
 	public void setEntidad(Entidad d) {
 		misEntidades.addFirst(d);
 		d.setLugarEnMapa(misEntidades.lastIndexOf(misEntidades.getFirst()));
-		System.out.println("Tamaño de Lista: " + misEntidades.size());
-		System.out.println("Ultima entidad agregada: "+ misEntidades.getFirst().getClass());
+		
 	}
 
 	public Entidad getEntidad() {

@@ -3,7 +3,8 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.EspadachinEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Ninja;
+import Logica.Inteligencia.Inteligencia;
+import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
 
 public class EspadachinElite extends Defensor {
@@ -17,6 +18,7 @@ public class EspadachinElite extends Defensor {
 		this.cost = 30;
 		this.grafico = new EspadachinEliteGrafico(x, y, m.getPanelMapa(), this);
 		super.col = new ColisionadorDefensor(this);
+		intel = new InteligenciaDefensor(this);
 	}
 
 	@Override
@@ -25,14 +27,9 @@ public class EspadachinElite extends Defensor {
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		EspadachinElite ret = new EspadachinElite( cost, cost, mapa);
-		try {
-			ret = (EspadachinElite)super.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return ret;
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return intel;
 	}
 
 }

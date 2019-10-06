@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Ninja;
+import Logica.Mapa.Mapa;
 
 public class NinjaGrafico extends AtacanteGrafico {
 	private String palabras[] = { "NinjaRunning", "NinjaAttacking", "NinjaDying" };
@@ -27,6 +29,17 @@ public class NinjaGrafico extends AtacanteGrafico {
 	public void cambiarPos(int x, int y) {// Tiene que estar si o si en cada clase
 		pos.setLocation(x, y);
 		graficoActual.setBounds(x, y, 100, 65);// 80
+	}
+	
+	public AtacanteGrafico copyEntidadGrafica() {
+		NinjaGrafico ret = this;
+		try {
+			ret = (NinjaGrafico) super.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		return ret;
 	}
 
 }

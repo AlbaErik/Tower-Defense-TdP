@@ -3,7 +3,8 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.ArqueroEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Ninja;
+import Logica.Inteligencia.Inteligencia;
+import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
 
 public class ArqueroElite extends Defensor {
@@ -12,6 +13,7 @@ public class ArqueroElite extends Defensor {
 		super(x, y, m);
 		super.col = new ColisionadorDefensor(this);
 		this.grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
+		intel = new InteligenciaDefensor(this);
 	}
 
 	@Override
@@ -20,14 +22,9 @@ public class ArqueroElite extends Defensor {
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		ArqueroElite ret = new ArqueroElite( cost, cost, mapa);
-		try {
-			ret = (ArqueroElite)super.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return ret;
+	public Inteligencia getInteligencia() {
+		// TODO Auto-generated method stub
+		return intel;
 	}
 
 }

@@ -1,15 +1,19 @@
 package Logica.Entidades.Atacantes;
 
 import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
+import Logica.Inteligencia.Inteligencia;
+import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
 public class Ninja extends Atacante {
 
 	public Ninja(int x, int y, Mapa m) {
 		super(x, y, m);
+		intel = new InteligenciaAtacante(this);
 		this.life = 200;
 		this.damage = 30;
 		this.attackSpeed = 5;
@@ -24,15 +28,26 @@ public class Ninja extends Atacante {
 		e.getColisionador().serChocado(this);
 	}
 
+		
 	@Override
-	public Entidad copyEntidad() {
-		Ninja ret = new Ninja(0,0, mapa);
+	public Atacante copyEntidad() {
+		Ninja ret = this;
 		try {
-			ret = (Ninja) super.clone();
+			ret = (Ninja) this.clone();
+			AtacanteGrafico graf = ( (AtacanteGrafico) this.getGrafico() ).copyEntidadGrafica();
+			ret.setGrafico(graf);
+			
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
 		return ret;
 	}
+
+	@Override
+	public Inteligencia getInteligencia() {
+		return intel;
+	}
+
+	
 
 }

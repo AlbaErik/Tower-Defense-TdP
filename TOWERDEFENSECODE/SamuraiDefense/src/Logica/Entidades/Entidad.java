@@ -4,23 +4,37 @@ import java.awt.Point;
 
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
+import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
 
-public abstract class Entidad implements Prototype{
+public abstract class Entidad {
 	protected int life;
 	protected Posicion miCelda;
 	protected Mapa mapa;
 	protected EntidadGrafica grafico;
 	protected int lugarEnMapa;
 	protected Colisionador col;
+	protected Inteligencia intel;
+	protected boolean mover;
 
 	public Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
 		grafico = new EntidadGrafica(x, y, m.getPanelMapa(), this);
+		mover = true;
+	}
+	
+	public boolean mePuedoMover() {
+		return mover;
+	}
+	
+	public void mover(boolean mov) {
+		mover = mov;
 	}
 
+	public abstract Inteligencia getInteligencia();
+	
 	public Colisionador getColisionador() {
 		return col;
 	}
@@ -44,6 +58,7 @@ public abstract class Entidad implements Prototype{
 	public void cambiarPosLogica(int x, int y) {
 		miCelda.setPos(x, y);
 		grafico.cambiarPos(x, y);
+		mapa.getPanelMapa().repaint();
 	}
 
 	public EntidadGrafica getGrafico() {

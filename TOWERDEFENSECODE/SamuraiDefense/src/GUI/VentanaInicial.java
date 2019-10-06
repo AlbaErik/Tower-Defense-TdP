@@ -62,9 +62,6 @@ public class VentanaInicial extends JFrame {
 		inicio = new PanelInicio(this);
 		PanelPrincipal.add(inicio);
 
-		// stats=new PanelStats(AnchoVentana,AltoVentana);
-		// PanelPrincipal.add(stats);
-
 	}
 
 	public int getAncho() {
@@ -94,9 +91,5 @@ public class VentanaInicial extends JFrame {
 		PanelPrincipal.repaint();
 
 	}
-
-	/**
-	 * public PanelPausa getPausa() { return pausa; }
-	 **/
 
 }

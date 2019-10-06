@@ -1,6 +1,9 @@
 package Logica.Juego;
 
+import java.util.LinkedList;
+
 import GUI.Paneles.PanelJuego;
+import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Hilos.Control;
 import Logica.Hilos.HiloMovimientoEnemigo;
@@ -18,6 +21,8 @@ public class Juego {
 	private Mapa mapa;
 	private HiloMovimientoEnemigo hiloEnem;
 	private Control controlador;
+	private LinkedList<Entidad> misAtacantes;
+	private LinkedList<Entidad> miHorda;
 
 	/**
 	 * Se inicializa el juego en el Nivel 1
@@ -25,12 +30,13 @@ public class Juego {
 	 * @param g
 	 */
 	public Juego(PanelJuego g) {
-		System.out.println("Se creo un Juego Nuevo");
 		Gui = g;
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
+		misAtacantes = new LinkedList<Entidad>();
+		controlador = new Control(mapa);
 	}
-	
+
 	public void crearNivel() {
 		nivel = new Nivel1(this);
 	}
@@ -41,16 +47,29 @@ public class Juego {
 	 **/
 
 	public void iniciar() {
-		hiloEnem = new HiloMovimientoEnemigo();// Crea el hilo
-		//hiloEnem.agregarEnemigo((Atacante) Gui.getPanelMapa().getEntidadMapa()); // Agrega la entidad al hilo
-		//hiloEnem.start();// Inicia el hilo del movimiento de enemigos
-
-		controlador = new Control(mapa);
-		controlador.start();
-		System.out.println("El juego se inicializo");
 
 	}
-	
+
+	public void inicializarHorda() {
+		miHorda = nivel.crearHorda();
+	}
+
+	public void agregarAtacante() { // cambiar, que agregue de a uno y que lo mueva
+		if (!miHorda.isEmpty()) {
+			Entidad atacante = miHorda.getFirst();
+			mapa.agregarEntidadAlCampo(atacante);
+			misAtacantes.add(atacante);
+			miHorda.remove(miHorda.getFirst());
+		}
+	}
+
+	public void moverAtacantes() {
+		for (Entidad e : mapa.getColeccion()) {
+			e.getInteligencia().mover();
+			mapa.getPanelMapa().repaint();
+		}
+	}
+
 	public void reanudar() {
 		// TODO Auto-generated method stub
 

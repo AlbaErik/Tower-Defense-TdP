@@ -11,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Atacante;
-import Logica.Entidades.Atacantes.Ninja;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Mapa.Mapa;
 //import Logica.Mapa.Posicion;
@@ -32,12 +30,6 @@ public class PanelMapa extends JPanel {
 		this.setLayout(null);
 		this.setBounds(200, 50, 1000, 650);
 		this.addMouseListener(new OyenteMouse());
-
-		// entidad = new Ninja(1000, 200, mapa);
-		// ninja = entidad.getGrafico().getGraficoActual();
-		// this.add(ninja);
-		System.out.println("Se creo el panelMapa");
-
 	}
 
 	public void eliminar() {
@@ -63,23 +55,27 @@ public class PanelMapa extends JPanel {
 		repaint();
 	}
 
-	public void agregarEntidad(Entidad e, JLabel graficoActual) {
-		System.out.println("Se agregan Entidades al mapa graficamente");
+	public void agregarEntidad(Entidad e) {
+		
 		Random rand = new Random();
+
 		int fila = rand.nextInt(5);
-		fila = fila * 66 + 200;// Lo posiciona en el eje y
+		fila = fila * 66 + 200;
 		int x = 900;
 		e.cambiarPosLogica(x, fila);
-		// e.getGrafico().cambiarPos(x, fila);
+		e.mover(true);
 		mapa.setEntidad(e);
-		System.out.println("El grafico es: " + e.getGrafico().getGraficoActual());
-		//JLabel novo = e.getGrafico().getGraficoActual();
-		System.out.println("Hash code JLabel 'nuevo': " + graficoActual.hashCode());
+		JLabel novo = e.getGrafico().getGraficoActual();
+		System.out.println("El JLABEL ninja grafico: " + novo.hashCode() + " Se agrego satisfactoriamente"); // ESTE ES EL
+																										// HASHCODE QUE
+																										// SIEMPRE SE
+																										// REPITE
 
-		add(graficoActual); // No lo puedo agregar
+		add(novo);
 		repaint();
 
-		System.out.println("En la pos (" + x + " ; " + fila + ") hay: " + getComponentAt(x, fila));
+		// System.out.println("En la pos (" + x + " ; " + fila + ") hay: " +
+		// getComponentAt(x, fila));
 	}
 
 	private class OyenteMouse implements MouseListener {
@@ -103,6 +99,8 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
+			System.out.println("Pulse en: (" + e.getX() + " ; " + e.getY() + ")");
+
 			int x = 0;
 			int y = 0;
 			if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
@@ -115,7 +113,8 @@ public class PanelMapa extends JPanel {
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 				add(nuevo);
-				//System.out.println("En la pos " + x + " e " + y + " hay: " + getComponentAt(x, y));
+				// System.out.println("En la pos " + x + " e " + y + " hay: " +
+				// getComponentAt(x, y));
 				repaint();
 			}
 
