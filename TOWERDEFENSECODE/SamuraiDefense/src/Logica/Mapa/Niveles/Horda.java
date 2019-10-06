@@ -2,9 +2,7 @@ package Logica.Mapa.Niveles;
 
 import java.util.LinkedList;
 import java.util.Random;
-import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Atacante;
-import Logica.Entidades.Atacantes.Ninja;
+import Logica.Entidades.Atacantes.*;
 import Logica.Mapa.Mapa;
 
 public class Horda {
@@ -32,25 +30,19 @@ public class Horda {
 
 	private void crearEnemigos() {
 		atacantes = new LinkedList<Atacante>();
-		int cantEnemigos = 4;
+		int cantEnemigos = 10;
 		for (int i = 0; i < cantEnemigos; i++) {
-			atacantes.add(crearAtacante());
+			atacantes.add(crearAtacanteRandom());
 		}
-
-		/*
-		 * for (Entidad e : atacantes) { System.out.println("HORDA entidad HASHCODE: " +
-		 * e.hashCode()); System.out.println("HORDA entidad grafica HASHCODE: " +
-		 * e.getGrafico().hashCode());
-		 * System.out.println("HORDA entidad GRAFICO ACTUAL HASHCODE: " +
-		 * e.getGrafico().getGraficoActual().hashCode()); System.out.println(); }
-		 */
 	}
 
 	private void inicializarHorda() {
 		lista.add(new Ninja(870, 350, mapa));
+		lista.add(new Espadachin(0, 0, mapa));
+		lista.add(new Arquero(0, 0, mapa));
 	}
 
-	private Atacante crearAtacante() {
+	private Atacante crearAtacanteRandom() {
 		int ent = lista.size();
 		int i = rand.nextInt(ent);
 		return clonador.clonarAtacantes(lista.get(i));

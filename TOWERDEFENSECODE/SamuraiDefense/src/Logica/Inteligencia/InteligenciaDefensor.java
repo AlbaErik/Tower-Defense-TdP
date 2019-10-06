@@ -11,7 +11,7 @@ public class InteligenciaDefensor extends Inteligencia{
 
 	@Override
 	public void mover() {
-		System.out.println("Muevo Defensor");
+
 	}
 
 }

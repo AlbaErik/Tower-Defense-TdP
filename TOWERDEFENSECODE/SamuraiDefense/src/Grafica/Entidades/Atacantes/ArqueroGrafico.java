@@ -28,5 +28,11 @@ public class ArqueroGrafico extends AtacanteGrafico {
 		graficoActual.setBounds(x, y, 120, 80);// 80
 	}
 
+	@Override
+	public AtacanteGrafico copyEntidadGrafica() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
 

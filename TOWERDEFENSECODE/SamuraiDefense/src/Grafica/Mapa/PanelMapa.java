@@ -58,24 +58,18 @@ public class PanelMapa extends JPanel {
 	public void agregarEntidad(Entidad e) {
 		
 		Random rand = new Random();
-
 		int fila = rand.nextInt(5);
 		fila = fila * 66 + 200;
 		int x = 900;
+		
 		e.cambiarPosLogica(x, fila);
 		e.mover(true);
 		mapa.setEntidad(e);
 		JLabel novo = e.getGrafico().getGraficoActual();
-		System.out.println("El JLABEL ninja grafico: " + novo.hashCode() + " Se agrego satisfactoriamente"); // ESTE ES EL
-																										// HASHCODE QUE
-																										// SIEMPRE SE
-																										// REPITE
 
 		add(novo);
 		repaint();
 
-		// System.out.println("En la pos (" + x + " ; " + fila + ") hay: " +
-		// getComponentAt(x, fila));
 	}
 
 	private class OyenteMouse implements MouseListener {
@@ -99,7 +93,6 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			System.out.println("Pulse en: (" + e.getX() + " ; " + e.getY() + ")");
 
 			int x = 0;
 			int y = 0;
@@ -113,8 +106,6 @@ public class PanelMapa extends JPanel {
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 				add(nuevo);
-				// System.out.println("En la pos " + x + " e " + y + " hay: " +
-				// getComponentAt(x, y));
 				repaint();
 			}
 

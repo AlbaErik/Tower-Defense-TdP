@@ -1,6 +1,5 @@
 package Logica.Entidades.Atacantes;
 
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
@@ -31,6 +30,7 @@ public class Ninja extends Atacante {
 		
 	@Override
 	public Atacante copyEntidad() {
+		/*
 		Ninja ret = this;
 		try {
 			ret = (Ninja) this.clone();
@@ -40,13 +40,11 @@ public class Ninja extends Atacante {
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
-		return ret;
+		*/
+		return new Ninja(0,0,super.mapa);
 	}
 
-	@Override
-	public Inteligencia getInteligencia() {
-		return intel;
-	}
+	
 
 	
 

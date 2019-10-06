@@ -1,6 +1,5 @@
 package Logica.Hilos;
 
-import GUI.Paneles.PanelJuego;
 import Logica.Juego.Juego;
 
 public class Game extends Thread{
@@ -25,9 +24,9 @@ public class Game extends Thread{
 					c = 0;
 				}
 				juego.moverAtacantes();
-				//control.chequearColision();
+				control.chequearColision();
 				c++;
-				sleep(50);
+				sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

@@ -3,6 +3,7 @@ package Logica.Entidades.Atacantes;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
+import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
@@ -19,6 +20,11 @@ public abstract class Atacante extends Personaje implements Cloneable{
 		this.grafico = graf;
 	}
 
+	
+	public Inteligencia getInteligencia() {
+		return intel;
+	}
+	
 	public abstract Atacante copyEntidad();
 
 }

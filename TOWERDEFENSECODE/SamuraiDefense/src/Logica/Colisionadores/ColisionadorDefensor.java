@@ -1,5 +1,7 @@
 package Logica.Colisionadores;
 
+import Logica.Entidades.Atacantes.Arquero;
+import Logica.Entidades.Atacantes.Espadachin;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Entidades.Defensores.ArqueroElite;
 import Logica.Entidades.Defensores.Defensor;
@@ -69,6 +71,18 @@ public class ColisionadorDefensor extends Colisionador{
 
 	@Override
 	public void serChocado(Barro barro) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Espadachin espadachin) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Arquero arquero) {
 		// TODO Auto-generated method stub
 		
 	}

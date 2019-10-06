@@ -16,6 +16,8 @@ public abstract class Colisionador {
 	public abstract void serChocado(SamuraiElite e);
 	public abstract void serChocado(Piedra e);
 	public abstract void serChocado(Barro barro);
+	public abstract void serChocado(Espadachin espadachin);
+	public abstract void serChocado(Arquero arquero);
 
 
 

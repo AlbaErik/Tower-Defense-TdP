@@ -10,7 +10,7 @@ public class InteligenciaAtacante extends Inteligencia {
 
 	public void mover() {
 		if (entidad.mePuedoMover()) {
-			int x = ((int) entidad.getPos().getX()) - 1;
+			int x = ((int) entidad.getPos().getX()) -1;
 			int y = (int) entidad.getPos().getY();
 			if (x > 0) {
 				entidad.cambiarPosLogica(x, y);

@@ -98,57 +98,63 @@ public class PanelTienda extends JPanel {
 			String s = e.getActionCommand();
 			switch (s) {
 			case ("NinjaElite"): {
-				if (tienda.getJuego().getMapa().hayEntidades()) {
-					tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
-				}
+				/*
+				 * if (tienda.getJuego().getMapa().hayEntidades()) {
+				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
+				 */
 
 				tienda.setPersonajeActual(tienda.getFabrica().crearNinjaElite(juego.getMapa()));
-				System.out.println("Pase por el boton Ninja");
+				// System.out.println("Pase por el boton Ninja");
 				break;
 			}
 			case ("EspadachinElite"): {
-				if (tienda.getJuego().getMapa().hayEntidades()) {
-					tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
-				}
+				/*
+				 * if (tienda.getJuego().getMapa().hayEntidades()) {
+				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
+				 */
 
 				tienda.setPersonajeActual(tienda.getFabrica().crearEspadachinElite(juego.getMapa()));
-				System.out.println("Pase por el boton Espadachin");
+				// System.out.println("Pase por el boton Espadachin");
 				break;
 			}
 			case ("ArqueroElite"): {
-				if (tienda.getJuego().getMapa().hayEntidades()) {
-					tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
-				}
+				/*
+				 * if (tienda.getJuego().getMapa().hayEntidades()) {
+				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
+				 */
 
 				tienda.setPersonajeActual(tienda.getFabrica().crearArqueroElite(juego.getMapa()));
-				System.out.println("Pase por el boton Arquero");
+				// System.out.println("Pase por el boton Arquero");
 				break;
 			}
 			case ("LanceroElite"): {
-				if (tienda.getJuego().getMapa().hayEntidades()) {
-					tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
-				}
+				/*
+				 * if (tienda.getJuego().getMapa().hayEntidades()) {
+				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
+				 */
 
 				tienda.setPersonajeActual(tienda.getFabrica().crearLanceroElite(juego.getMapa()));
-				System.out.println("Pase por el boton Lancero");
+				// System.out.println("Pase por el boton Lancero");
 				break;
 			}
 			case ("EmperadorReal"): {
-				if (tienda.getJuego().getMapa().hayEntidades()) {
-					tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
-				}
+				/*
+				 * if (tienda.getJuego().getMapa().hayEntidades()) {
+				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
+				 */
 
 				tienda.setPersonajeActual(tienda.getFabrica().crearEmperadorReal(juego.getMapa()));
-				System.out.println("Pase por el boton Emperador");
+				// System.out.println("Pase por el boton Emperador");
 				break;
 			}
 			case ("SamuraiElite"): {
-				if (tienda.getJuego().getMapa().hayEntidades()) {
-					tienda.getJuego().getMapa().getEntidad().getGrafico().atacar();
-				}
+				/*
+				 * if (tienda.getJuego().getMapa().hayEntidades()) {
+				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
+				 */
 
 				tienda.setPersonajeActual(tienda.getFabrica().crearSamuraiElite(juego.getMapa()));
-				System.out.println("Pase por el boton Samurai");
+				// System.out.println("Pase por el boton Samurai");
 				break;
 			}
 
