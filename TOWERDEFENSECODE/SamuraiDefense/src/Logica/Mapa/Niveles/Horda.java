@@ -37,13 +37,13 @@ public class Horda {
 			atacantes.add(crearAtacante());
 		}
 
-		for (Entidad e : atacantes) {
-			System.out.println("HORDA entidad HASHCODE: " + e.hashCode());
-			System.out.println("HORDA entidad grafica HASHCODE: " + e.getGrafico().hashCode());
-			System.out.println("HORDA entidad GRAFICO ACTUAL HASHCODE: " + e.getGrafico().getGraficoActual().hashCode());
-			System.out.println();
-		}
-
+		/*
+		 * for (Entidad e : atacantes) { System.out.println("HORDA entidad HASHCODE: " +
+		 * e.hashCode()); System.out.println("HORDA entidad grafica HASHCODE: " +
+		 * e.getGrafico().hashCode());
+		 * System.out.println("HORDA entidad GRAFICO ACTUAL HASHCODE: " +
+		 * e.getGrafico().getGraficoActual().hashCode()); System.out.println(); }
+		 */
 	}
 
 	private void inicializarHorda() {

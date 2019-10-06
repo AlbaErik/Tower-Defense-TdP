@@ -56,7 +56,7 @@ public class PanelMapa extends JPanel {
 	}
 
 	public void agregarEntidad(Entidad e) {
-		System.out.println("Se agregan Entidades al mapa graficamente");
+		
 		Random rand = new Random();
 
 		int fila = rand.nextInt(5);
@@ -66,7 +66,7 @@ public class PanelMapa extends JPanel {
 		e.mover(true);
 		mapa.setEntidad(e);
 		JLabel novo = e.getGrafico().getGraficoActual();
-		System.out.println("El ninja grafico: " + novo.hashCode() + " Se agrego satisfactoriamente"); // ESTE ES EL
+		System.out.println("El JLABEL ninja grafico: " + novo.hashCode() + " Se agrego satisfactoriamente"); // ESTE ES EL
 																										// HASHCODE QUE
 																										// SIEMPRE SE
 																										// REPITE

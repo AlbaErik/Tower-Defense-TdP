@@ -57,11 +57,9 @@ public class Juego {
 	public void agregarAtacante() { // cambiar, que agregue de a uno y que lo mueva
 		if (!miHorda.isEmpty()) {
 			Entidad atacante = miHorda.getFirst();
-			System.out.println("miHorda graf first: " + atacante.getGrafico().hashCode());
 			mapa.agregarEntidadAlCampo(atacante);
 			misAtacantes.add(atacante);
 			miHorda.remove(miHorda.getFirst());
-			System.out.println("miHorda size: " + miHorda.size());
 		}
 	}
 

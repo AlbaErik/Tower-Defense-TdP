@@ -9,7 +9,6 @@ public class Game extends Thread{
 	private Control control;
 	
 	public Game(Juego g) {
-		System.out.println("Se creo un nuevo Game");
 		juego = g;
 		g.crearNivel();
 		control = new Control(juego.getMapa());
