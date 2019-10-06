@@ -28,12 +28,6 @@ public class Barro extends Entidad{
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return null;

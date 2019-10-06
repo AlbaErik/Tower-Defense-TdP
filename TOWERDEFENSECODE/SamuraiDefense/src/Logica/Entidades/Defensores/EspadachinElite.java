@@ -27,17 +27,6 @@ public class EspadachinElite extends Defensor {
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		EspadachinElite ret = new EspadachinElite( cost, cost, mapa);
-		try {
-			ret = (EspadachinElite)super.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return ret;
-	}
-
-	@Override
 	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return intel;

@@ -22,17 +22,6 @@ public class EmperadorReal extends Defensor {
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		EmperadorReal ret = new EmperadorReal( 0, 0, mapa);
-		try {
-			ret = (EmperadorReal)super.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return ret;
-	}
-
-	@Override
 	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return intel;

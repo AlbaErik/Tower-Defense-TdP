@@ -4,7 +4,6 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.text.Position;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
@@ -40,9 +39,9 @@ public class EntidadGrafica {
 	}
 
 	public void cambiarPos(int x, int y) {
-		Posicion p = new Posicion(x,y);
+		Posicion p = new Posicion(x, y);
 		mientidad.setPos(p);
-		
+
 		pos.setLocation(x, y);
 		graficoActual.setBounds(x, y, ancho, alto);
 	}

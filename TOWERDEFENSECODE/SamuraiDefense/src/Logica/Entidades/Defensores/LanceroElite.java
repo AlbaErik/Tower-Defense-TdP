@@ -22,18 +22,6 @@ public class LanceroElite extends Defensor {
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		LanceroElite ret = new LanceroElite( cost, cost, mapa);
-		try {
-			ret = (LanceroElite)super.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ret;
-	}
-
-	@Override
 	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return intel;

@@ -3,7 +3,6 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.NinjaEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Ninja;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -20,18 +19,6 @@ public class NinjaElite extends Defensor {
 	@Override
 	public void chocar(Entidad e) {
 		e.getColisionador().serChocado(this);
-	}
-
-	@Override
-	public Entidad copyEntidad() {
-		NinjaElite ret = new NinjaElite(cost, cost, mapa);
-		try {
-			ret = (NinjaElite)super.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ret;
 	}
 
 	@Override

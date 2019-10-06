@@ -8,7 +8,7 @@ import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
 
-public abstract class Entidad implements Prototype{
+public abstract class Entidad {
 	protected int life;
 	protected Posicion miCelda;
 	protected Mapa mapa;

@@ -22,18 +22,6 @@ public class SamuraiElite extends Defensor {
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		SamuraiElite ret = new SamuraiElite(cost, cost, mapa);
-		try {
-			ret = (SamuraiElite)super.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ret;
-	}
-
-	@Override
 	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return intel;

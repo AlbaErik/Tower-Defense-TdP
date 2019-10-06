@@ -30,7 +30,7 @@ public class Ninja extends Atacante {
 
 		
 	@Override
-	public Entidad copyEntidad() {
+	public Atacante copyEntidad() {
 		Ninja ret = this;
 		try {
 			ret = (Ninja) this.clone();

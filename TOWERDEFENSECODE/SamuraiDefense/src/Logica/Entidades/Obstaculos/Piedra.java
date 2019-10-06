@@ -29,18 +29,6 @@ public class Piedra extends Entidad{
 	}
 
 	@Override
-	public Entidad copyEntidad() {
-		Piedra ret = new Piedra( life, life, mapa);
-		try {
-			ret = (Piedra)super.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ret;
-	}
-
-	@Override
 	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return null;
