@@ -1,7 +1,5 @@
 package Logica.Entidades;
 
-import java.awt.Point;
-
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Inteligencia.Inteligencia;
@@ -33,7 +31,9 @@ public abstract class Entidad {
 		mover = mov;
 	}
 
-	public abstract Inteligencia getInteligencia();
+	public Inteligencia getInteligencia() {
+		return intel;
+	}
 	
 	public Colisionador getColisionador() {
 		return col;
