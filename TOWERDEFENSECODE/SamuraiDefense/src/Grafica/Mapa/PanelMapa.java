@@ -4,37 +4,32 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Ninja;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Mapa.Mapa;
 //import Logica.Mapa.Posicion;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
+	protected Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
 	// private Image fondocongrilla;
 	// private JLabel fondomapa;
 	// private Posicion pos;
-	private JLabel ninja;
-	private Entidad entidad;
-	private Mapa mapa;
+	protected JLabel ninja;
+	protected Entidad entidad;
+	protected Mapa mapa;
 
 	public PanelMapa(Mapa m) {
 		mapa = m;
 		this.setLayout(null);
 		this.setBounds(200, 50, 1000, 650);
 		this.addMouseListener(new OyenteMouse());
-
-		entidad = new Ninja(800, 200, mapa);
-		ninja = entidad.getGrafico().getGraficoActual();
-		this.add(ninja);
-
 	}
 
 	public void eliminar() {
@@ -54,9 +49,27 @@ public class PanelMapa extends JPanel {
 		return mapa;
 	}
 
-	public void eliminarDefensorG(JLabel d) {
+	public void eliminarDefensorG(Entidad e) {
+		JLabel d = e.getGrafico().getGraficoActual();
 		this.remove(d);
 		repaint();
+	}
+
+	public void agregarEntidad(Entidad e) {
+		
+		Random rand = new Random();
+		int fila = rand.nextInt(5);
+		fila = fila * 66 + 200;
+		int x = 900;
+		
+		e.cambiarPosLogica(x, fila);
+		e.mover(true);
+		mapa.setEntidad(e);
+		JLabel novo = e.getGrafico().getGraficoActual();
+
+		add(novo);
+		repaint();
+
 	}
 
 	private class OyenteMouse implements MouseListener {
@@ -80,17 +93,15 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			System.out.println("X: " + e.getX() + "," + "Y: " + e.getY());
+
 			int x = 0;
 			int y = 0;
 			if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
-				System.out.println("Y ES IGUAL A : " + ((e.getY() / 66) - 3));
 				x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 				y = ((e.getY() / 66) - 3) * 66 + 200;// Lo posiciona en el eje y
 			}
-			System.out.println("X: " + x + " , " + "Y: " + y);
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
-			if (y != 0 && aColocar != null) {
+			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 				aColocar.cambiarPosLogica(x, y);
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();

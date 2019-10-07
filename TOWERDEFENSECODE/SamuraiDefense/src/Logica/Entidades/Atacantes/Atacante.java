@@ -1,26 +1,30 @@
 package Logica.Entidades.Atacantes;
 
+import Grafica.Entidades.Atacantes.AtacanteGrafico;
+import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
+import Logica.Inteligencia.Inteligencia;
+import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
-public abstract class Atacante extends Personaje {
-	protected boolean sepuedemover;
+public abstract class Atacante extends Personaje implements Cloneable{
 	protected int movementSpeed;
+	protected InteligenciaAtacante intel;
 
 	public Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
-		sepuedemover=true;
 	}
 	
-	
-	public void mover() {
-		int x=(int)miCelda.getPunto().getX();
-		if((x-1>=0) && sepuedemover){
-			int aux=(x-1)*miCelda.getAncho();
-			grafico.cambiarPos(grafico.getPosGrafica().x-movementSpeed,grafico.getPosGrafica().y);
-			
-			
-		}
+	//public abstract void setGrafico(AtacanteGrafico graf);
+	public void setGrafico(AtacanteGrafico graf) {
+		this.grafico = graf;
 	}
+
+	
+	public Inteligencia getInteligencia() {
+		return intel;
+	}
+	
+	public abstract Atacante copyEntidad();
 
 }
