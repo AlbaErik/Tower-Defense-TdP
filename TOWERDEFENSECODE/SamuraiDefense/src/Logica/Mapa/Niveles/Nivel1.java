@@ -2,13 +2,14 @@ package Logica.Mapa.Niveles;
 
 import java.util.LinkedList;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Atacante;
 import Logica.Juego.Juego;
+import Logica.Mapa.Hordas.Horda1;
 
 public class Nivel1 extends Nivel {
 
 	public Nivel1(Juego j) {
 		super(j);
+		horda = new Horda1(juego.getMapa());
 	}
 
 	@Override

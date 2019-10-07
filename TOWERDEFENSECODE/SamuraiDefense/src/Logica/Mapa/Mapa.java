@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.*;
-import Logica.Entidades.Defensores.Defensor;
 import Logica.Juego.Juego;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Tienda.Tienda;
@@ -14,7 +13,7 @@ public class Mapa {
 	private static final int filas = 6;
 	private static final int columnas = 10;
 	private LinkedList<Entidad> misEntidades;
-	private LinkedList<Defensor> misDefensores;
+	//private LinkedList<Defensor> misDefensores;
 	private PanelMapa mapagrafico;
 	private Nivel nivel;
 	private Juego juego;
@@ -24,7 +23,7 @@ public class Mapa {
 		juego = j;
 		nivel = j.getNivel();
 		misEntidades = new LinkedList<Entidad>();
-		misDefensores = new LinkedList<Defensor>();
+		//misDefensores = new LinkedList<Defensor>();
 		mapagrafico = new PanelMapa(this);
 		tienda = j.getTienda();
 	}

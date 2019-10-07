@@ -1,22 +1,14 @@
-package Logica.Mapa.Niveles;
+package Logica.Mapa.Hordas;
 
 import java.util.LinkedList;
-import java.util.Random;
 import Logica.Entidades.Atacantes.*;
 import Logica.Mapa.Mapa;
 
-public class Horda {
-	protected ClonadorEntidades clonador;
-	protected LinkedList<Atacante> lista;
-	protected Random rand;
-	protected Mapa mapa;
-	protected LinkedList<Atacante> atacantes;
+public class Horda1 extends Horda{
+	
 
-	public Horda(Mapa m) {
-		mapa = m;
-		clonador = new ClonadorEntidades();
-		lista = new LinkedList<Atacante>();
-		rand = new Random();
+	public Horda1(Mapa m) {
+		super(m);		
 		inicializarHorda();
 		crearEnemigos();
 	}

@@ -24,9 +24,11 @@ public class PanelJuego extends JPanel {
 		this.setBounds(0, 0, AnchoVentana, AltoVentana);
 	}
 
+	/*
 	private void cambiar(JPanel panel) {
 		vInicial.cambiarPanel(this, panel);
 	}
+	*/
 
 	public void ejecutar() {
 		if (juego == null) {

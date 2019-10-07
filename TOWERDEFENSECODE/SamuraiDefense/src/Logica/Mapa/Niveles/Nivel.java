@@ -2,6 +2,7 @@ package Logica.Mapa.Niveles;
 
 import Logica.Juego.Juego;
 import Logica.Mapa.Mapa;
+import Logica.Mapa.Hordas.Horda;
 
 import java.util.LinkedList;
 
@@ -18,7 +19,6 @@ public abstract class Nivel {
 
 	public Nivel(Juego j) {
 		juego = j;
-		horda = new Horda(juego.getMapa());
 		juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 	}
 
