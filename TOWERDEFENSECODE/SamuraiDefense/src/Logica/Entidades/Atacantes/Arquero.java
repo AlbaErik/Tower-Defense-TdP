@@ -22,10 +22,6 @@ public class Arquero extends Atacante {
 	}
 
 	public Atacante copyEntidad() {
-		/*
-		 * Arquero ret = new Arquero(0,0, mapa); try { ret = (Arquero) super.clone(); }
-		 * catch (CloneNotSupportedException e) { e.printStackTrace(); }
-		 */
 		return new Arquero(0, 0, super.mapa);
 	}
 

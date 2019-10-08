@@ -1148,9 +1148,9 @@
 											"font": "Arial;13;0",
 											"left": 215.9599609375,
 											"top": 429,
-											"width": 64.5908203125,
+											"width": 128.91796875,
 											"height": 13,
-											"text": "si encontre"
+											"text": "si capacidad igual cap"
 										},
 										{
 											"_type": "LabelView",
@@ -1201,7 +1201,7 @@
 													"font": "Arial;13;0",
 													"left": 184,
 													"top": 447,
-													"width": 171.09521484375,
+													"width": 183.3779296875,
 													"height": 43,
 													"guardLabel": {
 														"$ref": "AAAAAAFtrAijS7xOqBA="
@@ -1233,7 +1233,7 @@
 													"font": "Arial;13;0",
 													"left": 184,
 													"top": 490,
-													"width": 171.09521484375,
+													"width": 183.3779296875,
 													"height": 43,
 													"guardLabel": {
 														"$ref": "AAAAAAFtrAiuMbxXnVw="
@@ -1243,14 +1243,14 @@
 											"font": "Arial;13;0",
 											"left": 184,
 											"top": 447,
-											"width": 171.09521484375,
+											"width": 183.3779296875,
 											"height": 86
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 184,
 									"top": 424,
-									"width": 171.09521484375,
+									"width": 183.3779296875,
 									"height": 109,
 									"nameLabel": {
 										"$ref": "AAAAAAFtrAijK7w/oAo="
@@ -2305,7 +2305,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFtq/qM5bn+uM0="
 							},
-							"name": "si encontre",
+							"name": "si capacidad igual cap",
 							"interactionOperator": "seq",
 							"operands": [
 								{

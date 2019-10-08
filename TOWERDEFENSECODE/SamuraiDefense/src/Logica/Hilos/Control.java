@@ -12,7 +12,6 @@ public class Control {
 
 	public Control(Mapa m) {
 		map = m;
-		lista = m.getColeccion();
 	}
 
 	public void chequearColision() {

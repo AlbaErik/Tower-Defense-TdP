@@ -28,17 +28,7 @@ public class Ninja extends Atacante {
 		
 	@Override
 	public Atacante copyEntidad() {
-		/*
-		Ninja ret = this;
-		try {
-			ret = (Ninja) this.clone();
-			AtacanteGrafico graf = ( (AtacanteGrafico) this.getGrafico() ).copyEntidadGrafica();
-			ret.setGrafico(graf);
-			
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		*/
+		
 		return new Ninja(0,0,super.mapa);
 	}
 
