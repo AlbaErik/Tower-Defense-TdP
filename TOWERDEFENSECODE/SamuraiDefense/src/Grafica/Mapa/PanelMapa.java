@@ -63,7 +63,7 @@ public class PanelMapa extends JPanel {
 		int x = 900;
 		
 		e.cambiarPosLogica(x, fila);
-		e.mover(true);
+		//e.mover(true);
 		mapa.setEntidad(e);
 		JLabel novo = e.getGrafico().getGraficoActual();
 

@@ -1,5 +1,6 @@
 package Logica.Entidades;
 
+import Armas.Arma;
 import Logica.Mapa.Mapa;
 
 
@@ -7,7 +8,7 @@ public abstract class Personaje extends Entidad {
 	protected int damage;
 	protected int range;
 	protected int attackSpeed;
-	//protected Arma Weapon;
+	protected Arma Weapon;
 	
 	public Personaje(int x,int y, Mapa m) {
 		super(x,y,m);
