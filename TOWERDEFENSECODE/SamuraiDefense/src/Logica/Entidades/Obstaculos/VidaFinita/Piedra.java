@@ -1,6 +1,7 @@
 package Logica.Entidades.Obstaculos.VidaFinita;
 
 import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Obstaculos.VidaFinita.PiedraGrafica;
 import Logica.Entidades.Entidad;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
@@ -9,6 +10,8 @@ public class Piedra extends Entidad{
 
 	public Piedra(int x,int y,Mapa m) {
 		super(x,y,m);
+		
+		grafico=new PiedraGrafica(x,y,m.getPanelMapa(),this);
 	}
 
 	@Override
