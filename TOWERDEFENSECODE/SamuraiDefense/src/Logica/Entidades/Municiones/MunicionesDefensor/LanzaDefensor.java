@@ -10,7 +10,7 @@ public class LanzaDefensor extends Municion {
 	public LanzaDefensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		intel = new InteligenciaMunicionDef(this);
-		// TODO Auto-generated constructor stub
+		velocidad = 2;
 	}
 
 	@Override

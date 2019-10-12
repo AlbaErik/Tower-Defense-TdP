@@ -1,5 +1,7 @@
 package Logica.Entidades.Defensores;
 
+import Armas.Arco;
+import Armas.ArmaSimple;
 import Grafica.Entidades.Defensores.EspadachinEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
@@ -19,6 +21,7 @@ public class EspadachinElite extends Defensor {
 		this.grafico = new EspadachinEliteGrafico(x, y, m.getPanelMapa(), this);
 		super.col = new ColisionadorDefensor(this);
 		intel = new InteligenciaDefensor(this);
+		arma = new Arco(this, m);
 	}
 
 	@Override

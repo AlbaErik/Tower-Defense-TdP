@@ -8,9 +8,19 @@ public abstract class Municion extends Entidad {
 
 	protected Mapa mapa;
 	protected Inteligencia intel;
+	protected double velocidad;
 
 	public Municion(int x, int y, Mapa m) {
 		super(x, y, m);
 		mapa = m;
+		velocidad = 5;
+	}
+	
+	public double getVel() {
+		return velocidad;
+	}
+	
+	public Inteligencia getIntel() {
+		return intel;
 	}
 }

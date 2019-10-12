@@ -12,6 +12,7 @@ public class Control {
 
 	public Control(Mapa m) {
 		map = m;
+		lista = m.getColeccion();
 	}
 
 	public void chequearColision() {
@@ -29,12 +30,11 @@ public class Control {
 				boolean colisionY = e1.getY() == e2.getY();
 
 				if (ent1 != ent2 && colisionX && colisionY) {
-					System.out.print(" COLISION "+'\n');
+					// System.out.print(" COLISION "+'\n');
 					ent1.chocar(ent2);
 					ent2.chocar(ent1);
-				}
-				else {
-					//ent2.mover(true);
+				} else {
+					// ent2.mover(true);
 				}
 			}
 		}

@@ -10,6 +10,7 @@ public class ShurikenAtacante extends Municion {
 	public ShurikenAtacante(int x, int y, Mapa m) {
 		super(x, y, m);
 		intel = new InteligenciaMunicionAtaq(this);
+		velocidad = 2;
 	}
 
 	@Override

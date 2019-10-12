@@ -38,12 +38,12 @@ public class EntidadGrafica {
 		graficoActual.setBounds(x, y, ancho, alto);
 	}
 
-	public void cambiarPos(int x, int y) {
+	public void cambiarPos(double x, int y) {
 		Posicion p = new Posicion(x, y);
 		mientidad.setPos(p);
 
 		pos.setLocation(x, y);
-		graficoActual.setBounds(x, y, ancho, alto);
+		graficoActual.setBounds((int) x, y, ancho, alto);
 	}
 
 	public Point getPosGrafica() {
