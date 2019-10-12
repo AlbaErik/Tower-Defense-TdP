@@ -22,19 +22,9 @@ public class Espadachin extends Atacante {
 		e.getColisionador().serChocado(this);
 	}
 
-	/*
-	 * CopyEntidad es del prototype, se tiene que ver si se queda o usamos factory
-	 */
+	
 	@Override
 	public Atacante copyEntidad() {
-		/*
-		Atacante ret = new Espadachin(0, 0, mapa);
-		try {
-			ret = (Espadachin) super.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		*/
 		return new Espadachin(0,0,super.mapa);
 	}
 

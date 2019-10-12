@@ -15,17 +15,17 @@ public class Game extends Thread{
 	
 	public void run() {
 		juego.inicializarHorda();		
-		int c = 0;
+		int vueltas = 0;
 
 		while(true) {
 			try {
-				if(c % 120 == 0) { 		//Da tiempo entre entidades para agregarlas al mapa
+				if(vueltas % 120 == 0) { 		//Da tiempo entre entidades para agregarlas al mapa
 					juego.agregarAtacante();
-					c = 0;
+					vueltas = 0;
 				}
 				juego.moverAtacantes();
 				control.chequearColision();
-				c++;
+				vueltas++;
 				sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

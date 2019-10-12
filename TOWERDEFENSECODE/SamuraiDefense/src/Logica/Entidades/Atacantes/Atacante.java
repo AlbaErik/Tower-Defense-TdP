@@ -6,7 +6,7 @@ import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
-public abstract class Atacante extends Personaje implements Cloneable{
+public abstract class Atacante extends Personaje {
 	protected int movementSpeed;
 	protected InteligenciaAtacante intel;
 
