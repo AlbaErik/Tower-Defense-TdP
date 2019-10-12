@@ -2,8 +2,8 @@ package Logica.Colisionadores;
 
 import Logica.Entidades.Atacantes.*;
 import Logica.Entidades.Defensores.*;
-import Logica.Entidades.Obstaculos.Barro;
-import Logica.Entidades.Obstaculos.Piedra;
+import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
 public abstract class Colisionador {
 		

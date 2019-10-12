@@ -10,8 +10,8 @@ import Logica.Entidades.Defensores.EspadachinElite;
 import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SamuraiElite;
-import Logica.Entidades.Obstaculos.Barro;
-import Logica.Entidades.Obstaculos.Piedra;
+import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
 public class ColisionadorObstaculo extends Colisionador{
 

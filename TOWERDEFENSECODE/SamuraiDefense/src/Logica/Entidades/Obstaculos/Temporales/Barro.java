@@ -1,4 +1,4 @@
-package Logica.Entidades.Obstaculos;
+package Logica.Entidades.Obstaculos.Temporales;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Entidades.Entidad;
 import Logica.Inteligencia.Inteligencia;

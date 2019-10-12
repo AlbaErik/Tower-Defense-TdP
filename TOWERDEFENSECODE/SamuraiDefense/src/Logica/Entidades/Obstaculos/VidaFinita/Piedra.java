@@ -1,8 +1,7 @@
-package Logica.Entidades.Obstaculos;
+package Logica.Entidades.Obstaculos.VidaFinita;
 
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Ninja;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 

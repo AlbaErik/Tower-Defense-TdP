@@ -1,5 +1,6 @@
 package Logica.Entidades.Defensores;
 
+import Armas.TiraLanzas;
 import Grafica.Entidades.Defensores.LanceroEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
@@ -14,6 +15,7 @@ public class LanceroElite extends Defensor {
 		super.col = new ColisionadorDefensor(this);
 		this.grafico = new LanceroEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
+		arma = new TiraLanzas(this, m);
 	}
 
 	@Override

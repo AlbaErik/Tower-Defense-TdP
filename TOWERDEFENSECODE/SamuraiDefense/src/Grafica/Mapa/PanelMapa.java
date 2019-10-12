@@ -66,6 +66,8 @@ public class PanelMapa extends JPanel {
 		//e.mover(true);
 		mapa.setEntidad(e);
 		JLabel novo = e.getGrafico().getGraficoActual();
+		
+		System.out.println("Nuevo Label en pos: ("+ novo.getX() + ";" + novo.getY()+")");
 
 		add(novo);
 		repaint();
@@ -105,6 +107,7 @@ public class PanelMapa extends JPanel {
 				aColocar.cambiarPosLogica(x, y);
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+				System.out.println("Nuevo Label defensor en pos: ("+ nuevo.getX() + ";" + nuevo.getY()+")");
 				add(nuevo);
 				repaint();
 			}

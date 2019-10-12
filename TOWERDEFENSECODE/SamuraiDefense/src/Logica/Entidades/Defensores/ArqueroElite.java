@@ -1,5 +1,6 @@
 package Logica.Entidades.Defensores;
 
+import Armas.Arco;
 import Grafica.Entidades.Defensores.ArqueroEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
@@ -14,6 +15,8 @@ public class ArqueroElite extends Defensor {
 		super.col = new ColisionadorDefensor(this);
 		this.grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
+		arma = new Arco(this, m);
+		life = 800;
 	}
 
 	@Override

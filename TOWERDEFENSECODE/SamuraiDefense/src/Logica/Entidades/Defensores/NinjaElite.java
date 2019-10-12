@@ -1,5 +1,6 @@
 package Logica.Entidades.Defensores;
 
+import Armas.LanzadorShurikens;
 import Grafica.Entidades.Defensores.NinjaEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
@@ -9,11 +10,12 @@ import Logica.Mapa.Mapa;
 
 public class NinjaElite extends Defensor {
 
-	public NinjaElite(int x, int y, Mapa m) {//Agregar valores a los atributos
+	public NinjaElite(int x, int y, Mapa m) {// Agregar valores a los atributos
 		super(x, y, m);
-		this.grafico=new NinjaEliteGrafico(x,y,m.getPanelMapa(),this);
+		this.grafico = new NinjaEliteGrafico(x, y, m.getPanelMapa(), this);
 		super.col = new ColisionadorDefensor(this);
 		intel = new InteligenciaDefensor(this);
+		arma = new LanzadorShurikens(this, m);
 	}
 
 	@Override
