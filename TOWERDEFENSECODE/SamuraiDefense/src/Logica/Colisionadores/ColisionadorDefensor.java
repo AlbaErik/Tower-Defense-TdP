@@ -13,7 +13,6 @@ import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
-import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
@@ -97,6 +96,11 @@ public class ColisionadorDefensor extends Colisionador{
 	public void serChocado(Ejecutor e) {
 		e.mover(false);
 		e.atacar(true);	
+        }
+
+	public void serChocado(FlechaAtacante e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
@@ -104,19 +108,7 @@ public class ColisionadorDefensor extends Colisionador{
 	public void serChocado(Necromante e) {
 		e.mover(false);
 		e.atacar(true);	
-	}
-	
+        }
 
-	@Override
-	public void serChocado(FlechaAtacante e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void serChocado(FlechaDefensor e) {
-		// TODO Auto-generated method stub
-		
-	}	
 
 }

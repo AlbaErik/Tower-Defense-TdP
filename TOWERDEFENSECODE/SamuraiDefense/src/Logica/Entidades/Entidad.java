@@ -63,7 +63,7 @@ public abstract class Entidad {
 		miCelda = c;
 	}
 
-	public void cambiarPosLogica(int x, int y) {
+	public void cambiarPosLogica(double x, int y) {
 		miCelda.setPos(x, y);
 		grafico.cambiarPos(x, y);
 		mapa.getPanelMapa().repaint();

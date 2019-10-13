@@ -10,8 +10,13 @@ public class InteligenciaMunicionDef extends Inteligencia{
 
 	@Override
 	public void mover() {
-		// TODO Auto-generated method stub
 		
+		if(entidad.getPos().getX() < 990) {
+			double x = entidad.getPos().getX() + ( (Municion)entidad).getVel();
+			int y =  (int) entidad.getPos().getY();
+			entidad.cambiarPosLogica(x, y);
+			System.out.println("Me movi a las pos: (" + entidad.getPos().getX() + ";"+ entidad.getPos().getY() + ")");
+		}
 	}
 
 	@Override

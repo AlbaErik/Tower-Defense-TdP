@@ -10,6 +10,7 @@ public class ShurikenDefensor extends Municion {
 	public ShurikenDefensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		intel = new InteligenciaMunicionDef(this);
+		velocidad = 2;
 	}
 
 	@Override

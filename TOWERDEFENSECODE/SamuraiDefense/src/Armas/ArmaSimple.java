@@ -2,6 +2,7 @@ package Armas;
 
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
+import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Mapa.Mapa;
 
 public class ArmaSimple extends Arma{
@@ -14,7 +15,7 @@ public class ArmaSimple extends Arma{
 	@Override
 	public Municion crearMunicionDefensor() {
 		// TODO Auto-generated method stub
-		return null;
+		return new FlechaDefensor(daño, daño, mapa);
 	}
 
 	@Override

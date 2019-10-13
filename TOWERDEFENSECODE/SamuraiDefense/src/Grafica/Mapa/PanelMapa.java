@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Defensores.Defensor;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Mapa.Mapa;
 //import Logica.Mapa.Posicion;
 
@@ -103,11 +104,11 @@ public class PanelMapa extends JPanel {
 				y = ((e.getY() / 66) - 3) * 66 + 200;// Lo posiciona en el eje y
 			}
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
+						
 			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 				aColocar.cambiarPosLogica(x, y);
 				mapa.setEntidad(aColocar);
-				JLabel nuevo = aColocar.getGrafico().getGraficoActual();
-				System.out.println("Nuevo Label defensor en pos: ("+ nuevo.getX() + ";" + nuevo.getY()+")");
+				JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
 				add(nuevo);
 				repaint();
 			}

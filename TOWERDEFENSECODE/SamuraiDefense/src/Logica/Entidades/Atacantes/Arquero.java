@@ -1,5 +1,6 @@
 package Logica.Entidades.Atacantes;
 
+import Armas.Arco;
 import Grafica.Entidades.Atacantes.ArqueroGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
@@ -15,6 +16,7 @@ public class Arquero extends Atacante {
 		this.movementSpeed = 1;
 		this.col = new ColisionadorAtacante(this);
 		intel = new InteligenciaAtacante(this);
+		arma = new Arco(this, m);
 	}
 
 	public void chocar(Entidad e) {
@@ -27,7 +29,6 @@ public class Arquero extends Atacante {
 
 	@Override
 	public Inteligencia getInteligencia() {
-		// TODO Auto-generated method stub
 		return intel;
 	}
 

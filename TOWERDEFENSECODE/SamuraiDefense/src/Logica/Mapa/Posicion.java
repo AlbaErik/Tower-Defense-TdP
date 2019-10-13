@@ -9,14 +9,14 @@ public class Posicion {
 	private Point punto;
 	private Rectangle rectangulo;
 	
-	public Posicion(int x, int y) {
+	public Posicion(double x, int y) {
 		
-		punto = new Point(x,y);
+		punto = new Point((int) x,y);
 		rectangulo = new Rectangle(punto);
 		rectangulo.setSize(ancho, alto);
 	}
 	
-	public void setPos(int x, int y) {
+	public void setPos(double x, int y) {
 		punto.setLocation(x, y);
 	}
 	
