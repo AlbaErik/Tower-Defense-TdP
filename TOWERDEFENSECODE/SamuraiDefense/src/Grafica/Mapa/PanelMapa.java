@@ -104,19 +104,13 @@ public class PanelMapa extends JPanel {
 				y = ((e.getY() / 66) - 3) * 66 + 200;// Lo posiciona en el eje y
 			}
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
-			
-			System.out.println("aColocar tipo: " + aColocar.getClass());
-			
+						
 			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 				aColocar.cambiarPosLogica(x, y);
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
 				add(nuevo);
 				repaint();
-				
-				Municion municion = aColocar.getMunicion();
-				for(int i = 0; i < 50; i++)
-					municion.getIntel().mover();
 			}
 
 		}

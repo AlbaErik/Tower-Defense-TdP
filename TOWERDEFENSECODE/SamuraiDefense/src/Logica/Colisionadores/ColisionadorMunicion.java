@@ -12,8 +12,6 @@ import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
-import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
-import Logica.Entidades.Obstaculos.*;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
@@ -86,25 +84,19 @@ public class ColisionadorMunicion extends Colisionador {
 	}
 
 	@Override
-	public void serChocado(Ejecutor e) {
+	public void serChocado(FlechaAtacante flechaAtacante) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void serChocado(Necromante e) {
+	public void serChocado(Necromante necromante) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void serChocado(FlechaAtacante e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void serChocado(FlechaDefensor e) {
+	public void serChocado(Ejecutor ejecutor) {
 		// TODO Auto-generated method stub
 		
 	}

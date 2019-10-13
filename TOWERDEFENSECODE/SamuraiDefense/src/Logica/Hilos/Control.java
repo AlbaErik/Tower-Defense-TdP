@@ -26,7 +26,7 @@ public class Control {
 				double distX = Math.abs(e1.getX() - e2.getX());
 				double distY = Math.abs(e1.getY() - e2.getY());
 
-				boolean colisionX = distX < e1.getRectangle().getWidth();
+				boolean colisionX = distX < e1.getRectangle().getWidth() - 60;
 				boolean colisionY = e1.getY() == e2.getY();
 
 				if (ent1 != ent2 && colisionX && colisionY) {
@@ -34,7 +34,7 @@ public class Control {
 					ent1.chocar(ent2);
 					ent2.chocar(ent1);
 				} else {
-					// ent2.mover(true);
+					//ent2.mover(true);
 				}
 			}
 		}
