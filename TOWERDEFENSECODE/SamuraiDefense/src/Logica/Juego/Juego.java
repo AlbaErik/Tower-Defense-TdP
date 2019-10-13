@@ -62,6 +62,14 @@ public class Juego {
 			mapa.getPanelMapa().repaint();
 		}
 	}
+	
+	public void atacarAtacantes() {
+		for (Entidad e : mapa.getColeccion()) {
+			e.getInteligencia().atacarIA();
+			mapa.getPanelMapa().repaint();
+		}
+	}
+	
 
 	public void reanudar() {
 		// TODO Auto-generated method stub

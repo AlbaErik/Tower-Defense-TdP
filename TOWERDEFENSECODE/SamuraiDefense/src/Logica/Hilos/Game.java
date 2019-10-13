@@ -24,7 +24,9 @@ public class Game extends Thread{
 					vueltas = 0;
 				}
 				juego.moverAtacantes();
+				juego.atacarAtacantes();
 				control.chequearColision();
+				
 				vueltas++;
 				sleep(20);
 			} catch (InterruptedException e) {

@@ -15,12 +15,14 @@ public abstract class Entidad {
 	protected Colisionador col;
 	protected Inteligencia intel;
 	protected boolean mover;
+	protected boolean atacar;
 
 	public Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
 		grafico = new EntidadGrafica(x, y, m.getPanelMapa(), this);
 		mover = true;
+		atacar=false;
 	}
 	
 	public boolean mePuedoMover() {
@@ -29,6 +31,12 @@ public abstract class Entidad {
 	
 	public void mover(boolean mov) {
 		mover = mov;
+	}
+	public boolean puedoAtacar() {
+		return atacar;
+	}
+	public void atacar(boolean ata) {
+		atacar=ata;
 	}
 
 	public Inteligencia getInteligencia() {

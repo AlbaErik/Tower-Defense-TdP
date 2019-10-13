@@ -18,5 +18,11 @@ public class InteligenciaAtacante extends Inteligencia {
 		}
 
 	}
+	
+	public void atacarIA() {
+		if(entidad.puedoAtacar()) {
+			entidad.getGrafico().atacar();
+		}
+	}
 
 }

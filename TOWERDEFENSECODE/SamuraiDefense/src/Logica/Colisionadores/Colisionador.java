@@ -12,8 +12,8 @@ public abstract class Colisionador {
 	public abstract void serChocado(Ninja e);
 	public abstract void serChocado(Ejecutor e);
 	public abstract void serChocado(Necromante e);
-	public abstract void serChocado(Espadachin espadachin);
-	public abstract void serChocado(Arquero arquero);
+	public abstract void serChocado(Espadachin e);
+	public abstract void serChocado(Arquero e);
 	
 	public abstract void serChocado(ArqueroElite e);
 	public abstract void serChocado(EmperadorReal e);

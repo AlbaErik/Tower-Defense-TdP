@@ -30,82 +30,82 @@ public class ColisionadorAtacante extends Colisionador{
 	/*
 	 * Determina que entidad esta por detras de otra para frenarla mas tarde.
 	 */
-	private Entidad quienSeFrena(Entidad e) {
+	private void quienSeFrena(Entidad e) {
 		double Xataq = ataq.getPos().getX();
 		double XserChocado = e.getPos().getX();
 		
-		Entidad ret;
-		if(Xataq > XserChocado)
-			ret = ataq;
-		else
-			ret = e;
-		return ret;
+		if(Xataq > XserChocado && e.puedoAtacar())
+			ataq.mover(false);
+		
 	}
-
+	
 	@Override
-	public void serChocado(Ninja e) {
-		quienSeFrena(e).mover(false);
+	public void serChocado(Ninja e) {	
+		quienSeFrena(e);
 	}
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		quienSeFrena(e).mover(false);
+         //quienSeFrena(e).mover(false);
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		quienSeFrena(e).mover(false);
+		//quienSeFrena(e).mover(false);
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		quienSeFrena(e).mover(false);
+		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		quienSeFrena(e).mover(false);
+		//quienSeFrena(e).mover(false);
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		quienSeFrena(e).mover(false);
-	}
-
-	@Override
-	public void serChocado(SamuraiElite e) {
-		quienSeFrena(e).mover(false);
-	}
-
-	@Override
-	public void serChocado(Piedra e) {
-		quienSeFrena(e).mover(false);
-	}
-
-	@Override
-	public void serChocado(Barro e) {
-		quienSeFrena(e).mover(false);
-	}
-
-	@Override
-	public void serChocado(Espadachin e) {
-		quienSeFrena(e).mover(false);
-	}
-
-	@Override
-	public void serChocado(Arquero e) {
-		quienSeFrena(e).mover(false);
-	}
-
-	@Override
-	public void serChocado(Ejecutor e) {
-		// TODO Auto-generated method stub
+		//quienSeFrena(e).mover(false);
 		
 	}
 
 	@Override
+	public void serChocado(SamuraiElite e) {
+		//quienSeFrena(e).mover(false);
+		
+	}
+
+	@Override
+	public void serChocado(Piedra e) {
+		quienSeFrena(e);
+	}
+
+	@Override
+	public void serChocado(Barro e) {
+		//quienSeFrena(e).mover(false);
+	}
+
+	@Override
+	public void serChocado(Espadachin e) {
+		quienSeFrena(e);
+		
+	}
+
+	@Override
+	public void serChocado(Arquero e) {
+		quienSeFrena(e);
+		
+	}
+
+	@Override
+	public void serChocado(Ejecutor e) {
+		quienSeFrena(e);
+	}
+
+	@Override
 	public void serChocado(Necromante e) {
-		// TODO Auto-generated method stub
+		quienSeFrena(e);
 		
 	}
 

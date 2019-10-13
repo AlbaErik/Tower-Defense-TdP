@@ -14,4 +14,11 @@ public class InteligenciaDefensor extends Inteligencia{
 
 	}
 
+	@Override
+	public void atacarIA() {
+		if(entidad.puedoAtacar()) {
+			entidad.getGrafico().atacar();
+		}	
+	}
+
 }

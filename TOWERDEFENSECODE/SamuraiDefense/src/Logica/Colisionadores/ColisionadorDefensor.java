@@ -28,8 +28,8 @@ public class ColisionadorDefensor extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);	
 	}
 
 	@Override
@@ -81,28 +81,31 @@ public class ColisionadorDefensor extends Colisionador{
 	}
 
 	@Override
-	public void serChocado(Espadachin espadachin) {
-		// TODO Auto-generated method stub
-		
+	public void serChocado(Espadachin e) {
+		e.mover(false);
+		e.atacar(true);	
 	}
+		
 
 	@Override
-	public void serChocado(Arquero arquero) {
-		// TODO Auto-generated method stub
-		
+	public void serChocado(Arquero e) {
+		e.mover(false);
+		e.atacar(true);	
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);	
 	}
+
 
 	@Override
 	public void serChocado(Necromante e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);	
 	}
+	
 
 	@Override
 	public void serChocado(FlechaAtacante e) {
