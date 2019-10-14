@@ -4,7 +4,6 @@ import Armas.LanzadorShurikens;
 import Grafica.Entidades.Defensores.NinjaEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Municiones.Municion;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -16,6 +15,7 @@ public class NinjaElite extends Defensor {
 		this.grafico = new NinjaEliteGrafico(x, y, m.getPanelMapa(), this);
 		super.col = new ColisionadorDefensor(this);
 		intel = new InteligenciaDefensor(this);
+		arma = new LanzadorShurikens(this, m);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package Logica.Entidades.Municiones.MunicionesDefensor;
 
 import Grafica.Entidades.Municiones.MunicionesDefensor.FlechaDefensorGrafico;
-import Logica.Colisionadores.ColisionadorMunicion;
+import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionDef;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Avanzar;
@@ -17,7 +17,7 @@ public class FlechaDefensor extends Municion {
 		velocidad = 12.5;
 		grafico = new FlechaDefensorGrafico(x, y, mapa.getPanelMapa(), this);
 		estado = new Avanzar(this);
-		col = new ColisionadorMunicion();
+		col = new ColisionadorMunicionDef();
 	}
 
 	public double getVel() {

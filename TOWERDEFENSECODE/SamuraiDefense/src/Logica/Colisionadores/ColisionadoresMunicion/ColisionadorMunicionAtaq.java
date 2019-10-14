@@ -1,4 +1,4 @@
-package Logica.Colisionadores.ColisionadoresObstaculo;
+package Logica.Colisionadores.ColisionadoresMunicion;
 
 import Logica.Colisionadores.Colisionador;
 import Logica.Entidades.Atacantes.Arquero;
@@ -16,10 +16,34 @@ import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
-public class ColisionadorObstaculo extends Colisionador{
+public class ColisionadorMunicionAtaq extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Ejecutor e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Necromante e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Espadachin e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Arquero e) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -73,35 +97,9 @@ public class ColisionadorObstaculo extends Colisionador{
 	}
 
 	@Override
-	public void serChocado(Espadachin espadachin) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void serChocado(Arquero arquero) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void serChocado(FlechaAtacante flechaAtacante) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void serChocado(Necromante necromante) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void serChocado(Ejecutor ejecutor) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 
 }

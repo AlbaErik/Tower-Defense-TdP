@@ -14,7 +14,7 @@ public class Necromante extends Atacante {
 	public Necromante(int x, int y, Mapa m) {
 		super(x, y, m);
 		this.grafico = new NecromanteGrafico(x, y, m.getPanelMapa(), this);
-		this.movementSpeed = 1;
+		this.movementSpeed = 3;
 		this.col = new ColisionadorAtacante(this);
 		intel = new InteligenciaAtacante(this);
 		estado = new Avanzar(this);
@@ -22,10 +22,10 @@ public class Necromante extends Atacante {
 	}
 
 	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+		//e.getColisionador().serChocado(this);
 	}
 
-	public Atacante copyEntidad() {
+	public Atacante clone() {
 		return new Necromante(0, 0, super.mapa);
 	}
 

@@ -26,7 +26,7 @@ public class Arquero extends Atacante {
 		e.getColisionador().serChocado(this);
 	}
 
-	public Atacante copyEntidad() {
+	public Atacante clone() {
 		return new Arquero(0, 0, super.mapa);
 	}
 

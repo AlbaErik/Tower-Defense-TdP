@@ -1,4 +1,4 @@
-package Logica.Colisionadores.ColisionadoresObstaculo;
+package Logica.Colisionadores.ColisionadoresMunicion;
 
 import Logica.Colisionadores.Colisionador;
 import Logica.Entidades.Atacantes.Arquero;
@@ -16,7 +16,7 @@ import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
-public class ColisionadorBarro extends Colisionador{
+public class ColisionadorMunicionDef extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {

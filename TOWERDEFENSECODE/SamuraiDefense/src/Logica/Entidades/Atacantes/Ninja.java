@@ -30,7 +30,7 @@ public class Ninja extends Atacante {
 	}
 
 	@Override
-	public Atacante copyEntidad() {
+	public Atacante clone() {
 		return new Ninja(0, 0, super.mapa);
 	}
 

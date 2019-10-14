@@ -34,7 +34,7 @@ public class Control {
 					ent1.chocar(ent2);
 					ent2.chocar(ent1);
 				} else {
-					//ent2.mover(true);
+					//ent1.mover(true);
 				}
 			}
 		}

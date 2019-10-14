@@ -22,7 +22,7 @@ public class Horda1 extends Horda{
 
 	private void crearEnemigos() {
 		atacantes = new LinkedList<Atacante>();
-		int cantEnemigos = 20;
+		int cantEnemigos = 10;
 		for (int i = 0; i < cantEnemigos; i++) {
 			atacantes.add(crearAtacanteRandom());
 		}
@@ -39,7 +39,8 @@ public class Horda1 extends Horda{
 	private Atacante crearAtacanteRandom() {
 		int ent = lista.size();
 		int i = rand.nextInt(ent);
-		return clonador.clonarAtacantes(lista.get(i));
+		return lista.get(i).clone();
+		//return clonador.clonarAtacantes(lista.get(i));
 	}
 
 }

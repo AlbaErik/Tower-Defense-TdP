@@ -5,11 +5,9 @@ import java.util.Random;
 
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Mapa.Mapa;
-import Logica.Mapa.Niveles.ClonadorEntidades;
 
 public abstract class Horda {
 	
-	protected ClonadorEntidades clonador;
 	protected LinkedList<Atacante> lista;
 	protected Random rand;
 	protected Mapa mapa;
@@ -17,7 +15,7 @@ public abstract class Horda {
 	
 	public Horda(Mapa m) {
 		mapa = m;
-		clonador = new ClonadorEntidades();
+		
 		lista = new LinkedList<Atacante>();
 		rand = new Random();
 	}

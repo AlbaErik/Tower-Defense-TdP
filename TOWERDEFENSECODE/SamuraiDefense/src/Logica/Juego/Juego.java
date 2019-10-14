@@ -1,10 +1,12 @@
 package Logica.Juego;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 import GUI.Paneles.PanelJuego;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Atacante;
+import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;
@@ -12,18 +14,13 @@ import Logica.Tienda.Tienda;
 
 public class Juego {
 	private PanelJuego Gui;
-	// private int tiempo;
 	private Tienda tienda;
 	private Nivel nivel;
 	private Mapa mapa;
 	private LinkedList<Atacante> misAtacantes;
 	private LinkedList<Entidad> miHorda;
+	private LinkedList<Obstaculo> misObstaculos;
 
-	/**
-	 * Se inicializa el juego en el Nivel 1
-	 * 
-	 * @param g
-	 */
 	public Juego(PanelJuego g) {
 		Gui = g;
 		tienda = new Tienda(this);
@@ -35,11 +32,6 @@ public class Juego {
 		nivel = new Nivel1(this);
 	}
 
-	/**
-	 * public void aumentarTiempo() { tiempo++;
-	 * Gui.getPanelStats().actualizarTiempo(); }
-	 **/
-
 	public void iniciar() {
 
 	}
@@ -47,39 +39,48 @@ public class Juego {
 	public void inicializarHorda() {
 		miHorda = nivel.crearHorda();
 	}
+	
+	public void generarObstaculos() {
+		misObstaculos = nivel.crearObstaculos();
+	}
 
-	public void agregarAtacante() { // cambiar, que agregue de a uno y que lo mueva
+	public void agregarEntidades() { // cambiar, que agregue de a uno y que lo mueva
 		if (!miHorda.isEmpty()) {
 			Entidad atacante = miHorda.getFirst();
 			mapa.agregarEntidadAlCampo(atacante);
-			//misAtacantes.add((Atacante)atacante);
 			miHorda.remove(miHorda.getFirst());
+		}else {
+			if(!misObstaculos.isEmpty()) {
+				int x = randomX();
+				int y = randomY();
+				Obstaculo obs = misObstaculos.getFirst();
+				obs.cambiarPosLogica(x, y);
+				mapa.agregarEntidadAlCampoEnPosActual(obs);
+				misObstaculos.remove(misObstaculos.getFirst());
+			}
 		}
 	}
 	
-	public void dispararAtacantes() {
-		for(Atacante e : misAtacantes)
-			e.disparar();
+	private int randomY() {
+		Random rand = new Random();
+		int fila = rand.nextInt(5);
+		fila = fila * 66 + 200;
+		return fila;
 	}
 
-	public void moverAtacantes() {
-		for (Entidad e : mapa.getColeccion()) {
-			e.getInteligencia().mover();
-			mapa.getPanelMapa().repaint();
-		}
+	private int randomX() {
+		Random rand = new Random();
+		int x = rand.nextInt(400);
+		return x + 400;
 	}
-	
-	public void atacarAtacantes() {
-		for (Entidad e : mapa.getColeccion()) {
-			e.getInteligencia().atacarIA();
-			mapa.getPanelMapa().repaint();
-		}
-	}
-	
 
+	public void accionarEstados() {
+		for(Entidad e : mapa.getColeccion())
+			e.ejecutarEstado();
+	}
+	
 	public void reanudar() {
 		// TODO Auto-generated method stub
-
 	}
 
 	public Tienda getTienda() {
@@ -98,9 +99,6 @@ public class Juego {
 		return mapa;
 	}
 
-	public void accionarEstados() {
-		for(Entidad e : mapa.getColeccion())
-			e.ejecutarEstado();
-	}
+	
 
 }

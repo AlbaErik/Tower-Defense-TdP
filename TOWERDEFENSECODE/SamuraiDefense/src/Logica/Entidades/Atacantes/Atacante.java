@@ -36,7 +36,7 @@ public abstract class Atacante extends Personaje implements Cloneable{
 		return intel;
 	}
 	
-	public abstract Atacante copyEntidad();
+	public abstract Atacante clone();
 	
 	public int getDañoArma() {
 		return arma.getDaño();
