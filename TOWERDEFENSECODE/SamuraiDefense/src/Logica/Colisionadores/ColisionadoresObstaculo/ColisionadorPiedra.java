@@ -110,9 +110,8 @@ public class ColisionadorPiedra extends Colisionador {
 	}
 
 	@Override
-	public void serChocado(FlechaAtacante flechaAtacante) {
-		// TODO Auto-generated method stub
-
+	public void serChocado(FlechaAtacante f) {
+		
 	}
 
 }

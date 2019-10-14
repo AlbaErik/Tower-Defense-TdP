@@ -15,9 +15,10 @@ public class FlechaDefensor extends Municion {
 		super(x, y, m);
 		intel = new InteligenciaMunicionDef(this);
 		velocidad = 12.5;
+		daño = 5;
 		grafico = new FlechaDefensorGrafico(x, y, mapa.getPanelMapa(), this);
 		estado = new Avanzar(this);
-		col = new ColisionadorMunicionDef();
+		col = new ColisionadorMunicionDef(this);
 	}
 
 	public double getVel() {
@@ -36,6 +37,12 @@ public class FlechaDefensor extends Municion {
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();		
+	}
+
+	@Override
+	public int getDaño() {
+		// TODO Auto-generated method stub
+		return daño;
 	}
 
 }

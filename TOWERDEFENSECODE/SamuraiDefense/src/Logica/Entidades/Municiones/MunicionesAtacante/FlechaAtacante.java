@@ -18,6 +18,7 @@ public class FlechaAtacante extends Municion {
 		grafico = new FlechaAtacanteGrafico(x, y, mapa.getPanelMapa(), this);
 		estado = new Avanzar(this);
 		col = new ColisionadorMunicionAtaq();
+		daño = 15;
 	}
 	
 	public double getVel() {
@@ -36,6 +37,12 @@ public class FlechaAtacante extends Municion {
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();		
+	}
+
+	@Override
+	public int getDaño() {
+		// TODO Auto-generated method stub
+		return daño;
 	}
 
 }

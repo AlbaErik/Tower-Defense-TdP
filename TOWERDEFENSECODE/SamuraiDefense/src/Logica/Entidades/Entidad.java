@@ -58,6 +58,7 @@ public abstract class Entidad {
 	}
 
 	public void setLife(int lp) {
+		System.out.println("setLife vida: " + life);
 		life = life - lp;
 	}
 

@@ -8,18 +8,12 @@ import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 
-public class Piedra extends Obstaculo{
+public class Piedra extends Obstaculo {
 
-	public Piedra(int x,int y,Mapa m) {
-		super(x,y,m);
+	public Piedra(int x, int y, Mapa m) {
+		super(x, y, m);
 		col = new ColisionadorPiedra(this);
-		grafico=new PiedraGrafica(x,y,m.getPanelMapa(),this);
-	}
-
-	@Override
-	public void setLife(int lp) {
-		// TODO Auto-generated method stub
-		
+		grafico = new PiedraGrafica(x, y, m.getPanelMapa(), this);
 	}
 
 	@Override
@@ -40,7 +34,7 @@ public class Piedra extends Obstaculo{
 
 	@Override
 	public void ejecutarEstado() {
-		estado.ejecutar();		
+		estado.ejecutar();
 	}
 
 	@Override

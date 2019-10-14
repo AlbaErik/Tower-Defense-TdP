@@ -30,9 +30,7 @@ public class Control {
 				boolean colisionY = e1.getY() == e2.getY();
 
 				if (ent1 != ent2 && colisionX && colisionY) {
-					// System.out.print(" COLISION "+'\n');
 					ent1.chocar(ent2);
-					ent2.chocar(ent1);
 				} else {
 					//ent1.mover(true);
 				}

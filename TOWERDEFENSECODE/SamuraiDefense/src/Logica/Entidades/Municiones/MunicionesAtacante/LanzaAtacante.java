@@ -11,6 +11,7 @@ public class LanzaAtacante extends Municion {
 		super(x, y, m);
 		intel = new InteligenciaMunicionAtaq(this);
 		velocidad = 2;
+		daño = 20;
 	}
 
 	@Override
@@ -22,6 +23,12 @@ public class LanzaAtacante extends Municion {
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();		
+	}
+
+	@Override
+	public int getDaño() {
+		// TODO Auto-generated method stub
+		return daño;
 	}
 
 }
