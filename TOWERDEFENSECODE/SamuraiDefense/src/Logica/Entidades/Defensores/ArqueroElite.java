@@ -4,6 +4,7 @@ import Armas.Arco;
 import Grafica.Entidades.Defensores.ArqueroEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -26,8 +27,22 @@ public class ArqueroElite extends Defensor {
 
 	@Override
 	public Inteligencia getInteligencia() {
-		// TODO Auto-generated method stub
 		return intel;
+	}
+
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
+	}
+
+	@Override
+	public void atacar() {
+		if (contadorDisparos % 50 == 0) {
+			Municion mun = arma.crearMunicionDefensor();
+			mapa.agregarEntidadAlCampoEnPosActual(mun);
+			contadorDisparos = 0;
+		}
+		contadorDisparos++;		
 	}
 
 }

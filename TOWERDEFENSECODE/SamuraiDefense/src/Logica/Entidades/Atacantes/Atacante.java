@@ -19,6 +19,11 @@ public abstract class Atacante extends Personaje implements Cloneable{
 		arma = new ArmaSimple(this, m);
 	}
 	
+	public void disparar() {
+		Municion mun = arma.crearMunicionAtacante();
+		mapa.agregarEntidadAlCampo(mun);
+	}
+	
 	public void setGrafico(AtacanteGrafico graf) {
 		this.grafico = graf;
 	}

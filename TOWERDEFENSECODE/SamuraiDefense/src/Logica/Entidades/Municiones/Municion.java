@@ -1,6 +1,7 @@
 package Logica.Entidades.Municiones;
 
 import Logica.Entidades.Entidad;
+import Logica.Estados.Avanzar;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 
@@ -14,6 +15,7 @@ public abstract class Municion extends Entidad {
 		super(x, y, m);
 		mapa = m;
 		velocidad = 5;
+		estado = new Avanzar(this);
 	}
 	
 	public double getVel() {

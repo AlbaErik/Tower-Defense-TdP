@@ -2,11 +2,11 @@ package Logica.Inteligencia;
 
 import Logica.Entidades.Defensores.Defensor;
 
-public class InteligenciaDefensor extends Inteligencia{
+public class InteligenciaDefensor extends Inteligencia {
 
 	public InteligenciaDefensor(Defensor def) {
-		entidad = def;	
-		
+		entidad = def;
+
 	}
 
 	@Override
@@ -16,9 +16,9 @@ public class InteligenciaDefensor extends Inteligencia{
 
 	@Override
 	public void atacarIA() {
-		if(entidad.puedoAtacar()) {
+		if (entidad.puedoAtacar()) {
 			entidad.getGrafico().atacar();
-		}	
+		}
 	}
 
 }

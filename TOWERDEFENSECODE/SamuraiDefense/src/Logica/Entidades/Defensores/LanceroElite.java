@@ -28,4 +28,15 @@ public class LanceroElite extends Defensor {
 		// TODO Auto-generated method stub
 		return intel;
 	}
+
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
+	}
+
+	@Override
+	public void atacar() {
+		// TODO Auto-generated method stub
+		
+	}
 }

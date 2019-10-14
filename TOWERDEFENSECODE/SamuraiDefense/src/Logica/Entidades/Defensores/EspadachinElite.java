@@ -34,4 +34,15 @@ public class EspadachinElite extends Defensor {
 		return intel;
 	}
 
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
+	}
+
+	@Override
+	public void atacar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

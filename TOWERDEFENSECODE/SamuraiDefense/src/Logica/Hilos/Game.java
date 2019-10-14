@@ -1,5 +1,7 @@
 package Logica.Hilos;
 
+import Logica.Entidades.Municiones.Municion;
+import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Juego.Juego;
 
 public class Game extends Thread{
@@ -23,8 +25,14 @@ public class Game extends Thread{
 					juego.agregarAtacante();
 					vueltas = 0;
 				}
-				juego.moverAtacantes();
-				juego.atacarAtacantes();
+				
+				/*
+				 * moverAtacantes y atacarAtacantes deben ser remplazados por "ejecutarEstado() donde se delega la accion a cada estado perteneciente a la entidad"
+				 */
+				//juego.moverAtacantes();
+				//juego.atacarAtacantes();
+				
+				juego.accionarEstados();
 				control.chequearColision();
 				
 				vueltas++;

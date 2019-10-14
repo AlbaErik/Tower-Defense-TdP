@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import GUI.Paneles.PanelJuego;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;
@@ -15,7 +16,7 @@ public class Juego {
 	private Tienda tienda;
 	private Nivel nivel;
 	private Mapa mapa;
-	private LinkedList<Entidad> misAtacantes;
+	private LinkedList<Atacante> misAtacantes;
 	private LinkedList<Entidad> miHorda;
 
 	/**
@@ -27,7 +28,7 @@ public class Juego {
 		Gui = g;
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
-		misAtacantes = new LinkedList<Entidad>();
+		misAtacantes = new LinkedList<Atacante>();
 	}
 
 	public void crearNivel() {
@@ -51,9 +52,14 @@ public class Juego {
 		if (!miHorda.isEmpty()) {
 			Entidad atacante = miHorda.getFirst();
 			mapa.agregarEntidadAlCampo(atacante);
-			misAtacantes.add(atacante);
+			//misAtacantes.add((Atacante)atacante);
 			miHorda.remove(miHorda.getFirst());
 		}
+	}
+	
+	public void dispararAtacantes() {
+		for(Atacante e : misAtacantes)
+			e.disparar();
 	}
 
 	public void moverAtacantes() {
@@ -90,6 +96,11 @@ public class Juego {
 
 	public Mapa getMapa() {
 		return mapa;
+	}
+
+	public void accionarEstados() {
+		for(Entidad e : mapa.getColeccion())
+			e.ejecutarEstado();
 	}
 
 }

@@ -15,100 +15,108 @@ import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
+import Logica.Estados.Ataque;
 
-
-public class ColisionadorDefensor extends Colisionador{
+public class ColisionadorDefensor extends Colisionador {
 
 	private Defensor d;
-	
+
 	public ColisionadorDefensor(Defensor def) {
 		d = def;
 	}
 
 	@Override
-	public void serChocado(Ninja e) {
-		e.mover(false);
-		e.atacar(true);	
-	}
-
-	@Override
 	public void serChocado(ArqueroElite e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		// TODO Auto-generated method stub
-		
+		e.mover(false);
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void serChocado(Barro barro) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public void serChocado(Ninja e) {
+		e.mover(false);
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
 		e.mover(false);
-		e.atacar(true);	
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
-		
 
 	@Override
 	public void serChocado(Arquero e) {
 		e.mover(false);
-		e.atacar(true);	
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
 		e.mover(false);
-		e.atacar(true);	
-        }
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
+	}
 
 	public void serChocado(FlechaAtacante e) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 
 	@Override
 	public void serChocado(Necromante e) {
 		e.mover(false);
-		e.atacar(true);	
-        }
-
+		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
+	}
 
 }

@@ -14,8 +14,8 @@ public class InteligenciaMunicionAtaq extends Inteligencia {
 			double x = entidad.getPos().getX() - ((Municion) entidad).getVel();
 			int y = (int) entidad.getPos().getY();
 			entidad.cambiarPosLogica(x, y);
-			System.out.println("Me movi a las pos: (" + entidad.getPos().getX() + ";"+ entidad.getPos().getY() + ")");
-
+		}else {
+			//Matar la flecha
 		}
 	}
 

@@ -64,15 +64,19 @@ public class PanelMapa extends JPanel {
 		int x = 900;
 		
 		e.cambiarPosLogica(x, fila);
-		//e.mover(true);
 		mapa.setEntidad(e);
-		JLabel novo = e.getGrafico().getGraficoActual();
+		JLabel nuevo = e.getGrafico().getGraficoActual();
 		
-		System.out.println("Nuevo Label en pos: ("+ novo.getX() + ";" + novo.getY()+")");
-
-		add(novo);
+		add(nuevo);
 		repaint();
-
+	}
+	
+	public void agregarEntidadEnPosActual(Entidad e) {
+		mapa.setEntidad(e);
+		JLabel nuevo = e.getGrafico().getGraficoActual();
+		
+		add(nuevo);
+		repaint();		
 	}
 
 	private class OyenteMouse implements MouseListener {
@@ -107,6 +111,9 @@ public class PanelMapa extends JPanel {
 						
 			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 				aColocar.cambiarPosLogica(x, y);
+				
+				//mapa.agregarDefensor(aColocar);
+				
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
 				add(nuevo);
@@ -131,5 +138,7 @@ public class PanelMapa extends JPanel {
 		Graphics g = this.getGraphics();
 		g.drawImage(i, 0, 0, this.getWidth(), this.getHeight(), this);
 	}
+
+	
 
 }

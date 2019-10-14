@@ -16,63 +16,68 @@ import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
+import Logica.Estados.Ataque;
 
+public class ColisionadorAtacante extends Colisionador {
 
-public class ColisionadorAtacante extends Colisionador{
-	
 	private Atacante ataq;
-	
+
 	public ColisionadorAtacante(Atacante a) {
 		ataq = a;
 	}
-	
+
 	/*
 	 * Determina que entidad esta por detras de otra para frenarla mas tarde.
 	 */
 	private void quienSeFrena(Entidad e) {
 		double Xataq = ataq.getPos().getX();
 		double XserChocado = e.getPos().getX();
-		
-		if(Xataq > XserChocado && e.puedoAtacar())
+
+		if (Xataq > XserChocado && e.puedoAtacar())
 			ataq.mover(false);
-		
 	}
-	
-	@Override
-	public void serChocado(Ninja e) {	
-		quienSeFrena(e);
-	}
+
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-         //quienSeFrena(e).mover(false);
+		// quienSeFrena(e).mover(false);
+		e.cambiarEstado(new Ataque(e));
+		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		//quienSeFrena(e).mover(false);
+		// quienSeFrena(e).mover(false);
+		e.cambiarEstado(new Ataque(e));
+		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
 		e.atacar(true);
+		e.cambiarEstado(new Ataque(e));
+		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		//quienSeFrena(e).mover(false);
+		// quienSeFrena(e).mover(false);
+		e.cambiarEstado(new Ataque(e));
+		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		//quienSeFrena(e).mover(false);
-		
+		// quienSeFrena(e).mover(false);
+		e.cambiarEstado(new Ataque(e));
+		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		//quienSeFrena(e).mover(false);
-		
+		// quienSeFrena(e).mover(false);
+		e.cambiarEstado(new Ataque(e));
+		e.atacar(true);
 	}
 
 	@Override
@@ -82,19 +87,24 @@ public class ColisionadorAtacante extends Colisionador{
 
 	@Override
 	public void serChocado(Barro e) {
-		//quienSeFrena(e).mover(false);
+		// quienSeFrena(e).mover(false);
 	}
 
 	@Override
+	public void serChocado(Ninja e) {
+		quienSeFrena(e);
+	}
+	
+	@Override
 	public void serChocado(Espadachin e) {
 		quienSeFrena(e);
-		
+
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
 		quienSeFrena(e);
-		
+
 	}
 
 	@Override
@@ -105,13 +115,11 @@ public class ColisionadorAtacante extends Colisionador{
 	@Override
 	public void serChocado(Necromante e) {
 		quienSeFrena(e);
-        }
+	}
 
 	public void serChocado(FlechaAtacante flechaAtacante) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 }

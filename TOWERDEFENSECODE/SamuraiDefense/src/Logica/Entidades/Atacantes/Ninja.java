@@ -4,6 +4,7 @@ import Armas.LanzadorShurikens;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
+import Logica.Estados.Avanzar;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
@@ -20,6 +21,7 @@ public class Ninja extends Atacante {
 		this.grafico = new NinjaGrafico(x, y, m.getPanelMapa(), this);
 		this.col = new ColisionadorAtacante(this);
 		arma = new LanzadorShurikens(this, m);
+		estado = new Avanzar(this);
 	}
 
 	@Override
@@ -30,6 +32,17 @@ public class Ninja extends Atacante {
 	@Override
 	public Atacante copyEntidad() {
 		return new Ninja(0, 0, super.mapa);
+	}
+
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();
+
+	}
+
+	@Override
+	public void atacar() {
+		
 	}
 
 }

@@ -1,8 +1,10 @@
 package Logica.Entidades.Atacantes;
 
+import Armas.Arco;
 import Grafica.Entidades.Atacantes.EspadachinGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
+import Logica.Estados.Avanzar;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
@@ -15,6 +17,8 @@ public class Espadachin extends Atacante {
 		this.movementSpeed = 2;
 		this.col = new ColisionadorAtacante(this);
 		intel = new InteligenciaAtacante(this);
+		arma = new Arco(this, m);
+		estado = new Avanzar(this);
 	}
 
 	@Override
@@ -32,6 +36,17 @@ public class Espadachin extends Atacante {
 	public Inteligencia getInteligencia() {
 		// TODO Auto-generated method stub
 		return intel;
+	}
+
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
+	}
+
+	@Override
+	public void atacar() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

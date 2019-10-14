@@ -19,4 +19,9 @@ public class LanzaAtacante extends Municion {
 
 	}
 
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
+	}
+
 }

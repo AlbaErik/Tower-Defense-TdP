@@ -2,6 +2,8 @@ package Logica.Entidades;
 
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
+import Logica.Estados.Estado;
+import Logica.Estados.Reposo;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
@@ -16,33 +18,37 @@ public abstract class Entidad {
 	protected Inteligencia intel;
 	protected boolean mover;
 	protected boolean atacar;
+	protected Estado estado;
 
 	public Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
 		grafico = new EntidadGrafica(x, y, m.getPanelMapa(), this);
 		mover = true;
-		atacar=false;
+		atacar = false;
+		estado = new Reposo(this);
 	}
-	
+
 	public boolean mePuedoMover() {
 		return mover;
 	}
-	
+
 	public void mover(boolean mov) {
 		mover = mov;
 	}
+
 	public boolean puedoAtacar() {
 		return atacar;
 	}
+
 	public void atacar(boolean ata) {
-		atacar=ata;
+		atacar = ata;
 	}
 
 	public Inteligencia getInteligencia() {
 		return intel;
 	}
-	
+
 	public Colisionador getColisionador() {
 		return col;
 	}
@@ -82,4 +88,10 @@ public abstract class Entidad {
 	}
 
 	public abstract void chocar(Entidad e);
+
+	public abstract void ejecutarEstado();
+	
+	public void cambiarEstado(Estado e) {
+		estado = e;
+	}
 }

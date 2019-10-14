@@ -9,9 +9,11 @@ public abstract class Personaje extends Entidad {
 	protected int range;
 	protected int attackSpeed;
 	protected Arma Weapon;
+	protected int contadorDisparos;
 	
 	public Personaje(int x,int y, Mapa m) {
 		super(x,y,m);
+		contadorDisparos = 0;
 	}
 	
 	public  int getDamage() {
@@ -25,4 +27,6 @@ public abstract class Personaje extends Entidad {
 	public  int getAttackSpeed() {
 		return attackSpeed;
 	}
+	
+	public abstract void atacar();
 }

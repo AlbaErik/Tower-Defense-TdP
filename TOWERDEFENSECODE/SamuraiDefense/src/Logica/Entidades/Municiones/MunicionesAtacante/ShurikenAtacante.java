@@ -19,4 +19,9 @@ public class ShurikenAtacante extends Municion {
 
 	}
 
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
+	}
+
 }

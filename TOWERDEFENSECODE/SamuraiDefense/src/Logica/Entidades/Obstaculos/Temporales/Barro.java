@@ -33,5 +33,10 @@ public class Barro extends Entidad{
 		return null;
 	}
 
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
+	}
+
 
 }
