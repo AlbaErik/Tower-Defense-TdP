@@ -20,7 +20,7 @@ public class Game extends Thread{
 
 		while(true) {
 			try {
-				if(vueltas % 80 == 0) { 		//Da tiempo entre entidades para agregarlas al mapa
+				if(vueltas % 120 == 0) { 		//Da tiempo entre entidades para agregarlas al mapa
 					juego.agregarEntidades();
 					vueltas = 0;
 				}

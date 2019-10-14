@@ -1,6 +1,7 @@
-package Logica.Estados;
+package Logica.Estados.Personajes;
 
 import Logica.Entidades.Entidad;
+import Logica.Estados.Estado;
 
 public class Reposo extends Estado{
 

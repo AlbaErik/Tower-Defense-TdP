@@ -3,7 +3,7 @@ package Logica.Entidades;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Estados.Estado;
-import Logica.Estados.Reposo;
+import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
@@ -58,7 +58,6 @@ public abstract class Entidad {
 	}
 
 	public void setLife(int lp) {
-		System.out.println("setLife vida: " + life);
 		life = life - lp;
 	}
 

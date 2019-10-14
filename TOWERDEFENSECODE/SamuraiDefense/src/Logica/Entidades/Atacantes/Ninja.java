@@ -4,7 +4,7 @@ import Armas.LanzadorShurikens;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
-import Logica.Estados.Avanzar;
+import Logica.Estados.Personajes.Avanzar;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 

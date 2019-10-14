@@ -95,9 +95,8 @@ public class ColisionadorMunicionDef extends Colisionador{
 	@Override
 	public void serChocado(Piedra e) {
 		int daño = mun.getDaño();
-		System.out.println("DANIO: " + daño);
 		e.setLife(daño);
-		System.out.println("Vida piedra: " + e.getLife());		
+		System.out.println("Piedra : " + e.hashCode() + " Vida: "+ e.getLife());		
 	}
 
 	@Override

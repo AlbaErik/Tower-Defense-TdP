@@ -5,7 +5,7 @@ import Grafica.Entidades.Atacantes.ArqueroGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
-import Logica.Estados.Avanzar;
+import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;

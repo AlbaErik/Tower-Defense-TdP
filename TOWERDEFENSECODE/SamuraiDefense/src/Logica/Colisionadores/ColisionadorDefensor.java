@@ -15,7 +15,7 @@ import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
-import Logica.Estados.Ataque;
+import Logica.Estados.Personajes.*;
 
 public class ColisionadorDefensor extends Colisionador {
 

@@ -1,6 +1,7 @@
-package Logica.Estados;
+package Logica.Estados.Personajes;
 
 import Logica.Entidades.Personaje;
+import Logica.Estados.Estado;
 
 public class Ataque extends Estado{
 

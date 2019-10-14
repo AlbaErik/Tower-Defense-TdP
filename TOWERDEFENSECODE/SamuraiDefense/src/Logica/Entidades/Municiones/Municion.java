@@ -1,7 +1,7 @@
 package Logica.Entidades.Municiones;
 
 import Logica.Entidades.Entidad;
-import Logica.Estados.Avanzar;
+import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 

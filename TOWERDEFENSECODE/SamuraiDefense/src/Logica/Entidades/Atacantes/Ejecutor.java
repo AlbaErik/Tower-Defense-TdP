@@ -4,7 +4,7 @@ import Armas.Arco;
 import Grafica.Entidades.Atacantes.EjecutorGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
-import Logica.Estados.Avanzar;
+import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;

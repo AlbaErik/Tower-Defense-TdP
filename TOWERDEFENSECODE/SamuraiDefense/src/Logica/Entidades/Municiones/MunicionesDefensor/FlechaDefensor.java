@@ -4,7 +4,7 @@ import Grafica.Entidades.Municiones.MunicionesDefensor.FlechaDefensorGrafico;
 import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionDef;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
-import Logica.Estados.Avanzar;
+import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaMunicionDef;
 import Logica.Mapa.Mapa;
