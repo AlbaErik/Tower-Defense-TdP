@@ -14,7 +14,7 @@ public class PiedraBaja extends Estado{
 	public void ejecutar() {
 		entidad.getGrafico().morir(); //Simula una piedra con baja vida
 		if(entidad.getLife() <= 0) {
-			//Morir
+			entidad.morir();
 		}
 		
 	}

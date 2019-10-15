@@ -28,6 +28,11 @@ public abstract class Entidad {
 		atacar = false;
 		estado = new Reposo(this);
 	}
+	
+	public void morir() {
+		mapa.eliminarEntidad(this.getLugarEnMapa());
+		
+	}
 
 	public boolean mePuedoMover() {
 		return mover;

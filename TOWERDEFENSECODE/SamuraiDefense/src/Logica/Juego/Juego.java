@@ -42,6 +42,7 @@ public class Juego {
 	
 	public void generarObstaculos() {
 		misObstaculos = nivel.crearObstaculos();
+		
 	}
 
 	public void agregarEntidades() { // cambiar, que agregue de a uno y que lo mueva

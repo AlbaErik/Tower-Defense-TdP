@@ -92,6 +92,7 @@ public class Mapa {
 	}
 
 	public void eliminarEntidad(int i) {// Elimina al defensor de la lista de defensores
+		mapagrafico.eliminarDefensorG(misEntidades.get(i));
 		misEntidades.remove(i);
 	}
 
@@ -112,17 +113,17 @@ public class Mapa {
 	}
 
 	public boolean hayEnPos(int x, int y) {
-		boolean toret = false;
+		boolean ocupada = false;
 		
-		for (int i = 0; i < misEntidades.size(); i++) {
+		for (int i = 0; i < misEntidades.size() && !ocupada; i++) {
 			double X = misEntidades.get(i).getPos().getX();
 			double Y = misEntidades.get(i).getPos().getY();
 
 			if ((X == (double) x) && (Y == (double) y))
-				toret = true;
+				ocupada = true;
 		}
 
-		return toret;
+		return ocupada;
 	}
 
 }
