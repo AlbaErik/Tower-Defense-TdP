@@ -16,6 +16,7 @@ public class Arquero extends Atacante {
 		super(x, y, m);
 		this.grafico = new ArqueroGrafico(x, y, m.getPanelMapa(), this);
 		this.movementSpeed = 1;
+		life = 100;
 		this.col = new ColisionadorAtacante(this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);

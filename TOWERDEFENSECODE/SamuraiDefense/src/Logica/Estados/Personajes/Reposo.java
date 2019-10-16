@@ -11,8 +11,7 @@ public class Reposo extends Estado{
 
 	@Override
 	public void ejecutar() {
-		// TODO Auto-generated method stub
-		
+		entidad.getGrafico().posicionInicial();
 	}
 
 }

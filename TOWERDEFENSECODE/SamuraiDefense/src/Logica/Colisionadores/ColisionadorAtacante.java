@@ -82,7 +82,8 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(Piedra e) {
-		quienSeFrena(e);
+		//quienSeFrena(e);
+		ataq.cambiarEstado(new Ataque(ataq));
 	}
 
 	@Override
@@ -92,29 +93,29 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(Ninja e) {
-		quienSeFrena(e);
+		ataq.cambiarEstado(new Reposo(ataq));
 	}
 	
 	@Override
 	public void serChocado(Espadachin e) {
-		quienSeFrena(e);
+		ataq.cambiarEstado(new Reposo(ataq));
 
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		quienSeFrena(e);
+		ataq.cambiarEstado(new Reposo(ataq));
 
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		quienSeFrena(e);
+		ataq.cambiarEstado(new Reposo(ataq));
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		quienSeFrena(e);
+		ataq.cambiarEstado(new Reposo(ataq));
 	}
 
 	public void serChocado(FlechaAtacante flechaAtacante) {
