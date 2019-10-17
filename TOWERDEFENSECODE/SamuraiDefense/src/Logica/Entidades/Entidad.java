@@ -29,6 +29,7 @@ public abstract class Entidad {
 	}
 	
 	public void morir() {
+		System.out.println("Mato flecha def");
 		mapa.eliminarEntidad(this.getLugarEnMapa());
 		
 	}

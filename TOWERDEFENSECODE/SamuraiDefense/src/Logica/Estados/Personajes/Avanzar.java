@@ -11,11 +11,17 @@ public class Avanzar extends EstadoPersonaje {
 
 	@Override
 	public void ejecutar() {
-		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
-
-		p.running();
-
-		personaje.getInteligencia().mover();
+		
+		if(personaje.getLife() <= 0) {
+			System.out.println("Vida del personaje: " + personaje.getClass() + personaje.getLife());
+			personaje.cambiarEstado(new Morir(personaje));
+			personaje.morir();
+		}else {
+			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+			p.running();
+			personaje.getInteligencia().mover();
+		}
+		
 	}
 
 }

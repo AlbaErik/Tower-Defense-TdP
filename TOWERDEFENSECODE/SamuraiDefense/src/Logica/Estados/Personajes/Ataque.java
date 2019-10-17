@@ -11,10 +11,18 @@ public class Ataque extends EstadoPersonaje{
 
 	@Override
 	public void ejecutar() {
-		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
-		p.atack();
+		if(personaje.getLife() <= 0) {
+			System.out.println("Vida del personaje: " + personaje.getClass() + personaje.getLife());
+			personaje.cambiarEstado(new Morir(personaje));
+			personaje.morir();
+		}else {
+			personaje.atacar();
 
-		personaje.atacar();
+			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+			p.atack();
+
+		}
+		
 	}
 
 }

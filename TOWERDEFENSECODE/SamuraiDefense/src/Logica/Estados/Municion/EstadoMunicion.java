@@ -12,7 +12,8 @@ public class EstadoMunicion extends Estado{
 
 	@Override
 	public void ejecutar() {
-		mun.getIntel().mover();
+		
+		mun.getInteligencia().mover();
 	}
 
 }

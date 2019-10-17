@@ -28,32 +28,37 @@ public class ColisionadorMunicionDef extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();		
 	}
 
 	@Override
@@ -96,7 +101,6 @@ public class ColisionadorMunicionDef extends Colisionador{
 	public void serChocado(Piedra e) {
 		int daño = mun.getDaño();
 		e.setLife(daño);
-		System.out.println("Piedra : " + e.hashCode() + " Vida: "+ e.getLife());
 		mun.morir();
 	}
 

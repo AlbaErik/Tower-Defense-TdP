@@ -1,6 +1,5 @@
 package Logica.Colisionadores;
 
-import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Atacante;

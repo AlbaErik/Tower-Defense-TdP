@@ -5,7 +5,7 @@ import Grafica.Entidades.Defensores.ArqueroEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
-import Logica.Estados.Personajes.Reposo;
+import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -19,7 +19,7 @@ public class ArqueroElite extends Defensor {
 		intel = new InteligenciaDefensor(this);
 		arma = new Arco(this, m);
 		life = 800;
-		estado = new Reposo(this);
+		estado = new Ataque(this);
 	}
 
 	@Override
