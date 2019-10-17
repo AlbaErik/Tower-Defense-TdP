@@ -45,6 +45,6 @@ public class Barro extends Obstaculo{
 		// TODO Auto-generated method stub
 		return new Barro(0, 0, mapa);
 	}
-
+	
 
 }

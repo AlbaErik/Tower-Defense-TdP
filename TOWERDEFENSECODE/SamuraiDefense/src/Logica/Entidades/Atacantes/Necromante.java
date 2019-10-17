@@ -14,7 +14,7 @@ public class Necromante extends Atacante {
 	public Necromante(int x, int y, Mapa m) {
 		super(x, y, m);
 		this.grafico = new NecromanteGrafico(x, y, m.getPanelMapa(), this);
-		this.movementSpeed = 3;
+		this.movementSpeed = 2.5;
 		life = 150;
 		this.col = new ColisionadorAtacante(this);
 		intel = new InteligenciaAtacante(this);
@@ -46,5 +46,6 @@ public class Necromante extends Atacante {
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }

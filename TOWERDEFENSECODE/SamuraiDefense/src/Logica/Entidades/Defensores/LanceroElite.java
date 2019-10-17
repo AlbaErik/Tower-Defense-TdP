@@ -41,4 +41,5 @@ public class LanceroElite extends Defensor {
 		// TODO Auto-generated method stub
 		
 	}
+
 }

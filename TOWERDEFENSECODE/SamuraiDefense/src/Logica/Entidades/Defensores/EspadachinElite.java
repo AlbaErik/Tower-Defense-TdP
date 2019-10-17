@@ -46,5 +46,6 @@ public class EspadachinElite extends Defensor {
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }

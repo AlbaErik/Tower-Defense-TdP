@@ -13,6 +13,11 @@ public class Morir extends EstadoPersonaje{
 	public void ejecutar() {
 		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
 		p.death();
+		
+		personaje.restarTiempoMuerte();
+		
+		if(personaje.getTiempoMuerte() <= 0)
+			personaje.morir();
 	}
 
 }

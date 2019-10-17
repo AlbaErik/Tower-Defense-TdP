@@ -45,4 +45,5 @@ public class Ninja extends Atacante {
 		
 	}
 
+
 }

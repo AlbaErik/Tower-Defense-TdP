@@ -43,17 +43,7 @@ public class NinjaElite extends Defensor {
 
 	@Override
 	public void atacar() {
-		/* todavia no hay disparos con shurikens
-		if (contadorDisparos % 50 == 0) {
-			double x = this.getPos().getX();
-			int y = (int) this.getPos().getY();
-			Municion mun = arma.crearMunicionDefensor();
-			mun.cambiarPosLogica(x, y);
-			mapa.agregarEntidadAlCampoEnPosActual(mun);
-			contadorDisparos = 0;
-		}
-		contadorDisparos++;
-		*/		
+		
 	}
-
+	
 }

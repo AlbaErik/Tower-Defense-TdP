@@ -30,5 +30,5 @@ public class LanzaDefensor extends Municion {
 		// TODO Auto-generated method stub
 		return daño;
 	}
-
+	
 }

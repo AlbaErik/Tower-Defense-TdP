@@ -30,5 +30,6 @@ public class ShurikenAtacante extends Municion {
 		// TODO Auto-generated method stub
 		return daño;
 	}
+	
 
 }

@@ -10,10 +10,20 @@ public abstract class Personaje extends Entidad {
 	protected int attackSpeed;
 	protected Arma Weapon;
 	protected int contadorDisparos;
+	protected int tiempoMuerte;
 	
 	public Personaje(int x,int y, Mapa m) {
 		super(x,y,m);
 		contadorDisparos = 0;
+		tiempoMuerte = 2000;
+	}
+	
+	public void restarTiempoMuerte() {
+		tiempoMuerte--;
+	}
+	
+	public int getTiempoMuerte() {
+		return tiempoMuerte;
 	}
 	
 	public  int getDamage() {

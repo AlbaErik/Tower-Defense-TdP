@@ -47,6 +47,6 @@ public class Ejecutor extends Atacante {
 		// TODO Auto-generated method stub
 		
 	}
-
-
+	
+	
 }

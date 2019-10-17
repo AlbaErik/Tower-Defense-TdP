@@ -39,5 +39,6 @@ public class SamuraiElite extends Defensor {
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }

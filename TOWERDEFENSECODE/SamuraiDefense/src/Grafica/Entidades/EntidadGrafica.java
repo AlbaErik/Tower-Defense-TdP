@@ -21,7 +21,7 @@ public abstract class EntidadGrafica {
 		mientidad = e;
 		mapaPanel = m;
 		pos = new Point(x, y);
-		graficos = new ImageIcon[3];
+		graficos = new ImageIcon[4];
 		graficoActual = new JLabel();
 	}
 

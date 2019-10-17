@@ -26,27 +26,27 @@ public class Mapa {
 		juego = j;
 		nivel = j.getNivel();
 		misEntidades = new LinkedList<Entidad>();
-		//misDefensores = new LinkedList<Defensor>();
+		// misDefensores = new LinkedList<Defensor>();
 		mapagrafico = new PanelMapa(this);
 		tienda = j.getTienda();
 	}
-	
+
 	public void agregarAtacante(Atacante e) {
 		misAtacantes.add(e);
 	}
-	
+
 	public void agregarDefensor(Defensor e) {
 		misDefensores.add(e);
 	}
-	
+
 	public void agregarEntidadAlCampo(Entidad e) {
 		mapagrafico.agregarEntidad(e);
 	}
-	
+
 	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
 		mapagrafico.agregarEntidadEnPosActual(e);
 	}
-	
+
 	/**
 	 * Devuelve el ancho del mapa
 	 * 
@@ -83,17 +83,22 @@ public class Mapa {
 
 	public void setEntidad(Entidad d) {
 		misEntidades.addFirst(d);
-		d.setLugarEnMapa(misEntidades.lastIndexOf(misEntidades.getFirst()));
-		
 	}
 
 	public Entidad getEntidad() {
 		return misEntidades.getFirst();
 	}
 
-	public void eliminarEntidad(int i) {// Elimina al defensor de la lista de defensores
-		mapagrafico.eliminarDefensorG(misEntidades.get(i));
-		misEntidades.remove(i);
+	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
+		Entidad actual = misEntidades.getFirst();
+		for (Entidad i : misEntidades) {
+			if (i.hashCode() == e.hashCode())
+				actual = i;
+
+		}
+
+		mapagrafico.eliminarDefensorG(actual);
+		misEntidades.remove(actual);
 	}
 
 	public LinkedList<Entidad> getCol() {
@@ -114,7 +119,7 @@ public class Mapa {
 
 	public boolean hayEnPos(int x, int y) {
 		boolean ocupada = false;
-		
+
 		for (int i = 0; i < misEntidades.size() && !ocupada; i++) {
 			double X = misEntidades.get(i).getPos().getX();
 			double Y = misEntidades.get(i).getPos().getY();

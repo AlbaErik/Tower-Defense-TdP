@@ -41,7 +41,6 @@ public class NinjaEliteGrafico extends DefensorGrafico {
 	public void morir() {// QUIERO QUE ME MUESTRE LA ANIMACION Y QUE DESPUES MUERA
 		this.getGraficoActual().setIcon(graficos[2]);
 		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
-		mapaPanel.getMapa().eliminarEntidad(mientidad.getLugarEnMapa());
-		mapaPanel.eliminarDefensorG(this.getEntidad());
+		mapaPanel.getMapa().eliminarEntidad(mientidad);
 	}
 }

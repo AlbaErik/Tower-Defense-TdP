@@ -3,11 +3,9 @@ package Logica.Entidades;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Estados.Estado;
-import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
-import Logica.Estados.*;
 
 public abstract class Entidad {
 	protected int life;
@@ -27,11 +25,9 @@ public abstract class Entidad {
 		mover = true;
 		atacar = false;
 	}
-	
+
 	public void morir() {
-		System.out.println("Mato flecha def");
-		mapa.eliminarEntidad(this.getLugarEnMapa());
-		
+		mapa.eliminarEntidad(this);
 	}
 
 	public Inteligencia getInteligencia() {
@@ -68,18 +64,10 @@ public abstract class Entidad {
 		return grafico;
 	}
 
-	public void setLugarEnMapa(int i) {
-		lugarEnMapa = i;
-	}
-
-	public int getLugarEnMapa() {
-		return lugarEnMapa;
-	}
-
 	public abstract void chocar(Entidad e);
 
 	public abstract void ejecutarEstado();
-	
+
 	public void cambiarEstado(Estado e) {
 		estado = e;
 	}

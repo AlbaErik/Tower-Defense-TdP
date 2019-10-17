@@ -3,6 +3,7 @@ package Logica.Colisionadores;
 import Logica.Entidades.Atacantes.*;
 import Logica.Entidades.Defensores.*;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
+import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 
@@ -26,6 +27,7 @@ public abstract class Colisionador {
 	public abstract void serChocado(Barro barro);
 
 	public abstract void serChocado(FlechaAtacante flechaAtacante);
+	public abstract void serChocado(FlechaDefensor flechaAtacante);
 	
 
 

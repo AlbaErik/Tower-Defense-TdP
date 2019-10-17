@@ -12,16 +12,12 @@ import javax.swing.JPanel;
 
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Defensores.Defensor;
-import Logica.Entidades.Municiones.Municion;
 import Logica.Mapa.Mapa;
 //import Logica.Mapa.Posicion;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
 	protected Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
-	// private Image fondocongrilla;
-	// private JLabel fondomapa;
-	// private Posicion pos;
 	protected JLabel ninja;
 	protected Entidad entidad;
 	protected Mapa mapa;
@@ -111,9 +107,7 @@ public class PanelMapa extends JPanel {
 						
 			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 				aColocar.cambiarPosLogica(x, y);
-				
-				//mapa.agregarDefensor(aColocar);
-				
+								
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
 				add(nuevo);

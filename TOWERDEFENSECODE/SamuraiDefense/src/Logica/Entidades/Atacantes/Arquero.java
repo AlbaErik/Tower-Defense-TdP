@@ -50,5 +50,6 @@ public class Arquero extends Atacante {
 		}
 		contadorDisparos++;			
 	}
+	
 
 }

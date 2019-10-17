@@ -46,4 +46,5 @@ public class FlechaAtacante extends Municion {
 		return daño;
 	}
 
+
 }

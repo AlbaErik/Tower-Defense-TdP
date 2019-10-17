@@ -116,4 +116,10 @@ public class ColisionadorMunicionDef extends Colisionador{
 		
 	}
 
+	@Override
+	public void serChocado(FlechaDefensor flechaAtacante) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -31,4 +31,5 @@ public class LanzaAtacante extends Municion {
 		return daño;
 	}
 
+
 }
