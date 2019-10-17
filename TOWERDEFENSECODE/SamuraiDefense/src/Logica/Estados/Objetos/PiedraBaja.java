@@ -1,20 +1,20 @@
 package Logica.Estados.Objetos;
 
-import Logica.Entidades.Entidad;
-import Logica.Estados.Estado;
+import Grafica.Entidades.Obstaculos.VidaFinita.ObstaculoGrafico;
+import Logica.Entidades.Obstaculos.Obstaculo;
 
-public class PiedraBaja extends Estado{
+public class PiedraBaja extends EstadoObjeto {
 
-	public PiedraBaja(Entidad e) {
+	public PiedraBaja(Obstaculo e) {
 		super(e);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void ejecutar() {
-		entidad.getGrafico().morir(); //Simula una piedra con baja vida
-		if(entidad.getLife() <= 0) {
-			entidad.morir();
+		((ObstaculoGrafico) obs.getGrafico()).vidaBaja(); 		
+		if(obs.getLife() <= 0) {
+			obs.morir();
 		}
 		
 	}

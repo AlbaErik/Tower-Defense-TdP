@@ -3,6 +3,7 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.SamuraiEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
+import Logica.Estados.Personajes.Reposo;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -14,6 +15,7 @@ public class SamuraiElite extends Defensor {
 		super.col = new ColisionadorDefensor(this);
 		this.grafico=new SamuraiEliteGrafico(x,y,m.getPanelMapa(),this);
 		intel = new InteligenciaDefensor(this);
+		estado = new Reposo(this);
 	}
 
 	@Override

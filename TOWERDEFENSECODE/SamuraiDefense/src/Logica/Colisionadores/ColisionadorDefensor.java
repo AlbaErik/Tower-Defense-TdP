@@ -13,8 +13,8 @@ import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
+import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
-import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 import Logica.Estados.Personajes.*;
 
 public class ColisionadorDefensor extends Colisionador {
@@ -27,43 +27,32 @@ public class ColisionadorDefensor extends Colisionador {
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		e.mover(false);
-		e.atacar(true);
+		
 		e.cambiarEstado(new Ataque(e));
 	}
 
@@ -81,29 +70,21 @@ public class ColisionadorDefensor extends Colisionador {
 
 	@Override
 	public void serChocado(Ninja e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 
@@ -114,8 +95,6 @@ public class ColisionadorDefensor extends Colisionador {
 
 	@Override
 	public void serChocado(Necromante e) {
-		e.mover(false);
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
 	}
 

@@ -6,7 +6,7 @@ import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
 public class NecromanteGrafico extends AtacanteGrafico{
-	private String palabras[] = { "NecromanteRunning", "NecromanteAttacking", "NecromanteDying" };
+	private String palabras[] = { "NecromanteStanding", "NecromanteRunning", "NecromanteAttacking", "NecromanteDying" };
 
 	public NecromanteGrafico(int x, int y, PanelMapa m, Entidad e) {
 		super(x, y, m, e);

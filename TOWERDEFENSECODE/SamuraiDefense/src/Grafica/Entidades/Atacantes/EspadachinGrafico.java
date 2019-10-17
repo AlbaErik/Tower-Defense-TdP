@@ -6,7 +6,7 @@ import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
 public class EspadachinGrafico extends AtacanteGrafico {
-	private String palabras[] = { "EspadachinRunning", "EspadachinAttacking", "EspadachinDying" };
+	private String palabras[] = { "EspadachinStanding", "EspadachinRunning", "EspadachinAttacking", "EspadachinDying" };
 
 	public EspadachinGrafico(int x, int y, PanelMapa m, Entidad e) {
 		super(x, y, m, e);

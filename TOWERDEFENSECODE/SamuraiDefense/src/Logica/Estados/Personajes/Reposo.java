@@ -1,17 +1,20 @@
 package Logica.Estados.Personajes;
 
-import Logica.Entidades.Entidad;
-import Logica.Estados.Estado;
+import Grafica.Entidades.PersonajeGrafico;
+import Logica.Entidades.Personaje;
 
-public class Reposo extends Estado{
+public class Reposo extends EstadoPersonaje {
 
-	public Reposo(Entidad e) {
+	public Reposo(Personaje e) {
 		super(e);
+
 	}
 
 	@Override
 	public void ejecutar() {
-		entidad.getGrafico().posicionInicial();
+		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+		p.standing();
+
 	}
 
 }

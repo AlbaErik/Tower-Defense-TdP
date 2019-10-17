@@ -10,4 +10,19 @@ public class DefensorGrafico extends PersonajeGrafico {
 		super(x, y, m, e);
 	}
 
+	public void standing() {
+		this.getGraficoActual().setIcon(this.graficos[0]);
+	}
+	
+	public void running() {
+	}
+	
+	public void atack() {
+		this.getGraficoActual().setIcon(this.graficos[1]);
+	}
+
+	public void death() {
+		this.getGraficoActual().setIcon(this.graficos[2]);
+	}
+	
 }

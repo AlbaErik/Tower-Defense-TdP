@@ -1,19 +1,20 @@
 package Logica.Estados.Personajes;
 
+import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
-import Logica.Estados.Estado;
 
-public class Ataque extends Estado{
+public class Ataque extends EstadoPersonaje{
 
 	public Ataque(Personaje e) {
 		super(e);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void ejecutar() {
-		entidad.getInteligencia().atacarIA();
-		((Personaje)entidad).atacar();
+		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+		p.atack();
+
+		personaje.atacar();
 	}
 
 }

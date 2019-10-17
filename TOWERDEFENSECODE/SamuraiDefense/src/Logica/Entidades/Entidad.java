@@ -7,6 +7,7 @@ import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
+import Logica.Estados.*;
 
 public abstract class Entidad {
 	protected int life;
@@ -23,31 +24,13 @@ public abstract class Entidad {
 	public Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
-		grafico = new EntidadGrafica(x, y, m.getPanelMapa(), this);
 		mover = true;
 		atacar = false;
-		estado = new Reposo(this);
 	}
 	
 	public void morir() {
 		mapa.eliminarEntidad(this.getLugarEnMapa());
 		
-	}
-
-	public boolean mePuedoMover() {
-		return mover;
-	}
-
-	public void mover(boolean mov) {
-		mover = mov;
-	}
-
-	public boolean puedoAtacar() {
-		return atacar;
-	}
-
-	public void atacar(boolean ata) {
-		atacar = ata;
 	}
 
 	public Inteligencia getInteligencia() {

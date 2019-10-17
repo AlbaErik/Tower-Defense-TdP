@@ -1,6 +1,7 @@
 package Logica.Colisionadores;
 
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Atacantes.Ejecutor;
@@ -14,8 +15,8 @@ import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
+import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
-import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 import Logica.Estados.Personajes.*;
 
 public class ColisionadorAtacante extends Colisionador {
@@ -26,97 +27,83 @@ public class ColisionadorAtacante extends Colisionador {
 		ataq = a;
 	}
 
-	/*
-	 * Determina que entidad esta por detras de otra para frenarla mas tarde.
-	 */
-	private void quienSeFrena(Entidad e) {
-		double Xataq = ataq.getPos().getX();
-		double XserChocado = e.getPos().getX();
-
-		if (Xataq > XserChocado && e.puedoAtacar())
-			ataq.mover(false);
-	}
-
-
 	@Override
 	public void serChocado(ArqueroElite e) {
-		// quienSeFrena(e).mover(false);
 		e.cambiarEstado(new Ataque(e));
-		e.atacar(true);
+
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		// quienSeFrena(e).mover(false);
 		e.cambiarEstado(new Ataque(e));
-		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		e.atacar(true);
 		e.cambiarEstado(new Ataque(e));
-		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		// quienSeFrena(e).mover(false);
 		e.cambiarEstado(new Ataque(e));
-		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		// quienSeFrena(e).mover(false);
 		e.cambiarEstado(new Ataque(e));
-		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		// quienSeFrena(e).mover(false);
 		e.cambiarEstado(new Ataque(e));
-		e.atacar(true);
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
-		//quienSeFrena(e);
 		ataq.cambiarEstado(new Ataque(ataq));
 	}
 
 	@Override
 	public void serChocado(Barro e) {
-		// quienSeFrena(e).mover(false);
 	}
 
+	
+	private Personaje quienSeFrena(Personaje p) {
+		double x = ataq.getPos().getX();
+		Personaje toret = ataq;
+		if(p.getPos().getX() > x)
+			toret = p;
+		return toret;
+	}
+	
+	
 	@Override
 	public void serChocado(Ninja e) {
-		ataq.cambiarEstado(new Reposo(ataq));
+		Personaje p = quienSeFrena(e);
+		p.cambiarEstado(new Reposo(p));
 	}
 	
 	@Override
 	public void serChocado(Espadachin e) {
-		ataq.cambiarEstado(new Reposo(ataq));
-
+		Personaje p = quienSeFrena(e);
+		p.cambiarEstado(new Reposo(p));
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		ataq.cambiarEstado(new Reposo(ataq));
-
+		Personaje p = quienSeFrena(e);
+		p.cambiarEstado(new Reposo(p));
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		ataq.cambiarEstado(new Reposo(ataq));
-	}
+		Personaje p = quienSeFrena(e);
+		p.cambiarEstado(new Reposo(p));	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		ataq.cambiarEstado(new Reposo(ataq));
-	}
+		Personaje p = quienSeFrena(e);
+		p.cambiarEstado(new Reposo(p));	}
 
 	public void serChocado(FlechaAtacante flechaAtacante) {
 		// TODO Auto-generated method stub

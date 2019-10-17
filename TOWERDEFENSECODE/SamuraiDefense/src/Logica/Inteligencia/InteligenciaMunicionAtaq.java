@@ -19,10 +19,4 @@ public class InteligenciaMunicionAtaq extends Inteligencia {
 		}
 	}
 
-	@Override
-	public void atacarIA() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

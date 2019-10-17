@@ -1,15 +1,12 @@
 package Grafica.Entidades.Atacantes;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Atacantes.Ninja;
-import Logica.Mapa.Mapa;
 
 public class NinjaGrafico extends AtacanteGrafico {
-	private String palabras[] = { "NinjaRunning", "NinjaAttacking", "NinjaDying" };
+	private String palabras[] = { "NinjaStanding", "NinjaRunning", "NinjaAttacking", "NinjaDying" };
 
 	public NinjaGrafico(int x, int y, PanelMapa m, Entidad e) {
 		super(x, y, m, e);
@@ -18,7 +15,7 @@ public class NinjaGrafico extends AtacanteGrafico {
 		for (int i = 0; i < palabras.length; i++) {
 			graficos[i] = new ImageIcon("Sprites/Personajes/Atacantes/" + palabras[i] + ".gif");
 		}
-		graficos[3]=new ImageIcon("Sprites/Personajes/Atacantes/NinjaStanding.png");
+		graficos[3] = new ImageIcon("Sprites/Personajes/Atacantes/NinjaStanding.png");
 		setGraficoInicio(x, y);
 	}
 
@@ -30,17 +27,6 @@ public class NinjaGrafico extends AtacanteGrafico {
 	public void cambiarPos(int x, int y) {// Tiene que estar si o si en cada clase
 		pos.setLocation(x, y);
 		graficoActual.setBounds(x, y, 100, 65);// 80
-	}
-	
-	public AtacanteGrafico copyEntidadGrafica() {
-		NinjaGrafico ret = this;
-		try {
-			ret = (NinjaGrafico) super.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		return ret;
 	}
 
 }

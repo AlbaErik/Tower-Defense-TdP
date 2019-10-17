@@ -4,6 +4,7 @@ import Grafica.Entidades.Municiones.MunicionesAtacante.FlechaAtacanteGrafico;
 import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionAtaq;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
+import Logica.Estados.Municion.EstadoMunicion;
 import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaMunicionAtaq;
@@ -16,8 +17,8 @@ public class FlechaAtacante extends Municion {
 		intel = new InteligenciaMunicionAtaq(this);
 		velocidad = 12.5;
 		grafico = new FlechaAtacanteGrafico(x, y, mapa.getPanelMapa(), this);
-		estado = new Avanzar(this);
-		col = new ColisionadorMunicionAtaq();
+		estado = new EstadoMunicion(this);
+		col = new ColisionadorMunicionAtaq(this);
 		daño = 15;
 	}
 	

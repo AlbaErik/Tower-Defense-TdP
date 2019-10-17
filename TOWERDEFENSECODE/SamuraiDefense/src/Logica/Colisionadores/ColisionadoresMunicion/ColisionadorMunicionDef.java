@@ -15,8 +15,8 @@ import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
+import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
-import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
 public class ColisionadorMunicionDef extends Colisionador{
 	

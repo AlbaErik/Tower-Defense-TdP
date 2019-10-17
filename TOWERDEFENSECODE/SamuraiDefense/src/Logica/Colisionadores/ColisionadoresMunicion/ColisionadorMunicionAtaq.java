@@ -12,11 +12,18 @@ import Logica.Entidades.Defensores.EspadachinElite;
 import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SamuraiElite;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
+import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
-import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
 public class ColisionadorMunicionAtaq extends Colisionador{
+	
+	private Municion mun;
+	
+	public ColisionadorMunicionAtaq(Municion m) {
+		mun = m;
+	}
 
 	@Override
 	public void serChocado(Ninja e) {
@@ -86,8 +93,10 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 
 	@Override
 	public void serChocado(Piedra e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		System.out.println("Piedra : " + e.hashCode() + " Vida: "+ e.getLife());
+		mun.morir();		
 	}
 
 	@Override

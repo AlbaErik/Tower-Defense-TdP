@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 import Logica.Entidades.*;
 import Logica.Entidades.Obstaculos.Obstaculo;
-import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
+import Logica.Entidades.Obstaculos.ConVida.Piedra;
 
 public abstract class Nivel {
 

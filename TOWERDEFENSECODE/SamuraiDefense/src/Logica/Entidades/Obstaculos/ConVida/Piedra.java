@@ -1,4 +1,4 @@
-package Logica.Entidades.Obstaculos.VidaFinita;
+package Logica.Entidades.Obstaculos.ConVida;
 
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Obstaculos.VidaFinita.PiedraGrafica;

@@ -6,7 +6,7 @@ import Grafica.Entidades.EntidadGrafica;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
-public class PiedraGrafica extends EntidadGrafica {
+public class PiedraGrafica extends ObstaculoGrafico {
 	private String palabras[] = { "PiedraVidaAlta", "PiedraVidaMedia", "PiedraVidaBaja" };
 
 	public PiedraGrafica(int x, int y, PanelMapa m, Entidad e) {
@@ -24,6 +24,18 @@ public class PiedraGrafica extends EntidadGrafica {
 		graficoActual.setBounds(x, y, 120, 80);
 	}
 
+	public void vidaAlta() {
+		this.getGraficoActual().setIcon(this.graficos[0]);
+	}
 
+	public void vidaMedia() {
+		this.getGraficoActual().setIcon(this.graficos[1]);
+
+	}
+
+	public void vidaBaja() {
+		this.getGraficoActual().setIcon(this.graficos[2]);
+
+	}
 
 }

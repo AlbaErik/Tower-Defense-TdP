@@ -6,7 +6,7 @@ import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
 public class EjecutorGrafico extends AtacanteGrafico {
-	private String palabras[] = { "EjecutorRunning", "EjecutorAttacking", "EjecutorDying" };
+	private String palabras[] = { "EjecutorStanding", "EjecutorRunning", "EjecutorAttacking", "EjecutorDying" };
 
 	public EjecutorGrafico(int x, int y, PanelMapa m, Entidad e) {
 		super(x, y, m, e);
@@ -15,7 +15,7 @@ public class EjecutorGrafico extends AtacanteGrafico {
 		for (int i = 0; i < palabras.length; i++) {
 			graficos[i] = new ImageIcon("Sprites/Personajes/Atacantes/" + palabras[i] + ".gif");
 		}
-		graficos[3]=new ImageIcon("Sprites/Personajes/Atacantes/EjecutorStanding.png");
+		graficos[3] = new ImageIcon("Sprites/Personajes/Atacantes/EjecutorStanding.png");
 		setGraficoInicio(x, y);
 	}
 

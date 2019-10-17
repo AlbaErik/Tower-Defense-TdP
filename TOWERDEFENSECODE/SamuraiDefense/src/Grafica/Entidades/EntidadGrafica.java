@@ -9,7 +9,7 @@ import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 import Logica.Mapa.Posicion;
 
-public class EntidadGrafica {
+public abstract class EntidadGrafica {
 	protected PanelMapa mapaPanel;
 	protected ImageIcon graficos[];
 	protected JLabel graficoActual;
@@ -56,18 +56,6 @@ public class EntidadGrafica {
 
 	public void setY(int y) {
 		pos.y = y;
-	}
-
-	public void posicionInicial() {
-		this.getGraficoActual().setIcon(graficos[0]);
-	}
-
-	public void atacar() {
-		this.getGraficoActual().setIcon(graficos[1]);
-	}
-
-	public void morir() {
-		this.getGraficoActual().setIcon(graficos[2]);
 	}
 
 }

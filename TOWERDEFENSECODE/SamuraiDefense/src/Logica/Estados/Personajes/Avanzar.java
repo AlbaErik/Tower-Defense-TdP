@@ -1,17 +1,21 @@
 package Logica.Estados.Personajes;
 
-import Logica.Entidades.Entidad;
-import Logica.Estados.Estado;
+import Grafica.Entidades.PersonajeGrafico;
+import Logica.Entidades.Personaje;
 
-public class Avanzar extends Estado{
+public class Avanzar extends EstadoPersonaje {
 
-	public Avanzar(Entidad e) {
+	public Avanzar(Personaje e) {
 		super(e);
 	}
 
 	@Override
 	public void ejecutar() {
-		entidad.getInteligencia().mover();
+		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+
+		p.running();
+
+		personaje.getInteligencia().mover();
 	}
 
 }

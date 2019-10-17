@@ -3,8 +3,8 @@ package Logica.Colisionadores;
 import Logica.Entidades.Atacantes.*;
 import Logica.Entidades.Defensores.*;
 import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
+import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
-import Logica.Entidades.Obstaculos.VidaFinita.Piedra;
 
 public abstract class Colisionador {
 		
