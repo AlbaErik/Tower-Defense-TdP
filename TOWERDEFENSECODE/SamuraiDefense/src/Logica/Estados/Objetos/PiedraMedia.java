@@ -11,7 +11,9 @@ public class PiedraMedia extends EstadoObjeto {
 
 	@Override
 	public void ejecutar() {
-		((ObstaculoGrafico) obs.getGrafico()).vidaMedia(); // Simula la piedra con vida media
+		System.out.println("Vida de la piedra: " + obs.getLife());
+
+		((ObstaculoGrafico) obs.getGrafico()).vidaMedia();
 		if (obs.getLife() < 40 && obs.getLife() > 20) {
 			obs.cambiarEstado(new PiedraBaja(obs));
 		}

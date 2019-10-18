@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes;
 
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
 
 public class Morir extends EstadoPersonaje{
@@ -11,10 +10,8 @@ public class Morir extends EstadoPersonaje{
 
 	@Override
 	public void ejecutar() {
-		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
-		p.death();
-		
-		personaje.restarTiempoMuerte();
+				
+		personaje.restarTiempoMuerte(); //Da tiempo a que se vea la animacion de la muerte del personaje
 		
 		if(personaje.getTiempoMuerte() <= 0)
 			personaje.morir();

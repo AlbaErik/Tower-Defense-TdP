@@ -99,6 +99,7 @@ public class ColisionadorMunicionDef extends Colisionador{
 
 	@Override
 	public void serChocado(Piedra e) {
+		System.out.println("Choco con piedra");
 		int daño = mun.getDaño();
 		e.setLife(daño);
 		mun.morir();
@@ -111,13 +112,13 @@ public class ColisionadorMunicionDef extends Colisionador{
 	}
 
 	@Override
-	public void serChocado(FlechaAtacante flechaAtacante) {
+	public void serChocado(FlechaAtacante flecha) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void serChocado(FlechaDefensor flechaAtacante) {
+	public void serChocado(FlechaDefensor flecha) {
 		// TODO Auto-generated method stub
 		
 	}

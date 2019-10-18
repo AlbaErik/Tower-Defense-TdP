@@ -15,7 +15,7 @@ public class Ejecutor extends Atacante {
 		super(x, y, m);
 		this.grafico = new EjecutorGrafico(x, y, m.getPanelMapa(), this);
 		this.movementSpeed = 1;
-		life = 200;
+		life = 100;
 		this.col = new ColisionadorAtacante(this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);

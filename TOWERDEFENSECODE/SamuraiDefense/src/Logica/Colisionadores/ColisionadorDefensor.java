@@ -53,7 +53,7 @@ public class ColisionadorDefensor extends Colisionador {
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		
+
 		e.cambiarEstado(new Ataque(e));
 	}
 
@@ -102,7 +102,7 @@ public class ColisionadorDefensor extends Colisionador {
 	@Override
 	public void serChocado(FlechaDefensor flechaAtacante) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

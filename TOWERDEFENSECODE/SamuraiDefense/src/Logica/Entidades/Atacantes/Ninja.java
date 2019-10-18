@@ -13,7 +13,7 @@ public class Ninja extends Atacante {
 	public Ninja(int x, int y, Mapa m) {
 		super(x, y, m);
 		intel = new InteligenciaAtacante(this);
-		this.life = 200;
+		this.life = 100;
 		this.damage = 30;
 		this.attackSpeed = 5;
 		this.movementSpeed = 1.5;

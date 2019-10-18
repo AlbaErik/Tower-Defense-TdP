@@ -15,7 +15,7 @@ public abstract class Personaje extends Entidad {
 	public Personaje(int x,int y, Mapa m) {
 		super(x,y,m);
 		contadorDisparos = 0;
-		tiempoMuerte = 2000;
+		tiempoMuerte = 20;
 	}
 	
 	public void restarTiempoMuerte() {

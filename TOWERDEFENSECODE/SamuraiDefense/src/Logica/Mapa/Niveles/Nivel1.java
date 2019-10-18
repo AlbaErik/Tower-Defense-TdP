@@ -33,7 +33,7 @@ public class Nivel1 extends Nivel {
 	@Override
 	public LinkedList<Obstaculo> crearObstaculos() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 5;
+		int cantObstaculos = 1;
 		Random rand = new Random();
 		for(int i = 0 ; i < cantObstaculos ; i++) {
 			int k = rand.nextInt(obstaculos.size());

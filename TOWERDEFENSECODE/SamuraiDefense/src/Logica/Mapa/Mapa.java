@@ -26,7 +26,6 @@ public class Mapa {
 		juego = j;
 		nivel = j.getNivel();
 		misEntidades = new LinkedList<Entidad>();
-		// misDefensores = new LinkedList<Defensor>();
 		mapagrafico = new PanelMapa(this);
 		tienda = j.getTienda();
 	}
@@ -94,15 +93,10 @@ public class Mapa {
 		for (Entidad i : misEntidades) {
 			if (i.hashCode() == e.hashCode())
 				actual = i;
-
 		}
-
-		mapagrafico.eliminarDefensorG(actual);
+		
 		misEntidades.remove(actual);
-	}
-
-	public LinkedList<Entidad> getCol() {
-		return misEntidades;
+		mapagrafico.eliminarEntidad(actual);		
 	}
 
 	public LinkedList<Entidad> getColeccion() {

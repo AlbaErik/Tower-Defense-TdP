@@ -12,9 +12,13 @@ public class Reposo extends EstadoPersonaje {
 
 	@Override
 	public void ejecutar() {
-		if(personaje.getLife() <= 0) {
-			System.out.println("Vida del personaje: " + personaje.getClass() + personaje.getLife());
+		if(personaje.getLife() <= 0) {			
+			
+			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+			p.death();
 			personaje.cambiarEstado(new Morir(personaje));
+			personaje.prohibidoCambiarEstado();
+
 		}else {
 			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
 			p.standing();

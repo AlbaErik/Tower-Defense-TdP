@@ -18,7 +18,6 @@ import Logica.Mapa.Mapa;
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
 	protected Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
-	protected JLabel ninja;
 	protected Entidad entidad;
 	protected Mapa mapa;
 
@@ -29,15 +28,6 @@ public class PanelMapa extends JPanel {
 		this.addMouseListener(new OyenteMouse());
 	}
 
-	public void eliminar() {
-		ninja.setVisible(false);
-		this.remove(ninja);
-	}
-
-	public void ninja(JLabel n) {
-		ninja = n;
-	}
-
 	public Entidad getEntidadMapa() {
 		return entidad;
 	}
@@ -46,7 +36,7 @@ public class PanelMapa extends JPanel {
 		return mapa;
 	}
 
-	public void eliminarDefensorG(Entidad e) {
+	public void eliminarEntidad(Entidad e) {
 		JLabel d = e.getGrafico().getGraficoActual();
 		this.remove(d);
 		repaint();

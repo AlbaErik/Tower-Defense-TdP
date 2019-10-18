@@ -29,4 +29,20 @@ public class NinjaGrafico extends AtacanteGrafico {
 		graficoActual.setBounds(x, y, 100, 65);// 80
 	}
 
+	public void standing() {
+		getGraficoActual().setIcon(graficos[0]);
+	}
+	
+	public void running() {
+		getGraficoActual().setIcon(graficos[1]);
+	}
+	
+	public void atack() {
+		getGraficoActual().setIcon(graficos[2]);
+	}
+
+	public void death() {
+		getGraficoActual().setIcon(graficos[3]);
+	}
+	
 }

@@ -15,15 +15,13 @@ public abstract class Entidad {
 	protected int lugarEnMapa;
 	protected Colisionador col;
 	protected Inteligencia intel;
-	protected boolean mover;
-	protected boolean atacar;
 	protected Estado estado;
+	protected boolean permisoCambiarEstado;
 
 	public Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
-		mover = true;
-		atacar = false;
+		permisoCambiarEstado = true;
 	}
 
 	public void morir() {
@@ -68,7 +66,16 @@ public abstract class Entidad {
 
 	public abstract void ejecutarEstado();
 
+	public void prohibidoCambiarEstado() {
+		permisoCambiarEstado = false;
+	}
+	
 	public void cambiarEstado(Estado e) {
-		estado = e;
+		System.out.println("assdfasd");
+		if(permisoCambiarEstado) {
+			System.out.println("Se cambia el estado por: " + e.getClass());
+			estado = e;
+		}
+		
 	}
 }
