@@ -12,9 +12,7 @@ public class PiedraBaja extends EstadoObjeto {
 
 	@Override
 	public void ejecutar() {
-		System.out.println("Vida de la piedra: " + obs.getLife());
-
-		System.out.println("Vida de la piedra: " + obs.getLife());
+		
 		((ObstaculoGrafico) obs.getGrafico()).vidaBaja(); 		
 		if(obs.getLife() <= 0) {
 			obs.morir();

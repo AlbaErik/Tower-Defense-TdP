@@ -96,7 +96,6 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 	public void serChocado(Piedra e) {
 		int daño = mun.getDaño();
 		e.setLife(daño);
-		System.out.println("Piedra : " + e.hashCode() + " Vida: "+ e.getLife());
 		mun.morir();		
 	}
 

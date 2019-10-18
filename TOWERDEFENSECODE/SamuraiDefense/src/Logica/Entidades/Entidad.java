@@ -71,9 +71,7 @@ public abstract class Entidad {
 	}
 	
 	public void cambiarEstado(Estado e) {
-		System.out.println("assdfasd");
 		if(permisoCambiarEstado) {
-			System.out.println("Se cambia el estado por: " + e.getClass());
 			estado = e;
 		}
 		
