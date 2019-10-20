@@ -22,14 +22,19 @@ public class Ataque extends EstadoPersonaje {
 			if (personaje.getContador() % 50 == 0) {
 
 				personaje.atacar(aDestruir);
-				personaje.resetContador();
+				personaje.resetContador();				
+				
+				if(sePuedeAvanzar()) {
+					personaje.cambiarEstado(new Avanzar(personaje));
+				}
 			}
 			personaje.incrementarContador();
 			
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.attack();
-
 		}
+		
+		
 
 	}
 

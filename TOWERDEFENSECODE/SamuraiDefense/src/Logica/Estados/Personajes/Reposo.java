@@ -7,7 +7,6 @@ public class Reposo extends EstadoPersonaje {
 
 	public Reposo(Personaje e) {
 		super(e);
-
 	}
 
 	@Override
@@ -23,7 +22,21 @@ public class Reposo extends EstadoPersonaje {
 			p.standing();
 		}
 		
+		
+		if (personaje.getContador() % 50 == 0) {
+			
+			if(sePuedeAvanzar()) {
+				personaje.cambiarEstado(new Avanzar(personaje));
+			}
+			
+			personaje.resetContador();				
 
+		}
+		personaje.incrementarContador();
+		
+		
 	}
+
+	
 
 }

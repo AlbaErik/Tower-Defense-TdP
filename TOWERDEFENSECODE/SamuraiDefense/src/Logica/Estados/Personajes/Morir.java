@@ -10,7 +10,7 @@ public class Morir extends EstadoPersonaje{
 
 	@Override
 	public void ejecutar() {
-				
+		
 		personaje.restarTiempoMuerte(); //Da tiempo a que se vea la animacion de la muerte del personaje
 		
 		if(personaje.getTiempoMuerte() <= 0)

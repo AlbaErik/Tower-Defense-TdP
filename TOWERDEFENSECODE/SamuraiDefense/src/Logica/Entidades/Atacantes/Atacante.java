@@ -17,6 +17,11 @@ public abstract class Atacante extends Personaje implements Cloneable{
 	public Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
 		arma = new ArmaSimple(this, m);
+		direccion = -1;
+	}
+	
+	public int getDireccion() {
+		return direccion;
 	}
 	
 	public void disparar() {

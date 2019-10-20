@@ -14,7 +14,7 @@ public class EspadachinElite extends Defensor {
 	public EspadachinElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		this.life = 300;
-		this.damage = 50;
+		this.damage = 20;
 		this.attackSpeed = 2;
 		this.range = 1;
 		this.cost = 30;

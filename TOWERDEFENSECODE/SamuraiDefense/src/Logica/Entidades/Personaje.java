@@ -11,12 +11,15 @@ public abstract class Personaje extends Entidad {
 	protected Arma Weapon;
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
+	protected int direccion;
 	
 	public Personaje(int x,int y, Mapa m) {
 		super(x,y,m);
 		contadorDisparos = 0;
 		tiempoMuerte = 20;
 	}
+	
+	public abstract int getDireccion();
 	
 	public void restarTiempoMuerte() {
 		tiempoMuerte--;

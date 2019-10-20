@@ -26,6 +26,13 @@ public abstract class Entidad {
 		permisoCambiarEstado = true;
 	}
 	
+	public Mapa getMapa() {
+		return mapa;
+	}
+	
+	/*
+	 * Sirve para crear un delay a la hora de ejecutar una accion.
+	 */
 	public void incrementarContador() {
 		contador ++;
 	}
