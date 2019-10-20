@@ -38,5 +38,5 @@ public abstract class Personaje extends Entidad {
 		return attackSpeed;
 	}
 	
-	public abstract void atacar();
+	public abstract void atacar(Entidad aDestruir);
 }

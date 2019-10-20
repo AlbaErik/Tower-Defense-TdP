@@ -30,32 +30,39 @@ public class ColisionadorAtacante extends Colisionador {
 	@Override
 	public void serChocado(ArqueroElite e) {
 		e.cambiarEstado(new Ataque(e));
-
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(ataq);
+
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(ataq);
+
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(ataq);
+
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(ataq);
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(ataq);
 	}
 
 	@Override

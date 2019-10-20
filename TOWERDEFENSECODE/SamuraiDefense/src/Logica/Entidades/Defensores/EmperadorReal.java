@@ -16,6 +16,7 @@ public class EmperadorReal extends Defensor {
 		this.grafico = new EmperadorRealGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		estado = new Reposo(this);
+		life = 300;
 	}
 
 	@Override
@@ -35,9 +36,10 @@ public class EmperadorReal extends Defensor {
 	}
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
+	public void atacar(Entidad aDestruir) {
+		if(aDestruir != null) {
+			aDestruir.setLife(damage);
+		}
 	}
 
 }

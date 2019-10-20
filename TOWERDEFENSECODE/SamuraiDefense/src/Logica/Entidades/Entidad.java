@@ -17,11 +17,29 @@ public abstract class Entidad {
 	protected Inteligencia intel;
 	protected Estado estado;
 	protected boolean permisoCambiarEstado;
+	protected int contador = 0;
+	//El contador se usa para medir tiempo de ataque
 
 	public Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
 		permisoCambiarEstado = true;
+	}
+	
+	public void incrementarContador() {
+		contador ++;
+	}
+	
+	public int getContador() {
+		return contador;
+	}
+	
+	public void resetContador() {
+		contador = 0;
+	}
+	
+	public Estado getEstado() {
+		return estado;
 	}
 
 	public void morir() {

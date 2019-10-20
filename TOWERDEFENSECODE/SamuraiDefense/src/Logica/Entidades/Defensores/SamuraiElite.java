@@ -10,12 +10,13 @@ import Logica.Mapa.Mapa;
 
 public class SamuraiElite extends Defensor {
 
-	public SamuraiElite(int x,int y,Mapa m) {
-		super(x,y,m);
+	public SamuraiElite(int x, int y, Mapa m) {
+		super(x, y, m);
 		super.col = new ColisionadorDefensor(this);
-		this.grafico=new SamuraiEliteGrafico(x,y,m.getPanelMapa(),this);
+		this.grafico = new SamuraiEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		estado = new Reposo(this);
+		life = 150;
 	}
 
 	@Override
@@ -35,10 +36,10 @@ public class SamuraiElite extends Defensor {
 	}
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
+	public void atacar(Entidad aDestruir) {
+		if(aDestruir != null) {
+			aDestruir.setLife(damage);
+		}
 	}
-	
 
 }

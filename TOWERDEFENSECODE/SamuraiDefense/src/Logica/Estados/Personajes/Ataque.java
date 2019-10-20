@@ -12,17 +12,22 @@ public class Ataque extends EstadoPersonaje {
 	@Override
 	public void ejecutar() {
 		if (personaje.getLife() <= 0) {
-			
-			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+
+			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.death();
 			personaje.cambiarEstado(new Morir(personaje));
 			personaje.prohibidoCambiarEstado();
 
 		} else {
-			personaje.atacar();
+			if (personaje.getContador() % 50 == 0) {
 
+				personaje.atacar(aDestruir);
+				personaje.resetContador();
+			}
+			personaje.incrementarContador();
+			
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
-			p.atack();
+			p.attack();
 
 		}
 

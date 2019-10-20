@@ -72,11 +72,13 @@ public class ColisionadorDefensor extends Colisionador {
 	@Override
 	public void serChocado(Ninja e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(d);
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(d);
 	}
 
 	@Override
@@ -87,22 +89,23 @@ public class ColisionadorDefensor extends Colisionador {
 	@Override
 	public void serChocado(Ejecutor e) {
 		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(d);
 	}
 
+	@Override
+	public void serChocado(Necromante e) {
+		e.cambiarEstado(new Ataque(e));
+		e.getEstado().entidadADestruir(d);
+	}
+	
 	public void serChocado(FlechaAtacante e) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void serChocado(Necromante e) {
-		e.cambiarEstado(new Ataque(e));
-	}
-
-	@Override
 	public void serChocado(FlechaDefensor flechaAtacante) {
-		// TODO Auto-generated method stub
-
+		d.setLife(flechaAtacante.getDaño());
 	}
 
 }

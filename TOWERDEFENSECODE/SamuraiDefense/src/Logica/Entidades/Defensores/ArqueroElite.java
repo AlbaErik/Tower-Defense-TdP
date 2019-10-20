@@ -20,6 +20,8 @@ public class ArqueroElite extends Defensor {
 		arma = new Arco(this, m);
 		life = 800;
 		estado = new Ataque(this);
+		life = 140;
+		damage = 0;
 	}
 
 	@Override
@@ -34,17 +36,14 @@ public class ArqueroElite extends Defensor {
 
 	@Override
 	public void ejecutarEstado() {
-		estado.ejecutar();		
+		estado.ejecutar();
 	}
 
 	@Override
-	public void atacar() {
-		if (contadorDisparos % 50 == 0) {
-			Municion mun = arma.crearMunicionDefensor();
-			mapa.agregarEntidadAlCampoEnPosActual(mun);
-			contadorDisparos = 0;
-		}
-		contadorDisparos++;		
+
+	public void atacar(Entidad e) {
+		Municion mun = arma.crearMunicionDefensor();
+		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 
 }

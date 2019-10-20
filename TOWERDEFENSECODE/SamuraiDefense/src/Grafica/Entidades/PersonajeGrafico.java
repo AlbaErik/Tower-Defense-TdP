@@ -14,7 +14,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica{
 	
 	public abstract void running();
 
-	public abstract void atack();
+	public abstract void attack();
 
 	public abstract void death();
 	

@@ -19,6 +19,7 @@ public class NinjaElite extends Defensor {
 		intel = new InteligenciaDefensor(this);
 		arma = new LanzadorShurikens(this, m);
 		estado = new Reposo(this);
+		life = 190;
 	}
 
 	public EntidadGrafica getGrafico() {
@@ -42,8 +43,10 @@ public class NinjaElite extends Defensor {
 	}
 
 	@Override
-	public void atacar() {
-		
+	public void atacar(Entidad aDestruir) {
+		if(aDestruir != null) {
+			aDestruir.setLife(damage);
+		}
 	}
 	
 }

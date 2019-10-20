@@ -20,6 +20,7 @@ public class Espadachin extends Atacante {
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
+		damage = 40;
 	}
 
 	@Override
@@ -45,9 +46,10 @@ public class Espadachin extends Atacante {
 	}
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
+	public void atacar(Entidad aDestruir) {
+		if(aDestruir != null) {
+			aDestruir.setLife(damage);
+		}
 	}
 	
 }

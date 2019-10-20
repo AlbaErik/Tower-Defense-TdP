@@ -20,6 +20,7 @@ public class Necromante extends Atacante {
 		intel = new InteligenciaAtacante(this);
 		estado = new Avanzar(this);
 		arma = new Arco(this,m);
+		damage = 50;
 	}
 
 	public void chocar(Entidad e) {
@@ -42,9 +43,10 @@ public class Necromante extends Atacante {
 	}
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
+	public void atacar(Entidad aDestruir) {
+		if(aDestruir != null) {
+			aDestruir.setLife(damage);
+		}
 	}
 	
 

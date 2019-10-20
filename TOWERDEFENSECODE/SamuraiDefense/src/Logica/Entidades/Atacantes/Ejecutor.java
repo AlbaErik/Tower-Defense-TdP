@@ -20,6 +20,7 @@ public class Ejecutor extends Atacante {
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
+		damage = 10;
 	}
 	
 	public void chocar(Entidad e) {
@@ -43,9 +44,10 @@ public class Ejecutor extends Atacante {
 	}
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
+	public void atacar(Entidad aDestruir) {
+		if(aDestruir != null) {
+			aDestruir.setLife(damage);
+		}
 	}
 	
 	

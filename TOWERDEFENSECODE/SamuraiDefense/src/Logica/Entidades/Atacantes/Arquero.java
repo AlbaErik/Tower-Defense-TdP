@@ -21,6 +21,7 @@ public class Arquero extends Atacante {
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
+		damage = 0;
 	}
 
 	public void chocar(Entidad e) {
@@ -42,14 +43,9 @@ public class Arquero extends Atacante {
 	}
 
 	@Override
-	public void atacar() {
-		if (contadorDisparos % 50 == 0) {
-			Municion mun = arma.crearMunicionAtacante();
-			mapa.agregarEntidadAlCampoEnPosActual(mun);
-			contadorDisparos = 0;
-		}
-		contadorDisparos++;			
+	public void atacar(Entidad e) {
+		Municion mun = arma.crearMunicionAtacante();
+		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
-	
 
 }
