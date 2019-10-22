@@ -17,7 +17,13 @@ public abstract class EstadoPersonaje extends Estado{
 	protected boolean sePuedeAvanzar() {
 		int x = (int) personaje.getPos().getX();
 		int y = (int) personaje.getPos().getY();
-		return control.caminoLibre(x, y, personaje.getPos().getAncho(), personaje.getDireccion());
+		return control.hayEntidadEnRango(x, y, personaje.getPos().getAncho(), personaje.getDireccion());
+	}
+	
+	protected boolean chequearADistancia(int rango) {
+		int x = (int) personaje.getPos().getX() + personaje.getDireccion();
+		int y = (int) personaje.getPos().getY();
+		return control.hayEntidadEnRango(x, y, rango, personaje.getDireccion());
 	}
 
 }

@@ -1,11 +1,13 @@
-package Logica.Estados.Personajes;
+package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
+import Logica.Estados.Personajes.EstadoPersonaje;
+import Logica.Estados.Personajes.Morir;
 
-public class Reposo extends EstadoPersonaje {
+public class ReposoDefensor extends EstadoPersonaje {
 
-	public Reposo(Personaje e) {
+	public ReposoDefensor(Personaje e) {
 		super(e);
 	}
 
@@ -21,22 +23,15 @@ public class Reposo extends EstadoPersonaje {
 			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
 			p.standing();
 		}
-		
-		
+			
 		if (personaje.getContador() % 50 == 0) {
 			
-			if(sePuedeAvanzar()) {
-				personaje.cambiarEstado(new Avanzar(personaje));
+			if(!chequearADistancia(personaje.getRange())) {
+				personaje.cambiarEstado(new AtaqueDefensor(personaje));
 			}
 			
 			personaje.resetContador();				
-
 		}
-		personaje.incrementarContador();
-		
-		
+		personaje.incrementarContador();		
 	}
-
-	
-
 }

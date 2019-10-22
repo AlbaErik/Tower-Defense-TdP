@@ -25,7 +25,7 @@ public class Control {
 
 				double distX = Math.abs(e1.getX() - e2.getX());
 
-				boolean colisionX = distX < e1.getRectangle().getWidth() - 60;
+				boolean colisionX = distX < e1.getRectangle().getWidth() - 40;
 				boolean colisionY = e1.getY() == e2.getY();
 
 				if (ent1 != ent2 && colisionX && colisionY)
@@ -39,7 +39,7 @@ public class Control {
 	 * Esta funcion determina si hay entidades en un rago y direccion del mapa. 
 	 * La direccion a buscar depende del personaje que invoque la funcion.
 	 */
-	public boolean caminoLibre(int x, int y, int rango, int direccion) {
+	public boolean hayEntidadEnRango(int x, int y, int rango, int direccion) {
 		boolean avanzar = false;
 		while (rango >= 0 && !avanzar) {
 			avanzar = map.hayEnPos(x, y);

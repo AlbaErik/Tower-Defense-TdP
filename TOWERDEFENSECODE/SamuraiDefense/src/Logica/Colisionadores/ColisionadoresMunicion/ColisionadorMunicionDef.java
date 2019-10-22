@@ -99,9 +99,7 @@ public class ColisionadorMunicionDef extends Colisionador{
 
 	@Override
 	public void serChocado(Piedra e) {
-		int daño = mun.getDaño();
-		e.setLife(daño);
-		mun.morir();
+		
 	}
 
 	@Override

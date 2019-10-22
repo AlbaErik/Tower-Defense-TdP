@@ -1,11 +1,13 @@
-package Logica.Estados.Personajes;
+package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
+import Logica.Estados.Personajes.EstadoPersonaje;
+import Logica.Estados.Personajes.Morir;
 
-public class Ataque extends EstadoPersonaje {
+public class AtaqueDefensor extends EstadoPersonaje {
 
-	public Ataque(Personaje e) {
+	public AtaqueDefensor(Personaje e) {
 		super(e);
 	}
 
@@ -22,11 +24,12 @@ public class Ataque extends EstadoPersonaje {
 			if (personaje.getContador() % 50 == 0) {
 
 				personaje.atacar(aDestruir);
-				personaje.resetContador();				
+				personaje.resetContador();
 				
-				if(sePuedeAvanzar()) {
-					personaje.cambiarEstado(new Avanzar(personaje));
+				if(chequearADistancia(personaje.getRange())) {
+					personaje.cambiarEstado(new ReposoDefensor(personaje));
 				}
+				
 			}
 			personaje.incrementarContador();
 			

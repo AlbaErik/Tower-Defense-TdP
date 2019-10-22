@@ -11,7 +11,7 @@ public class InteligenciaMunicionDef extends Inteligencia{
 	@Override
 	public void mover() {
 
-		if(entidad.getPos().getX() < 900) {
+		if(entidad.getPos().getX() < 980) {
 			double x = entidad.getPos().getX() + ( (Municion)entidad).getVel();
 			int y =  (int) entidad.getPos().getY();
 			entidad.cambiarPosLogica(x, y);

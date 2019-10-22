@@ -17,7 +17,9 @@ import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
-import Logica.Estados.Personajes.*;
+import Logica.Estados.Personajes.Atacante.AtaqueEnemigo;
+import Logica.Estados.Personajes.Atacante.ReposoEnemigo;
+import Logica.Estados.Personajes.Defensor.AtaqueDefensor;
 
 public class ColisionadorAtacante extends Colisionador {
 
@@ -29,45 +31,47 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		e.cambiarEstado(new Ataque(e));
+		e.cambiarEstado(new AtaqueDefensor(e));
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		e.cambiarEstado(new Ataque(e));
+		e.cambiarEstado(new AtaqueDefensor(e));
 		e.getEstado().entidadADestruir(ataq);
 
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		e.cambiarEstado(new Ataque(e));
+		e.cambiarEstado(new AtaqueDefensor(e));
 		e.getEstado().entidadADestruir(ataq);
 
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		e.cambiarEstado(new Ataque(e));
+		e.cambiarEstado(new AtaqueDefensor(e));
 		e.getEstado().entidadADestruir(ataq);
 
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		e.cambiarEstado(new Ataque(e));
+		e.cambiarEstado(new AtaqueDefensor(e));
 		e.getEstado().entidadADestruir(ataq);
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		e.cambiarEstado(new Ataque(e));
+		e.cambiarEstado(new AtaqueDefensor(e));
 		e.getEstado().entidadADestruir(ataq);
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
-		ataq.cambiarEstado(new Ataque(ataq));
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
+		ataq.getEstado().entidadADestruir(e);
+
 	}
 
 	@Override
@@ -87,30 +91,30 @@ public class ColisionadorAtacante extends Colisionador {
 	@Override
 	public void serChocado(Ninja e) {
 		Personaje p = quienSeFrena(e);
-		p.cambiarEstado(new Reposo(p));
+		p.cambiarEstado(new ReposoEnemigo(p));
 	}
 	
 	@Override
 	public void serChocado(Espadachin e) {
 		Personaje p = quienSeFrena(e);
-		p.cambiarEstado(new Reposo(p));
+		p.cambiarEstado(new ReposoEnemigo(p));
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
 		Personaje p = quienSeFrena(e);
-		p.cambiarEstado(new Reposo(p));
+		p.cambiarEstado(new ReposoEnemigo(p));
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
 		Personaje p = quienSeFrena(e);
-		p.cambiarEstado(new Reposo(p));	}
+		p.cambiarEstado(new ReposoEnemigo(p));	}
 
 	@Override
 	public void serChocado(Necromante e) {
 		Personaje p = quienSeFrena(e);
-		p.cambiarEstado(new Reposo(p));	}
+		p.cambiarEstado(new ReposoEnemigo(p));	}
 
 	public void serChocado(FlechaAtacante flechaAtacante) {
 		// TODO Auto-generated method stub

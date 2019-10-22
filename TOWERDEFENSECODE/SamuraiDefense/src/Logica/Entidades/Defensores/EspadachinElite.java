@@ -4,7 +4,7 @@ import Armas.ArmaSimple;
 import Grafica.Entidades.Defensores.EspadachinEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
-import Logica.Estados.Personajes.Reposo;
+import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -22,7 +22,7 @@ public class EspadachinElite extends Defensor {
 		super.col = new ColisionadorDefensor(this);
 		intel = new InteligenciaDefensor(this);
 		arma = new ArmaSimple(this, m);
-		estado = new Reposo(this);
+		estado = new ReposoDefensor(this);
 	}
 
 	@Override

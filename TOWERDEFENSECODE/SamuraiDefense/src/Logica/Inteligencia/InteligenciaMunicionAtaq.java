@@ -10,7 +10,7 @@ public class InteligenciaMunicionAtaq extends Inteligencia {
 
 	@Override
 	public void mover() {
-		if (entidad.getPos().getX() > 0) {
+		if (entidad.getPos().getX() > -50) {
 			double x = entidad.getPos().getX() - ((Municion) entidad).getVel();
 			int y = (int) entidad.getPos().getY();
 			entidad.cambiarPosLogica(x, y);

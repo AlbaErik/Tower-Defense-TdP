@@ -4,7 +4,7 @@ import Armas.TiraLanzas;
 import Grafica.Entidades.Defensores.LanceroEliteGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
-import Logica.Estados.Personajes.Reposo;
+import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -17,7 +17,7 @@ public class LanceroElite extends Defensor {
 		this.grafico = new LanceroEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		arma = new TiraLanzas(this, m);
-		estado = new Reposo(this);
+		estado = new ReposoDefensor(this);
 		life = 200;
 	}
 
