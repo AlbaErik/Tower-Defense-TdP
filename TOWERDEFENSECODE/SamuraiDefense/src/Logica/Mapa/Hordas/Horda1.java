@@ -40,7 +40,6 @@ public class Horda1 extends Horda{
 		int ent = lista.size();
 		int i = rand.nextInt(ent);
 		return lista.get(i).clone();
-		//return clonador.clonarAtacantes(lista.get(i));
 	}
 
 }

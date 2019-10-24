@@ -6,7 +6,7 @@ import Logica.Mapa.Mapa;
 
 public abstract class Personaje extends Entidad {
 	protected int damage;
-	protected int range;
+	protected int range = 0;
 	protected int attackSpeed;
 	protected Arma Weapon;
 	protected int contadorDisparos;

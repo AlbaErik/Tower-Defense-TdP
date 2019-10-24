@@ -58,38 +58,44 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		// TODO Auto-generated method stub
-		
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();			
 	}
 
 	@Override

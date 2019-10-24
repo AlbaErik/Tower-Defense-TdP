@@ -2,6 +2,7 @@ package Logica.Estados.Personajes;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
+import Logica.Estados.Personajes.Atacante.AtaqueEnemigo;
 
 public class Avanzar extends EstadoPersonaje {
 
@@ -23,6 +24,10 @@ public class Avanzar extends EstadoPersonaje {
 			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
 			p.running();
 			personaje.getInteligencia().mover();
+			
+			if(chequearADistancia(personaje.getRange())) {
+				personaje.cambiarEstado(new AtaqueEnemigo(personaje));
+			}
 		}
 		
 	}

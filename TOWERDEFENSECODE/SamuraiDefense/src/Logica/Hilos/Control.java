@@ -39,15 +39,21 @@ public class Control {
 	 * Esta funcion determina si hay entidades en un rago y direccion del mapa. 
 	 * La direccion a buscar depende del personaje que invoque la funcion.
 	 */
-	public boolean hayEntidadEnRango(int x, int y, int rango, int direccion) {
+	public Entidad hayEntidadEnRango(int x, int y, int rango, int direccion, Entidad miEntidad) {
 		boolean avanzar = false;
-		while (rango >= 0 && !avanzar) {
+		Entidad ent = null;
+		while (rango > 0 && !avanzar) {
 			avanzar = map.hayEnPos(x, y);
+			if(avanzar) {
+				System.out.println("Se encontro la entidad: " + map.getEntidadEnPos(x, y).getClass());
+				ent = map.getEntidadEnPos(x, y);
+				ent.chocar(miEntidad);
+			}
 			rango--;
 			x += direccion;
 		}
-
-		return avanzar;
+		
+		return ent;
 	}
 
 }

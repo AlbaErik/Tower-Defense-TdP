@@ -20,6 +20,7 @@ public class NinjaElite extends Defensor {
 		arma = new LanzadorShurikens(this, m);
 		estado = new ReposoDefensor(this);
 		life = 190;
+		//range = 100;
 	}
 
 	public EntidadGrafica getGrafico() {

@@ -2,6 +2,7 @@ package Logica.Entidades.Atacantes;
 
 import Armas.Arco;
 import Grafica.Entidades.Atacantes.ArqueroGrafico;
+import Logica.Colisionadores.ColisionadorADistancia;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
@@ -11,7 +12,7 @@ import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
 public class Arquero extends Atacante {
-
+	
 	public Arquero(int x, int y, Mapa m) {
 		super(x, y, m);
 		this.grafico = new ArqueroGrafico(x, y, m.getPanelMapa(), this);
@@ -22,6 +23,7 @@ public class Arquero extends Atacante {
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
 		damage = 0;
+		range = 200;
 	}
 
 	public void chocar(Entidad e) {

@@ -1,6 +1,9 @@
 package Logica.Estados.Personajes;
 
+import Logica.Colisionadores.ColisionadorADistancia;
+import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Estado;
 import Logica.Hilos.Control;
 
@@ -14,16 +17,28 @@ public abstract class EstadoPersonaje extends Estado{
 		control = new Control(p.getMapa());
 	}
 	
-	protected boolean sePuedeAvanzar() {
+	protected boolean sePuedeAvanzar(Atacante a) {
 		int x = (int) personaje.getPos().getX();
 		int y = (int) personaje.getPos().getY();
-		return control.hayEntidadEnRango(x, y, personaje.getPos().getAncho(), personaje.getDireccion());
+		Entidad ent = control.hayEntidadEnRango(x, y, personaje.getPos().getAncho(), personaje.getDireccion(), personaje);
+		boolean toret = false;
+		if(ent != null) {
+			toret = true; //a.getCol2().serChocado(ent.getClass()); FALTA DEFINIR ESTA PARTE, QUÉ HACER CON LA ENTIDAD ENCONTRADA
+		}
+		
+		return toret;
 	}
 	
+	/*
+	 * Revisa si hay entidades a distancia para decidir si atacar, o avanzar segun el caso¿
+	 */
 	protected boolean chequearADistancia(int rango) {
 		int x = (int) personaje.getPos().getX() + personaje.getDireccion();
 		int y = (int) personaje.getPos().getY();
-		return control.hayEntidadEnRango(x, y, rango, personaje.getDireccion());
+		boolean toRet = false;
+		if(control.hayEntidadEnRango(x, y, rango, personaje.getDireccion(), personaje) != null)
+			toRet = true;
+		return toRet;
 	}
 
 }
