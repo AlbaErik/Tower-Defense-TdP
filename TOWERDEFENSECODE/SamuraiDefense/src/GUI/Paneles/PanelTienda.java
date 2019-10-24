@@ -8,6 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import GUI.Paneles.Botones.Boton;
+import GUI.Paneles.Botones.BotonArqueroElite;
+import GUI.Paneles.Botones.BotonEmperadorReal;
+import GUI.Paneles.Botones.BotonEspadachinElite;
+import GUI.Paneles.Botones.BotonLanceroElite;
+import GUI.Paneles.Botones.BotonNinjaElite;
+import GUI.Paneles.Botones.BotonSamuraiElite;
 import Logica.Juego.Juego;
 import Logica.Tienda.Tienda;
 
@@ -15,9 +22,7 @@ public class PanelTienda extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Tienda tienda;
 	private Juego juego;
-	private JButton colocables[];
-	private String palabras[] = { "NinjaElite", "EspadachinElite", "ArqueroElite", "LanceroElite", "EmperadorReal",
-			"SamuraiElite" };
+	private Boton colocables[];
 	private JLabel fondo;
 
 	public PanelTienda(Tienda t) {
@@ -35,27 +40,65 @@ public class PanelTienda extends JPanel {
 		this.add(fondo);
 	}
 
-	public void crearBotones() {
-		colocables = new JButton[palabras.length];
-		OyenteB oyente = new OyenteB();
-		for (int i = 0; i < palabras.length; i++) {
-			crearBoton(i, oyente);
-		}
+	private void crearBotones() {
+		colocables = new Boton[6];
+		
+		colocables[0]=new BotonNinjaElite(this.getTienda());
+		colocables[0].setBorder(null);
+		colocables[0].setBorderPainted(false);
+		colocables[0].setContentAreaFilled(false);
+		colocables[0].setIcon(new ImageIcon("Sprites/Botones/BotonNinjaElite.png"));
+		colocables[0].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonNinjaEliteEntered.png"));
+		colocables[0].setFocusable(false);
+		this.add(colocables[0]);
+		
+		colocables[1]=new BotonEspadachinElite(this.getTienda());
+		colocables[1].setBorder(null);
+		colocables[1].setBorderPainted(false);
+		colocables[1].setContentAreaFilled(false);
+		colocables[1].setIcon(new ImageIcon("Sprites/Botones/BotonEspadachinElite.png"));
+		colocables[1].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonEspadachinEliteEntered.png"));
+		colocables[1].setFocusable(false);
+		this.add(colocables[1]);
+		
+		colocables[2]=new BotonArqueroElite(this.getTienda());
+		colocables[2].setBorder(null);
+		colocables[2].setBorderPainted(false);
+		colocables[2].setContentAreaFilled(false);
+		colocables[2].setIcon(new ImageIcon("Sprites/Botones/BotonArqueroElite.png"));
+		colocables[2].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonArqueroEliteEntered.png"));
+		colocables[2].setFocusable(false);
+		this.add(colocables[2]);
+		
+		colocables[3]=new BotonLanceroElite(this.getTienda());
+		colocables[3].setBorder(null);
+		colocables[3].setBorderPainted(false);
+		colocables[3].setContentAreaFilled(false);
+		colocables[3].setIcon(new ImageIcon("Sprites/Botones/BotonLanceroElite.png"));
+		colocables[3].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonLanceroEliteEntered.png"));
+		colocables[3].setFocusable(false);
+		this.add(colocables[3]);
+		
+		colocables[4]=new BotonEmperadorReal(this.getTienda());
+		colocables[4].setBorder(null);
+		colocables[4].setBorderPainted(false);
+		colocables[4].setContentAreaFilled(false);
+		colocables[4].setIcon(new ImageIcon("Sprites/Botones/BotonEmperadorReal.png"));
+		colocables[4].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonEmperadorRealEntered.png"));
+		colocables[4].setFocusable(false);
+		this.add(colocables[4]);
+		
+		colocables[5]=new BotonSamuraiElite(this.getTienda());
+		colocables[5].setBorder(null);
+		colocables[5].setBorderPainted(false);
+		colocables[5].setContentAreaFilled(false);
+		colocables[5].setIcon(new ImageIcon("Sprites/Botones/BotonSamuraiElite.png"));
+		colocables[5].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonSamuraiEliteEntered.png"));
+		colocables[5].setFocusable(false);
+		this.add(colocables[5]);
+		
 		acomodarBotones();
 
-	}
-
-	private void crearBoton(int i, OyenteB oyente) {
-		colocables[i] = new JButton();
-		colocables[i].setBorder(null);
-		colocables[i].setBorderPainted(false);
-		colocables[i].setContentAreaFilled(false);
-		colocables[i].setActionCommand(palabras[i]);
-		colocables[i].setIcon(new ImageIcon("Sprites/Botones/Boton" + palabras[i] + ".png"));
-		colocables[i].setRolloverIcon(new ImageIcon("Sprites/Botones/Boton" + palabras[i] + "Entered.png"));
-		colocables[i].setFocusable(false);
-		colocables[i].addActionListener(oyente);
-		this.add(colocables[i]);
 	}
 
 	private void acomodarBotones() {
@@ -93,75 +136,5 @@ public class PanelTienda extends JPanel {
 		return tienda;
 	}
 
-	private class OyenteB implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			String s = e.getActionCommand();
-			switch (s) {
-			case ("NinjaElite"): {
-				/*
-				 * if (tienda.getJuego().getMapa().hayEntidades()) {
-				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
-				 */
-
-				tienda.setPersonajeActual(tienda.getFabrica().crearNinjaElite(juego.getMapa()));
-				// System.out.println("Pase por el boton Ninja");
-				break;
-			}
-			case ("EspadachinElite"): {
-				/*
-				 * if (tienda.getJuego().getMapa().hayEntidades()) {
-				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
-				 */
-
-				tienda.setPersonajeActual(tienda.getFabrica().crearEspadachinElite(juego.getMapa()));
-				// System.out.println("Pase por el boton Espadachin");
-				break;
-			}
-			case ("ArqueroElite"): {
-				/*
-				 * if (tienda.getJuego().getMapa().hayEntidades()) {
-				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
-				 */
-
-				tienda.setPersonajeActual(tienda.getFabrica().crearArqueroElite(juego.getMapa()));
-				// System.out.println("Pase por el boton Arquero");
-				break;
-			}
-			case ("LanceroElite"): {
-				/*
-				 * if (tienda.getJuego().getMapa().hayEntidades()) {
-				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
-				 */
-
-				tienda.setPersonajeActual(tienda.getFabrica().crearLanceroElite(juego.getMapa()));
-				// System.out.println("Pase por el boton Lancero");
-				break;
-			}
-			case ("EmperadorReal"): {
-				/*
-				 * if (tienda.getJuego().getMapa().hayEntidades()) {
-				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
-				 */
-
-				tienda.setPersonajeActual(tienda.getFabrica().crearEmperadorReal(juego.getMapa()));
-				// System.out.println("Pase por el boton Emperador");
-				break;
-			}
-			case ("SamuraiElite"): {
-				/*
-				 * if (tienda.getJuego().getMapa().hayEntidades()) {
-				 * tienda.getJuego().getMapa().getEntidad().getGrafico().atacar(); }
-				 */
-
-				tienda.setPersonajeActual(tienda.getFabrica().crearSamuraiElite(juego.getMapa()));
-				// System.out.println("Pase por el boton Samurai");
-				break;
-			}
-
-			}
-
-		}
-
-	}
-
+	
 }
