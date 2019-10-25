@@ -19,7 +19,7 @@ public class SamuraiEliteGrafico extends DefensorGrafico {
 	}
 
 	public void setGraficoInicio(int x, int y) {// Tiene que estar si o si en cada clase
-		graficoActual.setIcon(graficos[0]);
+		graficoActual.setIcon(graficos[1]);
 		graficoActual.setBounds(x, y, 120, 80);// 80
 	}
 
