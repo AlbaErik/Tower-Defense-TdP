@@ -26,7 +26,7 @@ public class ReposoDefensor extends EstadoPersonaje {
 			
 		if (personaje.getContador() % 50 == 0) {
 			
-			if(!chequearADistancia(personaje.getRange())) {
+			if(personaje.getRange() > 0 && chequearADistancia(personaje.getRange())) {
 				personaje.cambiarEstado(new AtaqueDefensor(personaje));
 			}
 			

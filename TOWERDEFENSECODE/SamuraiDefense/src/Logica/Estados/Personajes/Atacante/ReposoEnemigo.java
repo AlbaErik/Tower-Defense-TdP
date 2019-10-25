@@ -1,10 +1,13 @@
 package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
+import Logica.Colisionadores.ColisionadorADistancia;
 import Logica.Entidades.Personaje;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Personajes.Avanzar;
 import Logica.Estados.Personajes.EstadoPersonaje;
 import Logica.Estados.Personajes.Morir;
+import Logica.Estados.Personajes.Defensor.AtaqueDefensor;
 
 public class ReposoEnemigo extends EstadoPersonaje {
 
@@ -27,8 +30,12 @@ public class ReposoEnemigo extends EstadoPersonaje {
 			
 		if (personaje.getContador() % 50 == 0) {
 			
-			if(sePuedeAvanzar()) {
+			if(sePuedeAvanzar((Atacante) personaje)) {
 				personaje.cambiarEstado(new Avanzar(personaje));
+			}else {
+				if(chequearADistancia(personaje.getRange())) {
+					personaje.cambiarEstado(new AtaqueDefensor(personaje));
+				}
 			}
 			
 			personaje.resetContador();				
@@ -36,7 +43,4 @@ public class ReposoEnemigo extends EstadoPersonaje {
 		}
 		personaje.incrementarContador();		
 	}
-
-	
-
 }

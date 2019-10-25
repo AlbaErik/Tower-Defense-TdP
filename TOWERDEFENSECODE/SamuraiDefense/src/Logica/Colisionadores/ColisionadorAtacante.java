@@ -1,5 +1,6 @@
 package Logica.Colisionadores;
 
+import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Atacante;
@@ -31,40 +32,40 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		e.cambiarEstado(new AtaqueDefensor(e));
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
 	}
 
 	@Override
 	public void serChocado(EmperadorReal e) {
-		e.cambiarEstado(new AtaqueDefensor(e));
-		e.getEstado().entidadADestruir(ataq);
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
+		ataq.getEstado().entidadADestruir(e);
 
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		e.cambiarEstado(new AtaqueDefensor(e));
-		e.getEstado().entidadADestruir(ataq);
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
+		ataq.getEstado().entidadADestruir(e);
 
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		e.cambiarEstado(new AtaqueDefensor(e));
-		e.getEstado().entidadADestruir(ataq);
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
+		ataq.getEstado().entidadADestruir(e);
 
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		e.cambiarEstado(new AtaqueDefensor(e));
-		e.getEstado().entidadADestruir(ataq);
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
+		ataq.getEstado().entidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		e.cambiarEstado(new AtaqueDefensor(e));
-		e.getEstado().entidadADestruir(ataq);
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
+		ataq.getEstado().entidadADestruir(e);
 	}
 
 	@Override
@@ -86,6 +87,7 @@ public class ColisionadorAtacante extends Colisionador {
 			toret = p;
 		return toret;
 	}
+	
 	
 	
 	@Override
@@ -122,8 +124,7 @@ public class ColisionadorAtacante extends Colisionador {
 	}
 
 	@Override
-	public void serChocado(FlechaDefensor flechaAtacante) {
-		// TODO Auto-generated method stub
+	public void serChocado(FlechaDefensor f) {
 		
 	}
 

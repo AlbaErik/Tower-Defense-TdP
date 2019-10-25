@@ -26,7 +26,7 @@ public class AtaqueDefensor extends EstadoPersonaje {
 				personaje.atacar(aDestruir);
 				personaje.resetContador();
 				
-				if(chequearADistancia(personaje.getRange())) {
+				if(personaje.getRange() > 0 && !chequearADistancia(personaje.getRange())) {
 					personaje.cambiarEstado(new ReposoDefensor(personaje));
 				}
 				
@@ -36,9 +36,5 @@ public class AtaqueDefensor extends EstadoPersonaje {
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.attack();
 		}
-		
-		
-
 	}
-
 }

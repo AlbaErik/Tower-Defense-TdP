@@ -22,7 +22,7 @@ public class ArqueroElite extends Defensor {
 		estado = new ReposoDefensor(this);
 		life = 140;
 		damage = 0;
-		range = 200;
+		range = 400;
 	}
 
 	@Override

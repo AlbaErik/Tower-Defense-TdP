@@ -19,6 +19,7 @@ public class LanceroElite extends Defensor {
 		arma = new TiraLanzas(this, m);
 		estado = new ReposoDefensor(this);
 		life = 200;
+		range = 200;
 	}
 
 	@Override

@@ -29,6 +29,19 @@ public class Mapa {
 		mapagrafico = new PanelMapa(this);
 		tienda = j.getTienda();
 	}
+	
+	public Entidad getEntidadEnPos(int x, int y) {
+		Entidad toRet = null;
+		for(Entidad e : misEntidades) {
+			int X = (int)e.getPos().getX();
+			int Y = (int)e.getPos().getY();
+			if( X == x && y == Y) {
+				toRet = e;
+				break;
+			}				
+		}
+		return toRet;
+	}
 
 	public void agregarAtacante(Atacante e) {
 		misAtacantes.add(e);
@@ -113,15 +126,15 @@ public class Mapa {
 
 	public boolean hayEnPos(int x, int y) {
 		boolean ocupada = false;
+		int i=0;
 
-		for (int i = 0; i < misEntidades.size() && !ocupada; i++) {
+		for (i = 0; i < misEntidades.size() && !ocupada; i++) {
 			double X = misEntidades.get(i).getPos().getX();
 			double Y = misEntidades.get(i).getPos().getY();
 
 			if ((X == (double) x) && (Y == (double) y))
 				ocupada = true;
 		}
-
 		return ocupada;
 	}
 
