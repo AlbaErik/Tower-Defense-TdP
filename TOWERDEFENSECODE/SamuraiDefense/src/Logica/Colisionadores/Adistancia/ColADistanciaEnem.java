@@ -4,6 +4,7 @@ import Logica.Colisionadores.Colisionador;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Atacantes.Ejecutor;
+import Logica.Entidades.Atacantes.Emperador;
 import Logica.Entidades.Atacantes.Espadachin;
 import Logica.Entidades.Atacantes.Necromante;
 import Logica.Entidades.Atacantes.Ninja;
@@ -56,6 +57,13 @@ public class ColADistanciaEnem extends Colisionador{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void serChocado(Emperador e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 	@Override
 	public void serChocado(ArqueroElite e) {
@@ -115,5 +123,7 @@ public class ColADistanciaEnem extends Colisionador{
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 }

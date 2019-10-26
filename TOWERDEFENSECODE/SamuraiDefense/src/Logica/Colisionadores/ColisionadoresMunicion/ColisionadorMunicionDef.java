@@ -3,6 +3,7 @@ package Logica.Colisionadores.ColisionadoresMunicion;
 import Logica.Colisionadores.Colisionador;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Ejecutor;
+import Logica.Entidades.Atacantes.Emperador;
 import Logica.Entidades.Atacantes.Espadachin;
 import Logica.Entidades.Atacantes.Necromante;
 import Logica.Entidades.Atacantes.Ninja;
@@ -60,6 +61,15 @@ public class ColisionadorMunicionDef extends Colisionador{
 		e.setLife(daño);
 		mun.morir();		
 	}
+	
+	@Override
+	public void serChocado(Emperador e) {
+		int daño = mun.getDaño();
+		e.setLife(daño);
+		mun.morir();
+		
+	}
+
 
 	@Override
 	public void serChocado(ArqueroElite e) {
@@ -120,4 +130,5 @@ public class ColisionadorMunicionDef extends Colisionador{
 		
 	}
 
+	
 }

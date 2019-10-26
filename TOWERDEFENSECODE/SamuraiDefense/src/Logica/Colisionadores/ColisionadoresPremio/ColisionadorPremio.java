@@ -4,6 +4,7 @@ package Logica.Colisionadores.ColisionadoresPremio;
 import Logica.Colisionadores.Colisionador;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Ejecutor;
+import Logica.Entidades.Atacantes.Emperador;
 import Logica.Entidades.Atacantes.Espadachin;
 import Logica.Entidades.Atacantes.Necromante;
 import Logica.Entidades.Atacantes.Ninja;
@@ -107,6 +108,12 @@ public class ColisionadorPremio extends Colisionador{
 
 	@Override
 	public void serChocado(FlechaDefensor flechaAtacante) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Emperador e) {
 		// TODO Auto-generated method stub
 		
 	}

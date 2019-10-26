@@ -1,10 +1,10 @@
 package Logica.Colisionadores;
 
-import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Atacantes.Ejecutor;
+import Logica.Entidades.Atacantes.Emperador;
 import Logica.Entidades.Atacantes.Espadachin;
 import Logica.Entidades.Atacantes.Necromante;
 import Logica.Entidades.Atacantes.Ninja;
@@ -20,7 +20,6 @@ import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Estados.Personajes.Atacante.AtaqueEnemigo;
 import Logica.Estados.Personajes.Atacante.ReposoEnemigo;
-import Logica.Estados.Personajes.Defensor.AtaqueDefensor;
 
 public class ColisionadorAtacante extends Colisionador {
 
@@ -125,6 +124,12 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(FlechaDefensor f) {
+		
+	}
+
+	@Override
+	public void serChocado(Emperador e) {
+		// TODO Auto-generated method stub
 		
 	}
 
