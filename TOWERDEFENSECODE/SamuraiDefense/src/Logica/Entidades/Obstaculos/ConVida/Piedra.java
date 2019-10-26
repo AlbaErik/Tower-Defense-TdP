@@ -2,6 +2,7 @@ package Logica.Entidades.Obstaculos.ConVida;
 
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Obstaculos.VidaFinita.PiedraGrafica;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorPiedra;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
@@ -25,8 +26,8 @@ public class Piedra extends Obstaculo {
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);		
 	}
 
 	@Override

@@ -87,7 +87,7 @@ public abstract class Entidad {
 		return grafico;
 	}
 
-	public abstract void chocar(Entidad e);
+	public abstract void chocar(Colisionador e);
 
 	public abstract void ejecutarEstado();
 

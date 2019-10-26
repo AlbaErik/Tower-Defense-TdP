@@ -2,7 +2,9 @@ package Logica.Entidades.Defensores;
 
 import Armas.TiraLanzas;
 import Grafica.Entidades.Defensores.LanceroEliteGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
+import Logica.Colisionadores.Adistancia.ColADistanciaDef;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
@@ -19,12 +21,13 @@ public class LanceroElite extends Defensor {
 		arma = new TiraLanzas(this, m);
 		estado = new ReposoDefensor(this);
 		life = 200;
-		range = 200;
+		//colDistancia = new ColADistanciaDef(this);
+		//range = 200;
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
 
 	@Override

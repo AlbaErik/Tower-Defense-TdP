@@ -1,6 +1,7 @@
 package Logica.Entidades.Municiones.MunicionesAtacante;
 
 import Grafica.Entidades.Municiones.MunicionesAtacante.FlechaAtacanteGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionAtaq;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
@@ -27,9 +28,10 @@ public class FlechaAtacante extends Municion {
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+
 	}
+
 	
 	public Inteligencia getInteligencia() {
 		return intel;

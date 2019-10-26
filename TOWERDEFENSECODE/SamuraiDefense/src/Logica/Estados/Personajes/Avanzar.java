@@ -25,7 +25,7 @@ public class Avanzar extends EstadoPersonaje {
 			p.running();
 			personaje.getInteligencia().mover();
 			
-			if(chequearADistancia(personaje.getRange())) {
+			if(controlarAtaque()) {
 				personaje.cambiarEstado(new AtaqueEnemigo(personaje));
 			}
 		}

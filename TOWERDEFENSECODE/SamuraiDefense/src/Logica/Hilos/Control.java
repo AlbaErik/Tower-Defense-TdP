@@ -29,7 +29,7 @@ public class Control {
 				boolean colisionY = e1.getY() == e2.getY();
 
 				if (ent1 != ent2 && colisionX && colisionY)
-					ent1.chocar(ent2);
+					ent1.chocar(ent2.getColisionador());
 			}
 		}
 
@@ -47,7 +47,7 @@ public class Control {
 			if(avanzar) {
 				System.out.println("Se encontro la entidad: " + map.getEntidadEnPos(x, y).getClass());
 				ent = map.getEntidadEnPos(x, y);
-				ent.chocar(miEntidad);
+				ent.chocar(miEntidad.getColisionador());
 			}
 			rango--;
 			x += direccion;

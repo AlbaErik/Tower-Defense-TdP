@@ -1,7 +1,6 @@
 package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
-import Logica.Colisionadores.ColisionadorADistancia;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Personajes.Avanzar;
@@ -24,20 +23,27 @@ public class AtaqueEnemigo extends EstadoPersonaje {
 			personaje.prohibidoCambiarEstado();
 
 		} else {
+			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
+			p.attack();
+			
 			if (personaje.getContador() % 50 == 0) {
 
 				personaje.atacar(aDestruir);
 				personaje.resetContador();
+				
+				controlarAvanzar();
+				
+				/*
 
 				if (!sePuedeAvanzar((Atacante) personaje)) {
 					System.out.println("Personaje de tipo: " + personaje.getClass() + " puede avanzar");
 					personaje.cambiarEstado(new Avanzar(personaje));
 				}
+				*/
 			}
 			personaje.incrementarContador();
 
-			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
-			p.attack();
+			
 		}
 	}
 

@@ -2,6 +2,7 @@ package Logica.Entidades.Defensores;
 
 import Armas.ArmaSimple;
 import Grafica.Entidades.Defensores.EspadachinEliteGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
@@ -26,9 +27,10 @@ public class EspadachinElite extends Defensor {
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
+
 
 	@Override
 	public Inteligencia getInteligencia() {
@@ -47,6 +49,5 @@ public class EspadachinElite extends Defensor {
 			aDestruir.setLife(damage);
 		}
 	}
-	
 
 }

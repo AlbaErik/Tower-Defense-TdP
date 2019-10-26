@@ -2,6 +2,7 @@ package Logica.Entidades.Atacantes;
 
 import Armas.Arco;
 import Grafica.Entidades.Atacantes.EjecutorGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.*;
@@ -23,8 +24,8 @@ public class Ejecutor extends Atacante {
 		damage = 10;
 	}
 	
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
 
 	public Atacante clone() {
@@ -49,6 +50,5 @@ public class Ejecutor extends Atacante {
 			aDestruir.setLife(damage);
 		}
 	}
-	
-	
+
 }

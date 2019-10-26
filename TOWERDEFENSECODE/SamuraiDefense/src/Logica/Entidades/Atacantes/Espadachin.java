@@ -2,6 +2,7 @@ package Logica.Entidades.Atacantes;
 
 import Armas.Arco;
 import Grafica.Entidades.Atacantes.EspadachinGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.*;
@@ -24,10 +25,9 @@ public class Espadachin extends Atacante {
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
-
 	
 	@Override
 	public Atacante clone() {
@@ -51,5 +51,5 @@ public class Espadachin extends Atacante {
 			aDestruir.setLife(damage);
 		}
 	}
-	
+
 }

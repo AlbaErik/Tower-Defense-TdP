@@ -1,6 +1,7 @@
 package Logica.Entidades.Defensores;
 
 import Grafica.Entidades.Defensores.EmperadorRealGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
@@ -20,9 +21,10 @@ public class EmperadorReal extends Defensor {
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
+
 
 	@Override
 	public Inteligencia getInteligencia() {

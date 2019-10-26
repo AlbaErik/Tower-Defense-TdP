@@ -2,8 +2,9 @@ package Logica.Entidades.Atacantes;
 
 import Armas.Arco;
 import Grafica.Entidades.Atacantes.ArqueroGrafico;
-import Logica.Colisionadores.ColisionadorADistancia;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
+import Logica.Colisionadores.Adistancia.ColADistanciaEnem;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.*;
@@ -23,11 +24,12 @@ public class Arquero extends Atacante {
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
 		damage = 0;
+		colDistancia = new ColADistanciaEnem(this);
 		range = 200;
 	}
 
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
 
 	public Atacante clone() {

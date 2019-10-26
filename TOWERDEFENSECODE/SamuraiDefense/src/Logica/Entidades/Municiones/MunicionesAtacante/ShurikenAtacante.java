@@ -1,5 +1,6 @@
 package Logica.Entidades.Municiones.MunicionesAtacante;
 
+import Logica.Colisionadores.Colisionador;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Inteligencia.InteligenciaMunicionAtaq;
@@ -15,10 +16,10 @@ public class ShurikenAtacante extends Municion {
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		// TODO Auto-generated method stub
+	public void chocar(Colisionador e) {
 
 	}
+
 
 	@Override
 	public void ejecutarEstado() {

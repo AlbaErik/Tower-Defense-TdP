@@ -1,6 +1,7 @@
 package Logica.Entidades;
 
 import Armas.Arma;
+import Logica.Colisionadores.Colisionador;
 import Logica.Mapa.Mapa;
 
 
@@ -12,11 +13,16 @@ public abstract class Personaje extends Entidad {
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
 	protected int direccion;
+	protected Colisionador colDistancia;
 	
 	public Personaje(int x,int y, Mapa m) {
 		super(x,y,m);
 		contadorDisparos = 0;
 		tiempoMuerte = 20;
+	}
+		
+	public Colisionador getColDistancia() {
+		return colDistancia;
 	}
 	
 	public abstract int getDireccion();

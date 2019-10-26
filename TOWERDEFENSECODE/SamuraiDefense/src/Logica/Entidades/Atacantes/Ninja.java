@@ -2,6 +2,7 @@ package Logica.Entidades.Atacantes;
 
 import Armas.LanzadorShurikens;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Avanzar;
@@ -22,12 +23,13 @@ public class Ninja extends Atacante {
 		this.col = new ColisionadorAtacante(this);
 		arma = new LanzadorShurikens(this, m);
 		estado = new Avanzar(this);
+		//colDistancia = new ColADistanciaEnem(this);
 		//range = 100;
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
 
 	@Override
@@ -47,6 +49,5 @@ public class Ninja extends Atacante {
 			aDestruir.setLife(damage);
 		}
 	}
-
 
 }

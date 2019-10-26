@@ -1,5 +1,6 @@
 package Logica.Entidades.Obstaculos.Temporales;
 import Grafica.Entidades.EntidadGrafica;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorBarro;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
@@ -25,8 +26,8 @@ public class Barro extends Obstaculo{
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);		
+	public void chocar(Colisionador e) {
+		e.serChocado(this);		
 	}
 
 	@Override

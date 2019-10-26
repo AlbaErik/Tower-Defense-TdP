@@ -2,7 +2,9 @@ package Logica.Entidades.Defensores;
 
 import Armas.Arco;
 import Grafica.Entidades.Defensores.ArqueroEliteGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
+import Logica.Colisionadores.Adistancia.ColADistanciaDef;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
@@ -22,13 +24,15 @@ public class ArqueroElite extends Defensor {
 		estado = new ReposoDefensor(this);
 		life = 140;
 		damage = 0;
+		colDistancia = new ColADistanciaDef(this);
 		range = 400;
 	}
 
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
+
 
 	@Override
 	public Inteligencia getInteligencia() {

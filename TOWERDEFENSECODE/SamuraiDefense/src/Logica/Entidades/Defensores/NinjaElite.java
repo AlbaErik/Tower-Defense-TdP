@@ -3,7 +3,9 @@ package Logica.Entidades.Defensores;
 import Armas.LanzadorShurikens;
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Defensores.NinjaEliteGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
+import Logica.Colisionadores.Adistancia.ColADistanciaDef;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
@@ -20,6 +22,7 @@ public class NinjaElite extends Defensor {
 		arma = new LanzadorShurikens(this, m);
 		estado = new ReposoDefensor(this);
 		life = 190;
+		//colDistancia = new ColADistanciaDef(this);
 		//range = 100;
 	}
 
@@ -28,9 +31,10 @@ public class NinjaElite extends Defensor {
 	}
 	
 	@Override
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
+
 
 	@Override
 	public Inteligencia getInteligencia() {
@@ -49,5 +53,5 @@ public class NinjaElite extends Defensor {
 			aDestruir.setLife(damage);
 		}
 	}
-	
+
 }

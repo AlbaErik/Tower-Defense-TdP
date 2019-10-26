@@ -2,6 +2,7 @@ package Logica.Entidades.Atacantes;
 
 import Armas.Arco;
 import Grafica.Entidades.Atacantes.NecromanteGrafico;
+import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.*;
@@ -23,8 +24,8 @@ public class Necromante extends Atacante {
 		damage = 50;
 	}
 
-	public void chocar(Entidad e) {
-		e.getColisionador().serChocado(this);
+	public void chocar(Colisionador e) {
+		e.serChocado(this);
 	}
 
 	public Atacante clone() {
@@ -48,6 +49,5 @@ public class Necromante extends Atacante {
 			aDestruir.setLife(damage);
 		}
 	}
-	
 
 }
