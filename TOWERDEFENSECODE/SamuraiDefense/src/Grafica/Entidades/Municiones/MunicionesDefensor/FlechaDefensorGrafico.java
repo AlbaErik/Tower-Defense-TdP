@@ -12,7 +12,7 @@ public class FlechaDefensorGrafico extends EntidadGrafica {
 		super(x, y, m, e);
 		graficos = new ImageIcon[1];
 
-		graficos[0] = new ImageIcon("Sprites/Objetos/FlechaDefensor(VERSION 2).png");
+		graficos[0] = new ImageIcon("Sprites/Objetos/FlechaDefensor.png");
 
 		setGraficoInicio(x, y);
 	}

@@ -2,7 +2,7 @@ package Logica;
 
 import Logica.Entidades.Defensores.ArqueroElite;
 import Logica.Entidades.Defensores.Defensor;
-import Logica.Entidades.Defensores.EmperadorReal;
+import Logica.Entidades.Defensores.SacerdoteElite;
 import Logica.Entidades.Defensores.EspadachinElite;
 import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
@@ -30,8 +30,8 @@ public class FabricaDefensores{
 		return new EspadachinElite(0,0,m);
 	}
 
-	public Defensor crearEmperadorReal(Mapa m) {
-		return new EmperadorReal(0,0,m);
+	public Defensor crearSacerdoteElite(Mapa m) {
+		return new SacerdoteElite(0,0,m);
 	}
 
 	public Defensor crearSamuraiElite(Mapa m) {

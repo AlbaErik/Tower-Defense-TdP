@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 import GUI.Paneles.Botones.Boton;
 import GUI.Paneles.Botones.BotonArqueroElite;
-import GUI.Paneles.Botones.BotonEmperadorReal;
+import GUI.Paneles.Botones.BotonSacerdoteElite;
 import GUI.Paneles.Botones.BotonEspadachinElite;
 import GUI.Paneles.Botones.BotonLanceroElite;
 import GUI.Paneles.Botones.BotonNinjaElite;
@@ -79,12 +79,12 @@ public class PanelTienda extends JPanel {
 		colocables[3].setFocusable(false);
 		this.add(colocables[3]);
 		
-		colocables[4]=new BotonEmperadorReal(this.getTienda());
+		colocables[4]=new BotonSacerdoteElite(this.getTienda());
 		colocables[4].setBorder(null);
 		colocables[4].setBorderPainted(false);
 		colocables[4].setContentAreaFilled(false);
-		colocables[4].setIcon(new ImageIcon("Sprites/Botones/BotonEmperadorReal.png"));
-		colocables[4].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonEmperadorRealEntered.png"));
+		colocables[4].setIcon(new ImageIcon("Sprites/Botones/BotonSacerdoteElite.png"));
+		colocables[4].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonSacerdoteEliteEntered.png"));
 		colocables[4].setFocusable(false);
 		this.add(colocables[4]);
 		

@@ -65,7 +65,7 @@ public class Juego {
 	private int randomY() {
 		Random rand = new Random();
 		int fila = rand.nextInt(5);
-		fila = fila * 66 + 200;
+		fila = fila * 66 + 183;
 		return fila;
 	}
 

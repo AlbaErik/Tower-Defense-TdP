@@ -5,10 +5,10 @@ import javax.swing.ImageIcon;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
-public class EmperadorRealGrafico extends DefensorGrafico {
-	private String palabras[] = { "EmperadorRealStanding", "EmperadorRealAttacking", "EmperadorRealEliteDying" };
+public class SacerdoteEliteGrafico extends DefensorGrafico {
+	private String palabras[] = { "SacerdoteEliteStanding", "SacerdoteEliteAttacking", "SacerdoteEliteDying" };
 
-	public EmperadorRealGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public SacerdoteEliteGrafico(int x, int y, PanelMapa m, Entidad e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[3];
 
@@ -20,27 +20,27 @@ public class EmperadorRealGrafico extends DefensorGrafico {
 
 	public void setGraficoInicio(int x, int y) {// Tiene que estar si o si en cada clase
 		graficoActual.setIcon(graficos[0]);
-		graficoActual.setBounds(x, y, 120, 80);// 80
+		graficoActual.setBounds(x, y, 120, 120);// 80
 	}
 
 	public void cambiarPos(int x, int y) {// Tiene que estar si o si en cada clase
 		pos.setLocation(x, y);
-		graficoActual.setBounds(x, y, 120, 80);// 80
+		graficoActual.setBounds(x, y, 120, 120);// 80
 	}
 
 	public void posicionInicial() {
 		this.getGraficoActual().setIcon(graficos[0]);
-		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
+		graficoActual.setBounds(pos.x, pos.y, 120, 120);// 120,80
 	}
 
 	public void atacar() {
 		this.getGraficoActual().setIcon(graficos[1]);
-		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
+		graficoActual.setBounds(pos.x, pos.y, 120, 120);// 120,80
 	}
 
 	public void morir() {// QUIERO QUE ME MUESTRE LA ANIMACION Y QUE DESPUES MUERA
 		this.getGraficoActual().setIcon(graficos[2]);
-		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
+		graficoActual.setBounds(pos.x, pos.y, 120, 120);// 120,80
 		mapaPanel.getMapa().eliminarEntidad(mientidad);
 	}
 

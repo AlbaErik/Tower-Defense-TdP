@@ -7,7 +7,7 @@ import Logica.Entidades.Atacantes.Espadachin;
 import Logica.Entidades.Atacantes.Necromante;
 import Logica.Entidades.Atacantes.Ninja;
 import Logica.Entidades.Defensores.ArqueroElite;
-import Logica.Entidades.Defensores.EmperadorReal;
+import Logica.Entidades.Defensores.SacerdoteElite;
 import Logica.Entidades.Defensores.EspadachinElite;
 import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
@@ -64,7 +64,7 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 	}
 
 	@Override
-	public void serChocado(EmperadorReal e) {
+	public void serChocado(SacerdoteElite e) {
 		int daño = mun.getDaño();
 		e.setLife(daño);
 		mun.morir();			

@@ -30,17 +30,17 @@ public class ArqueroEliteGrafico extends DefensorGrafico {
 
 	public void posicionInicial() {
 		this.getGraficoActual().setIcon(graficos[0]);
-		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
+		graficoActual.setBounds(pos.x, pos.y, 120, 120);// 120,80
 	}
 
 	public void atacar() {
 		this.getGraficoActual().setIcon(graficos[1]);
-		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
+		graficoActual.setBounds(pos.x, pos.y, 120, 120);// 120,80
 	}
 
 	public void morir() {// QUIERO QUE ME MUESTRE LA ANIMACION Y QUE DESPUES MUERA
 		this.getGraficoActual().setIcon(graficos[2]);
-		graficoActual.setBounds(pos.x, pos.y, 120, 80);// 120,80
+		graficoActual.setBounds(pos.x, pos.y, 120, 120);// 120,80
 		mapaPanel.getMapa().eliminarEntidad(mientidad);
 	}
 

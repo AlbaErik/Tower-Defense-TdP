@@ -1,6 +1,6 @@
 package Logica.Entidades.Defensores;
 
-import Grafica.Entidades.Defensores.EmperadorRealGrafico;
+import Grafica.Entidades.Defensores.SacerdoteEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Entidad;
@@ -9,12 +9,12 @@ import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
 
-public class EmperadorReal extends Defensor {
+public class SacerdoteElite extends Defensor {
 
-	public EmperadorReal(int x, int y, Mapa m) {
+	public SacerdoteElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		super.col = new ColisionadorDefensor(this);
-		this.grafico = new EmperadorRealGrafico(x, y, m.getPanelMapa(), this);
+		this.grafico = new SacerdoteEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		estado = new ReposoDefensor(this);
 		life = 300;

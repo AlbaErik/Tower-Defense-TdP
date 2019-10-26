@@ -29,11 +29,12 @@ public class Horda1 extends Horda{
 	}
 
 	private void inicializarHorda() {
-		lista.add(new Ninja(870, 350, mapa));
+		lista.add(new Ninja(0, 0, mapa));
 		lista.add(new Espadachin(0, 0, mapa));
 		lista.add(new Arquero(0, 0, mapa));
 		lista.add(new Ejecutor(0,0,mapa));
 		lista.add(new Necromante(0,0,mapa));
+		lista.add(new Emperador(0,0,mapa));
 	}
 
 	private Atacante crearAtacanteRandom() {

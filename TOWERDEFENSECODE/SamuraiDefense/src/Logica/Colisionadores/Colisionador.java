@@ -17,7 +17,7 @@ public abstract class Colisionador {
 	
 
 	public abstract void serChocado(ArqueroElite e);
-	public abstract void serChocado(EmperadorReal e);
+	public abstract void serChocado(SacerdoteElite e);
 	public abstract void serChocado(EspadachinElite e);
 	public abstract void serChocado(LanceroElite e);
 	public abstract void serChocado(NinjaElite e);

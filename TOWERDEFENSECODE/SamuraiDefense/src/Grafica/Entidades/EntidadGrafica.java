@@ -15,7 +15,7 @@ public abstract class EntidadGrafica {
 	protected JLabel graficoActual;
 	protected Point pos;
 	protected Entidad mientidad;
-	protected int ancho = 100, alto = 65;
+	protected int ancho = 120, alto = 120;
 
 	public EntidadGrafica(int x, int y, PanelMapa m, Entidad e) {
 		mientidad = e;

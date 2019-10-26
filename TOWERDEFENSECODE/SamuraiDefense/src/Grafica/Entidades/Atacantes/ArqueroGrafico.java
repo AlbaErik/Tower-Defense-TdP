@@ -15,18 +15,18 @@ public class ArqueroGrafico extends AtacanteGrafico {
 		for (int i = 0; i < palabras.length; i++) {
 			graficos[i] = new ImageIcon("Sprites/Personajes/Atacantes/" + palabras[i] + ".gif");
 		}
-		graficos[3] = new ImageIcon("Sprites/Personajes/Atacantes/ArqueroStanding.png");
+		//graficos[3] = new ImageIcon("Sprites/Personajes/Atacantes/ArqueroStanding.png");
 		setGraficoInicio(x, y);
 	}
 
 	public void setGraficoInicio(int x, int y) {// Tiene que estar si o si en cada clase
 		graficoActual.setIcon(graficos[0]);
-		graficoActual.setBounds(x, y, 120, 80);
+		graficoActual.setBounds(x, y, 120, 120);
 	}
 
 	public void cambiarPos(int x, int y) {// Tiene que estar si o si en cada clase
 		pos.setLocation(x, y);
-		graficoActual.setBounds(x, y, 120, 80);// 80
+		graficoActual.setBounds(x, y, 120, 120);// 80
 	}
 	
 	

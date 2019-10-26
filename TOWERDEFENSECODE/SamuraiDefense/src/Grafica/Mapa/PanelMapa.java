@@ -46,7 +46,7 @@ public class PanelMapa extends JPanel {
 		
 		Random rand = new Random();
 		int fila = rand.nextInt(5);
-		fila = fila * 66 + 200;
+		fila = fila * 66 + 183;
 		int x = 900;
 		
 		e.cambiarPosLogica(x, fila);
@@ -91,7 +91,7 @@ public class PanelMapa extends JPanel {
 			int y = 0;
 			if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
 				x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
-				y = ((e.getY() / 66) - 3) * 66 + 200;// Lo posiciona en el eje y
+				y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 			}
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
 						
