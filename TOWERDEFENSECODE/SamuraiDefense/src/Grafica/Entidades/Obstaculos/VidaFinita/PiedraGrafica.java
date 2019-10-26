@@ -12,7 +12,6 @@ public class PiedraGrafica extends ObstaculoGrafico {
 	public PiedraGrafica(int x, int y, PanelMapa m, Entidad e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[3];
-
 		for (int i = 0; i < palabras.length; i++) {
 			graficos[i] = new ImageIcon("Sprites/Objetos/" + palabras[i] + ".png");
 		}
@@ -21,7 +20,7 @@ public class PiedraGrafica extends ObstaculoGrafico {
 
 	public void setGraficoInicio(int x, int y) {// Tiene que estar si o si en cada clase
 		graficoActual.setIcon(graficos[0]);
-		graficoActual.setBounds(x, y, 120, 80);
+		graficoActual.setBounds(x, y, 120, 120);
 	}
 
 	public void vidaAlta() {
