@@ -3,25 +3,23 @@ package Logica.Mapa.Niveles;
 import java.util.LinkedList;
 import java.util.Random;
 
-
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Juego.Juego;
-import Logica.Mapa.Hordas.Horda1;
+import Logica.Mapa.Hordas.Horda2;
 
-public class Nivel1 extends Nivel {
+public class Nivel2 extends Nivel{
 
-	public Nivel1(Juego j) {
+	public Nivel2(Juego j) {
 		super(j);
-		horda = new Horda1(juego.getMapa());
-		nivel1=false;
+		horda = new Horda2(juego.getMapa());
+		nivel2=false;
 		horda1=true;
 		horda2=true;
 		horda3=true;
 		obstaculos1=true;
 		obstaculos2=true;
 		obstaculos3=true;
-		
 	}
 
 	@Override
@@ -51,7 +49,7 @@ public class Nivel1 extends Nivel {
 		horda3=false;
 		return ret;
 	}
-	
+
 	@Override
 	public LinkedList<Entidad> getSigHorda() {
 		LinkedList<Entidad> toret=new LinkedList<Entidad>();
@@ -69,13 +67,13 @@ public class Nivel1 extends Nivel {
 		return toret;
 			
 	}
-
-
+	
+	
 
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos1() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 2;
+		int cantObstaculos = 3;
 		Random rand = new Random();
 		for(int i = 0 ; i < cantObstaculos ; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -89,7 +87,7 @@ public class Nivel1 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos2() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 2;
+		int cantObstaculos = 5;
 		Random rand = new Random();
 		for(int i = 0 ; i < cantObstaculos ; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -103,7 +101,7 @@ public class Nivel1 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos3() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 3;
+		int cantObstaculos = 6;
 		Random rand = new Random();
 		for(int i = 0 ; i < cantObstaculos ; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -130,13 +128,11 @@ public class Nivel1 extends Nivel {
 		
 		return toret;
 	}
-	
+
 	@Override
 	public Nivel setSigNivel() {
-		Nivel sig=new Nivel2(juego);
+		Nivel sig=new Nivel3(juego);
 		return sig;				
 	}
 
-
-	
 }

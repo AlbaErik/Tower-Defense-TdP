@@ -37,29 +37,57 @@ public class Juego {
 	}
 
 	public void inicializarHorda() {
-		miHorda = nivel.crearHorda();
+		miHorda = nivel.getSigHorda();
 	}
 	
 	public void generarObstaculos() {
-		misObstaculos = nivel.crearObstaculos();
+		misObstaculos = nivel.getSigObstaculos();
+		while(!misObstaculos.isEmpty()) {
+			double x = randomX();
+			int y = randomY();
+			Obstaculo obs = misObstaculos.getFirst();
+			obs.cambiarPosLogica(x, y);
+			mapa.agregarEntidadAlCampoEnPosActual(obs);
+			misObstaculos.remove(misObstaculos.getFirst());
+		}
 		
 	}
 
 	public void agregarEntidades() { // cambiar, que agregue de a uno y que lo mueva
-		if (!miHorda.isEmpty()) {
+		if(!misObstaculos.isEmpty()) {
+			int x = randomX();
+			int y = randomY();
+			while(!verificarLugarEnMapa(x,y)) { //Si no se puede colocar, devuelve false
+				x = randomX();
+				y = randomY();
+			}
+			System.out.println("JUEGO: Se seteo un obstaculo en el X:"+x+" Y:"+y);
+			Obstaculo obs = misObstaculos.getFirst();
+			obs.cambiarPosLogica(x, y);
+			mapa.agregarEntidadAlCampoEnPosActual(obs);
+			misObstaculos.remove(misObstaculos.getFirst());
+		}else if (!miHorda.isEmpty()) {
 			Entidad atacante = miHorda.getFirst();
 			mapa.agregarEntidadAlCampo(atacante);
 			miHorda.remove(miHorda.getFirst());
-		}else {
-			if(!misObstaculos.isEmpty()) {
-				int x = randomX();
-				int y = randomY();
-				Obstaculo obs = misObstaculos.getFirst();
-				obs.cambiarPosLogica(x, y);
-				mapa.agregarEntidadAlCampoEnPosActual(obs);
-				misObstaculos.remove(misObstaculos.getFirst());
+		}
+			
+		if(miHorda.isEmpty() && misObstaculos.isEmpty()) {//Si ya se vencio a la horda y ya se pusieron los obstaculos
+			
+			if(nivel.haySigHorda()) { 
+				miHorda=nivel.getSigHorda();
+				System.out.println("JUEGO: Se seteo la siguiente horda");
+			}
+			if(nivel.haySigObstaculos()) {
+				misObstaculos=nivel.getSigObstaculos();
+				System.out.println("JUEGO: Se setearon los siguientes obstaculos");
 			}
 		}
+		
+	}
+	
+	public boolean nivelTerminado() {
+		return miHorda.isEmpty() && misObstaculos.isEmpty() && nivel.haySigNivel();			
 	}
 	
 	private int randomY() {
@@ -71,8 +99,32 @@ public class Juego {
 
 	private int randomX() {
 		Random rand = new Random();
-		int x = rand.nextInt(400);
-		return x + 400;
+		int x = rand.nextInt(3);
+		x=x*100;
+		return x+500;
+	}
+	
+	private boolean verificarLugarEnMapa(int x,int y) {//Verifica si se puede colocar una entidad en ese lugar
+		boolean sepuedecolocar=false;
+		int i=x;
+		while(i<x+50 && !sepuedecolocar){
+			if(!mapa.hayEnPos(x, y)) {
+				sepuedecolocar=true;
+			}else {
+				sepuedecolocar=false;
+			}
+			i++;
+		}
+		i=x;
+		while(i>x-50 && !sepuedecolocar){
+			if(!mapa.hayEnPos(x, y)) {
+				sepuedecolocar=true;
+			}else {
+				sepuedecolocar=false;
+			}
+			i--;
+		}	
+		return sepuedecolocar;
 	}
 
 	public void accionarEstados() {
@@ -94,6 +146,10 @@ public class Juego {
 
 	public Nivel getNivel() {
 		return nivel;
+	}
+	
+	public void setSigNivel() {
+			nivel=nivel.setSigNivel(); //Controlo que haya siguiente nivel en el metodo nivelTerminado en la clase juego
 	}
 
 	public Mapa getMapa() {

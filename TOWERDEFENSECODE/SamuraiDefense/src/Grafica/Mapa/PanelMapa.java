@@ -17,7 +17,7 @@ import Logica.Mapa.Mapa;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
-	protected Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
+	protected Image fondo=new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
 	protected Entidad entidad;
 	protected Mapa mapa;
 
@@ -94,10 +94,10 @@ public class PanelMapa extends JPanel {
 				y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 			}
 			Defensor aColocar = mapa.getTienda().getPersonajeActual();
-						
+				
 			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 				aColocar.cambiarPosLogica(x, y);
-								
+				System.out.println("PANELMAPA: Se seteo un defensor en el X:"+x+" Y:"+y);				
 				mapa.setEntidad(aColocar);
 				JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
 				add(nuevo);

@@ -45,7 +45,7 @@ public class Control {
 		while (rango > 0 && !avanzar) {
 			avanzar = map.hayEnPos(x, y);
 			if(avanzar) {
-				System.out.println("Se encontro la entidad: " + map.getEntidadEnPos(x, y).getClass());
+				//System.out.println("CONTROL: Se encontro la entidad: " + map.getEntidadEnPos(x, y).getClass());
 				ent = map.getEntidadEnPos(x, y);
 				ent.chocar(miEntidad.getColisionador());
 			}

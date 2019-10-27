@@ -22,7 +22,11 @@ public class Game extends Thread{
 			try {
 				if(vueltas % 120 == 0) { 		//Da tiempo entre entidades para agregarlas al mapa
 					juego.agregarEntidades();
-					vueltas = 0;
+					if(juego.nivelTerminado()) {
+						juego.setSigNivel();
+						System.out.println("GAME: Se seteo el siguiente nivel");
+					}
+					vueltas = 0;	
 				}
 								
 				juego.accionarEstados();
