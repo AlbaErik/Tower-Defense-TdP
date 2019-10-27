@@ -1,7 +1,5 @@
 package Logica.Entidades.Atacantes;
 
-import Armas.Arma;
-import Armas.ArmaSimple;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
@@ -12,12 +10,10 @@ import Logica.Mapa.Mapa;
 public abstract class Atacante extends Personaje implements Cloneable{
 	protected double movementSpeed;
 	protected InteligenciaAtacante intel;
-	protected Arma arma;
 
 
 	public Atacante(int x, int y, Mapa m) {
-		super(x, y, m);
-		arma = new ArmaSimple(this, m);
+		super(x, y, m);	
 		direccion = -1;
 	}
 	

@@ -16,16 +16,18 @@ public class ArqueroElite extends Defensor {
 
 	public ArqueroElite(int x, int y, Mapa m) {
 		super(x, y, m);
-		super.col = new ColisionadorDefensor(this);
-		this.grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
+		life = 150;
+		attackSpeed=1;
+		damage = 30;
+		range = 400;
+		cost=100;
+		
+		grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		arma = new Arco(this, m);
-		life = 800;
 		estado = new ReposoDefensor(this);
-		life = 140;
-		damage = 0;
-		colDistancia = new ColADistanciaDef(this);
-		range = 400;
+		col = new ColisionadorDefensor(this);
+		colDistancia = new ColADistanciaDef(this);	
 	}
 
 	@Override

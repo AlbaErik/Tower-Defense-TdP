@@ -26,7 +26,7 @@ public class AtaqueEnemigo extends EstadoPersonaje {
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.attack();
 			
-			if (personaje.getContador() % 50 == 0) {
+			if (personaje.getContador() == personaje.getAttackSpeed()*1000) {
 
 				personaje.atacar(aDestruir);
 				personaje.resetContador();

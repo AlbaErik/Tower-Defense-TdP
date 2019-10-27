@@ -14,14 +14,17 @@ public class Espadachin extends Atacante {
 
 	public Espadachin(int x, int y, Mapa m) {
 		super(x, y, m);
-		this.grafico = new EspadachinGrafico(x, y, m.getPanelMapa(), this);
-		this.movementSpeed = 2;
-		life = 100;
-		this.col = new ColisionadorAtacante(this);
+		life = 260;
+		attackSpeed=1;
+		damage = 50;
+		range = 100;
+		movementSpeed=1.5;
+		
+		grafico = new EspadachinGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
-		damage = 40;
+		col = new ColisionadorAtacante(this);
 	}
 
 	@Override

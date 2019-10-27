@@ -16,14 +16,18 @@ public class NinjaElite extends Defensor {
 
 	public NinjaElite(int x, int y, Mapa m) {// Agregar valores a los atributos
 		super(x, y, m);
+		life = 200;
+		attackSpeed = 0.5; //Es 1 seg
+		damage = 20;
+		range = 200;
+		cost = 150;
+		
 		this.grafico = new NinjaEliteGrafico(x, y, m.getPanelMapa(), this);
 		super.col = new ColisionadorDefensor(this);
 		intel = new InteligenciaDefensor(this);
 		arma = new LanzadorShurikens(this, m);
 		estado = new ReposoDefensor(this);
-		life = 190;
 		//colDistancia = new ColADistanciaDef(this);
-		//range = 100;
 	}
 
 	public EntidadGrafica getGrafico() {

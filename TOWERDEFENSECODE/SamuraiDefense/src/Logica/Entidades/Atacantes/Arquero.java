@@ -16,16 +16,18 @@ public class Arquero extends Atacante {
 	
 	public Arquero(int x, int y, Mapa m) {
 		super(x, y, m);
-		this.grafico = new ArqueroGrafico(x, y, m.getPanelMapa(), this);
-		this.movementSpeed = 1;
-		life = 100;
-		this.col = new ColisionadorAtacante(this);
+		life = 160;
+		attackSpeed=1;
+		damage = 35;
+		range = 400;
+		movementSpeed=1;
+		
+		grafico = new ArqueroGrafico(x, y, m.getPanelMapa(), this);	
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
-		damage = 0;
+		col = new ColisionadorAtacante(this);
 		colDistancia = new ColADistanciaEnem(this);
-		range = 200;
 	}
 
 	public void chocar(Colisionador e) {

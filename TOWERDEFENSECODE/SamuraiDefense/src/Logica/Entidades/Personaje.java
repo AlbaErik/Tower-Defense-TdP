@@ -1,15 +1,16 @@
 package Logica.Entidades;
 
 import Armas.Arma;
+import Armas.ArmaSimple;
 import Logica.Colisionadores.Colisionador;
 import Logica.Mapa.Mapa;
 
 
 public abstract class Personaje extends Entidad {
 	protected int damage;
-	protected int range = 0;
-	protected int attackSpeed;
-	protected Arma Weapon;
+	protected int range;
+	protected double attackSpeed;
+	protected Arma arma;
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
 	protected int direccion;
@@ -17,6 +18,7 @@ public abstract class Personaje extends Entidad {
 	
 	public Personaje(int x,int y, Mapa m) {
 		super(x,y,m);
+		arma = new ArmaSimple(this, m);
 		contadorDisparos = 0;
 		tiempoMuerte = 20;
 	}
@@ -43,7 +45,7 @@ public abstract class Personaje extends Entidad {
 		return range;
 	}
 	
-	public  int getAttackSpeed() {
+	public  double getAttackSpeed() {
 		return attackSpeed;
 	}
 	

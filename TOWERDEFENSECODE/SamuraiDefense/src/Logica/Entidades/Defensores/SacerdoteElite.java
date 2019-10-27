@@ -13,11 +13,16 @@ public class SacerdoteElite extends Defensor {
 
 	public SacerdoteElite(int x, int y, Mapa m) {
 		super(x, y, m);
-		super.col = new ColisionadorDefensor(this);
-		this.grafico = new SacerdoteEliteGrafico(x, y, m.getPanelMapa(), this);
+		life = 350;
+		attackSpeed = 3; //Es 1 seg
+		damage = 70;
+		range = 100;//300 px
+		cost = 300;
+			
+		grafico = new SacerdoteEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		estado = new ReposoDefensor(this);
-		life = 300;
+		col = new ColisionadorDefensor(this);
 	}
 
 	@Override

@@ -15,14 +15,18 @@ public class LanceroElite extends Defensor {
 
 	public LanceroElite(int x, int y, Mapa m) {
 		super(x, y, m);
-		super.col = new ColisionadorDefensor(this);
-		this.grafico = new LanceroEliteGrafico(x, y, m.getPanelMapa(), this);
+		life = 300;
+		attackSpeed = 2; //Es 1 seg
+		damage = 50;
+		range = 300;//300 px
+		cost = 250;
+		
+		grafico = new LanceroEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		arma = new TiraLanzas(this, m);
 		estado = new ReposoDefensor(this);
-		life = 200;
+		col = new ColisionadorDefensor(this);
 		//colDistancia = new ColADistanciaDef(this);
-		//range = 200;
 	}
 
 	@Override

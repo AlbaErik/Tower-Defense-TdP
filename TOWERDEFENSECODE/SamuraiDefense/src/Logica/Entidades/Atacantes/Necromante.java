@@ -14,14 +14,17 @@ public class Necromante extends Atacante {
 
 	public Necromante(int x, int y, Mapa m) {
 		super(x, y, m);
-		this.grafico = new NecromanteGrafico(x, y, m.getPanelMapa(), this);
-		this.movementSpeed = 2.5;
-		life = 150;
-		this.col = new ColisionadorAtacante(this);
+		life = 300;
+		attackSpeed=1;
+		damage = 45;
+		range = 100;
+		movementSpeed=1.3;
+		
+		grafico = new NecromanteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
 		estado = new Avanzar(this);
 		arma = new Arco(this,m);
-		damage = 50;
+		col = new ColisionadorAtacante(this);
 	}
 
 	public void chocar(Colisionador e) {

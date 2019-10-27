@@ -13,11 +13,16 @@ public class SamuraiElite extends Defensor {
 
 	public SamuraiElite(int x, int y, Mapa m) {
 		super(x, y, m);
-		super.col = new ColisionadorDefensor(this);
-		this.grafico = new SamuraiEliteGrafico(x, y, m.getPanelMapa(), this);
+		life = 500;
+		attackSpeed = 3; //Es 1 seg
+		damage = 100;
+		range = 100;//300 px
+		cost = 450;
+		
+		grafico = new SamuraiEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		estado = new ReposoDefensor(this);
-		life = 150;
+		col = new ColisionadorDefensor(this);
 	}
 
 	@Override

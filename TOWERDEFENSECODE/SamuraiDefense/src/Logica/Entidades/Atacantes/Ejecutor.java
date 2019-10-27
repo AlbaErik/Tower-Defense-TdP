@@ -14,14 +14,17 @@ public class Ejecutor extends Atacante {
 
 	public Ejecutor(int x, int y, Mapa m) {
 		super(x, y, m);
-		this.grafico = new EjecutorGrafico(x, y, m.getPanelMapa(), this);
-		this.movementSpeed = 1;
-		life = 100;
-		this.col = new ColisionadorAtacante(this);
+		life = 360;
+		attackSpeed=1;
+		damage = 70;
+		range = 100;
+		movementSpeed=0.8;
+		
+		grafico = new EjecutorGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
-		damage = 10;
+		col = new ColisionadorAtacante(this);
 	}
 	
 	public void chocar(Colisionador e) {

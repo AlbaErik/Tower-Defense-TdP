@@ -13,18 +13,18 @@ public class Ninja extends Atacante {
 
 	public Ninja(int x, int y, Mapa m) {
 		super(x, y, m);
+		life = 210;
+		attackSpeed=0.5;
+		damage = 25;
+		range = 200;
+		movementSpeed=1;
+		
+		grafico = new NinjaGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
-		this.life = 100;
-		this.damage = 30;
-		this.attackSpeed = 5;
-		this.movementSpeed = 1.5;
-		this.range = 3;
-		this.grafico = new NinjaGrafico(x, y, m.getPanelMapa(), this);
-		this.col = new ColisionadorAtacante(this);
 		arma = new LanzadorShurikens(this, m);
 		estado = new Avanzar(this);
+		col = new ColisionadorAtacante(this);
 		//colDistancia = new ColADistanciaEnem(this);
-		//range = 100;
 	}
 
 	@Override

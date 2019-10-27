@@ -2,7 +2,6 @@ package Logica.Entidades.Atacantes;
 
 import Armas.Arco;
 import Grafica.Entidades.Atacantes.EmperadorGrafico;
-import Grafica.Entidades.Atacantes.EspadachinGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Entidades.Entidad;
@@ -15,13 +14,17 @@ public class Emperador extends Atacante {
 
 	public Emperador(int x, int y, Mapa m) {
 		super(x, y, m);
-		this.grafico = new EmperadorGrafico(x, y, m.getPanelMapa(), this);
-		this.movementSpeed = 2;
-		this.col = new ColisionadorAtacante(this);
-		this.life=200;
+		life = 450;
+		attackSpeed=4;
+		damage = 90;
+		range = 100;
+		movementSpeed=0.5;
+		
+		grafico = new EmperadorGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
+		col = new ColisionadorAtacante(this);
 	}
 
 	@Override
