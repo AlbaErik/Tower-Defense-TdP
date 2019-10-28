@@ -2,11 +2,8 @@ package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
-import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Personajes.Avanzar;
 import Logica.Estados.Personajes.EstadoPersonaje;
-import Logica.Estados.Personajes.Morir;
-import Logica.Estados.Personajes.Defensor.AtaqueDefensor;
 
 public class ReposoEnemigo extends EstadoPersonaje {
 
@@ -16,35 +13,29 @@ public class ReposoEnemigo extends EstadoPersonaje {
 
 	@Override
 	public void ejecutar() {
-		if(personaje.getLife() <= 0) {			
-			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
-			p.death();
-			personaje.cambiarEstado(new Morir(personaje));
-			personaje.prohibidoCambiarEstado();
+		if (personaje.getLife() <= 0) {
+			matarPersonaje();
 
-		}else {
-			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+		} else {
+			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.standing();
-		}
-			
-		if (personaje.getContador() % 50 == 0) {
-			
-			controlarAvanzar();
-			controlarAtaque();
-			
-			/*
-			if(sePuedeAvanzar((Atacante) personaje)) {
-				personaje.cambiarEstado(new Avanzar(personaje));
-			}else {
-				if(chequearADistancia(personaje.getRange())) {
-					personaje.cambiarEstado(new AtaqueDefensor(personaje));
-				}
-			}
-			*/
-			
-			personaje.resetContador();				
 
+			if (personaje.getContador() % 20 == 0) {
+
+				if (sePuedeAvanzar()) {
+					System.out.println("REPOSOENEMIGO----Entidad: " + personaje.getClass() + " puede avanzar");
+					personaje.cambiarEstado(new Avanzar(personaje));
+					personaje.resetContador();
+
+				} else {
+					actualizarentidadesEnRango();
+					controlarAtaqueDistancia();
+				}
+				personaje.resetContador();
+			}
+
+			personaje.incrementarContador();
 		}
-		personaje.incrementarContador();		
+
 	}
 }

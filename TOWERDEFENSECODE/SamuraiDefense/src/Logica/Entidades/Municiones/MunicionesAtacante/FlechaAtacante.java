@@ -2,6 +2,7 @@ package Logica.Entidades.Municiones.MunicionesAtacante;
 
 import Grafica.Entidades.Municiones.MunicionesAtacante.FlechaAtacanteGrafico;
 import Logica.Colisionadores.Colisionador;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionAtaq;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
@@ -46,6 +47,11 @@ public class FlechaAtacante extends Municion {
 	public int getDaño() {
 		// TODO Auto-generated method stub
 		return daño;
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 

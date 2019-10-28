@@ -5,7 +5,8 @@ import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Defensores.NinjaEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
-import Logica.Colisionadores.Adistancia.ColADistanciaDef;
+import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaDef;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
@@ -19,7 +20,7 @@ public class NinjaElite extends Defensor {
 		life = 200;
 		attackSpeed = 0.5; //Es 1 seg
 		damage = 20;
-		range = 200;
+		range = 0;
 		cost = 150;
 		
 		this.grafico = new NinjaEliteGrafico(x, y, m.getPanelMapa(), this);
@@ -27,7 +28,7 @@ public class NinjaElite extends Defensor {
 		intel = new InteligenciaDefensor(this);
 		arma = new LanzadorShurikens(this, m);
 		estado = new ReposoDefensor(this);
-		//colDistancia = new ColADistanciaDef(this);
+		colDistancia = new ColAtaqueDistanciaDef(this);
 	}
 
 	public EntidadGrafica getGrafico() {
@@ -56,6 +57,11 @@ public class NinjaElite extends Defensor {
 		if(aDestruir != null) {
 			aDestruir.setLife(damage);
 		}
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

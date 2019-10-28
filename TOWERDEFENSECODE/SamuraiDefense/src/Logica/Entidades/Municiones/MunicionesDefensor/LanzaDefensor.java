@@ -1,6 +1,7 @@
 package Logica.Entidades.Municiones.MunicionesDefensor;
 
 import Logica.Colisionadores.Colisionador;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Inteligencia.InteligenciaMunicionDef;
@@ -30,6 +31,11 @@ public class LanzaDefensor extends Municion {
 	public int getDaño() {
 		// TODO Auto-generated method stub
 		return daño;
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 	
 }

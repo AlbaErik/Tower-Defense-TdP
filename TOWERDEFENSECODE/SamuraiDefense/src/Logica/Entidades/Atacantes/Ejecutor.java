@@ -4,6 +4,7 @@ import Armas.Arco;
 import Grafica.Entidades.Atacantes.EjecutorGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
@@ -17,7 +18,7 @@ public class Ejecutor extends Atacante {
 		life = 360;
 		attackSpeed=1;
 		damage = 70;
-		range = 100;
+		range = 0;
 		movementSpeed=0.8;
 		
 		grafico = new EjecutorGrafico(x, y, m.getPanelMapa(), this);
@@ -52,6 +53,11 @@ public class Ejecutor extends Atacante {
 		if(aDestruir != null) {
 			aDestruir.setLife(damage);
 		}
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

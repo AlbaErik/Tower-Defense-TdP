@@ -17,6 +17,10 @@ public class PiedraMedia extends EstadoObjeto {
 		if (obs.getLife() < 40 && obs.getLife() >= 20) {
 			obs.cambiarEstado(new PiedraBaja(obs));
 		}
+		
+		if(obs.getLife() <= 0) {
+			obs.morir();
+		}
 	}
 
 	@Override

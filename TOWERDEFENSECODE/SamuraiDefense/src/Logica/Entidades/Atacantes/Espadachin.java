@@ -4,6 +4,7 @@ import Armas.Arco;
 import Grafica.Entidades.Atacantes.EspadachinGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.*;
 import Logica.Inteligencia.Inteligencia;
@@ -15,11 +16,11 @@ public class Espadachin extends Atacante {
 	public Espadachin(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 260;
-		attackSpeed=1;
+		attackSpeed = 1;
 		damage = 50;
-		range = 100;
-		movementSpeed=1.5;
-		
+		range = 0;
+		movementSpeed = 1.5;
+
 		grafico = new EspadachinGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
@@ -31,10 +32,10 @@ public class Espadachin extends Atacante {
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
 	}
-	
+
 	@Override
 	public Atacante clone() {
-		return new Espadachin(0,0,super.mapa);
+		return new Espadachin(0, 0, super.mapa);
 	}
 
 	@Override
@@ -45,14 +46,19 @@ public class Espadachin extends Atacante {
 
 	@Override
 	public void ejecutarEstado() {
-		estado.ejecutar();		
+		estado.ejecutar();
 	}
 
 	@Override
 	public void atacar(Entidad aDestruir) {
-		if(aDestruir != null) {
+		if (aDestruir != null) {
 			aDestruir.setLife(damage);
 		}
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

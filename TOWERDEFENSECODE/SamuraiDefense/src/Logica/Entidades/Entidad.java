@@ -2,6 +2,7 @@ package Logica.Entidades;
 
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Estados.Estado;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
@@ -29,6 +30,8 @@ public abstract class Entidad {
 	public Mapa getMapa() {
 		return mapa;
 	}
+	
+	public abstract boolean chocaraDistancia(VisitorDistancia v);
 	
 	/*
 	 * Sirve para crear un delay a la hora de ejecutar una accion.

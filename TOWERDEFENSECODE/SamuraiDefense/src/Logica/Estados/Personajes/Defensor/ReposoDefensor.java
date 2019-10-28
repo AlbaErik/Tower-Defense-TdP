@@ -3,7 +3,6 @@ package Logica.Estados.Personajes.Defensor;
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
 import Logica.Estados.Personajes.EstadoPersonaje;
-import Logica.Estados.Personajes.Morir;
 
 public class ReposoDefensor extends EstadoPersonaje {
 
@@ -14,10 +13,7 @@ public class ReposoDefensor extends EstadoPersonaje {
 	@Override
 	public void ejecutar() {
 		if(personaje.getLife() <= 0) {			
-			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
-			p.death();
-			personaje.cambiarEstado(new Morir(personaje));
-			personaje.prohibidoCambiarEstado();
+			matarPersonaje();
 
 		}else {
 			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
@@ -26,8 +22,8 @@ public class ReposoDefensor extends EstadoPersonaje {
 			
 		if (personaje.getContador() % 50 == 0) {
 			
-			if(personaje.getRange() > 0 && controlarAtaque()) {
-				personaje.cambiarEstado(new AtaqueDefensor(personaje));
+			if(personaje.getRange() > 0 ) {
+				controlarAtaqueDistancia();
 			}
 			
 			personaje.resetContador();				

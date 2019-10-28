@@ -78,23 +78,20 @@ public class ColisionadorAtacante extends Colisionador {
 	public void serChocado(Barro e) {
 	}
 
-	
 	private Personaje quienSeFrena(Personaje p) {
 		double x = ataq.getPos().getX();
 		Personaje toret = ataq;
-		if(p.getPos().getX() > x)
+		if (p.getPos().getX() > x)
 			toret = p;
 		return toret;
 	}
-	
-	
-	
+
 	@Override
 	public void serChocado(Ninja e) {
 		Personaje p = quienSeFrena(e);
 		p.cambiarEstado(new ReposoEnemigo(p));
 	}
-	
+
 	@Override
 	public void serChocado(Espadachin e) {
 		Personaje p = quienSeFrena(e);
@@ -110,12 +107,14 @@ public class ColisionadorAtacante extends Colisionador {
 	@Override
 	public void serChocado(Ejecutor e) {
 		Personaje p = quienSeFrena(e);
-		p.cambiarEstado(new ReposoEnemigo(p));	}
+		p.cambiarEstado(new ReposoEnemigo(p));
+	}
 
 	@Override
 	public void serChocado(Necromante e) {
 		Personaje p = quienSeFrena(e);
-		p.cambiarEstado(new ReposoEnemigo(p));	}
+		p.cambiarEstado(new ReposoEnemigo(p));
+	}
 
 	public void serChocado(FlechaAtacante flechaAtacante) {
 		// TODO Auto-generated method stub
@@ -124,13 +123,13 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(FlechaDefensor f) {
-		
+
 	}
 
 	@Override
 	public void serChocado(Emperador e) {
-		// TODO Auto-generated method stub
-		
+		Personaje p = quienSeFrena(e);
+		p.cambiarEstado(new ReposoEnemigo(p));
 	}
 
 }

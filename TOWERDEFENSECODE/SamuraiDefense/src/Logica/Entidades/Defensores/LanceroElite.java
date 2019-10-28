@@ -4,7 +4,8 @@ import Armas.TiraLanzas;
 import Grafica.Entidades.Defensores.LanceroEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
-import Logica.Colisionadores.Adistancia.ColADistanciaDef;
+import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaDef;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
@@ -18,7 +19,7 @@ public class LanceroElite extends Defensor {
 		life = 300;
 		attackSpeed = 2; //Es 1 seg
 		damage = 50;
-		range = 300;//300 px
+		range = 0;//300 px
 		cost = 250;
 		
 		grafico = new LanceroEliteGrafico(x, y, m.getPanelMapa(), this);
@@ -26,7 +27,7 @@ public class LanceroElite extends Defensor {
 		arma = new TiraLanzas(this, m);
 		estado = new ReposoDefensor(this);
 		col = new ColisionadorDefensor(this);
-		//colDistancia = new ColADistanciaDef(this);
+		colDistancia = new ColAtaqueDistanciaDef(this);
 	}
 
 	@Override
@@ -50,6 +51,11 @@ public class LanceroElite extends Defensor {
 		if(aDestruir != null) {
 			aDestruir.setLife(damage);
 		}
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

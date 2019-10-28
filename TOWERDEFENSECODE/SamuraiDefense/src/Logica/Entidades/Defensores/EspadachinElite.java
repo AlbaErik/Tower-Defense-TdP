@@ -4,6 +4,7 @@ import Armas.ArmaSimple;
 import Grafica.Entidades.Defensores.EspadachinEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
@@ -17,7 +18,7 @@ public class EspadachinElite extends Defensor {
 		life = 250;
 		attackSpeed = 1; //Es 1 seg
 		damage = 40;
-		range = 100;
+		range = 0;
 		cost = 200;
 		
 		grafico = new EspadachinEliteGrafico(x, y, m.getPanelMapa(), this);
@@ -49,6 +50,11 @@ public class EspadachinElite extends Defensor {
 		if(aDestruir != null) {
 			aDestruir.setLife(damage);
 		}
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

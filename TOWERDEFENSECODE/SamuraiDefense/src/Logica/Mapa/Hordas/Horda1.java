@@ -40,7 +40,7 @@ public class Horda1 extends Horda{
 
 	private void crearEnemigos1() {
 		atacantes1 = new LinkedList<Atacante>();
-		int cantEnemigos = 6;
+		int cantEnemigos = 5;
 		for (int i = 0; i < cantEnemigos; i++) {
 			atacantes1.add(crearAtacanteRandom());
 		}
@@ -63,8 +63,8 @@ public class Horda1 extends Horda{
 	}
 
 	private void inicializarHorda() {
-		lista.add(new Ninja(0, 0, mapa));
-		lista.add(new Espadachin(0, 0, mapa));
+		//lista.add(new Ninja(0, 0, mapa));
+		//lista.add(new Espadachin(0, 0, mapa));
 		lista.add(new Arquero(0, 0, mapa));
 		//lista.add(new Ejecutor(0,0,mapa));
 		//lista.add(new Necromante(0,0,mapa));

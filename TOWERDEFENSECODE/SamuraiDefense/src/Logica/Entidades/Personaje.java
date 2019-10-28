@@ -5,7 +5,6 @@ import Armas.ArmaSimple;
 import Logica.Colisionadores.Colisionador;
 import Logica.Mapa.Mapa;
 
-
 public abstract class Personaje extends Entidad {
 	protected int damage;
 	protected int range;
@@ -15,39 +14,39 @@ public abstract class Personaje extends Entidad {
 	protected int tiempoMuerte;
 	protected int direccion;
 	protected Colisionador colDistancia;
-	
-	public Personaje(int x,int y, Mapa m) {
-		super(x,y,m);
+
+	public Personaje(int x, int y, Mapa m) {
+		super(x, y, m);
 		arma = new ArmaSimple(this, m);
 		contadorDisparos = 0;
 		tiempoMuerte = 20;
 	}
-		
+
 	public Colisionador getColDistancia() {
 		return colDistancia;
 	}
-	
+
 	public abstract int getDireccion();
-	
+
 	public void restarTiempoMuerte() {
 		tiempoMuerte--;
 	}
-	
+
 	public int getTiempoMuerte() {
 		return tiempoMuerte;
 	}
-	
-	public  int getDamage() {
+
+	public int getDamage() {
 		return damage;
 	}
-	
-	public  int getRange() {
+
+	public int getRange() {
 		return range;
 	}
-	
-	public  double getAttackSpeed() {
+
+	public double getAttackSpeed() {
 		return attackSpeed;
 	}
-	
+
 	public abstract void atacar(Entidad aDestruir);
 }

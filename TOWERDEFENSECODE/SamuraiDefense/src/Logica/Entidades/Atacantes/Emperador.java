@@ -4,6 +4,7 @@ import Armas.Arco;
 import Grafica.Entidades.Atacantes.EmperadorGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Avanzar;
 import Logica.Inteligencia.Inteligencia;
@@ -17,7 +18,7 @@ public class Emperador extends Atacante {
 		life = 450;
 		attackSpeed=4;
 		damage = 90;
-		range = 100;
+		range = 0;
 		movementSpeed=0.5;
 		
 		grafico = new EmperadorGrafico(x, y, m.getPanelMapa(), this);
@@ -53,6 +54,11 @@ public class Emperador extends Atacante {
 	public void atacar(Entidad aDestruir) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 	

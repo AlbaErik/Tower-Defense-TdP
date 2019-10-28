@@ -3,6 +3,7 @@ package Logica.Entidades.Defensores;
 import Grafica.Entidades.Defensores.SamuraiEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
@@ -16,7 +17,7 @@ public class SamuraiElite extends Defensor {
 		life = 500;
 		attackSpeed = 3; //Es 1 seg
 		damage = 100;
-		range = 100;//300 px
+		range = 0;//300 px
 		cost = 450;
 		
 		grafico = new SamuraiEliteGrafico(x, y, m.getPanelMapa(), this);
@@ -47,6 +48,11 @@ public class SamuraiElite extends Defensor {
 		if(aDestruir != null) {
 			aDestruir.setLife(damage);
 		}
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

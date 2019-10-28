@@ -4,7 +4,8 @@ import Armas.Arco;
 import Grafica.Entidades.Atacantes.ArqueroGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
-import Logica.Colisionadores.Adistancia.ColADistanciaEnem;
+import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaEnem;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.*;
@@ -13,21 +14,21 @@ import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
 public class Arquero extends Atacante {
-	
+
 	public Arquero(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 160;
-		attackSpeed=1;
+		attackSpeed = 1;
 		damage = 35;
-		range = 400;
-		movementSpeed=1;
-		
-		grafico = new ArqueroGrafico(x, y, m.getPanelMapa(), this);	
+		range = 200;
+		movementSpeed = 1;
+
+		grafico = new ArqueroGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
 		col = new ColisionadorAtacante(this);
-		colDistancia = new ColADistanciaEnem(this);
+		colDistancia = new ColAtaqueDistanciaEnem(this);
 	}
 
 	public void chocar(Colisionador e) {
@@ -52,6 +53,11 @@ public class Arquero extends Atacante {
 	public void atacar(Entidad e) {
 		Municion mun = arma.crearMunicionAtacante();
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

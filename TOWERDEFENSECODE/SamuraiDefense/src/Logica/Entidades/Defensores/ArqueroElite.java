@@ -4,7 +4,8 @@ import Armas.Arco;
 import Grafica.Entidades.Defensores.ArqueroEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
-import Logica.Colisionadores.Adistancia.ColADistanciaDef;
+import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaDef;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
@@ -17,24 +18,23 @@ public class ArqueroElite extends Defensor {
 	public ArqueroElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 150;
-		attackSpeed=1;
+		attackSpeed = 1;
 		damage = 30;
 		range = 400;
-		cost=100;
-		
+		cost = 100;
+
 		grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		arma = new Arco(this, m);
 		estado = new ReposoDefensor(this);
 		col = new ColisionadorDefensor(this);
-		colDistancia = new ColADistanciaDef(this);	
+		colDistancia = new ColAtaqueDistanciaDef(this);
 	}
 
 	@Override
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
 	}
-
 
 	@Override
 	public Inteligencia getInteligencia() {
@@ -50,6 +50,11 @@ public class ArqueroElite extends Defensor {
 	public void atacar(Entidad e) {
 		Municion mun = arma.crearMunicionDefensor();
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

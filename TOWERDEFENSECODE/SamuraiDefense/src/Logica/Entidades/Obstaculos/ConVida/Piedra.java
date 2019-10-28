@@ -3,6 +3,7 @@ package Logica.Entidades.Obstaculos.ConVida;
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Obstaculos.VidaFinita.PiedraGrafica;
 import Logica.Colisionadores.Colisionador;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorPiedra;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
@@ -44,6 +45,11 @@ public class Piedra extends Obstaculo {
 	@Override
 	public Obstaculo clone() {
 		return new Piedra(0, 0, mapa);
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 
 }

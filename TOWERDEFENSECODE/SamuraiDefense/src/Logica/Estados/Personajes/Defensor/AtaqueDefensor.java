@@ -3,7 +3,6 @@ package Logica.Estados.Personajes.Defensor;
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
 import Logica.Estados.Personajes.EstadoPersonaje;
-import Logica.Estados.Personajes.Morir;
 
 public class AtaqueDefensor extends EstadoPersonaje {
 
@@ -15,10 +14,7 @@ public class AtaqueDefensor extends EstadoPersonaje {
 	public void ejecutar() {
 		if (personaje.getLife() <= 0) {
 
-			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
-			p.death();
-			personaje.cambiarEstado(new Morir(personaje));
-			personaje.prohibidoCambiarEstado();
+			matarPersonaje();
 
 		} else {
 			if (personaje.getContador() % 50 == 0) {
@@ -26,9 +22,7 @@ public class AtaqueDefensor extends EstadoPersonaje {
 				personaje.atacar(aDestruir);
 				personaje.resetContador();
 				
-				if(personaje.getRange() > 0 && !controlarAtaque()) {
-					personaje.cambiarEstado(new ReposoDefensor(personaje));
-				}
+				rangoVacioDef(); //Controla que no encuentre enemigos al frente para parar
 				
 			}
 			personaje.incrementarContador();

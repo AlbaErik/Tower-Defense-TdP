@@ -1,6 +1,7 @@
 package Logica.Entidades.Obstaculos.Temporales;
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
+import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorBarro;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
@@ -45,6 +46,11 @@ public class Barro extends Obstaculo{
 	public Obstaculo clone() {
 		// TODO Auto-generated method stub
 		return new Barro(0, 0, mapa);
+	}
+
+	@Override
+	public boolean chocaraDistancia(VisitorDistancia v) {
+		return v.serChocado(this);
 	}
 	
 

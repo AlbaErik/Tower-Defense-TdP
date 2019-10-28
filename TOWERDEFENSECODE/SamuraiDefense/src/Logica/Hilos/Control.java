@@ -25,7 +25,7 @@ public class Control {
 
 				double distX = Math.abs(e1.getX() - e2.getX());
 
-				boolean colisionX = distX < e1.getRectangle().getWidth()-40;
+				boolean colisionX = distX < e1.getRectangle().getWidth() - 40;
 				boolean colisionY = e1.getY() == e2.getY();
 
 				if (ent1 != ent2 && colisionX && colisionY)
@@ -36,24 +36,41 @@ public class Control {
 	}
 
 	/*
-	 * Esta funcion determina si hay entidades en un rago y direccion del mapa. 
-	 * La direccion a buscar depende del personaje que invoque la funcion.
+	 * Esta funcion determina si hay entidades en un rago y direccion del mapa. La
+	 * direccion a buscar depende del personaje que invoque la funcion.
 	 */
 	public Entidad hayEntidadEnRango(int x, int y, int rango, int direccion, Entidad miEntidad) {
 		boolean avanzar = false;
 		Entidad ent = null;
 		while (rango > 0 && !avanzar) {
 			avanzar = map.hayEnPos(x, y);
-			if(avanzar) {
-				//System.out.println("CONTROL: Se encontro la entidad: " + map.getEntidadEnPos(x, y).getClass());
+			if (avanzar) {
+				// System.out.println("CONTROL: Se encontro la entidad: " +
+				// map.getEntidadEnPos(x, y).getClass());
 				ent = map.getEntidadEnPos(x, y);
 				ent.chocar(miEntidad.getColisionador());
 			}
 			rango--;
 			x += direccion;
 		}
-		
 		return ent;
+	}
+
+	public LinkedList<Entidad> getEntidadesEnRango(int x, int y, int rango, int direccion, Entidad miEntidad) {
+		LinkedList<Entidad> lista = new LinkedList<Entidad>();
+		Entidad ent;
+		boolean encontre = false;
+		while (rango > 0) {
+			encontre = map.hayEnPos(x, y);
+			if (encontre) {
+				ent = map.getEntidadEnPos(x, y);
+				lista.addLast(ent);
+			}
+			rango--;
+			x += direccion;
+		}
+
+		return lista;
 	}
 
 }
