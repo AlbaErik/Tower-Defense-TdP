@@ -9,6 +9,7 @@ public class AtaqueEnemigo extends EstadoPersonaje {
 
 	public AtaqueEnemigo(Personaje e) {
 		super(e);
+		dejoPasar = false;
 	}
 
 	@Override

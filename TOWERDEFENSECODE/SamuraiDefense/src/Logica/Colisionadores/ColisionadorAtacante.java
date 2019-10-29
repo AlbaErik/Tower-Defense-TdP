@@ -89,36 +89,49 @@ public class ColisionadorAtacante extends Colisionador {
 	@Override
 	public void serChocado(Ninja e) {
 		Personaje p = quienSeFrena(e);
-		if (!p.getEstado().getPermisoParaPasar())
+		if (!(p.getEstado().getPermisoParaPasar())) {
 			p.cambiarEstado(new ReposoEnemigo(p));
+		}
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
 		Personaje p = quienSeFrena(e);
-		if (!p.getEstado().getPermisoParaPasar())
+		if (!(p.getEstado().getPermisoParaPasar())) {
 			p.cambiarEstado(new ReposoEnemigo(p));
+		}
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
 		Personaje p = quienSeFrena(e);
-		if (!p.getEstado().getPermisoParaPasar())
+		if (!(p.getEstado().getPermisoParaPasar())) {
 			p.cambiarEstado(new ReposoEnemigo(p));
+		}
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
 		Personaje p = quienSeFrena(e);
-		if (!p.getEstado().getPermisoParaPasar())
+		if (!(p.getEstado().getPermisoParaPasar())) {
 			p.cambiarEstado(new ReposoEnemigo(p));
+		}
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
 		Personaje p = quienSeFrena(e);
-		if (!p.getEstado().getPermisoParaPasar())
+		if (!(p.getEstado().getPermisoParaPasar())) {
 			p.cambiarEstado(new ReposoEnemigo(p));
+		}
+	}
+	
+	@Override
+	public void serChocado(Emperador e) {
+		Personaje p = quienSeFrena(e);
+		if (!(p.getEstado().getPermisoParaPasar())) {
+			p.cambiarEstado(new ReposoEnemigo(p));
+		}
 	}
 
 	public void serChocado(FlechaAtacante flechaAtacante) {
@@ -131,11 +144,6 @@ public class ColisionadorAtacante extends Colisionador {
 
 	}
 
-	@Override
-	public void serChocado(Emperador e) {
-		Personaje p = quienSeFrena(e);
-		if (!p.getEstado().getPermisoParaPasar())
-			p.cambiarEstado(new ReposoEnemigo(p));
-	}
+	
 
 }

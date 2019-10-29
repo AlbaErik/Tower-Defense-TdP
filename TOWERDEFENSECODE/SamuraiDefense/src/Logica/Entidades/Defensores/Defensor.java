@@ -1,5 +1,6 @@
 package Logica.Entidades.Defensores;
 
+import Logica.Colisionadores.Adistancia.ColCaminoLibreDef;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Mapa.Mapa;
@@ -9,6 +10,7 @@ public abstract class Defensor extends Personaje {
 	
 	public Defensor(int x, int y, Mapa m) {
 		super(x, y, m);
+		colCaminoLibre = new ColCaminoLibreDef();
 		direccion = 1;
 	}
 

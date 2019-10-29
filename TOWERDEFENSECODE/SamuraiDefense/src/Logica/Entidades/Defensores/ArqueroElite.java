@@ -28,7 +28,7 @@ public class ArqueroElite extends Defensor {
 		arma = new Arco(this, m);
 		estado = new ReposoDefensor(this);
 		col = new ColisionadorDefensor(this);
-		colDistancia = new ColAtaqueDistanciaDef(this);
+		colDistancia = new ColAtaqueDistanciaDef(this); // revisar su utilidad
 	}
 
 	@Override

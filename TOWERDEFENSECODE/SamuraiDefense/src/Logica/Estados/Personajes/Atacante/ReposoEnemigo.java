@@ -22,11 +22,9 @@ public class ReposoEnemigo extends EstadoPersonaje {
 			p.standing();
 
 			if (personaje.getContador() % 50 == 0) {
-
 				actualizarentidadesEnRango();
 
 				if (sePuedeAvanzar()) {
-					System.out.println("REPOSOENEMIGO----Entidad: " + personaje.getClass() + " puede avanzar");
 					personaje.cambiarEstado(new Avanzar(personaje));
 					
 

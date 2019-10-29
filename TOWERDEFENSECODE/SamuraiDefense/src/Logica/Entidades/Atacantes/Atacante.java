@@ -1,6 +1,7 @@
 package Logica.Entidades.Atacantes;
 
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
+import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Inteligencia.Inteligencia;
@@ -14,6 +15,7 @@ public abstract class Atacante extends Personaje implements Cloneable{
 
 	public Atacante(int x, int y, Mapa m) {
 		super(x, y, m);	
+		colCaminoLibre = new ColCaminoLibreEnem();
 		direccion = -1;
 	}
 	
