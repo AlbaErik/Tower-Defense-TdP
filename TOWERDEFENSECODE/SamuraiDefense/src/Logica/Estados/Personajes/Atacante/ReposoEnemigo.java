@@ -9,6 +9,7 @@ public class ReposoEnemigo extends EstadoPersonaje {
 
 	public ReposoEnemigo(Personaje e) {
 		super(e);
+		dejoPasar = false;
 	}
 
 	@Override
@@ -20,15 +21,16 @@ public class ReposoEnemigo extends EstadoPersonaje {
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.standing();
 
-			if (personaje.getContador() % 20 == 0) {
+			if (personaje.getContador() % 50 == 0) {
+
+				actualizarentidadesEnRango();
 
 				if (sePuedeAvanzar()) {
 					System.out.println("REPOSOENEMIGO----Entidad: " + personaje.getClass() + " puede avanzar");
 					personaje.cambiarEstado(new Avanzar(personaje));
-					personaje.resetContador();
+					
 
 				} else {
-					actualizarentidadesEnRango();
 					controlarAtaqueDistancia();
 				}
 				personaje.resetContador();

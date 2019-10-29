@@ -23,7 +23,7 @@ public abstract class EstadoPersonaje extends Estado {
 		control = new Control(p.getMapa());
 		entidadesEnRango = new LinkedList<Entidad>();		
 	}
-	
+		
 	protected void matarPersonaje() {
 		PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
 		p.death();
@@ -47,14 +47,19 @@ public abstract class EstadoPersonaje extends Estado {
 		entidadesEnRango = control.getEntidadesEnRango(x, y, personaje.getRange(), personaje.getDireccion(), personaje);
 	}
 
+	
+	
+	
 	/*
 	 * Revisa si hay entidades a distancia para decidir si atacar, o avanzar segun el caso
 	 */
 	protected void controlarAtaqueDistancia() {
 		if (personaje.getRange() > 0) {			
 			Entidad entEnRango = buscarEntidadEnRango();
-			if (entEnRango != null)
+			if (entEnRango != null) {
+				System.out.println("EstadoPersonaje---Entidad en rango: " + entEnRango.getClass());
 				entEnRango.chocar(personaje.getColDistancia());
+			}
 		}
 	}
 

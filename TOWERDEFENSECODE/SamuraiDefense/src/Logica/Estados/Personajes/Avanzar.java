@@ -7,6 +7,11 @@ public class Avanzar extends EstadoPersonaje {
 
 	public Avanzar(Personaje e) {
 		super(e);
+		dejoPasar = true;
+	}
+	
+	public boolean getPersmisoParaAvanzar() {
+		return false;
 	}
 
 	@Override
