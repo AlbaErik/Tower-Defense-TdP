@@ -4,7 +4,6 @@ import Armas.Arco;
 import Grafica.Entidades.Defensores.ArqueroEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
-import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaDef;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
@@ -28,7 +27,6 @@ public class ArqueroElite extends Defensor {
 		arma = new Arco(this, m);
 		estado = new ReposoDefensor(this);
 		col = new ColisionadorDefensor(this);
-		colDistancia = new ColAtaqueDistanciaDef(this); // revisar su utilidad
 	}
 
 	@Override

@@ -4,7 +4,6 @@ import Armas.TiraLanzas;
 import Grafica.Entidades.Defensores.LanceroEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
-import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaDef;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
@@ -27,7 +26,6 @@ public class LanceroElite extends Defensor {
 		arma = new TiraLanzas(this, m);
 		estado = new ReposoDefensor(this);
 		col = new ColisionadorDefensor(this);
-		colDistancia = new ColAtaqueDistanciaDef(this);
 	}
 
 	@Override

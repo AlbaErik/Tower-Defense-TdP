@@ -5,7 +5,6 @@ import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Defensores.NinjaEliteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
-import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaDef;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
@@ -28,7 +27,6 @@ public class NinjaElite extends Defensor {
 		intel = new InteligenciaDefensor(this);
 		arma = new LanzadorShurikens(this, m);
 		estado = new ReposoDefensor(this);
-		colDistancia = new ColAtaqueDistanciaDef(this);
 	}
 
 	public EntidadGrafica getGrafico() {

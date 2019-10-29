@@ -4,7 +4,6 @@ import Armas.Arco;
 import Grafica.Entidades.Atacantes.ArqueroGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
-import Logica.Colisionadores.Adistancia.ColAtaqueDistanciaEnem;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
@@ -28,7 +27,6 @@ public class Arquero extends Atacante {
 		arma = new Arco(this, m);
 		estado = new Avanzar(this);
 		col = new ColisionadorAtacante(this);
-		colDistancia = new ColAtaqueDistanciaEnem(this);
 	}
 
 	public void chocar(Colisionador e) {
