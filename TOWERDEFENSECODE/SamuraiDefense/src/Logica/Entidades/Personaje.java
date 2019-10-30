@@ -2,7 +2,6 @@ package Logica.Entidades;
 
 import Armas.Arma;
 import Armas.ArmaSimple;
-import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Mapa.Mapa;
 
@@ -14,8 +13,7 @@ public abstract class Personaje extends Entidad {
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
 	protected int direccion;
-	protected Colisionador colDistancia;//revisar su utilidad
-	
+
 	protected VisitorDistancia colCaminoLibre;
 
 	public Personaje(int x, int y, Mapa m) {
@@ -24,13 +22,9 @@ public abstract class Personaje extends Entidad {
 		contadorDisparos = 0;
 		tiempoMuerte = 20;
 	}
-	
+
 	public VisitorDistancia getVisitorDistancia() {
 		return colCaminoLibre;
-	}
-
-	public Colisionador getColDistancia() {
-		return colDistancia;
 	}
 
 	public abstract int getDireccion();

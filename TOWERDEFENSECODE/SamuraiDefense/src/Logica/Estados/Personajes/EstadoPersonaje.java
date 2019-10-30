@@ -48,11 +48,9 @@ public abstract class EstadoPersonaje extends Estado {
 		int y = (int) personaje.getPos().getY();
 		entidadesEnRango = control.getEntidadesEnRango(x, y, personaje.getRange(), personaje.getDireccion(), personaje);
 	}
-	
-	
-	
-	
-	
+
+	// --------------------------------------------------------------------------------------------------------------------------
+
 	/*
 	 * Revisa si hay entidades a distancia para decidir si atacar, o avanzar segun
 	 * el caso
@@ -74,8 +72,8 @@ public abstract class EstadoPersonaje extends Estado {
 		for (Entidad e : entidadesEnRango) {
 			puedoAtacar = puedoAtacar || !e.chocaraDistancia(new ColCaminoLibreDef());
 		}
-		
-		if(!puedoAtacar) {
+
+		if (!puedoAtacar) {
 			personaje.cambiarEstado(new ReposoDefensor(personaje));
 		}
 	}
