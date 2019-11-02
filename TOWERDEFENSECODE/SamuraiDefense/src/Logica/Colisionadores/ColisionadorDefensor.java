@@ -29,38 +29,38 @@ public class ColisionadorDefensor extends Colisionador {
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		//e.cambiarEstado(new AtaqueDefensor(e));
+		// e.cambiarEstado(new AtaqueDefensor(e));
 	}
 
 	@Override
 	public void serChocado(SacerdoteElite e) {
-		//e.cambiarEstado(new AtaqueDefensor(e));
+		// e.cambiarEstado(new AtaqueDefensor(e));
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		//e.cambiarEstado(new AtaqueDefensor(e));
+		// e.cambiarEstado(new AtaqueDefensor(e));
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		//e.cambiarEstado(new AtaqueDefensor(e));
+		// e.cambiarEstado(new AtaqueDefensor(e));
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		//e.cambiarEstado(new AtaqueDefensor(e));
+		// e.cambiarEstado(new AtaqueDefensor(e));
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
 
-		//e.cambiarEstado(new AtaqueDefensor(e));
+		// e.cambiarEstado(new AtaqueDefensor(e));
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
-		
+
 	}
 
 	@Override
@@ -72,13 +72,13 @@ public class ColisionadorDefensor extends Colisionador {
 	@Override
 	public void serChocado(Ninja e) {
 		d.cambiarEstado(new AtaqueDefensor(d));
-		d.getEstado().entidadADestruir(e);
+		d.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
 		d.cambiarEstado(new AtaqueDefensor(d));
-		d.getEstado().entidadADestruir(e);
+		d.setEntidadADestruir(e);
 	}
 
 	@Override
@@ -89,21 +89,21 @@ public class ColisionadorDefensor extends Colisionador {
 	@Override
 	public void serChocado(Ejecutor e) {
 		d.cambiarEstado(new AtaqueDefensor(d));
-		d.getEstado().entidadADestruir(e);
+		d.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
 		d.cambiarEstado(new AtaqueDefensor(d));
-		d.getEstado().entidadADestruir(e);
+		d.setEntidadADestruir(e);
 	}
-	
+
 	@Override
 	public void serChocado(Emperador e) {
 		d.cambiarEstado(new AtaqueDefensor(d));
-		d.getEstado().entidadADestruir(e);
+		d.setEntidadADestruir(e);
 	}
-	
+
 	public void serChocado(FlechaAtacante e) {
 
 	}
@@ -111,7 +111,5 @@ public class ColisionadorDefensor extends Colisionador {
 	@Override
 	public void serChocado(FlechaDefensor flechaAtacante) {
 	}
-
-	
 
 }

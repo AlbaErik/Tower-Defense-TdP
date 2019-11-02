@@ -48,8 +48,12 @@ public abstract class Entidad {
 		contador = 0;
 	}
 	
-	public Estado getEstado() {
-		return estado;
+	public boolean puedoPasar() {
+		return estado.getPermisoParaPasar();
+	}
+	
+	public void setEntidadADestruir(Entidad e) {
+		estado.entidadADestruir(e);
 	}
 
 	public void morir() {

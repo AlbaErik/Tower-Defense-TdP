@@ -38,40 +38,38 @@ public class ColisionadorAtacante extends Colisionador {
 	@Override
 	public void serChocado(SacerdoteElite e) {
 		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
-		ataq.getEstado().entidadADestruir(e);
+		ataq.setEntidadADestruir(e);
 
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
 		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
-		ataq.getEstado().entidadADestruir(e);
-
+		ataq.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
 		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
-		ataq.getEstado().entidadADestruir(e);
-
+		ataq.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
 		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
-		ataq.getEstado().entidadADestruir(e);
+		ataq.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
 		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
-		ataq.getEstado().entidadADestruir(e);
+		ataq.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
 		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
-		ataq.getEstado().entidadADestruir(e);
+		ataq.setEntidadADestruir(e);
 	}
 
 	@Override
@@ -85,14 +83,14 @@ public class ColisionadorAtacante extends Colisionador {
 		if (p.getPos().getX() > x) {
 			toret = p;
 			noSeFrena = ataq;
-		}		
+		}
 		return toret;
 	}
 
 	private void frenar(Personaje p) {
-		//Personaje noSeFrena = (p == ataq ? );
-		if (!(noSeFrena.getEstado().getPermisoParaPasar())) {
-			//System.out.println("COLISIONADOR ATACANTE--- estado de p:  " + p.getEstado());
+		// Personaje noSeFrena = (p == ataq ? );
+		if (!(noSeFrena.puedoPasar())) {
+			// System.out.println("COLISIONADOR ATACANTE--- estado de p: " + p.getEstado());
 			p.cambiarEstado(new ReposoEnemigo(p));
 		}
 	}

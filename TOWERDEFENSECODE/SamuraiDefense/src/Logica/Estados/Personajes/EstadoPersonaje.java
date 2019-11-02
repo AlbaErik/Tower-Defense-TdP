@@ -32,13 +32,6 @@ public abstract class EstadoPersonaje extends Estado {
 		personaje.prohibidoCambiarEstado();
 	}
 
-	private Entidad buscarEntidadEnRango() {
-		int x = (int) personaje.getPos().getX() + personaje.getDireccion();
-		int y = (int) personaje.getPos().getY();
-		Entidad entEnRango = control.hayEntidadEnRango(x, y, personaje.getRange(), personaje.getDireccion(), personaje);
-		return entEnRango;
-	}
-
 	/*
 	 * Se encarga de cambiar el contenido de la lista "entidadesEnRango" con las
 	 * entidades encontradas.
@@ -65,7 +58,7 @@ public abstract class EstadoPersonaje extends Estado {
 		return puedoAtacar;
 	}
 
-	protected void rangoVacioDef() { // no funciona como corresponde
+	protected void rangoVacioDef() {
 		boolean puedoAtacar = false;
 
 		actualizarentidadesEnRango();
