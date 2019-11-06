@@ -8,11 +8,11 @@ import javax.swing.JButton;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Tienda.Tienda;
 
-public abstract class Boton extends JButton {
+public abstract class BotonDefensor extends JButton {
 	private static final long serialVersionUID = 1L;
 	protected  Tienda tienda;
 	
-	public Boton(Tienda t) {
+	public BotonDefensor(Tienda t) {
 		tienda=t;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

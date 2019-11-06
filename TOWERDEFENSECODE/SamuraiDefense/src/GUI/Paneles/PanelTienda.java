@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import GUI.Paneles.Botones.Boton;
+import GUI.Paneles.Botones.BotonDefensor;
 import GUI.Paneles.Botones.BotonArqueroElite;
 import GUI.Paneles.Botones.BotonSacerdoteElite;
 import GUI.Paneles.Botones.BotonEspadachinElite;
@@ -22,8 +22,9 @@ public class PanelTienda extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Tienda tienda;
 	private Juego juego;
-	private Boton colocables[];
+	private BotonDefensor colocables[];
 	private JLabel fondo;
+	
 
 	public PanelTienda(Tienda t) {
 		tienda = t;
@@ -41,7 +42,7 @@ public class PanelTienda extends JPanel {
 	}
 
 	private void crearBotones() {
-		colocables = new Boton[6];
+		colocables = new BotonDefensor[6];
 		
 		colocables[0]=new BotonNinjaElite(this.getTienda());
 		colocables[0].setBorder(null);
