@@ -1,6 +1,5 @@
 package Logica.PowerUps.Temporales;
 
-import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 
@@ -18,15 +17,10 @@ public class BolsaDeDinero extends MagiaTemporal{
 	}
 
 	@Override
-	public Premio getPremio() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void click() {
-		// -----------------------------------------------------------
-		
+		int i = (int) ((Math.random() * ((10000 - 5000) + 1)) + 5000);
+		map.actualizarOroTienda(i);
 	}
 
+	
 }

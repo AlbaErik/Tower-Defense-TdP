@@ -29,6 +29,10 @@ public class PanelJuego extends JPanel {
 		vInicial.cambiarPanel(this, panel);
 	}
 	*/
+	
+	public void actualizarOroStats(int o) {
+		panelStats.actualizarOro(o);
+	}
 
 	public void ejecutar() {
 		if (juego == null) {

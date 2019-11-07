@@ -1,6 +1,6 @@
 package Logica.PowerUps.Temporales;
 
-import Logica.Entidades.Premios.Premio;
+import Logica.Entidades.Premios.PocionFuerza;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 
@@ -18,15 +18,8 @@ public class PocionDeFuerza extends MagiaTemporal{
 	}
 
 	@Override
-	public Premio getPremio() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void click() {
-		// -----------------------------------------------------------
-		
+		map.agregarPremioTienda(clave, new PocionFuerza(0, 0, map));
 	}
 
 }

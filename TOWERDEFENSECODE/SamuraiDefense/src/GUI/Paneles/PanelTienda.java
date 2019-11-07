@@ -15,6 +15,7 @@ import GUI.Paneles.Botones.BotonSacerdoteElite;
 import GUI.Paneles.Botones.BotonEspadachinElite;
 import GUI.Paneles.Botones.BotonLanceroElite;
 import GUI.Paneles.Botones.BotonNinjaElite;
+import GUI.Paneles.Botones.BotonPremio;
 import GUI.Paneles.Botones.BotonSamuraiElite;
 import Logica.Juego.Juego;
 import Logica.Tienda.Tienda;
@@ -24,6 +25,7 @@ public class PanelTienda extends JPanel {
 	private Tienda tienda;
 	private Juego juego;
 	private BotonDefensor colocables[];
+	private BotonPremio colocablesP[];
 	private BotonEliminar Eliminar;
 	private JLabel fondo;
 	
@@ -42,6 +44,12 @@ public class PanelTienda extends JPanel {
 		fondo.setIcon(new ImageIcon("Sprites/Fondos/FondoPanelTienda.png"));
 		fondo.setBounds(0, 0, ancho - 1000, alto - 50);
 		this.add(fondo);
+	}
+	
+	public void revisarStockPremios() {
+		for(BotonPremio b: colocablesP)
+			if(tienda.hayPremio(b.getClave()))
+				b.setEnabled(true);
 	}
 	
 	private void crearBotones() {
