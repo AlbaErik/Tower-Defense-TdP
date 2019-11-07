@@ -16,6 +16,7 @@ public class EspadachinElite extends Defensor {
 	public EspadachinElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 250;
+		vida=250;
 		attackSpeed = 1; //Es 1 seg
 		damage = 40;
 		range = 0;

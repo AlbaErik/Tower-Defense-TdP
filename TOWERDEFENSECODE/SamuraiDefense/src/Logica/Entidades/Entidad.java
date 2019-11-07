@@ -71,7 +71,7 @@ public abstract class Entidad {
 	public int getLife() {
 		return life;
 	}
-
+	
 	public void setLife(int lp) {
 		life = life - lp;
 	}
@@ -106,6 +106,10 @@ public abstract class Entidad {
 		if(permisoCambiarEstado) {
 			estado = e;
 		}
+		
+	}
+	
+	public void eliminarPorBoton() {
 		
 	}
 }

@@ -15,6 +15,7 @@ public class SacerdoteElite extends Defensor {
 	public SacerdoteElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 350;
+		vida=350;
 		attackSpeed = 3; //Es 1 seg
 		damage = 70;
 		range = 0;//300 px

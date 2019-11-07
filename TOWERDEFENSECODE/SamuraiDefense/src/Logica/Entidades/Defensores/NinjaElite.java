@@ -17,6 +17,7 @@ public class NinjaElite extends Defensor {
 	public NinjaElite(int x, int y, Mapa m) {// Agregar valores a los atributos
 		super(x, y, m);
 		life = 200;
+		vida=200;
 		attackSpeed = 0.5; //Es 1 seg
 		damage = 20;
 		range = 0;

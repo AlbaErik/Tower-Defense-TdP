@@ -16,6 +16,7 @@ public class LanceroElite extends Defensor {
 	public LanceroElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 300;
+		vida=300;
 		attackSpeed = 2; //Es 1 seg
 		damage = 50;
 		range = 0;//300 px

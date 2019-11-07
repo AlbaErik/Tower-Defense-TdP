@@ -86,24 +86,34 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
+			if(mapa.getTienda().getEliminar()) {
+				int x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
+				int y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
+				if(mapa.hayEnPos(x, y)) {
+					Entidad aEliminar=mapa.getEntidadEnPos(x, y);
+					aEliminar.eliminarPorBoton();
+				}
+			}else {
+				int x = 0;
+				int y = 0;
+				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
+					x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
+					y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
+				}
+				Defensor aColocar = mapa.getTienda().getPersonajeActual();
+					
+				if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
+					aColocar.cambiarPosLogica(x, y);
+					System.out.println("PANELMAPA: Se seteo un defensor en el X:"+x+" Y:"+y);				
+					mapa.setEntidad(aColocar);
+					JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
+					add(nuevo);
+					repaint();
+				}
 
-			int x = 0;
-			int y = 0;
-			if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
-				x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
-				y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
-			}
-			Defensor aColocar = mapa.getTienda().getPersonajeActual();
-				
-			if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
-				aColocar.cambiarPosLogica(x, y);
-				System.out.println("PANELMAPA: Se seteo un defensor en el X:"+x+" Y:"+y);				
-				mapa.setEntidad(aColocar);
-				JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
-				add(nuevo);
-				repaint();
 			}
 
+			
 		}
 
 		@Override

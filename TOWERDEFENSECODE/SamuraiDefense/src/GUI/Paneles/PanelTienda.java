@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import GUI.Paneles.Botones.BotonDefensor;
+import GUI.Paneles.Botones.BotonEliminar;
 import GUI.Paneles.Botones.BotonArqueroElite;
 import GUI.Paneles.Botones.BotonSacerdoteElite;
 import GUI.Paneles.Botones.BotonEspadachinElite;
@@ -23,6 +24,7 @@ public class PanelTienda extends JPanel {
 	private Tienda tienda;
 	private Juego juego;
 	private BotonDefensor colocables[];
+	private BotonEliminar Eliminar;
 	private JLabel fondo;
 	
 
@@ -33,15 +35,21 @@ public class PanelTienda extends JPanel {
 		int alto = juego.getPanelJuego().getAlto();
 		this.setLayout(null);
 		this.setBounds(0, 50, ancho - 1000, alto - 50); // El 50 es debido a la altura del PanelStats
-
+		
 		crearBotones();
+
 		fondo = new JLabel();
 		fondo.setIcon(new ImageIcon("Sprites/Fondos/FondoPanelTienda.png"));
 		fondo.setBounds(0, 0, ancho - 1000, alto - 50);
 		this.add(fondo);
 	}
-
+	
 	private void crearBotones() {
+		crearBotonesDefensores();
+		crearBotonEliminar();
+	}
+
+	private void crearBotonesDefensores() {
 		colocables = new BotonDefensor[6];
 		
 		colocables[0]=new BotonNinjaElite(this.getTienda());
@@ -98,11 +106,11 @@ public class PanelTienda extends JPanel {
 		colocables[5].setFocusable(false);
 		this.add(colocables[5]);
 		
-		acomodarBotones();
+		acomodarBotonesDefensores();
 
 	}
 
-	private void acomodarBotones() {
+	private void acomodarBotonesDefensores() {
 		int j = 0;
 		int x = 0;
 		int y = 0;
@@ -133,6 +141,18 @@ public class PanelTienda extends JPanel {
 		}
 	}
 
+	private void crearBotonEliminar() {
+		Eliminar=new BotonEliminar(this.getTienda());
+		Eliminar.setBorder(null);
+		Eliminar.setBorderPainted(false);
+		Eliminar.setContentAreaFilled(false);
+		Eliminar.setIcon(new ImageIcon("Sprites/Botones/BotonEliminar.png"));
+		Eliminar.setRolloverIcon(new ImageIcon("Sprites/Botones/BotonEliminarEntered.png"));
+		Eliminar.setFocusable(false);
+		
+		Eliminar.setBounds(65,500,70,70);
+		this.add(Eliminar);
+	}
 	public Tienda getTienda() {
 		return tienda;
 	}

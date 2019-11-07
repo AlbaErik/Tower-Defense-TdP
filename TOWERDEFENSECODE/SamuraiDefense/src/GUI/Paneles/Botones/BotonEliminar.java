@@ -8,21 +8,16 @@ import javax.swing.JButton;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Tienda.Tienda;
 
-public abstract class BotonDefensor extends JButton {
+public class BotonEliminar extends JButton {
 	private static final long serialVersionUID = 1L;
 	protected  Tienda tienda;
 	
-	public BotonDefensor(Tienda t) {
+	public BotonEliminar(Tienda t) {
 		tienda=t;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				t.setEliminar(false);
-				Defensor defensor = crearDefensor();
-				t.setPersonajeActual(defensor);
+				tienda.setEliminar(true);
 			}	
 		});
 	}
-	
-	public abstract Defensor crearDefensor();
-
 }

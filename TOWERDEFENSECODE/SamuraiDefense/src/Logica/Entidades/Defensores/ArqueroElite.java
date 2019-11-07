@@ -17,6 +17,7 @@ public class ArqueroElite extends Defensor {
 	public ArqueroElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 150;
+		vida=150;
 		attackSpeed = 1;
 		damage = 30;
 		range = 400;

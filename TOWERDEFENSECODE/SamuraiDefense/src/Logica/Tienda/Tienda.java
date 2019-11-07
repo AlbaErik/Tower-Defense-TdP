@@ -10,6 +10,7 @@ public class Tienda {
 	private Juego juego;
 	protected int oro;
 	private Defensor personajeActual;
+	private boolean eliminar;
 	private FabricaDefensores fabrica;
 
 	public Tienda(Juego j) {
@@ -17,6 +18,7 @@ public class Tienda {
 		tienda = new PanelTienda(this);
 		fabrica = new FabricaDefensores();
 		personajeActual = null;
+		eliminar=false;
 		oro = 1000;
 		juego.getPanelJuego().getPanelStats().actualizarOro(oro);
 	}
@@ -27,6 +29,14 @@ public class Tienda {
 
 	public Juego getJuego() {
 		return juego;
+	}
+	
+	public void setEliminar(boolean c) { //Lo utiliza el boton eliminar
+		eliminar=c;
+	}
+	
+	public boolean getEliminar() {
+		return eliminar;
 	}
 
 	public void setPersonajeActual(Defensor d) {

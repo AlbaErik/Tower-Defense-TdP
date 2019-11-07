@@ -15,6 +15,7 @@ public class SamuraiElite extends Defensor {
 	public SamuraiElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 500;
+		vida=500;
 		attackSpeed = 3; //Es 1 seg
 		damage = 100;
 		range = 0;//300 px

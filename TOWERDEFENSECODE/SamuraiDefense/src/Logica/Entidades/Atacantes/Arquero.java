@@ -57,5 +57,6 @@ public class Arquero extends Atacante {
 	public boolean chocaraDistancia(VisitorDistancia v) {
 		return v.serChocado(this);
 	}
+	
 
 }
