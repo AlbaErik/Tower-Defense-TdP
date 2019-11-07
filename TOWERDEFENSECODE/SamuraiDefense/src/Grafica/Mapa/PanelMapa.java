@@ -92,8 +92,9 @@ public class PanelMapa extends JPanel {
 				if(mapa.hayEnPos(x, y)) {
 					Entidad aEliminar=mapa.getEntidadEnPos(x, y);
 					aEliminar.eliminarPorBoton();
+					
 				}
-			}else {
+			}else { //FALTA HACER EL IF DEL PREMIO
 				int x = 0;
 				int y = 0;
 				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
@@ -106,7 +107,8 @@ public class PanelMapa extends JPanel {
 					aColocar.cambiarPosLogica(x, y);
 					System.out.println("PANELMAPA: Se seteo un defensor en el X:"+x+" Y:"+y);				
 					mapa.setEntidad(aColocar);
-					JLabel nuevo = aColocar.getGrafico().getGraficoActual();				
+					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+					mapa.getTienda().actualizarOro(-aColocar.getCost());
 					add(nuevo);
 					repaint();
 				}

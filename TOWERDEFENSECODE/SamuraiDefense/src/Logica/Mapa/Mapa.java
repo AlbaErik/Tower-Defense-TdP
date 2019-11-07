@@ -91,6 +91,10 @@ public class Mapa {
 	public Juego getJuego() {
 		return juego;
 	}
+	
+	public Tienda getTienda() {
+		return tienda;
+	}
 		
 	public Defensor getPersonajeActual() {
 		return tienda.getPersonajeActual();

@@ -11,11 +11,13 @@ import Logica.Juego.Juego;
 
 public class Tienda {
 	protected int oro;
-	private boolean eliminar;
+	protected boolean eliminar;
+	protected boolean premio;
 
 	private PanelTienda tienda;
 	private Juego juego;
 	private Defensor personajeActual;
+	protected Premio premioActual;
 	private FabricaDefensores fabrica;
 	private Map<Integer, Premio> powerUps = new HashMap<Integer, Premio>();
 
@@ -24,7 +26,9 @@ public class Tienda {
 		tienda = new PanelTienda(this);
 		fabrica = new FabricaDefensores();
 		personajeActual = null;
+		premioActual=null;
 		eliminar = false;
+		premio=false;
 		oro = 10000;
 		juego.getPanelJuego().getPanelStats().actualizarOro(oro);
 	}
@@ -42,24 +46,40 @@ public class Tienda {
 	}
 
 	public boolean getEliminar() {
-		return eliminar;
+		boolean toret=eliminar;
+		eliminar=false;
+		return toret;
+	}
+	
+	public void setPremio(boolean p) {
+		premio=p;
+	}
+	
+	public boolean getPremio() {
+		return premio;
 	}
 
+	public void setPremioActual(Premio p) {
+		premioActual=p;
+	}
+	
+	public Premio getPremioActual() {
+		Premio toret=premioActual;
+		premioActual=null;
+		return toret;
+	}
 	public void setPersonajeActual(Defensor d) {
 		if (d.getCost() <= oro)
 			personajeActual = d;
 	}
 
 	public Defensor getPersonajeActual() {
-		Defensor toret = null;
-		if (personajeActual != null) {
-			toret = personajeActual;
-			oro = oro - personajeActual.getCost();
-			juego.getPanelJuego().getPanelStats().actualizarOro(oro);
-			personajeActual = null;
-		}
+		Defensor toret=personajeActual;
+		personajeActual = null;
 		return toret;
 	}
+	
+	
 
 	public FabricaDefensores getFabrica() {
 		return fabrica;
