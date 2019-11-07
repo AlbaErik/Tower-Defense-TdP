@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.*;
-import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Juego.Juego;
 import Logica.Mapa.Niveles.Nivel;
@@ -12,11 +11,7 @@ import Logica.Tienda.Tienda;
 
 public class Mapa {
 
-	private static final int filas = 6;
-	private static final int columnas = 10;
 	private LinkedList<Entidad> misEntidades;
-	private LinkedList<Defensor> misDefensores;
-	private LinkedList<Atacante> misAtacantes;
 	private PanelMapa mapagrafico;
 	private Nivel nivel;
 	private Juego juego;
@@ -24,10 +19,52 @@ public class Mapa {
 
 	public Mapa(Juego j) {
 		juego = j;
-		nivel = j.getNivel();
+		nivel = juego.getNivel();
 		misEntidades = new LinkedList<Entidad>();
 		mapagrafico = new PanelMapa(this);
-		tienda = j.getTienda();
+		tienda = juego.getTienda();
+	}
+	
+	public void agregarEntidadAlCampo(Entidad e) {
+		mapagrafico.agregarEntidad(e);
+	}
+
+	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
+		mapagrafico.agregarEntidadEnPosActual(e);
+	}
+	
+	public void actualizarOroTienda(int o) {
+		tienda.actualizarOro(o);
+	}
+	
+	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
+		Entidad actual = misEntidades.getFirst();
+		for (Entidad i : misEntidades) {
+			if (i.hashCode() == e.hashCode())
+				actual = i;
+		}		
+		misEntidades.remove(actual);
+		mapagrafico.eliminarEntidad(actual);		
+	}	
+
+	public boolean hayEntidades() {
+		return !misEntidades.isEmpty();
+	}
+
+	public boolean hayEnPos(int x, int y) {
+		boolean ocupada = false;
+		for (int i = 0; i < misEntidades.size() && !ocupada; i++) {
+			double X = misEntidades.get(i).getPos().getX();
+			double Y = misEntidades.get(i).getPos().getY();
+
+			if ((X == (double) x) && (Y == (double) y))
+				ocupada = true;
+		}
+		return ocupada;
+	}
+	
+	public boolean tiendaGetEliminar() {
+		return tienda.getEliminar();
 	}
 	
 	public Entidad getEntidadEnPos(int x, int y) {
@@ -43,40 +80,6 @@ public class Mapa {
 		return toRet;
 	}
 
-	public void agregarAtacante(Atacante e) {
-		misAtacantes.add(e);
-	}
-
-	public void agregarDefensor(Defensor e) {
-		misDefensores.add(e);
-	}
-
-	public void agregarEntidadAlCampo(Entidad e) {
-		mapagrafico.agregarEntidad(e);
-	}
-
-	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
-		mapagrafico.agregarEntidadEnPosActual(e);
-	}
-
-	/**
-	 * Devuelve el ancho del mapa
-	 * 
-	 * @return cantidad de filas del mapa
-	 */
-	public int getFilas() {
-		return filas;
-	}
-
-	/**
-	 * Devuelve el largo del mapa
-	 * 
-	 * @return cantidad de columnas del mapa
-	 */
-	public int getColumnas() {
-		return columnas;
-	}
-
 	public PanelMapa getPanelMapa() {
 		return mapagrafico;
 	}
@@ -88,30 +91,11 @@ public class Mapa {
 	public Juego getJuego() {
 		return juego;
 	}
-
-	public Tienda getTienda() {
-		return tienda;
-	}
-
-	public void setEntidad(Entidad d) {
-		misEntidades.addFirst(d);
-	}
-
-	public Entidad getEntidad() {
-		return misEntidades.getFirst();
-	}
-
-	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
-		Entidad actual = misEntidades.getFirst();
-		for (Entidad i : misEntidades) {
-			if (i.hashCode() == e.hashCode())
-				actual = i;
-		}
 		
-		misEntidades.remove(actual);
-		mapagrafico.eliminarEntidad(actual);		
-	}
-
+	public Defensor getPersonajeActual() {
+		return tienda.getPersonajeActual();
+	}	
+	
 	public LinkedList<Entidad> getColeccion() {
 		LinkedList<Entidad> nueva = new LinkedList<Entidad>();
 		for (Entidad e : misEntidades) {
@@ -119,23 +103,8 @@ public class Mapa {
 		}
 		return nueva;
 	}
-
-	public boolean hayEntidades() {
-		return !misEntidades.isEmpty();
+	
+	public void setEntidad(Entidad d) {
+		misEntidades.addFirst(d);
 	}
-
-	public boolean hayEnPos(int x, int y) {
-		boolean ocupada = false;
-		int i=0;
-
-		for (i = 0; i < misEntidades.size() && !ocupada; i++) {
-			double X = misEntidades.get(i).getPos().getX();
-			double Y = misEntidades.get(i).getPos().getY();
-
-			if ((X == (double) x) && (Y == (double) y))
-				ocupada = true;
-		}
-		return ocupada;
-	}
-
 }

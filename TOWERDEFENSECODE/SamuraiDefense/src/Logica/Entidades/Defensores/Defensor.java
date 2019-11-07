@@ -34,9 +34,9 @@ public abstract class Defensor extends Personaje {
 	
     public void eliminarPorBoton() {
 		if(this.life<=vida && this.life>vida/2)
-			mapa.getTienda().actualizarOro(cost);
+			mapa.actualizarOroTienda(cost);
 		if(this.life<=vida/2)
-			mapa.getTienda().actualizarOro(cost/2);
+			mapa.actualizarOroTienda(cost/2);
 		this.mapa.eliminarEntidad(this);	
 	} 
 }

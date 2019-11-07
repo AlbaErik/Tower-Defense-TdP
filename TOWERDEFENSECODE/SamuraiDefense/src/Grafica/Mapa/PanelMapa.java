@@ -86,7 +86,7 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if(mapa.getTienda().getEliminar()) {
+			if(mapa.tiendaGetEliminar()) {
 				int x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 				int y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 				if(mapa.hayEnPos(x, y)) {
@@ -100,7 +100,7 @@ public class PanelMapa extends JPanel {
 					x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 					y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 				}
-				Defensor aColocar = mapa.getTienda().getPersonajeActual();
+				Defensor aColocar = mapa.getPersonajeActual();
 					
 				if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 					aColocar.cambiarPosLogica(x, y);

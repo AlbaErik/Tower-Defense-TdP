@@ -1,7 +1,5 @@
 package Logica.Entidades.Atacantes;
 
-import java.util.Random;
-
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Personaje;
@@ -24,7 +22,7 @@ public abstract class Atacante extends Personaje implements Cloneable{
 	public void morir() {
 		mapa.eliminarEntidad(this);
 		int dinero=this.dineroDropeado();
-		mapa.getTienda().actualizarOro(dinero);
+		mapa.actualizarOroTienda(dinero);
 	}
 	
 	public int getDireccion() {
