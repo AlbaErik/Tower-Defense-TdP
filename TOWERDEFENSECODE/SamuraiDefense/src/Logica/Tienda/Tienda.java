@@ -8,6 +8,7 @@ import Logica.Juego.Juego;
 public class Tienda {
 	private PanelTienda tienda;
 	private Juego juego;
+	protected int oro;
 	private Defensor personajeActual;
 	private FabricaDefensores fabrica;
 
@@ -16,6 +17,8 @@ public class Tienda {
 		tienda = new PanelTienda(this);
 		fabrica = new FabricaDefensores();
 		personajeActual = null;
+		oro = 1000;
+		juego.getPanelJuego().getPanelStats().actualizarOro(oro);
 	}
 
 	public PanelTienda getPanelTienda() {
@@ -27,17 +30,28 @@ public class Tienda {
 	}
 
 	public void setPersonajeActual(Defensor d) {
-		personajeActual = d;
+		if (d.getCost() <= oro)
+			personajeActual = d;
 	}
 
 	public Defensor getPersonajeActual() {
-		Defensor toret = personajeActual;
-		personajeActual = null;
+		Defensor toret = null;
+		if (personajeActual != null) {
+			toret = personajeActual;
+			oro = oro - personajeActual.getCost();
+			juego.getPanelJuego().getPanelStats().actualizarOro(oro);
+			personajeActual = null;
+		}
 		return toret;
 	}
 
 	public FabricaDefensores getFabrica() {
 		return fabrica;
+	}
+
+	public void actualizarOro(int o) {
+		oro = oro + o;
+		juego.getPanelJuego().getPanelStats().actualizarOro(oro);
 	}
 
 }
