@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.*;
 import Logica.Entidades.Defensores.Defensor;
+import Logica.Entidades.Premios.Premio;
 import Logica.Juego.Juego;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Tienda.Tienda;
@@ -23,6 +24,10 @@ public class Mapa {
 		misEntidades = new LinkedList<Entidad>();
 		mapagrafico = new PanelMapa(this);
 		tienda = juego.getTienda();
+	}
+	
+	public void agregarPremioTienda(int c, Premio p) {
+		tienda.agregarPremio(c, p);
 	}
 	
 	public void agregarEntidadAlCampo(Entidad e) {
