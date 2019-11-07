@@ -8,6 +8,7 @@ public class BolsaDeDinero extends MagiaTemporal{
 
 	public BolsaDeDinero(Mapa m) {
 		super(m);
+		clave = 2;
 	}
 	
 	@Override

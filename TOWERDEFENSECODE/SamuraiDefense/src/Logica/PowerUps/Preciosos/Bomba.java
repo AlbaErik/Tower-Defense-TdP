@@ -11,6 +11,7 @@ public class Bomba extends ObjetoPrecioso{
 	public Bomba(Mapa m) {
 		super(m);
 		bombita = new Bombita(0, 0, null);
+		clave = 5;
 	}
 	
 	@Override

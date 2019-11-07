@@ -8,6 +8,7 @@ public class PocionDeFuerza extends MagiaTemporal{
 
 	public PocionDeFuerza(Mapa m) {
 		super(m);
+		clave = 3;
 	}
 	
 	@Override

@@ -11,6 +11,7 @@ public class CampoProteccion extends MagiaTemporal{
 	public CampoProteccion(Mapa m) {
 		super(m);
 		escudo = new Escudo(0, 0, m);
+		clave = 1;
 	}
 	
 	@Override

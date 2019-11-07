@@ -11,6 +11,7 @@ public class Barricada extends ObjetoPrecioso{
 	public Barricada(Mapa m) {
 		super(m);
 		muro = new Muro(0, 0, m);
+		clave = 4;
 	}
 
 	@Override

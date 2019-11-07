@@ -1,8 +1,12 @@
 package Logica.Tienda;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import GUI.Paneles.PanelTienda;
 import Logica.FabricaDefensores;
 import Logica.Entidades.Defensores.Defensor;
+import Logica.Entidades.Premios.Premio;
 import Logica.Juego.Juego;
 
 public class Tienda {
@@ -13,6 +17,7 @@ public class Tienda {
 	private Juego juego;
 	private Defensor personajeActual;
 	private FabricaDefensores fabrica;
+	private Map<Integer, Premio> powerUps = new HashMap<Integer, Premio>();
 
 	public Tienda(Juego j) {
 		juego = j;
