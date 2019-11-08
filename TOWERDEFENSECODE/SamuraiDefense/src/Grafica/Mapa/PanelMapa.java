@@ -42,9 +42,19 @@ public class PanelMapa extends JPanel {
 		this.remove(d);
 		repaint();
 	}
+	
+	public void eliminarPowerUp(PowerUp power) {
+		JLabel p= power.getGrafico().getGrafico();
+		this.remove(p);
+		repaint();
+	}
 
-	public void agregarPowerUp(PowerUp power) {
-		
+	public void agregarPowerUp(int x,int y, PowerUp power) {
+		JLabel nuevo= power.getGrafico().getGrafico();
+		nuevo.setBounds(x, y, 120, 120);
+		add(nuevo);
+		repaint();	
+		System.out.println("PANELMAPA: Se agrego powerUp al mapa");
 	}
 	
 	public void agregarEntidad(Entidad e) {

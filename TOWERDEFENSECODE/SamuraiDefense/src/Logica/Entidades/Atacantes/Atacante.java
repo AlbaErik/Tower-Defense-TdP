@@ -26,9 +26,11 @@ public abstract class Atacante extends Personaje implements Cloneable {
 	}
 
 	public void morir() {
+		
 		mapa.eliminarEntidad(this);
 		int dinero = this.dineroDropeado();
 		mapa.actualizarOroTienda(dinero);
+		System.out.println("ATACANTE: Enemigo muerto");
 		
 		devolverPowerUp();
 	}
@@ -40,7 +42,9 @@ public abstract class Atacante extends Personaje implements Cloneable {
 		if(i % 2 == 0)
 			tiendaPowerUp.getRandom();
 		 */
-		mapa.agregarPowerUp(new BolsaDeDinero(mapa));
+		int x=(int) this.getPos().getX();
+		int y=(int) this.getPos().getY();
+		mapa.agregarPowerUp(x,y,new BolsaDeDinero(mapa));
 	}
 
 	public int getDireccion() {

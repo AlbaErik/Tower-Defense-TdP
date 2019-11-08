@@ -28,8 +28,12 @@ public class Mapa {
 		tienda = juego.getTienda();
 	}
 	
-	public void agregarPowerUp(PowerUp power) {
-		mapagrafico.agregarPowerUp(power);
+	public void agregarPowerUp(int x, int y, PowerUp power) {
+		mapagrafico.agregarPowerUp(x,y,power);
+	}
+	
+	public void eliminarPowerUp(PowerUp power) {
+		mapagrafico.eliminarPowerUp(power);
 	}
 	
 	public void agregarPremioTienda(int c, Premio p) {

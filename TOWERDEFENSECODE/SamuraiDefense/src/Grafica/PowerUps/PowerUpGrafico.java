@@ -17,17 +17,15 @@ import Logica.PowerUps.PowerUp;
 public abstract class PowerUpGrafico extends JLabel {
 	private static final long serialVersionUID = 1L;
 	private PowerUp pu;
-	protected ImageIcon grafico;
 	protected Mapa mapa;
 
 	public PowerUpGrafico(PowerUp p) {
 		pu = p;
 		addMouseListener(new OyenteMouse());
+
 	}
 
-	public ImageIcon getGrafico() {
-		return grafico;
-	}
+	public abstract JLabel getGrafico();
 
 	private class OyenteMouse implements MouseListener {
 
@@ -51,6 +49,8 @@ public abstract class PowerUpGrafico extends JLabel {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			pu.click();
+			pu.morir();
+			System.out.println("POWERUPGRAFICO: Se elimino entidad");
 		}
 
 		@Override

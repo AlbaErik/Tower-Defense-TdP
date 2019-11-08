@@ -16,6 +16,8 @@ public abstract class PowerUp {
 		return grafica;
 	}
 	
+	public abstract void morir();
+	
 	public abstract void click();
 	
 	public abstract PowerUp clone();
