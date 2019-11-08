@@ -7,6 +7,7 @@ import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
@@ -20,7 +21,7 @@ public class NinjaElite extends Defensor {
 		vida=200;
 		attackSpeed = 0.5; //Es 1 seg
 		damage = 20;
-		range = 0;
+		range = 200;
 		cost = 150;
 		
 		this.grafico = new NinjaEliteGrafico(x, y, m.getPanelMapa(), this);
@@ -53,9 +54,9 @@ public class NinjaElite extends Defensor {
 
 	@Override
 	public void atacar(Entidad aDestruir) {
-		if(aDestruir != null) {
-			aDestruir.setLife(damage);
-		}
+		
+		Municion mun = arma.crearMunicionDefensor();
+		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 
 	@Override

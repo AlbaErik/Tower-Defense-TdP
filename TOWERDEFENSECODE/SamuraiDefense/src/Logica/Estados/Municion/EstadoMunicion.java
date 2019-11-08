@@ -13,7 +13,6 @@ public class EstadoMunicion extends Estado{
 
 	@Override
 	public void ejecutar() {
-		
 		mun.getInteligencia().mover();
 	}
 

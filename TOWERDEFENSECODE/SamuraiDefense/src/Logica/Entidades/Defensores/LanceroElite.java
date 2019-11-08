@@ -6,6 +6,7 @@ import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaDefensor;
@@ -16,12 +17,12 @@ public class LanceroElite extends Defensor {
 	public LanceroElite(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 300;
-		vida=300;
-		attackSpeed = 2; //Es 1 seg
+		vida = 300;
+		attackSpeed = 2; // Es 1 seg
 		damage = 50;
-		range = 0;//300 px
+		range = 300;// 300 px
 		cost = 250;
-		
+
 		grafico = new LanceroEliteGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaDefensor(this);
 		arma = new TiraLanzas(this, m);
@@ -42,14 +43,16 @@ public class LanceroElite extends Defensor {
 
 	@Override
 	public void ejecutarEstado() {
-		estado.ejecutar();		
+		estado.ejecutar();
 	}
 
 	@Override
 	public void atacar(Entidad aDestruir) {
-		if(aDestruir != null) {
-			aDestruir.setLife(damage);
-		}
+		Municion mun = arma.crearMunicionDefensor();
+		mapa.agregarEntidadAlCampoEnPosActual(mun);
+		/*
+		 * if(aDestruir != null) { aDestruir.setLife(damage); }
+		 */
 	}
 
 	@Override

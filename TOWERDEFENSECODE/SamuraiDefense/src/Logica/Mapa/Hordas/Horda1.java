@@ -74,7 +74,8 @@ public class Horda1 extends Horda{
 	private Atacante crearAtacanteRandom() {
 		int ent = lista.size();
 		int i = rand.nextInt(ent);
-		return lista.get(i).clone();
+		return new Ninja(0,0,mapa);
+		//return lista.get(i).clone();
 	}
 
 	

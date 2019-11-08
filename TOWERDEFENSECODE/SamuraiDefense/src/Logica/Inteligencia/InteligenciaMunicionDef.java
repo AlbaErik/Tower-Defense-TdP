@@ -16,7 +16,7 @@ public class InteligenciaMunicionDef extends Inteligencia{
 			int y =  (int) entidad.getPos().getY();
 			entidad.cambiarPosLogica(x, y);
 		}else {
-			//Matar la flecha
+			entidad.morir();
 		}
 	}
 

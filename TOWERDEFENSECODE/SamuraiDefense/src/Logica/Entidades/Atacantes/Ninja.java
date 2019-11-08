@@ -6,6 +6,7 @@ import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.Avanzar;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
@@ -17,7 +18,7 @@ public class Ninja extends Atacante {
 		life = 210;
 		attackSpeed = 0.5;
 		damage = 25;
-		range = 0;
+		range = 200;
 		movementSpeed = 1;
 
 		grafico = new NinjaGrafico(x, y, m.getPanelMapa(), this);
@@ -46,9 +47,8 @@ public class Ninja extends Atacante {
 
 	@Override
 	public void atacar(Entidad aDestruir) {
-		if (aDestruir != null) {
-			aDestruir.setLife(damage);
-		}
+		Municion mun = arma.crearMunicionAtacante();
+		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 
 	@Override

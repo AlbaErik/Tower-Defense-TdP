@@ -6,7 +6,7 @@ import Logica.Entidades.Municiones.MunicionesAtacante.LanzaAtacante;
 import Logica.Entidades.Municiones.MunicionesDefensor.LanzaDefensor;
 import Logica.Mapa.Mapa;
 
-public class TiraLanzas extends Arma{
+public class TiraLanzas extends Arma {
 
 	public TiraLanzas(Personaje p, Mapa m) {
 		super(p, m);
