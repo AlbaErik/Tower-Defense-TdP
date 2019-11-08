@@ -18,7 +18,7 @@ public class Arquero extends Atacante {
 		super(x, y, m);
 		life = 160;
 		attackSpeed = 1;
-		damage = 35;
+		damage = 30;
 		range = 200;
 		movementSpeed = 1.5;
 

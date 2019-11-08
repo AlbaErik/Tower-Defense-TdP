@@ -17,7 +17,7 @@ public class Ninja extends Atacante {
 		super(x, y, m);
 		life = 210;
 		attackSpeed = 0.5;
-		damage = 25;
+		damage = 20;
 		range = 200;
 		movementSpeed = 1;
 

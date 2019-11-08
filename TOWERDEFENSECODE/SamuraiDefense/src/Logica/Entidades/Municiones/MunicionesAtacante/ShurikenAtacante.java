@@ -1,6 +1,6 @@
 package Logica.Entidades.Municiones.MunicionesAtacante;
 
-import Grafica.Entidades.Municiones.MunicionesAtacante.ShurikenGrafico;
+import Grafica.Entidades.Municiones.MunicionesAtacante.ShurikenAtacanteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionAtaq;
@@ -17,9 +17,9 @@ public class ShurikenAtacante extends Municion {
 		super(x, y, m);
 		intel = new InteligenciaMunicionAtaq(this);
 		velocidad = 2;
-		daño = 15;
+		daño = 20;
 		
-		grafico = new ShurikenGrafico(x, y, mapa.getPanelMapa(), this);
+		grafico = new ShurikenAtacanteGrafico(x, y, mapa.getPanelMapa(), this);
 		estado = new EstadoMunicion(this);
 		col = new ColisionadorMunicionAtaq(this);
 	}

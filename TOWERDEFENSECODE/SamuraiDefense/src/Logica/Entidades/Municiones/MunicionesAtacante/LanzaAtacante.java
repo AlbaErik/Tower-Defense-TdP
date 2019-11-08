@@ -13,7 +13,7 @@ public class LanzaAtacante extends Municion {
 		super(x, y, m);
 		intel = new InteligenciaMunicionAtaq(this);
 		velocidad = 2;
-		daño = 20;
+		daño = 50;
 	}
 
 	@Override

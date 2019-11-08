@@ -20,7 +20,7 @@ public class NinjaElite extends Defensor {
 		life = 200;
 		vida=200;
 		attackSpeed = 0.5; //Es 1 seg
-		damage = 20;
+		damage = 25;
 		range = 200;
 		cost = 150;
 		

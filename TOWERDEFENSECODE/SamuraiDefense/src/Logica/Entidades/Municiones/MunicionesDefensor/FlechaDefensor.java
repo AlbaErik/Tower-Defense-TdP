@@ -18,7 +18,7 @@ public class FlechaDefensor extends Municion {
 		super(x, y, m);
 		intel = new InteligenciaMunicionDef(this);
 		velocidad = 12.5;
-		daño = 20;
+		daño = 35;
 		grafico = new FlechaDefensorGrafico(x, y, mapa.getPanelMapa(), this);
 		estado = new EstadoMunicion(this);
 		col = new ColisionadorMunicionDef(this);

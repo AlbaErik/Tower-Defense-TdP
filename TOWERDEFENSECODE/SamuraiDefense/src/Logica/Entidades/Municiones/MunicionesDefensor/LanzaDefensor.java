@@ -17,7 +17,7 @@ public class LanzaDefensor extends Municion {
 	public LanzaDefensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		velocidad = 2;
-		daño = 15;
+		daño =50;
 		
 		intel = new InteligenciaMunicionDef(this);
 		grafico = new LanzaDefensorGrafico(x, y, mapa.getPanelMapa(), this);

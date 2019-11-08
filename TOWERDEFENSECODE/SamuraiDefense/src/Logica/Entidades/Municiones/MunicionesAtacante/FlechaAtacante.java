@@ -21,7 +21,7 @@ public class FlechaAtacante extends Municion {
 		grafico = new FlechaAtacanteGrafico(x, y, mapa.getPanelMapa(), this);
 		estado = new EstadoMunicion(this);
 		col = new ColisionadorMunicionAtaq(this);
-		daño = 20;
+		daño = 30;
 	}
 	
 	public double getVel() {

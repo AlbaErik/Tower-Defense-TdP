@@ -19,7 +19,7 @@ public class ArqueroElite extends Defensor {
 		life = 150;
 		vida=150;
 		attackSpeed = 1;
-		damage = 30;
+		damage = 35;
 		range = 400;
 		cost = 100;
 
