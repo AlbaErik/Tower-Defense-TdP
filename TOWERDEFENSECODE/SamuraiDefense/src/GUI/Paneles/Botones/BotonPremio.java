@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import Logica.Entidades.Premios.Bombita;
+import Logica.Entidades.Premios.Muro;
 import Logica.Tienda.Tienda;
 
 public abstract class BotonPremio extends JButton {
@@ -21,8 +22,8 @@ public abstract class BotonPremio extends JButton {
 				tienda.setPersonajeActual(null);
 				if(tienda.hayPremio(clave))
 					tienda.setPremio(clave);	**/
-				tienda.setPremioActual(new Bombita(0,0,tienda.getJuego().getMapa()));
-				System.out.println("BOTONPREMIO: SE SETEO LA BOMBITA EN PREMIOACTUAL");
+				tienda.setPremioActual(new Muro(0,0,tienda.getJuego().getMapa()));
+				System.out.println("BOTONPREMIO: SE SETEO EL MURO EN PREMIOACTUAL");
 			}	
 		});
 	}
