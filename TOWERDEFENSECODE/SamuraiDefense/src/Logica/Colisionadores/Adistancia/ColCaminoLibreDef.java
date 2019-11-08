@@ -20,6 +20,7 @@ import Logica.Entidades.Municiones.MunicionesDefensor.LanzaDefensor;
 import Logica.Entidades.Municiones.MunicionesDefensor.ShurikenDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Premios.Muro;
 
 public class ColCaminoLibreDef extends VisitorDistancia{
 
@@ -139,6 +140,12 @@ public class ColCaminoLibreDef extends VisitorDistancia{
 
 	@Override
 	public boolean serChocado(LanzaDefensor lanzaDefensor) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean serChocado(Muro m) {
 		// TODO Auto-generated method stub
 		return true;
 	}

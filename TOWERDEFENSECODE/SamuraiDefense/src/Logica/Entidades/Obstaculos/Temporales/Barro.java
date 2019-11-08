@@ -47,7 +47,7 @@ public class Barro extends Obstaculo{
 
 	@Override
 	public void ejecutarEstado() {
-		estado.ejecutar();		
+		//estado.ejecutar();		
 	}
 
 	@Override

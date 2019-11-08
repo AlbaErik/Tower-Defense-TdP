@@ -12,7 +12,7 @@ public class BarroGrafico extends EntidadGrafica{
 		super(x, y, m, e);
 		graficos = new ImageIcon[1];
 
-		graficos[0] = new ImageIcon("Sprites/Objetos/FlechaAtacante.png");
+		graficos[0] = new ImageIcon("Sprites/Objetos/Barro.png");
 
 		setGraficoInicio(x, y);
 	}
