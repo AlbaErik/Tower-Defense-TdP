@@ -48,7 +48,7 @@ public abstract class Atacante extends Personaje implements Cloneable {
 		 */
 		int x=(int) this.getPos().getX();
 		int y=(int) this.getPos().getY();
-		mapa.agregarPowerUp(x,y,new BolsaDeDinero(mapa));
+		mapa.agregarPowerUp(x,y,new Bomba (mapa));
 	}
 
 	public int getDireccion() {

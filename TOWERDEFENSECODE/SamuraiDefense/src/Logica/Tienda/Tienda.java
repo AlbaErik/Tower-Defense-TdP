@@ -14,6 +14,7 @@ public class Tienda {
 	protected int oro;
 	protected boolean eliminar;
 	protected boolean premio;
+	protected boolean premioParaEntidad;
 
 	private PanelTienda tienda;
 	private Juego juego;
@@ -31,6 +32,7 @@ public class Tienda {
 		premioActual = null;
 		eliminar = false;
 		premio = false;
+		premioParaEntidad=false;
 		oro = 10000;
 		juego.actualizarOro(oro);
 		inicializarMap();
@@ -38,7 +40,7 @@ public class Tienda {
 
 	private void inicializarMap() {
 		powerUps = new HashMap<Integer, LinkedList<Premio>>();
-		for(int i = 0; i < cantPremios; i++)
+		for(int i = 0; i <=cantPremios; i++)
 			powerUps.put(i+1, new LinkedList<Premio>());
 	}
 
@@ -52,20 +54,23 @@ public class Tienda {
 	}
 	
 	public void setPremio(int clave) {
-		LinkedList<Premio> lista = powerUps.get(clave);
+		LinkedList<Premio> lista = powerUps.get(clave); //PUEDE GENERAR UN NULL POINTER POR BOTONDEF Y BOTONELIM
 		if(!lista.isEmpty()) {
 			premioActual = lista.getFirst();
+			if(clave==1 || clave==2) {
+				premioParaEntidad=true;
+			}else {
+				premioParaEntidad=false;
+			}
 		}else {
 			premioActual = null;
+			premioParaEntidad=false;
 		}
 	}
-	public Premio getPremio(int clave) {
-		LinkedList<Premio> lista = powerUps.get(clave);
-		Premio Actual = null;
-		if(!lista.isEmpty()) {
-			Actual = lista.getFirst();
-		}
-		return Actual;
+	public Premio getPremioActual() {
+		Premio toret=premioActual;
+		premioActual=null;
+		return toret;
 	}
 	
 	public void eliminarPremio(int clave) {
@@ -77,6 +82,11 @@ public class Tienda {
 	public boolean hayPremioActual() {
 		return premioActual!=null;
 	}
+	
+	public boolean premioParaEntidad() {
+		return premioParaEntidad;
+	}
+	
 	public boolean hayPremio(int clave) {
 		LinkedList<Premio> lista = powerUps.get(clave);
 		return !lista.isEmpty();
@@ -101,8 +111,12 @@ public class Tienda {
 	}
 
 	public void setPersonajeActual(Defensor d) {
+		if(d==null) {
+			personajeActual=null;
+		}else {
 		if (d.getCost() <= oro)
 			personajeActual = d;
+		}
 	}
 
 	public Defensor getPersonajeActual() {

@@ -52,6 +52,14 @@ public class Mapa {
 		tienda.actualizarOro(o);
 	}
 	
+	public boolean premioParaEntidad() {
+		return tienda.premioParaEntidad();
+	}
+	
+	public Premio getPremioActual() {
+		return tienda.getPremioActual();
+	}
+	
 	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
 		Entidad actual = misEntidades.getFirst();
 		for (Entidad i : misEntidades) {

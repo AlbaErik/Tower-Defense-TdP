@@ -19,12 +19,12 @@ public class FlechaAtacanteGrafico extends EntidadGrafica {
 
 	public void setGraficoInicio(int x, int y) {// Tiene que estar si o si en cada clase
 		graficoActual.setIcon(graficos[0]);
-		graficoActual.setBounds(x, y, 120, 80);
+		graficoActual.setBounds(x, y, 120, 120);
 	}
 
 	public void cambiarPos(int x, int y) {// Tiene que estar si o si en cada clase
 		pos.setLocation(x, y);
-		graficoActual.setBounds(x, y, 120, 80);// 80
+		graficoActual.setBounds(x, y, 120,120);// 80
 	}
 
 }

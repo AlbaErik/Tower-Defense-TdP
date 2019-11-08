@@ -16,7 +16,8 @@ public abstract class BotonDefensor extends JButton {
 		tienda=t;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				t.setEliminar(false);
+				tienda.setEliminar(false);
+				tienda.setPremio(5);
 				Defensor defensor = crearDefensor();
 				t.setPersonajeActual(defensor);
 			}	

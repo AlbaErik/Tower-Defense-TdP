@@ -16,6 +16,8 @@ public class BotonEliminar extends JButton {
 		tienda=t;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				tienda.setPremio(5);
+				tienda.setPersonajeActual(null);
 				tienda.setEliminar(true);
 			}	
 		});

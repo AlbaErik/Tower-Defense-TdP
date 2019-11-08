@@ -1,5 +1,6 @@
 package Logica.Entidades.Premios;
 
+import Grafica.Entidades.Premios.BarricadaGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.Premios.VisitorMuro;
@@ -11,6 +12,7 @@ public class Muro extends Premio{
 		super(x, y, m);
 		life = 100;
 		col = new VisitorMuro(this);
+		grafico=new BarricadaGrafica(x,y,m.getPanelMapa(),this);
 	}
 
 	@Override
