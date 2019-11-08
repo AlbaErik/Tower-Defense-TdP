@@ -6,6 +6,7 @@ import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Premios.Bombita;
 import Logica.Entidades.Premios.Escudo;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
@@ -36,6 +37,8 @@ public abstract class Colisionador {
 	public abstract void serChocado(Muro m);
 	public abstract void serChocado(Escudo e);
 	public abstract void serChocado(EscudoEnemigo e);
+
+	public abstract void serChocado(Bombita m);
 
 
 }

@@ -18,6 +18,7 @@ import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
 import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Premios.Bombita;
 import Logica.Entidades.Premios.Escudo;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
@@ -158,6 +159,12 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(EscudoEnemigo e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(Bombita m) {
 		// TODO Auto-generated method stub
 		
 	}
