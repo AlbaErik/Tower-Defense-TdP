@@ -1,5 +1,6 @@
 package Logica.PowerUps.Temporales;
 
+import Grafica.PowerUps.CampoProteccionGrafico;
 import Logica.Entidades.Premios.Escudo;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
@@ -9,6 +10,7 @@ public class CampoProteccion extends MagiaTemporal{
 	public CampoProteccion(Mapa m) {
 		super(m);
 		clave = 1;
+		grafica = new CampoProteccionGrafico(this);
 	}
 	
 	@Override
@@ -24,8 +26,7 @@ public class CampoProteccion extends MagiaTemporal{
 
 	@Override
 	public void morir() {
-		// TODO Auto-generated method stub
-		
+		map.eliminarPowerUp(this);
 	}
 
 }

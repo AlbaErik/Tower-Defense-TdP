@@ -126,4 +126,8 @@ public class Mapa {
 	public void setEntidad(Entidad d) {
 		misEntidades.addFirst(d);
 	}
+	
+	public boolean hayPremioActual() {
+		return tienda.hayPremioActual();
+	}
 }

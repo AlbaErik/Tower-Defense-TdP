@@ -16,7 +16,8 @@ public abstract class BotonPremio extends JButton {
 		tienda=t;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				if(tienda.hayPremio(clave))
+					tienda.setPremio(clave);	
 			}	
 		});
 	}

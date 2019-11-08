@@ -51,6 +51,14 @@ public class Tienda {
 		powerUps.put(clave, lista);
 	}
 	
+	public void setPremio(int clave) {
+		LinkedList<Premio> lista = powerUps.get(clave);
+		if(!lista.isEmpty()) {
+			premioActual = lista.getFirst();
+		}else {
+			premioActual = null;
+		}
+	}
 	public Premio getPremio(int clave) {
 		LinkedList<Premio> lista = powerUps.get(clave);
 		Premio Actual = null;
@@ -66,7 +74,9 @@ public class Tienda {
 			lista.remove(lista.getFirst());
 		}
 	}
-	
+	public boolean hayPremioActual() {
+		return premioActual!=null;
+	}
 	public boolean hayPremio(int clave) {
 		LinkedList<Premio> lista = powerUps.get(clave);
 		return !lista.isEmpty();

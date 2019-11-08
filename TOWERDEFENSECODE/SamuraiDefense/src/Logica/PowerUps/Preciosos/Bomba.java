@@ -1,5 +1,6 @@
 package Logica.PowerUps.Preciosos;
 
+import Grafica.PowerUps.BombaGrafico;
 import Logica.Entidades.Premios.Bombita;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
@@ -8,7 +9,8 @@ public class Bomba extends ObjetoPrecioso{
 	
 	public Bomba(Mapa m) {
 		super(m);
-		clave = 5;
+		clave = 3;
+		grafica = new BombaGrafico(this);
 	}
 	
 	@Override
@@ -24,7 +26,7 @@ public class Bomba extends ObjetoPrecioso{
 
 	@Override
 	public void morir() {
-		// TODO Auto-generated method stub
+		map.eliminarPowerUp(this);
 		
 	}
 

@@ -5,12 +5,12 @@ import javax.swing.JLabel;
 
 import Logica.PowerUps.PowerUp;
 
-public class BolsadeMonedasGrafico extends PowerUpGrafico{
+public class CampoProteccionGrafico extends PowerUpGrafico{
 	private static final long serialVersionUID = 1L;
 	
-	public BolsadeMonedasGrafico(PowerUp p) {
+	public CampoProteccionGrafico(PowerUp p) {
 		super(p);
-		this.setIcon(new ImageIcon("Sprites/Objetos/Drops/BolsaMonedasDrop.png"));
+		this.setIcon(new ImageIcon("Sprites/Objetos/Drops/CampoDeFuerzaDrop.png"));
 		
 	}
 
@@ -18,7 +18,5 @@ public class BolsadeMonedasGrafico extends PowerUpGrafico{
 	public JLabel getGrafico() {
 		return this;
 	}
-	
-	
-
 }
+	

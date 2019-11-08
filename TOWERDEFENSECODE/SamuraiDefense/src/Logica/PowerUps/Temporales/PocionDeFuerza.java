@@ -1,5 +1,6 @@
 package Logica.PowerUps.Temporales;
 
+import Grafica.PowerUps.PocionDeFuerzaGrafico;
 import Logica.Entidades.Premios.PocionFuerza;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
@@ -8,7 +9,8 @@ public class PocionDeFuerza extends MagiaTemporal{
 
 	public PocionDeFuerza(Mapa m) {
 		super(m);
-		clave = 3;
+		clave = 2;
+		grafica = new PocionDeFuerzaGrafico(this);
 	}
 	
 	@Override
@@ -24,8 +26,8 @@ public class PocionDeFuerza extends MagiaTemporal{
 
 	@Override
 	public void morir() {
-		// TODO Auto-generated method stub
-		
+		map.eliminarPowerUp(this);
 	}
+
 
 }

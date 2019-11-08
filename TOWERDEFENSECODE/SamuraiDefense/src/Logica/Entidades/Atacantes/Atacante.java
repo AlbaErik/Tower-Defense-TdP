@@ -11,7 +11,11 @@ import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
+import Logica.PowerUps.Preciosos.Barricada;
+import Logica.PowerUps.Preciosos.Bomba;
 import Logica.PowerUps.Temporales.BolsaDeDinero;
+import Logica.PowerUps.Temporales.CampoProteccion;
+import Logica.PowerUps.Temporales.PocionDeFuerza;
 
 public abstract class Atacante extends Personaje implements Cloneable {
 	protected double movementSpeed;

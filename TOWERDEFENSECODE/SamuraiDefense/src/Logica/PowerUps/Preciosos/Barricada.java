@@ -1,5 +1,6 @@
 package Logica.PowerUps.Preciosos;
 
+import Grafica.PowerUps.BarricadaGrafico;
 import Logica.Entidades.Premios.Muro;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
@@ -9,6 +10,7 @@ public class Barricada extends ObjetoPrecioso{
 	public Barricada(Mapa m) {
 		super(m);
 		clave = 4;
+		grafica = new BarricadaGrafico(this);
 	}
 
 	@Override
@@ -24,7 +26,7 @@ public class Barricada extends ObjetoPrecioso{
 
 	@Override
 	public void morir() {
-		// TODO Auto-generated method stub
+		map.eliminarPowerUp(this);
 		
 	}
 

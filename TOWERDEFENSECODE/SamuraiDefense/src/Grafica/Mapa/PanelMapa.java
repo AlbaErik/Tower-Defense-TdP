@@ -109,6 +109,8 @@ public class PanelMapa extends JPanel {
 					aEliminar.eliminarPorBoton();
 					
 				}
+			}else if(mapa.hayPremioActual()){
+				
 			}else { //FALTA HACER EL IF DEL PREMIO
 				int x = 0;
 				int y = 0;

@@ -1,16 +1,11 @@
 package Grafica.PowerUps;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import Logica.Entidades.Entidad;
-import Logica.Entidades.Defensores.Defensor;
-import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 

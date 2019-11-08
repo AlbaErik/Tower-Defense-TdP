@@ -8,7 +8,7 @@ public class BolsaDeDinero extends MagiaTemporal{
 
 	public BolsaDeDinero(Mapa m) {
 		super(m);
-		clave = 2;
+		clave = 0;
 		grafica = new BolsadeMonedasGrafico(this);
 	}
 	

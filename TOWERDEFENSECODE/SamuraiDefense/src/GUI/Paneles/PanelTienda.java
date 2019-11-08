@@ -11,10 +11,14 @@ import javax.swing.JPanel;
 import GUI.Paneles.Botones.BotonDefensor;
 import GUI.Paneles.Botones.BotonEliminar;
 import GUI.Paneles.Botones.BotonArqueroElite;
+import GUI.Paneles.Botones.BotonBarricada;
+import GUI.Paneles.Botones.BotonBomba;
+import GUI.Paneles.Botones.BotonCampoProteccion;
 import GUI.Paneles.Botones.BotonSacerdoteElite;
 import GUI.Paneles.Botones.BotonEspadachinElite;
 import GUI.Paneles.Botones.BotonLanceroElite;
 import GUI.Paneles.Botones.BotonNinjaElite;
+import GUI.Paneles.Botones.BotonPocionDeFuerza;
 import GUI.Paneles.Botones.BotonPremio;
 import GUI.Paneles.Botones.BotonSamuraiElite;
 import Logica.Juego.Juego;
@@ -54,7 +58,9 @@ public class PanelTienda extends JPanel {
 	
 	private void crearBotones() {
 		crearBotonesDefensores();
+		crearBotonesPremios();
 		crearBotonEliminar();
+		
 	}
 
 	private void crearBotonesDefensores() {
@@ -160,6 +166,77 @@ public class PanelTienda extends JPanel {
 		
 		Eliminar.setBounds(65,500,70,70);
 		this.add(Eliminar);
+	}
+	
+	private void crearBotonesPremios() {
+		colocablesP = new BotonPremio[4];
+		
+		colocablesP[0]=new BotonCampoProteccion(this.getTienda());
+		colocablesP[0].setBorder(null);
+		colocablesP[0].setBorderPainted(false);
+		colocablesP[0].setContentAreaFilled(false);
+		colocablesP[0].setIcon(new ImageIcon("Sprites/Botones/BotonCampoDeFuerza.png"));
+		colocablesP[0].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonCampoDeFuerzaEntered.png"));
+		colocablesP[0].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonCampoDeFuerzaDisable.png"));
+		colocablesP[0].setFocusable(false);
+		this.add(colocablesP[0]);
+		
+		colocablesP[1]=new BotonPocionDeFuerza(this.getTienda());
+		colocablesP[1].setBorder(null);
+		colocablesP[1].setBorderPainted(false);
+		colocablesP[1].setContentAreaFilled(false);
+		colocablesP[1].setIcon(new ImageIcon("Sprites/Botones/BotonPocionFuerza.png"));
+		colocablesP[1].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonPocionFuerzaEntered.png"));
+		colocablesP[1].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonPocionFuerzaDisable.png"));
+		colocablesP[1].setFocusable(false);
+		this.add(colocablesP[1]);
+		
+		colocablesP[2]=new BotonBarricada(this.getTienda());
+		colocablesP[2].setBorder(null);
+		colocablesP[2].setBorderPainted(false);
+		colocablesP[2].setContentAreaFilled(false);
+		colocablesP[2].setIcon(new ImageIcon("Sprites/Botones/BotonBarricada.png"));
+		colocablesP[2].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonBarricadaEntered.png"));
+		colocablesP[2].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonBarricadaDisable.png"));
+		colocablesP[2].setFocusable(false);
+		this.add(colocablesP[2]);
+		
+		colocablesP[3]=new BotonBomba(this.getTienda());
+		colocablesP[3].setBorder(null);
+		colocablesP[3].setBorderPainted(false);
+		colocablesP[3].setContentAreaFilled(false);
+		colocablesP[3].setIcon(new ImageIcon("Sprites/Botones/BotonBomba.png"));
+		colocablesP[3].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonBombaEntered.png"));
+		colocablesP[3].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonBombaDisable.png"));
+		colocablesP[3].setFocusable(false);
+		this.add(colocablesP[3]);
+		
+		acomodarBotonesPremios();
+	}
+	
+	private void acomodarBotonesPremios() {
+		int j = 0;
+		int x = 0;
+		int y = 0;
+		int medida = 70;
+		int cont = 0;
+		while (j < 2) {
+			x = 20 * (cont + 1) + 70 * cont;
+			y = 310;
+			colocablesP[j].setBounds(x, y, medida, medida);
+			j++;
+			cont++;
+		}
+		cont = 0;
+		while (j < 4) {
+			x = 20 * (cont + 1) + 70 * cont;
+			y = 400;
+			colocablesP[j].setBounds(x, y, medida, medida);
+			j++;
+			cont++;
+		}
+		
+		
 	}
 	public Tienda getTienda() {
 		return tienda;
