@@ -42,7 +42,6 @@ public class Ninja extends Atacante {
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();
-
 	}
 
 	@Override
