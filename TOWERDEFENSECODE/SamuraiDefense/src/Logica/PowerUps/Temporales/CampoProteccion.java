@@ -22,4 +22,10 @@ public class CampoProteccion extends MagiaTemporal{
 		map.agregarPremioTienda(clave, new Escudo(0, 0, map));
 	}
 
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

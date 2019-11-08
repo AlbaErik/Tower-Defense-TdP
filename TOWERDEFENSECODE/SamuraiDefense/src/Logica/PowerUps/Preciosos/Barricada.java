@@ -22,4 +22,10 @@ public class Barricada extends ObjetoPrecioso{
 		map.agregarPremioTienda(clave, new Muro(0, 0, map));
 	}
 
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -22,4 +22,10 @@ public class PocionDeFuerza extends MagiaTemporal{
 		map.agregarPremioTienda(clave, new PocionFuerza(0, 0, map));
 	}
 
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

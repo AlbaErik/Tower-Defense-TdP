@@ -22,4 +22,10 @@ public class Bomba extends ObjetoPrecioso{
 		map.agregarPremioTienda(clave, new Bombita(0, 0, map));
 	}
 
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
