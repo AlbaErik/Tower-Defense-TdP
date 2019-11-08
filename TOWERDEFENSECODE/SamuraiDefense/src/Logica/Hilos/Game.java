@@ -6,11 +6,14 @@ public class Game extends Thread{
 
 	private Juego juego;
 	private Control control;
+	private boolean ejecutar;
 	
 	public Game(Juego g) {
 		juego = g;
 		juego.crearNivel();
 		control = new Control(juego.getMapa());
+		ejecutar=true;
+	
 	}
 	
 	public void run() {
@@ -18,7 +21,7 @@ public class Game extends Thread{
 		juego.generarObstaculos();
 		int vueltas = 0;
 
-		while(true) {
+		while(ejecutar) {
 			try {
 				if(vueltas % 120 == 0) { 		//Da tiempo entre entidades para agregarlas al mapa
 					juego.agregarEntidades();
@@ -39,8 +42,10 @@ public class Game extends Thread{
 				
 				if(!juego.haySiguienteNivel() && juego.controlGanar())
 					System.out.println("WIN - WIN - WIN");
-				if(juego.controlPerder())
+				if(juego.controlPerder()) {
 					System.out.println("PERDIO EL JUGADOR");
+					ejecutar=false;
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
