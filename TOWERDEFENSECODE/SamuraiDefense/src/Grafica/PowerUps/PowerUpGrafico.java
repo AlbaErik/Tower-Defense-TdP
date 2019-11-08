@@ -19,17 +19,17 @@ public abstract class PowerUpGrafico extends JLabel {
 	private PowerUp pu;
 	protected ImageIcon grafico;
 	protected Mapa mapa;
-	
+
 	public PowerUpGrafico(PowerUp p) {
-		pu=p;
+		pu = p;
 		addMouseListener(new OyenteMouse());
 	}
-	
+
 	public ImageIcon getGrafico() {
 		return grafico;
 	}
 
-private class OyenteMouse implements MouseListener {
+	private class OyenteMouse implements MouseListener {
 
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
@@ -50,7 +50,7 @@ private class OyenteMouse implements MouseListener {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			pu.click();	
+			pu.click();
 		}
 
 		@Override

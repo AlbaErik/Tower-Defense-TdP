@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Mapa.Mapa;
+import Logica.PowerUps.PowerUp;
 //import Logica.Mapa.Posicion;
 
 public class PanelMapa extends JPanel {
@@ -42,6 +43,10 @@ public class PanelMapa extends JPanel {
 		repaint();
 	}
 
+	public void agregarPowerUp(PowerUp power) {
+		
+	}
+	
 	public void agregarEntidad(Entidad e) {
 		
 		Random rand = new Random();

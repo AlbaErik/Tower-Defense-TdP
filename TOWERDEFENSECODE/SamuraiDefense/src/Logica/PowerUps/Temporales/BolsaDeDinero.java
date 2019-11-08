@@ -1,5 +1,6 @@
 package Logica.PowerUps.Temporales;
 
+import Grafica.PowerUps.BolsadeMonedasGrafico;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 
@@ -8,6 +9,7 @@ public class BolsaDeDinero extends MagiaTemporal{
 	public BolsaDeDinero(Mapa m) {
 		super(m);
 		clave = 2;
+		grafica = new BolsadeMonedasGrafico(this);
 	}
 	
 	@Override

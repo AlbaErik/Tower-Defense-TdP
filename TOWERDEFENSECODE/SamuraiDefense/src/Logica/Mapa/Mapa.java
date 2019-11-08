@@ -3,11 +3,13 @@ package Logica.Mapa;
 import java.util.LinkedList;
 
 import Grafica.Mapa.PanelMapa;
+import Grafica.PowerUps.PowerUpGrafico;
 import Logica.Entidades.*;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Entidades.Premios.Premio;
 import Logica.Juego.Juego;
 import Logica.Mapa.Niveles.Nivel;
+import Logica.PowerUps.PowerUp;
 import Logica.Tienda.Tienda;
 
 public class Mapa {
@@ -24,6 +26,10 @@ public class Mapa {
 		misEntidades = new LinkedList<Entidad>();
 		mapagrafico = new PanelMapa(this);
 		tienda = juego.getTienda();
+	}
+	
+	public void agregarPowerUp(PowerUp power) {
+		mapagrafico.agregarPowerUp(power);
 	}
 	
 	public void agregarPremioTienda(int c, Premio p) {
