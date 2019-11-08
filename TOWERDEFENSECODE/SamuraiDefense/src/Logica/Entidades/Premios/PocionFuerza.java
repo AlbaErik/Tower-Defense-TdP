@@ -29,4 +29,9 @@ public class PocionFuerza extends Premio{
 		
 	}
 
+	@Override
+	public boolean queHago(int x,int y) {
+		return mapa.hayEnPos(x, y);
+	}
+
 }

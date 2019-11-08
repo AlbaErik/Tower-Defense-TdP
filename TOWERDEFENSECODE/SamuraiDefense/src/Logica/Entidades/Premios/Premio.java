@@ -13,4 +13,6 @@ public abstract class Premio extends Entidad{
 	public int getClave() {
 		return clave;
 	}
+	
+	public abstract boolean queHago(int x,int y);
 }

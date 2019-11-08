@@ -102,7 +102,7 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if (mapa.tiendaGetEliminar()) {
+			if (mapa.tiendaGetEliminar()) {//BOTONELIMINAR
 				int x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 				int y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 				if (mapa.hayEnPos(x, y)) {
@@ -111,47 +111,21 @@ public class PanelMapa extends JPanel {
 
 				}
 
-			} else if (mapa.hayPremioActual() && mapa.premioParaEntidad()) { // Es o un campo de proteccion o pocion de
-																				// fuerza
+			} else if (mapa.hayPremioActual()) { //PARA PREMIOS
 				int x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 				int y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
-				if (mapa.hayEnPos(x, y)) {
-
-				}
-
-			} else if (mapa.hayPremioActual() && !mapa.premioParaEntidad()) {//Es barricada o bomba
-				int x = 0;
-				int y = 0;
-				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
-					x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
-					y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
-				}
-
 				Premio aColocar = mapa.getPremioActual();
-
-				if (aColocar.getPos().getAlto() == 132) { // SE QUE ES UNA BARRICADA
-					if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y) && !mapa.hayEnPos(x, y + 66)) {
-						aColocar.cambiarPosLogica(x, y);
-						System.out.println("PANELMAPA: Se seteo un premio precioso en el X:" + x + " Y:" + y);
-						mapa.setEntidad(aColocar);
-						JLabel nuevo = aColocar.getGrafico().getGraficoActual();
-						//FALTA ELIMINARPU DE TIENDA
-						add(nuevo);
-						repaint();
-					} else {
-						if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) { // SE QUE ES UNA BOMBA
-							aColocar.cambiarPosLogica(x, y);
-							System.out.println("PANELMAPA: Se seteo un premio precioso en el X:" + x + " Y:" + y);
-							mapa.setEntidad(aColocar);
-							JLabel nuevo = aColocar.getGrafico().getGraficoActual();
-							//FALTA ELIMINARPU DE TIENDA
-							add(nuevo);
-							repaint();
-						}
-					}
-
-				}
-			} else {
+				System.out.println("PANELMAPA: HAY PREMIO" + aColocar.getClass());
+				if(y != 0 && aColocar!=null && aColocar.queHago(x,y)) {
+					aColocar.cambiarPosLogica(x, y);
+					System.out.println("PANELMAPA: Se seteo un premio precioso en el X:" + x + " Y:" + y);
+					mapa.setEntidad(aColocar);
+					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+					//mapa.getTienda().eliminarPremio(aColocar.getClave());
+					add(nuevo);
+					repaint();
+			    }
+			} else {//PARA DEFENSORES
 				int x = 0;
 				int y = 0;
 				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {

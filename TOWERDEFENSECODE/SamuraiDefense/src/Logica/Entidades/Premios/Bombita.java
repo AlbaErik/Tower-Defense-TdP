@@ -14,6 +14,7 @@ public class Bombita extends Premio {
 
 	public Bombita(int x, int y, Mapa m) {
 		super(x, y, m);
+		clave = 3;
 		grafico = new BombaGrafica(x, y, mapa.getPanelMapa(), this);
 	}
 
@@ -82,6 +83,11 @@ public class Bombita extends Premio {
 		cont--;
 		if (cont <= 0)
 			reventar();
+	}
+
+	@Override
+	public boolean queHago(int x,int y) {
+		return !mapa.hayEnPos(x, y);
 	}
 
 }

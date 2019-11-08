@@ -29,4 +29,10 @@ public class Escudo extends Premio{
 		
 	}
 
+	@Override
+	public boolean queHago(int x,int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

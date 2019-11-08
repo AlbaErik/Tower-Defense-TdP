@@ -57,16 +57,14 @@ public class Tienda {
 		LinkedList<Premio> lista = powerUps.get(clave); //PUEDE GENERAR UN NULL POINTER POR BOTONDEF Y BOTONELIM
 		if(!lista.isEmpty()) {
 			premioActual = lista.getFirst();
-			if(clave==1 || clave==2) {
-				premioParaEntidad=true;
-			}else {
-				premioParaEntidad=false;
-			}
 		}else {
 			premioActual = null;
-			premioParaEntidad=false;
 		}
 	}
+	public void setPremioActual(Premio p) {//ELIMINAR,ES SOLO PARA TESTEAR
+		premioActual=p;
+	}
+	
 	public Premio getPremioActual() {
 		Premio toret=premioActual;
 		premioActual=null;
@@ -79,6 +77,7 @@ public class Tienda {
 			lista.remove(lista.getFirst());
 		}
 	}
+	
 	public boolean hayPremioActual() {
 		return premioActual!=null;
 	}
