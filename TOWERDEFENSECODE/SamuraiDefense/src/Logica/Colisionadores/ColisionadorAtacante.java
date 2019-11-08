@@ -147,7 +147,10 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(Muro m) {
-		
+		ataq.cambiarEstado(new AtaqueEnemigo(ataq));
+		ataq.setEntidadADestruir(m);
+		if(m.getLife() <= 0)
+			m.morir();
 	}
 
 	@Override

@@ -12,7 +12,7 @@ public class Muro extends Premio {
 	public Muro(int x, int y, Mapa m) {
 		super(x, y, m);
 		this.getPos().setAlto(132);
-		life = 100;
+		life = 40000;
 		col = new VisitorMuro(this);
 		grafico = new BarricadaGrafica(x, y, m.getPanelMapa(), this);
 	}
@@ -42,12 +42,12 @@ public class Muro extends Premio {
 
 		if (ent1 != null) {
 			System.out.println("Muro---Encontro entidad por encima");
-			puedoPonerlo = ((ent1.getPos().getY() + ent1.getPos().getAlto()) < this.getPos().getY());
+			puedoPonerlo = ((ent1.getPos().getY() + ent1.getPos().getAlto()) <= this.getPos().getY());
 		}
 
 		if (ent2 != null) {
 			System.out.println("Muro---Encontro entidad por debajo");
-			puedoPonerlo = puedoPonerlo && ((ent2.getPos().getY() - ent2.getPos().getAlto()) > this.getPos().getY());
+			puedoPonerlo = puedoPonerlo && ((ent2.getPos().getY() - ent2.getPos().getAlto()) >= this.getPos().getY());
 		}
 		return puedoPonerlo;
 	}
@@ -57,12 +57,12 @@ public class Muro extends Premio {
 		int x = (int) this.getPos().getX();
 		int y = (int) this.getPos().getY() + 1;
 
-		for (int i = 0; i < 132; i++) {
+		for (int i = 0; i < 140; i++) {
 			if (mapa.hayEnPos(x, y) && mapa.getEntidadEnPos(x, y) != this) {
 				toret = mapa.getEntidadEnPos(x, y);
 				break;
 			}
-			y--;
+			y++;
 		}
 		return toret;
 	}
@@ -70,14 +70,14 @@ public class Muro extends Premio {
 	private Entidad revisarArriba() {
 		Entidad toret = null;
 		int x = (int) this.getPos().getX();
-		int y = (int) this.getPos().getY() + 1;
+		int y = (int) this.getPos().getY() - 1;
 
-		for (int i = 0; i < 132; i++) {
+		for (int i = 0; i < 140; i++) {
 			if (mapa.hayEnPos(x, y) && mapa.getEntidadEnPos(x, y) != this) {
 				toret = mapa.getEntidadEnPos(x, y);
 				break;
 			}
-			y++;
+			y--;
 		}
 		return toret;
 	}

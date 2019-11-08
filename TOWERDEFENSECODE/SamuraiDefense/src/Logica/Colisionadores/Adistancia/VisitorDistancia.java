@@ -20,6 +20,7 @@ import Logica.Entidades.Municiones.MunicionesDefensor.LanzaDefensor;
 import Logica.Entidades.Municiones.MunicionesDefensor.ShurikenDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Premios.Muro;
 
 /*
  * Determina si el personaje encontro o no un enemigo a distancia
@@ -67,6 +68,8 @@ public abstract class VisitorDistancia {
 
 	
 	public abstract boolean serChocado(Barro barro);
+	
+	public abstract boolean serChocado(Muro m);
 
 	
 	public abstract boolean serChocado(FlechaAtacante flechaAtacante);

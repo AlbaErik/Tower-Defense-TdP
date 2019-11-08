@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import Logica.Entidades.*;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
+import Logica.Entidades.Obstaculos.Temporales.Barro;
 
 public abstract class Nivel {
 
@@ -32,7 +33,7 @@ public abstract class Nivel {
 
 	private void crearListaObstaculos() {
 		obstaculos.add(new Piedra(0, 0, juego.getMapa()));
-		obstaculos.add(new Piedra(0, 0, juego.getMapa()));
+		obstaculos.add(new Barro(0, 0, juego.getMapa()));
 	}
 
 	protected abstract LinkedList<Entidad> crearHorda1();
