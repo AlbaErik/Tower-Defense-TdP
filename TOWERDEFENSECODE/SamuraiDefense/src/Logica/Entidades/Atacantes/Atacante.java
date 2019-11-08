@@ -28,6 +28,10 @@ public abstract class Atacante extends Personaje implements Cloneable {
 		direccion = -1;
 		tiendaPowerUp = new TiendaPowerUp(m);
 	}
+	
+	public void restarVelocidad(int i) {
+		movementSpeed = i;
+	}
 
 	public void morir() {
 		

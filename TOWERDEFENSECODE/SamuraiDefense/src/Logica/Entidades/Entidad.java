@@ -18,13 +18,15 @@ public abstract class Entidad {
 	protected Inteligencia intel;
 	protected Estado estado;
 	protected boolean permisoCambiarEstado;
-	protected int contador = 0;
+	//protected int contador = 0;
+	protected Contador cont;
 	//El contador se usa para medir tiempo de ataque
 
 	public Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
 		permisoCambiarEstado = true;
+		cont = new Contador();
 	}
 	
 	public Mapa getMapa() {
@@ -37,15 +39,15 @@ public abstract class Entidad {
 	 * Sirve para crear un delay a la hora de ejecutar una accion.
 	 */
 	public void incrementarContador() {
-		contador ++;
+		cont.incrementarContador();
 	}
 	
 	public int getContador() {
-		return contador;
+		return cont.getContador();
 	}
 	
 	public void resetContador() {
-		contador = 0;
+		cont.resetContador();
 	}
 	
 	public boolean puedoPasar() {

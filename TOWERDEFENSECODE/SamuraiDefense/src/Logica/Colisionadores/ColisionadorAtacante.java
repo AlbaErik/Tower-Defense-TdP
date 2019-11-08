@@ -77,6 +77,7 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(Barro e) {
+		
 	}
 
 	private Personaje quienSeFrena(Personaje p) {

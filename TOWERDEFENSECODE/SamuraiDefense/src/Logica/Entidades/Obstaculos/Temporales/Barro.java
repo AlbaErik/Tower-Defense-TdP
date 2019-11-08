@@ -1,5 +1,6 @@
 package Logica.Entidades.Obstaculos.Temporales;
 import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Obstaculos.VidaFinita.BarroGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorBarro;
@@ -10,15 +11,22 @@ import Logica.Mapa.Mapa;
 
 public class Barro extends Obstaculo{
 
+	private int lentitud;
 	public Barro(int x,int y,Mapa m) {
 		super(x,y,m);
+		life = 1000000000;
+		lentitud = 1;
+		grafico = new BarroGrafico(y, y, mapa.getPanelMapa(), this);
 		col = new ColisionadorBarro();
 	}
 
+	public int getLentitud() {
+		return lentitud;
+	}
+	
 	@Override
 	public void setLife(int lp) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 	@Override

@@ -20,7 +20,7 @@ public class Arquero extends Atacante {
 		attackSpeed = 1;
 		damage = 35;
 		range = 200;
-		movementSpeed = 1;
+		movementSpeed = 1.5;
 
 		grafico = new ArqueroGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
