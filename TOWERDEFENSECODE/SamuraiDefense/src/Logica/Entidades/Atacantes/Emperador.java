@@ -16,11 +16,11 @@ public class Emperador extends Atacante {
 	public Emperador(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 450;
-		attackSpeed=4;
+		attackSpeed = 4;
 		damage = 90;
 		range = 0;
-		movementSpeed=0.5;
-		
+		movementSpeed = 0.5;
+
 		grafico = new EmperadorGrafico(x, y, m.getPanelMapa(), this);
 		intel = new InteligenciaAtacante(this);
 		arma = new Arco(this, m);
@@ -30,13 +30,12 @@ public class Emperador extends Atacante {
 
 	@Override
 	public void chocar(Colisionador e) {
-		// TODO Auto-generated method stub
-		
+		e.serChocado(this);
 	}
-	
+
 	@Override
 	public Atacante clone() {
-		return new Emperador(0,0,super.mapa);
+		return new Emperador(0, 0, super.mapa);
 	}
 
 	@Override
@@ -47,13 +46,14 @@ public class Emperador extends Atacante {
 
 	@Override
 	public void ejecutarEstado() {
-		estado.ejecutar();		
+		estado.ejecutar();
 	}
 
 	@Override
 	public void atacar(Entidad aDestruir) {
-		// TODO Auto-generated method stub
-		
+		if(aDestruir != null) {
+			aDestruir.setLife(damage);
+		}
 	}
 
 	@Override
@@ -61,5 +61,4 @@ public class Emperador extends Atacante {
 		return v.serChocado(this);
 	}
 
-	
 }

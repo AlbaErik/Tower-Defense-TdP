@@ -2,15 +2,14 @@ package Logica.Entidades.Premios;
 
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
-import Logica.Colisionadores.Premios.VisitorMuro;
+import Logica.Colisionadores.Premios.VisitorEscudoEnemigo;
 import Logica.Mapa.Mapa;
 
-public class Muro extends Premio{
+public class EscudoEnemigo extends Premio{
 
-	public Muro(int x, int y, Mapa m) {
+	public EscudoEnemigo(int x, int y, Mapa m) {
 		super(x, y, m);
-		life = 100;
-		col = new VisitorMuro(this);
+		col = new VisitorEscudoEnemigo();
 	}
 
 	@Override
@@ -21,7 +20,8 @@ public class Muro extends Premio{
 
 	@Override
 	public void chocar(Colisionador e) {
-		e.serChocado(this);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
