@@ -3,10 +3,8 @@ package Logica.Mapa.Niveles;
 import Logica.Juego.Juego;
 import Logica.Mapa.Hordas.Horda;
 
-import java.awt.Image;
 import java.util.LinkedList;
 
-import javax.swing.ImageIcon;
 
 import Logica.Entidades.*;
 import Logica.Entidades.Obstaculos.Obstaculo;
@@ -16,10 +14,8 @@ public abstract class Nivel {
 
 	// AGREGAR FONDO
 
-	private int presupuesto;
 	protected Horda horda;
 	protected boolean horda1, horda2, horda3, obstaculos1, obstaculos2, obstaculos3, nivel1, nivel2, nivel3;
-	private Nivel siguiente;
 	protected Juego juego;
 	protected LinkedList<Obstaculo> obstaculos;
 
