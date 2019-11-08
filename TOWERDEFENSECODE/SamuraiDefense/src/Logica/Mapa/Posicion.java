@@ -16,6 +16,10 @@ public class Posicion {
 		rectangulo.setSize(ancho, alto);
 	}
 	
+	public void setAlto(int i) {
+		alto = i;
+	}
+	
 	public void setPos(double x, int y) {
 		punto.setLocation(x, y);
 	}
