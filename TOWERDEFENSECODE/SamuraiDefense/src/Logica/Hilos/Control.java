@@ -24,6 +24,7 @@ public class Control {
 				Posicion e2 = ent2.getPos();
 
 				double distX = Math.abs(e1.getX() - e2.getX());
+				double distY = Math.abs(e1.getAlto() - e2.getAlto());
 
 				boolean colisionX = distX < e1.getRectangle().getWidth() - 40;
 				boolean colisionY = e1.getY() == e2.getY();

@@ -21,6 +21,7 @@ public abstract class Atacante extends Personaje implements Cloneable {
 	protected double movementSpeed;
 	protected InteligenciaAtacante intel;
 	protected TiendaPowerUp tiendaPowerUp;
+	protected double backupVel;
 
 	public Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -28,32 +29,33 @@ public abstract class Atacante extends Personaje implements Cloneable {
 		direccion = -1;
 		tiendaPowerUp = new TiendaPowerUp(m);
 	}
-	
-	public void restarVelocidad(int i) {
+
+	public void restarVelocidad(double i) {
+		backupVel = movementSpeed;
 		movementSpeed = i;
 	}
 
 	public void morir() {
-		
+
 		mapa.notificarMuerteEnemigo();
 		mapa.eliminarEntidad(this);
 		int dinero = this.dineroDropeado();
 		mapa.actualizarOroTienda(dinero);
 		System.out.println("ATACANTE: Enemigo muerto");
-		
+
 		devolverPowerUp();
 	}
 
 	protected void devolverPowerUp() {
 		/*
-		Random ran = new Random();
-		int i = ran.nextInt(10);
-		if(i % 2 == 0)
-			tiendaPowerUp.getRandom();
+		 * Random ran = new Random(); 
+		 * int i = ran.nextInt(10); 
+		 * 		if(i % 2 == 0)
+		 * tiendaPowerUp.getRandom();
 		 */
-		int x=(int) this.getPos().getX();
-		int y=(int) this.getPos().getY();
-		mapa.agregarPowerUp(x,y,new Bomba (mapa));
+		int x = (int) this.getPos().getX();
+		int y = (int) this.getPos().getY();
+		mapa.agregarPowerUp(x, y, new Bomba(mapa));
 	}
 
 	public int getDireccion() {
