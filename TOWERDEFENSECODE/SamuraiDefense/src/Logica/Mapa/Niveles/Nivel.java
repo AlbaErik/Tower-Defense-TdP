@@ -18,7 +18,7 @@ public abstract class Nivel {
 
 	private int presupuesto;
 	protected Horda horda;
-	protected boolean horda1,horda2,horda3,obstaculos1,obstaculos2,obstaculos3,nivel1,nivel2,nivel3;
+	protected boolean horda1, horda2, horda3, obstaculos1, obstaculos2, obstaculos3, nivel1, nivel2, nivel3;
 	private Nivel siguiente;
 	protected Juego juego;
 	protected LinkedList<Obstaculo> obstaculos;
@@ -28,10 +28,10 @@ public abstract class Nivel {
 		juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 		obstaculos = new LinkedList<Obstaculo>();
 		crearListaObstaculos();
-		nivel1=true;
-		nivel2=true;
-		nivel3=true;
-		
+		nivel1 = true;
+		nivel2 = true;
+		nivel3 = true;
+
 	}
 
 	private void crearListaObstaculos() {
@@ -40,45 +40,47 @@ public abstract class Nivel {
 	}
 
 	protected abstract LinkedList<Entidad> crearHorda1();
+
 	protected abstract LinkedList<Entidad> crearHorda2();
+
 	protected abstract LinkedList<Entidad> crearHorda3();
-	
+
 	public abstract LinkedList<Entidad> getSigHorda();
-	
+
 	public boolean haySigHorda() {
-		boolean toret=false;
-		if(horda1 || horda2 || horda3)
-			toret=true;
-		System.out.println("*NIVEL: " + horda1+" , "+ horda2+" , "+ horda3);
+		boolean toret = false;
+		if (horda1 || horda2 || horda3)
+			toret = true;
+		System.out.println("*NIVEL: " + horda1 + " , " + horda2 + " , " + horda3);
 		return toret;
 	}
-
 
 	protected abstract LinkedList<Obstaculo> crearObstaculos1();
+
 	protected abstract LinkedList<Obstaculo> crearObstaculos2();
+
 	protected abstract LinkedList<Obstaculo> crearObstaculos3();
-	
+
 	public abstract LinkedList<Obstaculo> getSigObstaculos();
-	
+
 	public boolean haySigObstaculos() {
-		boolean toret=false;
-		if(obstaculos1 || obstaculos2 || obstaculos3)
-			toret=true;
+		boolean toret = false;
+		if (obstaculos1 || obstaculos2 || obstaculos3)
+			toret = true;
 		return toret;
 	}
-	
-	
+
 	public abstract Nivel setSigNivel();
-	
+
 	public boolean haySigNivel() {
-		boolean toret=false;
-		if(nivel1 || nivel2 || nivel3)
-			toret=true;
+		boolean toret = false;
+		if (nivel1 || nivel2 || nivel3)
+			toret = true;
 		return toret;
 	}
 
 	public Juego getJuego() {
 		return juego;
 	}
-	
+
 }

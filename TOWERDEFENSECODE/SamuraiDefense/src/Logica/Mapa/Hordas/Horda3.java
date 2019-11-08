@@ -45,7 +45,7 @@ public class Horda3 extends Horda{
 	
 	private void crearEnemigos1() {
 		atacantes1 = new LinkedList<Atacante>();
-		int cantEnemigos = 12 ;
+		int cantEnemigos = 1 ; // 12
 		for (int i = 0; i < cantEnemigos; i++) {
 			atacantes1.add(crearAtacanteRandom());
 		}
@@ -53,7 +53,7 @@ public class Horda3 extends Horda{
 	
 	private void crearEnemigos2() {
 		atacantes2 = new LinkedList<Atacante>();
-		int cantEnemigos = 13;
+		int cantEnemigos = 1; // 13
 		for (int i = 0; i < cantEnemigos; i++) {
 			atacantes2.add(crearAtacanteRandom());
 		}
@@ -61,7 +61,7 @@ public class Horda3 extends Horda{
 	
 	private void crearEnemigos3() {
 		atacantes3 = new LinkedList<Atacante>();
-		int cantEnemigos = 15;
+		int cantEnemigos = 1; // 15
 		for (int i = 0; i < cantEnemigos; i++) {
 			atacantes3.add(crearAtacanteRandom());
 		}

@@ -33,7 +33,14 @@ public class Game extends Thread{
 				control.chequearColision();
 				
 				vueltas++;
+				
+				
 				sleep(20);
+				
+				if(!juego.haySiguienteNivel() && juego.controlGanar())
+					System.out.println("WIN - WIN - WIN");
+				if(juego.controlPerder())
+					System.out.println("PERDIO EL JUGADOR");
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

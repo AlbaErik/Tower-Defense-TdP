@@ -3,7 +3,6 @@ package Logica.Mapa;
 import java.util.LinkedList;
 
 import Grafica.Mapa.PanelMapa;
-import Grafica.PowerUps.PowerUpGrafico;
 import Logica.Entidades.*;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Entidades.Premios.Premio;
@@ -26,6 +25,18 @@ public class Mapa {
 		misEntidades = new LinkedList<Entidad>();
 		mapagrafico = new PanelMapa(this);
 		tienda = juego.getTienda();
+	}
+	
+	public void perdioElJugador() {
+		juego.hacerPerderAlJugador();
+	}
+	
+	public boolean hayPremioActual() {
+		return tienda.hayPremioActual();
+	}
+
+	public void notificarMuerteEnemigo() {
+		juego.restarEnemigoMuerto();
 	}
 	
 	public void agregarPowerUp(int x, int y, PowerUp power) {
@@ -133,9 +144,5 @@ public class Mapa {
 	
 	public void setEntidad(Entidad d) {
 		misEntidades.addFirst(d);
-	}
-	
-	public boolean hayPremioActual() {
-		return tienda.hayPremioActual();
 	}
 }

@@ -8,79 +8,77 @@ import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Juego.Juego;
 import Logica.Mapa.Hordas.Horda2;
 
-public class Nivel2 extends Nivel{
+public class Nivel2 extends Nivel {
 
 	public Nivel2(Juego j) {
 		super(j);
 		horda = new Horda2(juego.getMapa());
-		nivel2=false;
-		horda1=true;
-		horda2=true;
-		horda3=true;
-		obstaculos1=true;
-		obstaculos2=true;
-		obstaculos3=true;
+		nivel2 = false;
+		horda1 = true;
+		horda2 = true;
+		horda3 = true;
+		obstaculos1 = true;
+		obstaculos2 = true;
+		obstaculos3 = true;
 	}
 
 	@Override
 	protected LinkedList<Entidad> crearHorda1() {
 		LinkedList<Entidad> ret = new LinkedList<Entidad>();
-		for(Entidad e : horda.crearAtacantes1())
+		for (Entidad e : horda.crearAtacantes1())
 			ret.add(e);
-		horda1=false;
+		horda1 = false;
 		return ret;
-		
+
 	}
-	
+
 	@Override
 	protected LinkedList<Entidad> crearHorda2() {
 		LinkedList<Entidad> ret = new LinkedList<Entidad>();
-		for(Entidad e : horda.crearAtacantes2())
+		for (Entidad e : horda.crearAtacantes2())
 			ret.add(e);
-		horda2=false;
+		horda2 = false;
 		return ret;
 	}
 
 	@Override
 	protected LinkedList<Entidad> crearHorda3() {
 		LinkedList<Entidad> ret = new LinkedList<Entidad>();
-		for(Entidad e : horda.crearAtacantes3())
+		for (Entidad e : horda.crearAtacantes3())
 			ret.add(e);
-		horda3=false;
+		horda3 = false;
 		return ret;
 	}
 
 	@Override
 	public LinkedList<Entidad> getSigHorda() {
-		LinkedList<Entidad> toret=new LinkedList<Entidad>();
-		if(horda1) {
-			for(Entidad e : this.crearHorda1())
+		LinkedList<Entidad> toret = new LinkedList<Entidad>();
+		if (horda1) {
+			for (Entidad e : this.crearHorda1())
 				toret.add(e);
-		}else if (horda2) {
-			for(Entidad e : this.crearHorda2())
+		} else if (horda2) {
+			for (Entidad e : this.crearHorda2())
 				toret.add(e);
-		}else if(horda3) {
-			for(Entidad e : this.crearHorda3())
+		} else if (horda3) {
+			for (Entidad e : this.crearHorda3())
 				toret.add(e);
 		}
-		
+
 		return toret;
-			
+
 	}
-	
-	
 
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos1() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
 		int cantObstaculos = 3;
 		Random rand = new Random();
-		for(int i = 0 ; i < cantObstaculos ; i++) {
+		for (int i = 0; i < cantObstaculos; i++) {
 			int k = rand.nextInt(obstaculos.size());
 			Obstaculo clone = obstaculos.get(k).clone();
 			lista.add(clone);
 		}
-		obstaculos1=false;
+		obstaculos1 = false;
 		return lista;
 	}
 
@@ -89,12 +87,12 @@ public class Nivel2 extends Nivel{
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
 		int cantObstaculos = 5;
 		Random rand = new Random();
-		for(int i = 0 ; i < cantObstaculos ; i++) {
+		for (int i = 0; i < cantObstaculos; i++) {
 			int k = rand.nextInt(obstaculos.size());
 			Obstaculo clone = obstaculos.get(k).clone();
 			lista.add(clone);
 		}
-		obstaculos2=false;
+		obstaculos2 = false;
 		return lista;
 	}
 
@@ -103,36 +101,36 @@ public class Nivel2 extends Nivel{
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
 		int cantObstaculos = 6;
 		Random rand = new Random();
-		for(int i = 0 ; i < cantObstaculos ; i++) {
+		for (int i = 0; i < cantObstaculos; i++) {
 			int k = rand.nextInt(obstaculos.size());
 			Obstaculo clone = obstaculos.get(k).clone();
 			lista.add(clone);
 		}
-		obstaculos3=false;
+		obstaculos3 = false;
 		return lista;
 	}
 
 	@Override
 	public LinkedList<Obstaculo> getSigObstaculos() {
-		LinkedList<Obstaculo> toret=new LinkedList<Obstaculo>();
-		if(obstaculos1) {
-			for(Obstaculo o : this.crearObstaculos1())
+		LinkedList<Obstaculo> toret = new LinkedList<Obstaculo>();
+		if (obstaculos1) {
+			for (Obstaculo o : this.crearObstaculos1())
 				toret.add(o);
-		}else if (obstaculos2) {
-			for(Obstaculo o : this.crearObstaculos2())
+		} else if (obstaculos2) {
+			for (Obstaculo o : this.crearObstaculos2())
 				toret.add(o);
-		}else if(obstaculos3) {
-			for(Obstaculo o : this.crearObstaculos3())
+		} else if (obstaculos3) {
+			for (Obstaculo o : this.crearObstaculos3())
 				toret.add(o);
 		}
-		
+
 		return toret;
 	}
 
 	@Override
 	public Nivel setSigNivel() {
-		Nivel sig=new Nivel3(juego);
-		return sig;				
+		Nivel sig = new Nivel3(juego);
+		return sig;
 	}
 
 }

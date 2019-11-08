@@ -18,11 +18,29 @@ public class Juego {
 	private Mapa mapa;
 	private LinkedList<Entidad> miHorda;
 	private LinkedList<Obstaculo> misObstaculos;
+	private int contadorEnemigos = 0;
+	private boolean perdio = false;
 
 	public Juego(PanelJuego g) {
 		Gui = g;
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
+	}
+	
+	public void hacerPerderAlJugador() {
+		perdio = true;
+	}
+	
+	public boolean controlPerder() {
+		return perdio;
+	}
+	
+	public boolean controlGanar() {
+		return contadorEnemigos == 0;
+	}
+	
+	public void restarEnemigoMuerto() {
+		contadorEnemigos--;
 	}
 
 	public void actualizarOro(int c) {
@@ -67,6 +85,7 @@ public class Juego {
 			Entidad atacante = miHorda.getFirst();
 			mapa.agregarEntidadAlCampo(atacante);
 			miHorda.remove(miHorda.getFirst());
+			contadorEnemigos++;
 		}
 
 		if (miHorda.isEmpty() && misObstaculos.isEmpty()) {// Si ya se vencio a la horda y ya se pusieron los obstaculos
@@ -139,6 +158,10 @@ public class Juego {
 
 	public PanelJuego getPanelJuego() {
 		return Gui;
+	}
+	
+	public boolean haySiguienteNivel() {
+		return nivel.haySigNivel();
 	}
 
 	public Nivel getNivel() {

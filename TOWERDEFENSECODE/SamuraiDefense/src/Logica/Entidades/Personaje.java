@@ -50,4 +50,8 @@ public abstract class Personaje extends Entidad {
 	}
 
 	public abstract void atacar(Entidad aDestruir);
+
+	public void perdioElJugador() {
+		mapa.perdioElJugador();
+	}
 }
