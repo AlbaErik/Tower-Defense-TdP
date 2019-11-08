@@ -1,5 +1,6 @@
 package Logica.Entidades.Premios;
 
+import Grafica.Entidades.Premios.BombaGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
@@ -13,6 +14,7 @@ public class Bombita extends Premio {
 
 	public Bombita(int x, int y, Mapa m) {
 		super(x, y, m);
+		grafico = new BombaGrafica(x, y, mapa.getPanelMapa(), this);
 	}
 
 	public void reventar() {
@@ -43,7 +45,7 @@ public class Bombita extends Premio {
 	}
 
 	private void matarEnRangoY() {
-		int rang = rangoX;
+		int rang = rangoY;
 		int Y1 = (int) miCelda.getY() + 1;
 		int Y2 = (int) miCelda.getY() - 1;
 		int X = (int) miCelda.getX();
