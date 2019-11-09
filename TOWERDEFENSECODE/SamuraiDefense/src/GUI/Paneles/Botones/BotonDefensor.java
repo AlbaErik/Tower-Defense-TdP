@@ -10,20 +10,20 @@ import Logica.Tienda.Tienda;
 
 public abstract class BotonDefensor extends JButton {
 	private static final long serialVersionUID = 1L;
-	protected  Tienda tienda;
-	
+	protected Tienda tienda;
+
 	public BotonDefensor(Tienda t) {
-		tienda=t;
+		tienda = t;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tienda.setEliminar(false);
 				tienda.setPremio(5);
 				Defensor defensor = crearDefensor();
 				t.setPersonajeActual(defensor);
-			}	
+			}
 		});
 	}
-	
+
 	public abstract Defensor crearDefensor();
 
 }
