@@ -169,8 +169,9 @@ public class Juego {
 	}
 
 	public void setSigNivel() {
-		nivel = nivel.setSigNivel(); // Controlo que haya siguiente nivel en el metodo nivelTerminado en la clase
-										// juego
+		if(nivel.haySigNivel()) {
+		nivel = nivel.setSigNivel();// Controlo que haya siguiente nivel en el metodo nivelTerminado en la clase juego
+	  }
 	}
 
 	public Mapa getMapa() {

@@ -14,6 +14,7 @@ public class Nivel1 extends Nivel {
 	public Nivel1(Juego j) {
 		super(j);
 		horda = new Horda1(juego.getMapa());
+		siguiente=new Nivel2(juego);
 		nivel1=false;
 		horda1=true;
 		horda2=true;
@@ -75,7 +76,7 @@ public class Nivel1 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos1() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 2;
+		int cantObstaculos = 1;//2;
 		Random rand = new Random();
 		for(int i = 0 ; i < cantObstaculos ; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -89,7 +90,7 @@ public class Nivel1 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos2() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 2;
+		int cantObstaculos = 1;//2;
 		Random rand = new Random();
 		for(int i = 0 ; i < cantObstaculos ; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -103,7 +104,7 @@ public class Nivel1 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos3() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 3;
+		int cantObstaculos = 1;//3;
 		Random rand = new Random();
 		for(int i = 0 ; i < cantObstaculos ; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -133,8 +134,13 @@ public class Nivel1 extends Nivel {
 	
 	@Override
 	public Nivel setSigNivel() {
-		Nivel sig=new Nivel2(juego);
-		return sig;				
+		return siguiente;				
+	}
+
+	@Override
+	public boolean haySigNivel() {
+		// TODO Auto-generated method stub
+		return siguiente!=null;
 	}
 
 

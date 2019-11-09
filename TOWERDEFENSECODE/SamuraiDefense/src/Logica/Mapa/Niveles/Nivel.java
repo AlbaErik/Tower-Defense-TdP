@@ -18,6 +18,7 @@ public abstract class Nivel {
 	protected Horda horda;
 	protected boolean horda1, horda2, horda3, obstaculos1, obstaculos2, obstaculos3, nivel1, nivel2, nivel3;
 	protected Juego juego;
+	protected Nivel siguiente;
 	protected LinkedList<Obstaculo> obstaculos;
 
 	public Nivel(Juego j) {
@@ -33,7 +34,7 @@ public abstract class Nivel {
 
 	private void crearListaObstaculos() {
 		obstaculos.add(new Piedra(0, 0, juego.getMapa()));
-		obstaculos.add(new Barro(0, 0, juego.getMapa()));
+		//obstaculos.add(new Barro(0, 0, juego.getMapa()));
 	}
 
 	protected abstract LinkedList<Entidad> crearHorda1();
@@ -69,12 +70,14 @@ public abstract class Nivel {
 
 	public abstract Nivel setSigNivel();
 
-	public boolean haySigNivel() {
+	/**public boolean haySigNivel() {
 		boolean toret = false;
 		if (nivel1 || nivel2 || nivel3)
 			toret = true;
 		return toret;
-	}
+	}**/
+	
+	public abstract boolean haySigNivel();
 
 	public Juego getJuego() {
 		return juego;

@@ -6,6 +6,7 @@ import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
+import Logica.Entidades.Premios.Premio;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
@@ -47,15 +48,18 @@ public abstract class Atacante extends Personaje implements Cloneable {
 	}
 
 	protected void devolverPowerUp() {
-		/*
-		 * Random ran = new Random(); 
-		 * int i = ran.nextInt(10); 
-		 * 		if(i % 2 == 0)
-		 * tiendaPowerUp.getRandom();
-		 */
-		int x = (int) this.getPos().getX();
-		int y = (int) this.getPos().getY();
-		mapa.agregarPowerUp(x, y, new Bomba(mapa));
+		PowerUp aleatorio = null;
+		Random ran = new Random();
+		int i = ran.nextInt(10);
+		if (i % 2 == 0)
+			aleatorio = tiendaPowerUp.getRandom();
+		
+		if (aleatorio != null) {
+			int x = (int) this.getPos().getX();
+			int y = (int) this.getPos().getY();
+			mapa.agregarPowerUp(x, y, aleatorio);
+		}
+
 	}
 
 	public int getDireccion() {

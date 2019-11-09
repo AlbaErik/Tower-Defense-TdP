@@ -13,6 +13,7 @@ public class Nivel3 extends Nivel {
 	public Nivel3(Juego j) {
 		super(j);
 		horda = new Horda3(juego.getMapa());
+		siguiente=null;
 		nivel3 = false;
 		horda1 = true;
 		horda2 = true;
@@ -71,7 +72,7 @@ public class Nivel3 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos1() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 4;
+		int cantObstaculos = 1;//4;
 		Random rand = new Random();
 		for (int i = 0; i < cantObstaculos; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -85,7 +86,7 @@ public class Nivel3 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos2() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 5;
+		int cantObstaculos = 1;//5;
 		Random rand = new Random();
 		for (int i = 0; i < cantObstaculos; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -99,7 +100,7 @@ public class Nivel3 extends Nivel {
 	@Override
 	protected LinkedList<Obstaculo> crearObstaculos3() {
 		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 7;
+		int cantObstaculos = 1;//7;
 		Random rand = new Random();
 		for (int i = 0; i < cantObstaculos; i++) {
 			int k = rand.nextInt(obstaculos.size());
@@ -129,6 +130,11 @@ public class Nivel3 extends Nivel {
 
 	@Override
 	public Nivel setSigNivel() {
-		return null;
+		return siguiente;				
+	}
+
+	@Override
+	public boolean haySigNivel() {
+		return siguiente!=null;
 	}
 }

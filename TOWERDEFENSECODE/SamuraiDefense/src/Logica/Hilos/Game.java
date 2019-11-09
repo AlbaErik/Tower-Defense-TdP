@@ -26,8 +26,10 @@ public class Game extends Thread{
 				if(vueltas % 120 == 0) { 		//Da tiempo entre entidades para agregarlas al mapa
 					juego.agregarEntidades();
 					if(juego.nivelTerminado()) {
-						juego.setSigNivel();
-						System.out.println("GAME: Se seteo el siguiente nivel");
+						if(juego.haySiguienteNivel()) {
+						   juego.setSigNivel();
+						   System.out.println("GAME: Se seteo el siguiente nivel");
+						}
 					}
 					vueltas = 0;	
 				}
@@ -39,9 +41,12 @@ public class Game extends Thread{
 				
 				
 				sleep(20);
-				
-				if(!juego.haySiguienteNivel() && juego.controlGanar())
+				System.out.println("GAME: ControlGanar "+ juego.controlGanar());
+				System.out.println("GAME: signivel "+ !juego.haySiguienteNivel());
+				if(!juego.haySiguienteNivel() && juego.controlGanar()) {
 					System.out.println("WIN - WIN - WIN");
+					ejecutar=false;	
+				}
 				if(juego.controlPerder()) {
 					System.out.println("PERDIO EL JUGADOR");
 					ejecutar=false;

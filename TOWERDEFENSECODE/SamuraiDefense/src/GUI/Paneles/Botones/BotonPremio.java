@@ -18,11 +18,10 @@ public abstract class BotonPremio extends JButton {
 		tienda=t;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/**tienda.setEliminar(false);
+				tienda.setEliminar(false);
 				tienda.setPersonajeActual(null);
 				if(tienda.hayPremio(clave))
-					tienda.setPremio(clave);	**/
-				tienda.setPremioActual(new Muro(0,0,tienda.getJuego().getMapa()));
+					tienda.setPremio(clave);	
 				System.out.println("BOTONPREMIO: SE SETEO EL MURO EN PREMIOACTUAL");
 			}	
 		});

@@ -121,7 +121,7 @@ public class PanelMapa extends JPanel {
 					System.out.println("PANELMAPA: Se seteo un premio precioso en el X:" + x + " Y:" + y);
 					mapa.setEntidad(aColocar);
 					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
-					//mapa.getTienda().eliminarPremio(aColocar.getClave());
+					mapa.getTienda().eliminarPremio(aColocar.getClave());
 					add(nuevo);
 					repaint();
 			    }
