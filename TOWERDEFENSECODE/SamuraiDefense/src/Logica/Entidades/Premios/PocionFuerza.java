@@ -31,6 +31,8 @@ public class PocionFuerza extends Premio{
 
 	@Override
 	public boolean queHago(int x,int y) {
+		if(mapa.hayEnPos(x, y))
+			mapa.getEntidadEnPos(x, y).subirFuerza(8000);
 		return mapa.hayEnPos(x, y);
 	}
 

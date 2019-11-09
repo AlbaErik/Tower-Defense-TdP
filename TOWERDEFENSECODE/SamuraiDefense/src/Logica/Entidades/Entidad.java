@@ -29,6 +29,8 @@ public abstract class Entidad {
 		cont = new Contador();
 	}
 	
+	public void subirFuerza(int cant) {}
+	
 	public Mapa getMapa() {
 		return mapa;
 	}

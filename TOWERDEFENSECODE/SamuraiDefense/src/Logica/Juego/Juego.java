@@ -92,7 +92,7 @@ public class Juego {
 			Random rand = new Random();
 			int i = rand.nextInt(10);
 
-			if (i % 2 == 0)
+			if (i % 3 == 0)
 				asignarEscudo(atacante);
 		}
 

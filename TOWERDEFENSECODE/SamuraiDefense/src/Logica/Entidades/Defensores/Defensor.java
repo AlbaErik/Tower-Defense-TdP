@@ -15,6 +15,10 @@ public abstract class Defensor extends Personaje {
 		direccion = 1;
 		
 	}
+	
+	public void subirFuerza(int cant) {
+		damage += cant;
+	}
 
 	public int getDireccion() {
 		return direccion;
