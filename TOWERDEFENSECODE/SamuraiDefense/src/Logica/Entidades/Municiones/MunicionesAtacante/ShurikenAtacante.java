@@ -4,7 +4,6 @@ import Grafica.Entidades.Municiones.MunicionesAtacante.ShurikenAtacanteGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionAtaq;
-import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionDef;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Municion.EstadoMunicion;
 import Logica.Inteligencia.Inteligencia;
