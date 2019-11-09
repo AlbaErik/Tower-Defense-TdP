@@ -3,19 +3,19 @@ package Logica.Entidades.Premios;
 import Grafica.Entidades.Premios.EscudoGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
-import Logica.Colisionadores.Premios.VisitorEscudoEnemigo;
+import Logica.Colisionadores.Premios.VisitorEscudoDef;
 import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
 
-public class EscudoEnemigo extends Premio{
+public class EscudoDef extends Premio {
 
-	private Entidad entidad;
+	private Entidad entidad = null;
 
-	public EscudoEnemigo(int x, int y, Mapa m) {
+	public EscudoDef(int x, int y, Mapa m) {
 		super(x, y, m);
 		clave = 1;
 		grafico = new EscudoGrafico(y, y, mapa.getPanelMapa(), this);
-		col = new VisitorEscudoEnemigo(this);
+		col = new VisitorEscudoDef();
 	}
 
 	@Override
@@ -31,23 +31,27 @@ public class EscudoEnemigo extends Premio{
 
 	@Override
 	public void ejecutarEstado() {
-		
+		if(entidad != null) {
+			this.setPos(entidad.getPos());
+			int y = (int) this.getPos().getY();
+			int x = (int) this.getPos().getX() + 10;
+			this.getPos().setPos(x, y);
+		}
 	}
 
-	public void actualizarPos(double x, int y) {
-		this.cambiarPosLogica(x, y);
-	}
-	
 	@Override
 	public boolean queHago(int x, int y) {
 		Entidad ent = mapa.getEntidadEnPos(x, y);
+		boolean toret = false;
 		if(ent != null) {
 			setEntidad(ent);
+			toret = true;
 		}
-		return false;
+		return toret;
 	}
 
-	public void setEntidad(Entidad ent) {
+	private void setEntidad(Entidad ent) {
 		entidad = ent;
 	}
+
 }
