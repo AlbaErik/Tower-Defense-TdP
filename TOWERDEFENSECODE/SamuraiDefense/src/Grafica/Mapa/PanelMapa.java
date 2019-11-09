@@ -15,7 +15,6 @@ import Logica.Entidades.Defensores.Defensor;
 import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
-//import Logica.Mapa.Posicion;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;

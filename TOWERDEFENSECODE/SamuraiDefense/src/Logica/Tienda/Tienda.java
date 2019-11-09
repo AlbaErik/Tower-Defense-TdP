@@ -32,16 +32,16 @@ public class Tienda {
 		premioActual = null;
 		eliminar = false;
 		premio = false;
-		premioParaEntidad=false;
+		premioParaEntidad = false;
 		oro = 5000;
 		juego.actualizarOro(oro);
 		inicializarMap();
-	}	
+	}
 
 	private void inicializarMap() {
 		powerUps = new HashMap<Integer, LinkedList<Premio>>();
-		for(int i = 0; i <=cantPremios; i++)
-			powerUps.put(i+1, new LinkedList<Premio>());
+		for (int i = 0; i <= cantPremios; i++)
+			powerUps.put(i + 1, new LinkedList<Premio>());
 	}
 
 	/*
@@ -52,37 +52,37 @@ public class Tienda {
 		lista.add(premio);
 		powerUps.put(clave, lista);
 	}
-	
+
 	public void setPremio(int clave) {
-		LinkedList<Premio> lista = powerUps.get(clave); //PUEDE GENERAR UN NULL POINTER POR BOTONDEF Y BOTONELIM
-		if(!lista.isEmpty()) {
+		LinkedList<Premio> lista = powerUps.get(clave); // PUEDE GENERAR UN NULL POINTER POR BOTONDEF Y BOTONELIM
+		if (!lista.isEmpty()) {
 			premioActual = lista.getFirst();
-		}else {
+		} else {
 			premioActual = null;
 		}
 	}
-	
+
 	public Premio getPremioActual() {
-		Premio toret=premioActual;
-		premioActual=null;
+		Premio toret = premioActual;
+		premioActual = null;
 		return toret;
 	}
-	
+
 	public void eliminarPremio(int clave) {
 		LinkedList<Premio> lista = powerUps.get(clave);
-		if(!lista.isEmpty()) {
+		if (!lista.isEmpty()) {
 			lista.remove(lista.getFirst());
 		}
 	}
-	
+
 	public boolean hayPremioActual() {
-		return premioActual!=null;
+		return premioActual != null;
 	}
-	
+
 	public boolean premioParaEntidad() {
 		return premioParaEntidad;
 	}
-	
+
 	public boolean hayPremio(int clave) {
 		LinkedList<Premio> lista = powerUps.get(clave);
 		return !lista.isEmpty();
@@ -107,11 +107,11 @@ public class Tienda {
 	}
 
 	public void setPersonajeActual(Defensor d) {
-		if(d==null) {
-			personajeActual=null;
-		}else {
-		if (d.getCost() <= oro)
-			personajeActual = d;
+		if (d == null) {
+			personajeActual = null;
+		} else {
+			if (d.getCost() <= oro)
+				personajeActual = d;
 		}
 	}
 

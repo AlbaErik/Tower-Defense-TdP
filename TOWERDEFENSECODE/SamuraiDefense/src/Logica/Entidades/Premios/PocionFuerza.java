@@ -8,6 +8,7 @@ public class PocionFuerza extends Premio{
 
 	public PocionFuerza(int x, int y, Mapa m) {
 		super(x, y, m);
+		clave = 2;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -34,6 +35,10 @@ public class PocionFuerza extends Premio{
 		if(mapa.hayEnPos(x, y))
 			mapa.getEntidadEnPos(x, y).subirFuerza(8000);
 		return mapa.hayEnPos(x, y);
+	}
+	
+	public void cambiarPosLogica(double x, int y){
+		
 	}
 
 }

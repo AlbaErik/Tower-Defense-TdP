@@ -11,6 +11,7 @@ public class Muro extends Premio {
 
 	public Muro(int x, int y, Mapa m) {
 		super(x, y, m);
+		clave = 4;
 		this.getPos().setAlto(132);
 		life = 40000;
 		col = new VisitorMuro(this);
@@ -41,12 +42,10 @@ public class Muro extends Premio {
 		Entidad ent2 = revisarAbajo();
 
 		if (ent1 != null) {
-			System.out.println("Muro---Encontro entidad por encima");
 			puedoPonerlo = ((ent1.getPos().getY() + ent1.getPos().getAlto()) <= this.getPos().getY());
 		}
 
 		if (ent2 != null) {
-			System.out.println("Muro---Encontro entidad por debajo");
 			puedoPonerlo = puedoPonerlo && ((ent2.getPos().getY() - ent2.getPos().getAlto()) >= this.getPos().getY());
 		}
 		return puedoPonerlo;
