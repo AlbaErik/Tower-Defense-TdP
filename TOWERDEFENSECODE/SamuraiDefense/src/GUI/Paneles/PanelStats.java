@@ -1,7 +1,6 @@
 package GUI.Paneles;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import GUI.VentanaInicial;
 
 public class PanelStats extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -58,14 +56,6 @@ public class PanelStats extends JPanel {
 		add(pause);
 	}
 
-	/*
-	 * public void eliminarNinja() { JButton eliminarNinja=new JButton();
-	 * eliminarNinja.addActionListener(new ActionListener() { public void
-	 * actionPerformed(ActionEvent e) {//HAY QUE COMPLETAR CON LO QUE VA A HACER EL
-	 * BOTON DE PAUSA Gui.getJuego().getMapa().getPanelMapa().eliminar();
-	 * actualizarOro(30); }}); eliminarNinja.setBounds(100, 0,70,50);
-	 * add(eliminarNinja); }
-	 */
 
 	public void actualizarOro(int o) {
 		oro.setText("" + o);

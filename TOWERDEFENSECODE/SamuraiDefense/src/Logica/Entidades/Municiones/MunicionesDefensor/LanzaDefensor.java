@@ -1,11 +1,9 @@
 package Logica.Entidades.Municiones.MunicionesDefensor;
 
-import Grafica.Entidades.Municiones.MunicionesDefensor.FlechaDefensorGrafico;
 import Grafica.Entidades.Municiones.MunicionesDefensor.LanzaDefensorGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresMunicion.ColisionadorMunicionDef;
-import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Municion.EstadoMunicion;
 import Logica.Inteligencia.Inteligencia;

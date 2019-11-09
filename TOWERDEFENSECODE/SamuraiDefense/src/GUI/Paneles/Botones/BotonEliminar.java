@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import Logica.Entidades.Defensores.Defensor;
 import Logica.Tienda.Tienda;
 
 public class BotonEliminar extends JButton {

@@ -2,7 +2,6 @@ package Logica.Entidades.Municiones.MunicionesAtacante;
 
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
-import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Inteligencia.InteligenciaMunicionAtaq;
 import Logica.Mapa.Mapa;

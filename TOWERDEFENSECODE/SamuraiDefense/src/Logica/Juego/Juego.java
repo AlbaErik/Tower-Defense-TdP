@@ -8,7 +8,6 @@ import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Entidades.Premios.EscudoEnemigo;
-import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;

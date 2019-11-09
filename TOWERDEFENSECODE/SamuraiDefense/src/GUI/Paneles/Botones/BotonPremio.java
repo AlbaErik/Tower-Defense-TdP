@@ -4,10 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-
-import Logica.Entidades.Premios.Bombita;
-import Logica.Entidades.Premios.Escudo;
-import Logica.Entidades.Premios.Muro;
 import Logica.Tienda.Tienda;
 
 public abstract class BotonPremio extends JButton {

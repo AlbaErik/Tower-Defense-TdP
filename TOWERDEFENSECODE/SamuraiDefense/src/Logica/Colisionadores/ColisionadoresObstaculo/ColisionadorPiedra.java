@@ -25,10 +25,8 @@ import Logica.Entidades.Premios.Muro;
 
 public class ColisionadorPiedra extends Colisionador {
 	
-	private Obstaculo obs;
 	
 	public ColisionadorPiedra(Obstaculo o) {
-		obs = o;
 	}
 
 	@Override
@@ -99,13 +97,6 @@ public class ColisionadorPiedra extends Colisionador {
 
 	@Override
 	public void serChocado(Piedra e) {
-		/**double x = obs.getPos().getX() - obs.getPos().getAncho()/2;
-		int y = (int) obs.getPos().getY();
-		obs.cambiarPosLogica(x, y);
-		
-		x = obs.getPos().getX() + obs.getPos().getAncho()/2;
-		y = (int) obs.getPos().getY();
-		e.cambiarPosLogica(x, y);**/
 		
 	}
 
