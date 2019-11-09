@@ -4,12 +4,9 @@ import Grafica.Entidades.Premios.EscudoGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.Premios.VisitorEscudoEnemigo;
-import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
 
 public class EscudoEnemigo extends Premio{
-
-	private Entidad entidad;
 
 	public EscudoEnemigo(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -40,14 +37,8 @@ public class EscudoEnemigo extends Premio{
 	
 	@Override
 	public boolean queHago(int x, int y) {
-		Entidad ent = mapa.getEntidadEnPos(x, y);
-		if(ent != null) {
-			setEntidad(ent);
-		}
 		return false;
 	}
 
-	public void setEntidad(Entidad ent) {
-		entidad = ent;
-	}
+	
 }

@@ -8,7 +8,6 @@ import Logica.Entidades.Entidad;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Entidades.Premios.EscudoEnemigo;
-import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;
@@ -93,7 +92,7 @@ public class Juego {
 			Random rand = new Random();
 			int i = rand.nextInt(10);
 
-			if (i % 2 == 0)
+			if (i % 3 == 0)
 				asignarEscudo(atacante);
 		}
 
