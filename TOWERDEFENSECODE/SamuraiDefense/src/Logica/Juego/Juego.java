@@ -83,21 +83,10 @@ public class Juego {
 			mapa.agregarEntidadAlCampoEnPosActual(obs);
 			misObstaculos.remove(misObstaculos.getFirst());
 		} else if (!miHorda.isEmpty()) {
-
-			Entidad atacante = miHorda.getFirst();
-			mapa.agregarEntidadAlCampo(atacante);
-			miHorda.remove(miHorda.getFirst());
-			contadorEnemigos++;
-
-			Random rand = new Random();
-			int i = rand.nextInt(10);
-
-			if (i % 3 == 0)
-				asignarEscudo(atacante);
+			agregarAtacante();			
 		}
 
 		if (miHorda.isEmpty() && misObstaculos.isEmpty()) {// Si ya se vencio a la horda y ya se pusieron los obstaculos
-
 			if (nivel.haySigHorda()) {
 				miHorda = nivel.getSigHorda();
 			}
@@ -105,7 +94,17 @@ public class Juego {
 				misObstaculos = nivel.getSigObstaculos();
 			}
 		}
-
+	}
+	
+	private void agregarAtacante() {
+		Entidad atacante = miHorda.getFirst();
+		mapa.agregarEntidadAlCampo(atacante);
+		miHorda.remove(miHorda.getFirst());
+		contadorEnemigos++;
+		Random rand = new Random();
+		int i = rand.nextInt(10);
+		if (i % 3 == 0)
+			asignarEscudo(atacante);
 	}
 
 	private void asignarEscudo(Entidad ent) {
@@ -182,8 +181,7 @@ public class Juego {
 
 	public void setSigNivel() {
 		if (nivel.haySigNivel()) {
-			nivel = nivel.setSigNivel();// Controlo que haya siguiente nivel en el metodo nivelTerminado en la clase
-										// juego
+			nivel = nivel.setSigNivel();
 		}
 	}
 
