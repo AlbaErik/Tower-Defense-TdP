@@ -28,7 +28,6 @@ public class Game extends Thread{
 					if(juego.nivelTerminado()) {
 						if(juego.haySiguienteNivel()) {
 						   juego.setSigNivel();
-						   System.out.println("GAME: Se seteo el siguiente nivel");
 						}
 					}
 					vueltas = 0;	
@@ -41,8 +40,7 @@ public class Game extends Thread{
 				
 				
 				sleep(20);
-				System.out.println("GAME: ControlGanar "+ juego.controlGanar());
-				System.out.println("GAME: signivel "+ !juego.haySiguienteNivel());
+				
 				if(!juego.haySiguienteNivel() && juego.controlGanar()) {
 					System.out.println("WIN - WIN - WIN");
 					ejecutar=false;	

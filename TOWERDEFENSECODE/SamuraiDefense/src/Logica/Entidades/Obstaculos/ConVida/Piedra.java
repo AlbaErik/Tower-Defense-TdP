@@ -5,7 +5,6 @@ import Grafica.Entidades.Obstaculos.VidaFinita.PiedraGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorPiedra;
-import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Estados.Objetos.PiedraAlta;
 import Logica.Inteligencia.Inteligencia;
@@ -17,7 +16,7 @@ public class Piedra extends Obstaculo {
 		super(x, y, m);
 		col = new ColisionadorPiedra(this);
 		grafico = new PiedraGrafica(x, y, m.getPanelMapa(), this);
-		life = 60;
+		life = 200;
 		estado = new PiedraAlta(this);
 	}
 

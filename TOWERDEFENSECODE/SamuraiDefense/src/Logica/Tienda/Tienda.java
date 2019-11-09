@@ -33,7 +33,7 @@ public class Tienda {
 		eliminar = false;
 		premio = false;
 		premioParaEntidad=false;
-		oro = 10000;
+		oro = 5000;
 		juego.actualizarOro(oro);
 		inicializarMap();
 	}	
@@ -60,9 +60,6 @@ public class Tienda {
 		}else {
 			premioActual = null;
 		}
-	}
-	public void setPremioActual(Premio p) {//ELIMINAR,ES SOLO PARA TESTEAR
-		premioActual=p;
 	}
 	
 	public Premio getPremioActual() {

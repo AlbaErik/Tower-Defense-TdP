@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import Logica.Entidades.Premios.Bombita;
+import Logica.Entidades.Premios.Escudo;
 import Logica.Entidades.Premios.Muro;
 import Logica.Tienda.Tienda;
 
@@ -22,7 +23,6 @@ public abstract class BotonPremio extends JButton {
 				tienda.setPersonajeActual(null);
 				if(tienda.hayPremio(clave))
 					tienda.setPremio(clave);	
-				System.out.println("BOTONPREMIO: SE SETEO EL MURO EN PREMIOACTUAL");
 			}	
 		});
 	}

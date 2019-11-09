@@ -14,7 +14,7 @@ public class PiedraMedia extends EstadoObjeto {
 	public void ejecutar() {
 
 		((ObstaculoGrafico) obs.getGrafico()).vidaMedia();
-		if (obs.getLife() < 40 && obs.getLife() >= 20) {
+		if (obs.getLife() < 100 && obs.getLife() >= 50) {
 			obs.cambiarEstado(new PiedraBaja(obs));
 		}
 		

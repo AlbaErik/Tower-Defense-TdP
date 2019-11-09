@@ -16,7 +16,7 @@ public abstract class Nivel {
 	// AGREGAR FONDO
 
 	protected Horda horda;
-	protected boolean horda1, horda2, horda3, obstaculos1, obstaculos2, obstaculos3, nivel1, nivel2, nivel3;
+	protected boolean horda1, horda2, horda3, obstaculos1, obstaculos2, obstaculos3;
 	protected Juego juego;
 	protected Nivel siguiente;
 	protected LinkedList<Obstaculo> obstaculos;
@@ -26,9 +26,6 @@ public abstract class Nivel {
 		juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 		obstaculos = new LinkedList<Obstaculo>();
 		crearListaObstaculos();
-		nivel1 = true;
-		nivel2 = true;
-		nivel3 = true;
 
 	}
 
@@ -49,7 +46,6 @@ public abstract class Nivel {
 		boolean toret = false;
 		if (horda1 || horda2 || horda3)
 			toret = true;
-		System.out.println("*NIVEL: " + horda1 + " , " + horda2 + " , " + horda3);
 		return toret;
 	}
 
@@ -70,13 +66,6 @@ public abstract class Nivel {
 
 	public abstract Nivel setSigNivel();
 
-	/**public boolean haySigNivel() {
-		boolean toret = false;
-		if (nivel1 || nivel2 || nivel3)
-			toret = true;
-		return toret;
-	}**/
-	
 	public abstract boolean haySigNivel();
 
 	public Juego getJuego() {

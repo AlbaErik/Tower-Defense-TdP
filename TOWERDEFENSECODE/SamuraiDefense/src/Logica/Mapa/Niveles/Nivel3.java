@@ -14,7 +14,6 @@ public class Nivel3 extends Nivel {
 		super(j);
 		horda = new Horda3(juego.getMapa());
 		siguiente=null;
-		nivel3 = false;
 		horda1 = true;
 		horda2 = true;
 		horda3 = true;

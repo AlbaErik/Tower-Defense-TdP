@@ -76,7 +76,6 @@ public class Juego {
 				x = randomX();
 				y = randomY();
 			}
-			System.out.println("JUEGO: Se seteo un obstaculo en el X:" + x + " Y:" + y);
 			Obstaculo obs = misObstaculos.getFirst();
 			obs.cambiarPosLogica(x, y);
 			mapa.agregarEntidadAlCampoEnPosActual(obs);
@@ -92,11 +91,9 @@ public class Juego {
 
 			if (nivel.haySigHorda()) {
 				miHorda = nivel.getSigHorda();
-				System.out.println("JUEGO: Se seteo la siguiente horda");
 			}
 			if (nivel.haySigObstaculos()) {
 				misObstaculos = nivel.getSigObstaculos();
-				System.out.println("JUEGO: Se setearon los siguientes obstaculos");
 			}
 		}
 
@@ -148,8 +145,7 @@ public class Juego {
 			e.ejecutarEstado();
 	}
 
-	public void reanudar() {
-		// TODO Auto-generated method stub
+	public void reanudar() {//METODO PARA BOTONPAUSA
 	}
 
 	public Tienda getTienda() {
