@@ -102,7 +102,7 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if (mapa.tiendaGetEliminar()) {//BOTONELIMINAR
+			if (mapa.tiendaGetEliminar()) {// BOTONELIMINAR
 				int x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 				int y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 				if (mapa.hayEnPos(x, y)) {
@@ -111,12 +111,16 @@ public class PanelMapa extends JPanel {
 
 				}
 
-			} else if (mapa.hayPremioActual()) { //PARA PREMIOS
-				int x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
-				int y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
+			} else if (mapa.hayPremioActual()) { // PARA PREMIOS
+				int x = 0;
+				int y = 0;
+				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
+					x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
+					y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
+				}
 				Premio aColocar = mapa.getPremioActual();
 				System.out.println("PANELMAPA: HAY PREMIO" + aColocar.getClass());
-				if(y != 0 && aColocar!=null && aColocar.queHago(x,y)) {
+				if (y != 0 && aColocar != null && aColocar.queHago(x, y)) {
 					aColocar.cambiarPosLogica(x, y);
 					System.out.println("PANELMAPA: Se seteo un premio precioso en el X:" + x + " Y:" + y);
 					mapa.setEntidad(aColocar);
@@ -124,8 +128,8 @@ public class PanelMapa extends JPanel {
 					mapa.getTienda().eliminarPremio(aColocar.getClave());
 					add(nuevo);
 					repaint();
-			    }
-			} else {//PARA DEFENSORES
+				}
+			} else {// PARA DEFENSORES
 				int x = 0;
 				int y = 0;
 				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {

@@ -18,7 +18,7 @@ import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Premios.Bombita;
-import Logica.Entidades.Premios.Escudo;
+import Logica.Entidades.Premios.EscudoDef;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
 import Logica.Estados.Personajes.Defensor.AtaqueDefensor;
@@ -121,21 +121,21 @@ public class ColisionadorDefensor extends Colisionador {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
-	public void serChocado(Escudo e) {
+	public void serChocado(Bombita m) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
 	public void serChocado(EscudoEnemigo e) {
 		System.out.println("ColisionadorDefensor---me choque con escudo enemigo mato a mi defensor");
 		d.morir();
-	}
+	}	
 
 	@Override
-	public void serChocado(Bombita m) {
+	public void serChocado(EscudoDef e) {
 		// TODO Auto-generated method stub
 		
 	}

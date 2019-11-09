@@ -1,7 +1,7 @@
 package Logica.PowerUps.Temporales;
 
 import Grafica.PowerUps.CampoProteccionGrafico;
-import Logica.Entidades.Premios.Escudo;
+import Logica.Entidades.Premios.EscudoDef;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 
@@ -21,7 +21,7 @@ public class CampoProteccion extends MagiaTemporal{
 
 	@Override
 	public void click() {
-		map.agregarPremioTienda(clave, new Escudo(0, 0, map));
+		map.agregarPremioTienda(clave, new EscudoDef(0, 0, map));
 	}
 
 	@Override

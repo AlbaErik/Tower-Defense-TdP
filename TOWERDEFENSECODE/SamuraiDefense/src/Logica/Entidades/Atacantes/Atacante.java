@@ -1,34 +1,38 @@
 package Logica.Entidades.Atacantes;
 
 import java.util.Random;
-
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
-import Logica.Entidades.Premios.Premio;
+import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
-import Logica.PowerUps.Preciosos.Barricada;
-import Logica.PowerUps.Preciosos.Bomba;
-import Logica.PowerUps.Temporales.BolsaDeDinero;
-import Logica.PowerUps.Temporales.CampoProteccion;
-import Logica.PowerUps.Temporales.PocionDeFuerza;
 
 public abstract class Atacante extends Personaje implements Cloneable {
 	protected double movementSpeed;
 	protected InteligenciaAtacante intel;
 	protected TiendaPowerUp tiendaPowerUp;
 	protected double backupVel;
+	protected EscudoEnemigo escudo = null;
 
 	public Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
 		colCaminoLibre = new ColCaminoLibreEnem();
 		direccion = -1;
 		tiendaPowerUp = new TiendaPowerUp(m);
+		intel = new InteligenciaAtacante(this);
+	}
+	
+	public EscudoEnemigo getEscudo() {
+		return escudo;
+	}
+	
+	public void setEscudo(EscudoEnemigo esc) {
+		escudo = esc;
 	}
 
 	public void restarVelocidad(double i) {

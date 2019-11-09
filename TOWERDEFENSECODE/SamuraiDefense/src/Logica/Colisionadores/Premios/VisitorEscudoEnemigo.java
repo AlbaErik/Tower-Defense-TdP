@@ -18,11 +18,17 @@ import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Premios.Bombita;
-import Logica.Entidades.Premios.Escudo;
+import Logica.Entidades.Premios.EscudoDef;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
 
 public class VisitorEscudoEnemigo extends Colisionador{
+	
+	private EscudoEnemigo escudo;
+	
+	public VisitorEscudoEnemigo(EscudoEnemigo esc) {
+		escudo = esc;
+	}
 	
 	@Override
 	public void serChocado(Ninja e) {
@@ -62,44 +68,37 @@ public class VisitorEscudoEnemigo extends Colisionador{
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		// TODO Auto-generated method stub
-		
+		escudo.morir();		
 	}
 
 	@Override
 	public void serChocado(SacerdoteElite e) {
-		// TODO Auto-generated method stub
-		
+		escudo.morir();		
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		// TODO Auto-generated method stub
-		
+		escudo.morir();		
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		// TODO Auto-generated method stub
-		
+		escudo.morir();		
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		// TODO Auto-generated method stub
-		
+		escudo.morir();		
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		// TODO Auto-generated method stub
-		
+		escudo.morir();		
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
-		// TODO Auto-generated method stub
-		
+		escudo.morir();		
 	}
 
 	@Override
@@ -122,23 +121,24 @@ public class VisitorEscudoEnemigo extends Colisionador{
 	@Override
 	public void serChocado(Muro m) {
 		m.morir();
-	}
-
-	@Override
-	public void serChocado(Escudo e) {
-		e.morir();
+		escudo.morir();
 	}
 
 	@Override
 	public void serChocado(EscudoEnemigo e) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void serChocado(Bombita m) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void serChocado(EscudoDef e) {
+		e.morir();		
+		escudo.morir();
 	}
 
 }

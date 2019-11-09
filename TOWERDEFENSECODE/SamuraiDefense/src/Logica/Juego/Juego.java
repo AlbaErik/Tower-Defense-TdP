@@ -5,7 +5,10 @@ import java.util.Random;
 
 import GUI.Paneles.PanelJuego;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
+import Logica.Entidades.Premios.EscudoEnemigo;
+import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
 import Logica.Mapa.Niveles.Nivel;
 import Logica.Mapa.Niveles.Nivel1;
@@ -26,19 +29,19 @@ public class Juego {
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
 	}
-	
+
 	public void hacerPerderAlJugador() {
 		perdio = true;
 	}
-	
+
 	public boolean controlPerder() {
 		return perdio;
 	}
-	
+
 	public boolean controlGanar() {
 		return contadorEnemigos == 0;
 	}
-	
+
 	public void restarEnemigoMuerto() {
 		contadorEnemigos--;
 	}
@@ -76,30 +79,41 @@ public class Juego {
 				x = randomX();
 				y = randomY();
 			}
-			System.out.println("JUEGO: Se seteo un obstaculo en el X:" + x + " Y:" + y);
 			Obstaculo obs = misObstaculos.getFirst();
 			obs.cambiarPosLogica(x, y);
 			mapa.agregarEntidadAlCampoEnPosActual(obs);
 			misObstaculos.remove(misObstaculos.getFirst());
 		} else if (!miHorda.isEmpty()) {
+
 			Entidad atacante = miHorda.getFirst();
 			mapa.agregarEntidadAlCampo(atacante);
 			miHorda.remove(miHorda.getFirst());
 			contadorEnemigos++;
+
+			Random rand = new Random();
+			int i = rand.nextInt(10);
+
+			if (i % 2 == 0)
+				asignarEscudo(atacante);
 		}
 
 		if (miHorda.isEmpty() && misObstaculos.isEmpty()) {// Si ya se vencio a la horda y ya se pusieron los obstaculos
 
 			if (nivel.haySigHorda()) {
 				miHorda = nivel.getSigHorda();
-				System.out.println("JUEGO: Se seteo la siguiente horda");
 			}
 			if (nivel.haySigObstaculos()) {
 				misObstaculos = nivel.getSigObstaculos();
-				System.out.println("JUEGO: Se setearon los siguientes obstaculos");
 			}
 		}
 
+	}
+
+	private void asignarEscudo(Entidad ent) {
+		EscudoEnemigo escudo = new EscudoEnemigo((int) ent.getPos().getX(), (int) ent.getPos().getY(), mapa);
+		((Atacante) ent).setEscudo(escudo);
+		;
+		mapa.agregarEntidadAlCampoEnPosActual(escudo);
 	}
 
 	public boolean nivelTerminado() {
@@ -159,7 +173,7 @@ public class Juego {
 	public PanelJuego getPanelJuego() {
 		return Gui;
 	}
-	
+
 	public boolean haySiguienteNivel() {
 		return nivel.haySigNivel();
 	}
@@ -169,9 +183,10 @@ public class Juego {
 	}
 
 	public void setSigNivel() {
-		if(nivel.haySigNivel()) {
-		nivel = nivel.setSigNivel();// Controlo que haya siguiente nivel en el metodo nivelTerminado en la clase juego
-	  }
+		if (nivel.haySigNivel()) {
+			nivel = nivel.setSigNivel();// Controlo que haya siguiente nivel en el metodo nivelTerminado en la clase
+										// juego
+		}
 	}
 
 	public Mapa getMapa() {
