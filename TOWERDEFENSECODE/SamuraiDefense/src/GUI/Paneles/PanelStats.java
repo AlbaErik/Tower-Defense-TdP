@@ -14,10 +14,10 @@ import javax.swing.JPanel;
 public class PanelStats extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JLabel oro;
-	private PanelJuego Gui;
+	//private PanelJuego Gui;
 
 	public PanelStats(int AnchoVentana, int AltoVentana, PanelJuego g) {
-		Gui = g;
+		//Gui = g;
 		this.setLayout(null);
 		this.setBounds(0, 0, AnchoVentana, 50);// Seteo espacio para el panel
 

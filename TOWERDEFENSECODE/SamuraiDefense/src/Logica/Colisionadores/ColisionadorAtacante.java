@@ -93,9 +93,7 @@ public class ColisionadorAtacante extends Colisionador {
 	}
 
 	private void frenar(Personaje p) {
-		// Personaje noSeFrena = (p == ataq ? );
 		if (!(noSeFrena.puedoPasar())) {
-			// System.out.println("COLISIONADOR ATACANTE--- estado de p: " + p.getEstado());
 			p.cambiarEstado(new ReposoEnemigo(p));
 		}
 	}
@@ -168,7 +166,6 @@ public class ColisionadorAtacante extends Colisionador {
 	
 	@Override
 	public void serChocado(EscudoDef e) {
-		System.out.println("ColisionadorAtacante---me choque con escudo enemigo mato a mi atacante");
 		ataq.morir();
 	}
 

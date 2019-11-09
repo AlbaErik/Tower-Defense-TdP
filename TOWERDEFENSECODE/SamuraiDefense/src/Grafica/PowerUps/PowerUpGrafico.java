@@ -45,7 +45,6 @@ public abstract class PowerUpGrafico extends JLabel {
 		public void mousePressed(MouseEvent e) {
 			pu.click();
 			pu.morir();
-			System.out.println("POWERUPGRAFICO: Se elimino entidad");
 		}
 
 		@Override

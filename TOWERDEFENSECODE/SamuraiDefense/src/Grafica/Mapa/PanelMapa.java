@@ -55,7 +55,6 @@ public class PanelMapa extends JPanel {
 		nuevo.setBounds(x, y, 120, 120);
 		add(nuevo);
 		repaint();
-		System.out.println("PANELMAPA: Se agrego powerUp al mapa");
 	}
 
 	public void agregarEntidad(Entidad e) {
@@ -119,10 +118,8 @@ public class PanelMapa extends JPanel {
 					y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 				}
 				Premio aColocar = mapa.getPremioActual();
-				System.out.println("PANELMAPA: HAY PREMIO" + aColocar.getClass());
 				if (y != 0 && aColocar != null && aColocar.queHago(x, y)) {
 					aColocar.cambiarPosLogica(x, y);
-					System.out.println("PANELMAPA: Se seteo un premio precioso en el X:" + x + " Y:" + y);
 					mapa.setEntidad(aColocar);
 					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 					mapa.getTienda().eliminarPremio(aColocar.getClave());
@@ -140,7 +137,6 @@ public class PanelMapa extends JPanel {
 
 				if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 					aColocar.cambiarPosLogica(x, y);
-					System.out.println("PANELMAPA: Se seteo un defensor en el X:" + x + " Y:" + y);
 					mapa.setEntidad(aColocar);
 					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 					mapa.getTienda().actualizarOro(-aColocar.getCost());

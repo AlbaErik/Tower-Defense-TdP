@@ -26,7 +26,6 @@ public class BolsaDeDinero extends MagiaTemporal{
 	public void click() {
 		int i = (int) ((Math.random() * ((10000 - 5000) + 1)) + 5000);
 		map.actualizarOroTienda(i);
-		System.out.println("BOLSADEDINERO: Se actualizo oro tienda");
 	}
 
 	

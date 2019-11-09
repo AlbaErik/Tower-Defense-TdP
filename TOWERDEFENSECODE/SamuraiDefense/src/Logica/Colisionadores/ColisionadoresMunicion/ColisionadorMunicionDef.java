@@ -142,7 +142,6 @@ public class ColisionadorMunicionDef extends Colisionador{
 
 	@Override
 	public void serChocado(EscudoEnemigo e) {
-		System.out.println("ColisionadorMunicionDef---me choque con escudo enemigo mato a mi municion");
 		mun.morir();
 	}
 	

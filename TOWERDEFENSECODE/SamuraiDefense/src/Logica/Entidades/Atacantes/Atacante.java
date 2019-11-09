@@ -46,7 +46,6 @@ public abstract class Atacante extends Personaje implements Cloneable {
 		mapa.eliminarEntidad(this);
 		int dinero = this.dineroDropeado();
 		mapa.actualizarOroTienda(dinero);
-		System.out.println("ATACANTE: Enemigo muerto");
 
 		devolverPowerUp();
 	}
