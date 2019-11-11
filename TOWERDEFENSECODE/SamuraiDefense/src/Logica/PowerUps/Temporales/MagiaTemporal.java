@@ -7,7 +7,6 @@ public abstract class MagiaTemporal extends PowerUp{
 
 	protected MagiaTemporal(Mapa m) {
 		super(m);
-		// TODO Auto-generated constructor stub
 	}
 
 }

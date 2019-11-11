@@ -5,7 +5,6 @@ import Logica.Mapa.Hordas.Horda;
 
 import java.util.LinkedList;
 
-
 import Logica.Entidades.*;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
@@ -21,7 +20,7 @@ public abstract class Nivel {
 	protected Nivel siguiente;
 	protected LinkedList<Obstaculo> obstaculos;
 
-	public Nivel(Juego j) {
+	protected Nivel(Juego j) {
 		juego = j;
 		juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 		obstaculos = new LinkedList<Obstaculo>();

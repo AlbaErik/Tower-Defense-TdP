@@ -2,7 +2,6 @@ package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
-import Logica.Estados.Personajes.Avanzar;
 import Logica.Estados.Personajes.EstadoPersonaje;
 
 public class ReposoEnemigo extends EstadoPersonaje {

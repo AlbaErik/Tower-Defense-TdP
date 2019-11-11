@@ -12,7 +12,7 @@ public abstract class Municion extends Entidad {
 	protected double velocidad;
 	protected int daño;
 
-	public Municion(int x, int y, Mapa m) {
+	protected Municion(int x, int y, Mapa m) {
 		super(x, y, m);
 		mapa = m;
 		velocidad = 5;

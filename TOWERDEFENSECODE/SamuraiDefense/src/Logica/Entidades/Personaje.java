@@ -15,7 +15,7 @@ public abstract class Personaje extends Entidad {
 	protected int direccion;
 	protected VisitorDistancia colCaminoLibre;
 
-	public Personaje(int x, int y, Mapa m) {
+	protected Personaje(int x, int y, Mapa m) {
 		super(x, y, m);
 		arma = new ArmaSimple(this, m);
 		contadorDisparos = 0;

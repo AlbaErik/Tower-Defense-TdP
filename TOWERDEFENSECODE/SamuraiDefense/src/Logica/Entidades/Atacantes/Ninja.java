@@ -3,12 +3,9 @@ package Logica.Entidades.Atacantes;
 import Armas.LanzadorShurikens;
 import Grafica.Entidades.Atacantes.NinjaGrafico;
 import Logica.Colisionadores.Colisionador;
-import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
-import Logica.Estados.Personajes.Avanzar;
-import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 
 public class Ninja extends Atacante {
@@ -22,10 +19,7 @@ public class Ninja extends Atacante {
 		movementSpeed = 1;
 
 		grafico = new NinjaGrafico(x, y, m.getPanelMapa(), this);
-		intel = new InteligenciaAtacante(this);
 		arma = new LanzadorShurikens(this, m);
-		estado = new Avanzar(this);
-		col = new ColisionadorAtacante(this);
 	}
 
 	@Override

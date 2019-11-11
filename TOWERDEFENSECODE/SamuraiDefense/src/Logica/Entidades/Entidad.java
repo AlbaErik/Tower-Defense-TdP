@@ -22,7 +22,7 @@ public abstract class Entidad {
 	protected Contador cont;
 	//El contador se usa para medir tiempo de ataque
 
-	public Entidad(int x, int y, Mapa m) {
+	protected Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		miCelda = new Posicion(x, y);
 		permisoCambiarEstado = true;

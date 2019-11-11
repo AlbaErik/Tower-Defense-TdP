@@ -9,7 +9,7 @@ public abstract class Defensor extends Personaje {
 	protected int cost;
 	protected int vida;
 	
-	public Defensor(int x, int y, Mapa m) {
+	protected Defensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		colCaminoLibre = new ColCaminoLibreDef();
 		direccion = 1;

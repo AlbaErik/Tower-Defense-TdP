@@ -13,7 +13,7 @@ public abstract class Horda {
 	protected Mapa mapa;
 	protected LinkedList<Atacante> atacantes1,atacantes2,atacantes3;
 	
-	public Horda(Mapa m) {
+	protected Horda(Mapa m) {
 		mapa = m;
 		lista = new LinkedList<Atacante>();
 		rand = new Random();

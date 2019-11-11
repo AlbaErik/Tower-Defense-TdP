@@ -1,7 +1,8 @@
-package Logica.Estados.Personajes;
+package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
+import Logica.Estados.Personajes.EstadoPersonaje;
 import Logica.Estados.Personajes.Atacante.AtaqueEnemigo;
 
 public class Avanzar extends EstadoPersonaje {
@@ -24,7 +25,7 @@ public class Avanzar extends EstadoPersonaje {
 			p.running();
 			personaje.getInteligencia().mover();
 
-			if (controlarAtaqueDistancia()) {
+			if (!tengoCaminoLibre()) {
 				personaje.cambiarEstado(new AtaqueEnemigo(personaje));
 			}
 		}

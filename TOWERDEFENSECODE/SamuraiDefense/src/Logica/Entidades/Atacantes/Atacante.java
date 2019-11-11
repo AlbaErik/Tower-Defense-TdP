@@ -2,10 +2,12 @@ package Logica.Entidades.Atacantes;
 
 import java.util.Random;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
+import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Premios.EscudoEnemigo;
+import Logica.Estados.Personajes.Atacante.Avanzar;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
@@ -21,10 +23,13 @@ public abstract class Atacante extends Personaje implements Cloneable {
 
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
-		colCaminoLibre = new ColCaminoLibreEnem();
 		direccion = -1;
+
+		colCaminoLibre = new ColCaminoLibreEnem();
 		tiendaPowerUp = new TiendaPowerUp(m);
 		intel = new InteligenciaAtacante(this);
+		estado = new Avanzar(this);
+		col = new ColisionadorAtacante(this);
 	}
 	
 	public EscudoEnemigo getEscudo() {

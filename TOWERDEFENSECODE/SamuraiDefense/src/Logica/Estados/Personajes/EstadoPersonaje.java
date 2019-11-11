@@ -19,7 +19,7 @@ public abstract class EstadoPersonaje extends Estado {
 	protected LinkedList<Entidad> entidadesEnRango;
 	protected VisitorDistancia visitorRangoVacio;
 
-	public EstadoPersonaje(Personaje p) {
+	protected EstadoPersonaje(Personaje p) {
 		personaje = p;
 		control = new Control(p.getMapa());
 		entidadesEnRango = new LinkedList<Entidad>();

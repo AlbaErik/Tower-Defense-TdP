@@ -110,8 +110,7 @@ public class VisitorEscudoDef extends Colisionador{
 
 	@Override
 	public void serChocado(FlechaAtacante flechaAtacante) {
-		// TODO Auto-generated method stub
-		
+		flechaAtacante.morir();
 	}
 
 	@Override
