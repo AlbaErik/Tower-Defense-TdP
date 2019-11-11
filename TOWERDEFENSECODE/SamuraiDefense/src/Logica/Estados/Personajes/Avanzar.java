@@ -10,20 +10,21 @@ public class Avanzar extends EstadoPersonaje {
 		super(e);
 		dejoPasar = true;
 	}
-	
+
 	@Override
 	public void ejecutar() {
-		
-		if(personaje.getLife() <= 0) {
+
+		if (personaje.getLife() <= 0) {
 			matarPersonaje();
-		}else {
-			if(personaje.getPos().getX() == 0)
+		} else {
+			if (personaje.getPos().getX() == 0)
 				personaje.perdioElJugador();
-			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+			
+			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.running();
 			personaje.getInteligencia().mover();
-			
-			if(controlarAtaqueDistancia()) {
+
+			if (controlarAtaqueDistancia()) {
 				personaje.cambiarEstado(new AtaqueEnemigo(personaje));
 			}
 		}

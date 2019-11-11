@@ -19,7 +19,7 @@ public abstract class Atacante extends Personaje implements Cloneable {
 	protected double backupVel;
 	protected EscudoEnemigo escudo = null;
 
-	public Atacante(int x, int y, Mapa m) {
+	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
 		colCaminoLibre = new ColCaminoLibreEnem();
 		direccion = -1;

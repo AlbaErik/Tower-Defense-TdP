@@ -3,6 +3,7 @@ package Logica.Entidades.Premios;
 import Grafica.Entidades.Premios.BombaGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
+import Logica.Colisionadores.Premios.VisitorSinEfecto;
 import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
 
@@ -16,6 +17,7 @@ public class Bombita extends Premio {
 		super(x, y, m);
 		clave = 3;
 		grafico = new BombaGrafica(x, y, mapa.getPanelMapa(), this);
+		col = new VisitorSinEfecto();
 	}
 
 	public void reventar() {

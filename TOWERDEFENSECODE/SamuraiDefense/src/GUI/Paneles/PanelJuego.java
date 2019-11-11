@@ -23,12 +23,6 @@ public class PanelJuego extends JPanel {
 		this.setLayout(null);
 		this.setBounds(0, 0, AnchoVentana, AltoVentana);
 	}
-
-	/*
-	private void cambiar(JPanel panel) {
-		vInicial.cambiarPanel(this, panel);
-	}
-	*/
 	
 	public void actualizarOroStats(int o) {
 		panelStats.actualizarOro(o);
@@ -47,18 +41,9 @@ public class PanelJuego extends JPanel {
 
 			game.start();
 			
-		} // else {
-			// juego.reanudar();
-			// }
+		} 
 
 	}
-
-	/**
-	 * public void terminarPartidaAnterior() {
-	 * 
-	 * }
-	 * 
-	 **/
 
 	public VentanaInicial getVentanaInicial() {
 		return vInicial;

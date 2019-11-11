@@ -184,7 +184,7 @@ public class PanelTienda extends JPanel {
 		colocablesP[1].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonPocionFuerzaEntered.png"));
 		colocablesP[1].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonPocionFuerzaDisable.png"));
 		colocablesP[1].setFocusable(false);
-		colocablesP[1].setEnabled(false);
+		//colocablesP[1].setEnabled(false);
 		this.add(colocablesP[1]);
 
 		colocablesP[2] = new BotonBarricada(this.getTienda());

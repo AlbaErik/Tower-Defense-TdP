@@ -15,11 +15,8 @@ public class InteligenciaAtacante extends Inteligencia {
 		if (x > -10) {
 			entidad.cambiarPosLogica(x, y);
 			if (((Atacante) entidad).getEscudo() != null) {
-				((Atacante) entidad).getEscudo().actualizarPos(x, y);
+				((Atacante) entidad).getEscudo().actualizarPos(x-10, y);
 			}
-		}
-		
-		
+		}		
 	}
-
 }

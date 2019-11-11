@@ -57,9 +57,7 @@ public class PanelInicio extends JPanel {
 			switch (s) {
 			case ("Juego"): {
 				PanelJuego g = vInicial.getPanelJuego();
-				// if(g!=null) {//Si ya hay un juego guardado lo elimina
-				// g.terminarPartidaAnterior();
-				// }
+
 				g = new PanelJuego(vInicial);// Crea juego nuevo
 				g.ejecutar();// Ejecuta el juego
 				vInicial.cambiarJuego(g);// El panel inicial tiene ahora al juego nuevo
@@ -67,10 +65,6 @@ public class PanelInicio extends JPanel {
 				break;
 			}
 			case ("Salir"): {
-				PanelJuego g = vInicial.getPanelJuego();
-				if (g != null) {// Si ya hay un juego guardado lo elimina
-					// g.terminarPartidaAnterior();
-				}
 				vInicial.dispose();// Cierra la aplicacion
 			}
 			}

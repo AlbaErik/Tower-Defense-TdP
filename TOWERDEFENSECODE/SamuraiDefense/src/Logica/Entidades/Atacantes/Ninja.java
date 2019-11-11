@@ -26,7 +26,6 @@ public class Ninja extends Atacante {
 		arma = new LanzadorShurikens(this, m);
 		estado = new Avanzar(this);
 		col = new ColisionadorAtacante(this);
-		// colDistancia = new ColADistanciaEnem(this);
 	}
 
 	@Override

@@ -12,14 +12,11 @@ import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SacerdoteElite;
 import Logica.Entidades.Defensores.SamuraiElite;
-import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
-import Logica.Entidades.Municiones.MunicionesAtacante.LanzaAtacante;
-import Logica.Entidades.Municiones.MunicionesAtacante.ShurikenAtacante;
-import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
-import Logica.Entidades.Municiones.MunicionesDefensor.LanzaDefensor;
-import Logica.Entidades.Municiones.MunicionesDefensor.ShurikenDefensor;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Premios.EscudoDef;
+import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
 
 public class ColCaminoLibreEnem extends VisitorDistancia{
@@ -110,45 +107,27 @@ public class ColCaminoLibreEnem extends VisitorDistancia{
 	}
 
 	@Override
-	public boolean serChocado(FlechaAtacante flechaAtacante) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean serChocado(FlechaDefensor flechaAtacante) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean serChocado(ShurikenAtacante shurikenAtacante) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean serChocado(LanzaAtacante lanzaAtacante) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean serChocado(ShurikenDefensor shurikenDefensor) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean serChocado(LanzaDefensor lanzaDefensor) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
 	public boolean serChocado(Muro m) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public boolean serChocado(Municion m) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean serChocado(EscudoEnemigo e) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean serChocado(EscudoDef e) {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 	

@@ -44,6 +44,15 @@ public abstract class EstadoPersonaje extends Estado {
 
 	// --------------------------------------------------------------------------------------------------------------------------
 
+	protected boolean tengoCaminoLibre() {
+		boolean caminoLibre = true;
+		actualizarentidadesEnRango();
+		for(Entidad e : entidadesEnRango) {
+			caminoLibre = caminoLibre && e.chocaraDistancia(personaje.getVisitorDistancia());
+		}
+		return caminoLibre;
+	}
+	
 	/*
 	 * Revisa si hay entidades a distancia para decidir si atacar, o avanzar segun
 	 * el caso

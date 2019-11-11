@@ -13,7 +13,6 @@ public abstract class Personaje extends Entidad {
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
 	protected int direccion;
-
 	protected VisitorDistancia colCaminoLibre;
 
 	public Personaje(int x, int y, Mapa m) {

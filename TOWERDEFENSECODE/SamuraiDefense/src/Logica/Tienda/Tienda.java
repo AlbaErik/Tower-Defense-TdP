@@ -40,8 +40,10 @@ public class Tienda {
 
 	private void inicializarMap() {
 		powerUps = new HashMap<Integer, LinkedList<Premio>>();
-		for (int i = 0; i <= cantPremios; i++)
+		for (int i = 0; i <= cantPremios; i++) {
 			powerUps.put(i + 1, new LinkedList<Premio>());
+		}
+		
 	}
 
 	/*
