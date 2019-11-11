@@ -7,7 +7,6 @@ public abstract class ObjetoPrecioso extends PowerUp{
 
 	protected ObjetoPrecioso(Mapa m) {
 		super(m);
-		// TODO Auto-generated constructor stub
 	}
 
 }

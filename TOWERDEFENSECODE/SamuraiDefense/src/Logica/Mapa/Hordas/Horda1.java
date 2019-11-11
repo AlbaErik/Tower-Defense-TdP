@@ -4,11 +4,10 @@ import java.util.LinkedList;
 import Logica.Entidades.Atacantes.*;
 import Logica.Mapa.Mapa;
 
-public class Horda1 extends Horda{
-	
+public class Horda1 extends Horda {
 
 	public Horda1(Mapa m) {
-		super(m);		
+		super(m);
 		inicializarHorda();
 		crearEnemigos1();
 		crearEnemigos2();
@@ -21,7 +20,7 @@ public class Horda1 extends Horda{
 			ret.add(e);
 		return ret;
 	}
-	
+
 	@Override
 	public LinkedList<Atacante> crearAtacantes2() {
 		LinkedList<Atacante> ret = new LinkedList<Atacante>();
@@ -45,7 +44,7 @@ public class Horda1 extends Horda{
 			atacantes1.add(crearAtacanteRandom());
 		}
 	}
-	
+
 	private void crearEnemigos2() {
 		atacantes2 = new LinkedList<Atacante>();
 		int cantEnemigos = 4; // 8
@@ -53,7 +52,7 @@ public class Horda1 extends Horda{
 			atacantes2.add(crearAtacanteRandom());
 		}
 	}
-	
+
 	private void crearEnemigos3() {
 		atacantes3 = new LinkedList<Atacante>();
 		int cantEnemigos = 5; // 10
@@ -65,7 +64,7 @@ public class Horda1 extends Horda{
 	private void inicializarHorda() {
 		lista.add(new Espadachin(0, 0, mapa));
 		lista.add(new Arquero(0, 0, mapa));
-		lista.add(new Ejecutor(0,0,mapa));
+		lista.add(new Ejecutor(0, 0, mapa));
 	}
 
 	private Atacante crearAtacanteRandom() {
@@ -73,7 +72,5 @@ public class Horda1 extends Horda{
 		int i = rand.nextInt(ent);
 		return lista.get(i).clone();
 	}
-
-	
 
 }

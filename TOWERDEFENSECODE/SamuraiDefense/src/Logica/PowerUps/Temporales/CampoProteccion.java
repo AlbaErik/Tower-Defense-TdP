@@ -15,7 +15,6 @@ public class CampoProteccion extends MagiaTemporal{
 	
 	@Override
 	public PowerUp clone() {
-		// TODO Auto-generated method stub
 		return new CampoProteccion(map);
 	}
 

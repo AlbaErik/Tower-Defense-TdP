@@ -16,6 +16,7 @@ public class Bombita extends Premio {
 	public Bombita(int x, int y, Mapa m) {
 		super(x, y, m);
 		clave = 3;
+		
 		grafico = new BombaGrafica(x, y, mapa.getPanelMapa(), this);
 		col = new VisitorSinEfecto();
 	}

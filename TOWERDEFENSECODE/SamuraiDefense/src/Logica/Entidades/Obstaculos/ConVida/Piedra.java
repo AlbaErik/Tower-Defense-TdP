@@ -1,6 +1,5 @@
 package Logica.Entidades.Obstaculos.ConVida;
 
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Obstaculos.VidaFinita.PiedraGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
@@ -14,15 +13,11 @@ public class Piedra extends Obstaculo {
 
 	public Piedra(int x, int y, Mapa m) {
 		super(x, y, m);
+		life = 200;
+
 		col = new ColisionadorPiedra(this);
 		grafico = new PiedraGrafica(x, y, m.getPanelMapa(), this);
-		life = 200;
 		estado = new PiedraAlta(this);
-	}
-
-	@Override
-	public EntidadGrafica getGrafico() {
-		return grafico;
 	}
 
 	@Override

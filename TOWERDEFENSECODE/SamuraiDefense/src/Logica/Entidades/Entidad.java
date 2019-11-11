@@ -18,50 +18,73 @@ public abstract class Entidad {
 	protected Inteligencia intel;
 	protected Estado estado;
 	protected boolean permisoCambiarEstado;
-	//protected int contador = 0;
 	protected Contador cont;
-	//El contador se usa para medir tiempo de ataque
 
 	protected Entidad(int x, int y, Mapa m) {
-		mapa = m;
-		miCelda = new Posicion(x, y);
+		mapa = m;		
 		permisoCambiarEstado = true;
+		
+		miCelda = new Posicion(x, y);
 		cont = new Contador();
 	}
-	
-	public void subirFuerza(int cant) {}
-	
-	public Mapa getMapa() {
-		return mapa;
-	}
-	
+
+	public abstract void chocar(Colisionador e);
+
+	public abstract void ejecutarEstado();
+
 	public abstract boolean chocaraDistancia(VisitorDistancia v);
-	
-	/*
-	 * Sirve para crear un delay a la hora de ejecutar una accion.
-	 */
+
+	public void subirFuerza(int cant) {
+	}
+
 	public void incrementarContador() {
 		cont.incrementarContador();
 	}
-	
-	public int getContador() {
-		return cont.getContador();
-	}
-	
+
 	public void resetContador() {
 		cont.resetContador();
 	}
-	
+
 	public boolean puedoPasar() {
 		return estado.getPermisoParaPasar();
-	}
-	
-	public void setEntidadADestruir(Entidad e) {
-		estado.entidadADestruir(e);
 	}
 
 	public void morir() {
 		mapa.eliminarEntidad(this);
+	}
+
+	public void cambiarPosLogica(double x, int y) {
+		miCelda.setPos(x, y);
+		grafico.cambiarPos(x, y);
+		mapa.getPanelMapa().repaint();
+	}
+
+	public void prohibidoCambiarEstado() {
+		permisoCambiarEstado = false;
+	}
+
+	public void cambiarEstado(Estado e) {
+		if (permisoCambiarEstado) 
+			estado = e;
+	}
+
+	public void eliminarPorBoton() {
+
+	}
+
+	/*
+	 * getters y setters
+	 */
+	public int getContador() {
+		return cont.getContador();
+	}
+
+	public EntidadGrafica getGrafico() {
+		return grafico;
+	}
+
+	public Mapa getMapa() {
+		return mapa;
 	}
 
 	public Inteligencia getInteligencia() {
@@ -75,10 +98,6 @@ public abstract class Entidad {
 	public int getLife() {
 		return life;
 	}
-	
-	public void setLife(int lp) {
-		life = life - lp;
-	}
 
 	public Posicion getPos() {
 		return miCelda;
@@ -88,32 +107,12 @@ public abstract class Entidad {
 		miCelda = c;
 	}
 
-	public void cambiarPosLogica(double x, int y) {
-		miCelda.setPos(x, y);
-		grafico.cambiarPos(x, y);
-		mapa.getPanelMapa().repaint();
+	public void setEntidadADestruir(Entidad e) {
+		estado.entidadADestruir(e);
 	}
 
-	public EntidadGrafica getGrafico() {
-		return grafico;
+	public void setLife(int lp) {
+		life = life - lp;
 	}
 
-	public abstract void chocar(Colisionador e);
-
-	public abstract void ejecutarEstado();
-
-	public void prohibidoCambiarEstado() {
-		permisoCambiarEstado = false;
-	}
-	
-	public void cambiarEstado(Estado e) {
-		if(permisoCambiarEstado) {
-			estado = e;
-		}
-		
-	}
-	
-	public void eliminarPorBoton() {
-		
-	}
 }

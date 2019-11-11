@@ -21,18 +21,11 @@ public class ReposoEnemigo extends EstadoPersonaje {
 			p.standing();
 
 			if (personaje.getContador() % 50 == 0) {
-				actualizarentidadesEnRango();
-
-				if (sePuedeAvanzar()) {
+				if (tengoCaminoLibre()) {
 					personaje.cambiarEstado(new Avanzar(personaje));
-					
-
-				} else {
-					controlarAtaqueDistancia();
-				}
+				} 
 				personaje.resetContador();
 			}
-
 			personaje.incrementarContador();
 		}
 

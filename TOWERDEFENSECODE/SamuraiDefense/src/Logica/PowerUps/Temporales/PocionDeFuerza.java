@@ -15,7 +15,6 @@ public class PocionDeFuerza extends MagiaTemporal{
 	
 	@Override
 	public PowerUp clone() {
-		// TODO Auto-generated method stub
 		return new PocionDeFuerza(map);
 	}
 
@@ -28,6 +27,5 @@ public class PocionDeFuerza extends MagiaTemporal{
 	public void morir() {
 		map.eliminarPowerUp(this);
 	}
-
 
 }

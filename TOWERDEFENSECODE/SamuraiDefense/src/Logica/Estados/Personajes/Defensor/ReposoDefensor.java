@@ -12,24 +12,22 @@ public class ReposoDefensor extends EstadoPersonaje {
 
 	@Override
 	public void ejecutar() {
-		if(personaje.getLife() <= 0) {			
+		if (personaje.getLife() <= 0) {
 			matarPersonaje();
-
-		}else {
-			PersonajeGrafico p = (PersonajeGrafico)personaje.getGrafico();
+		} else {
+			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.standing();
 		}
-			
+
 		if (personaje.getContador() % 50 == 0) {
-			
-			if(personaje.getRange() > 0 ) {
-				if(controlarAtaqueDistancia()) {
+
+			if (personaje.getRange() > 0) {
+				if (!tengoCaminoLibre()) 
 					personaje.cambiarEstado(new AtaqueDefensor(personaje));
-				}
 			}
-			
-			personaje.resetContador();				
+
+			personaje.resetContador();
 		}
-		personaje.incrementarContador();		
+		personaje.incrementarContador();
 	}
 }

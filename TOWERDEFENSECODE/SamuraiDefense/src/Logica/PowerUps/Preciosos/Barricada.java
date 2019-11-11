@@ -15,7 +15,6 @@ public class Barricada extends ObjetoPrecioso{
 
 	@Override
 	public PowerUp clone() {
-		// TODO Auto-generated method stub
 		return new Barricada(map);
 	}
 
@@ -26,8 +25,7 @@ public class Barricada extends ObjetoPrecioso{
 
 	@Override
 	public void morir() {
-		map.eliminarPowerUp(this);
-		
+		map.eliminarPowerUp(this);		
 	}
 
 }

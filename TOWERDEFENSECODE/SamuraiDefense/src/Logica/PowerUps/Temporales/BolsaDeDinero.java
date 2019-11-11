@@ -14,7 +14,6 @@ public class BolsaDeDinero extends MagiaTemporal{
 	
 	@Override
 	public PowerUp clone() {
-		// TODO Auto-generated method stub
 		return new BolsaDeDinero(map);
 	}
 	
@@ -27,6 +26,5 @@ public class BolsaDeDinero extends MagiaTemporal{
 		int i = (int) ((Math.random() * ((10000 - 5000) + 1)) + 5000);
 		map.actualizarOroTienda(i);
 	}
-
 	
 }

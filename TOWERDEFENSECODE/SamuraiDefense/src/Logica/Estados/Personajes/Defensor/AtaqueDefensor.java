@@ -19,16 +19,17 @@ public class AtaqueDefensor extends EstadoPersonaje {
 		} else {
 			if (personaje.getContador() % 50 == 0) {
 
+				PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
+				p.attack();
+
 				personaje.atacar(aDestruir);
 				personaje.resetContador();
-				
-				rangoVacioDef(); //Controla que no encuentre enemigos al frente para parar
-				
+
+				if (tengoCaminoLibre()) {
+					personaje.cambiarEstado(new ReposoDefensor(personaje));
+				}
 			}
 			personaje.incrementarContador();
-			
-			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
-			p.attack();
 		}
 	}
 }

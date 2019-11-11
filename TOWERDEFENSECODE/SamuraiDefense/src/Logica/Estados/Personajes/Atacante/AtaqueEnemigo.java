@@ -14,27 +14,23 @@ public class AtaqueEnemigo extends EstadoPersonaje {
 	@Override
 	public void ejecutar() {
 		if (personaje.getLife() <= 0) {
-
 			matarPersonaje();
-
 		} else {
+			
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.attack();
 
 			if (personaje.getContador() % 50 == 0) {
-				actualizarentidadesEnRango();
 
 				personaje.atacar(aDestruir);
-				personaje.resetContador();
 
-				if (sePuedeAvanzar()) {
+				if (tengoCaminoLibre()) {
 					personaje.cambiarEstado(new Avanzar(personaje));
 					personaje.resetContador();
 				}
-
+				personaje.resetContador();
 			}
 			personaje.incrementarContador();
 		}
 	}
-
 }

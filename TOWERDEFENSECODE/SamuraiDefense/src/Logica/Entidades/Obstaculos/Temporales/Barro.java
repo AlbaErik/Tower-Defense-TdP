@@ -15,6 +15,7 @@ public class Barro extends Obstaculo{
 		super(x,y,m);
 		life = 1000000000;
 		lentitud = 1;
+		
 		grafico = new BarroGrafico(y, y, mapa.getPanelMapa(), this);
 		col = new ColisionadorBarro();
 	}
@@ -25,7 +26,7 @@ public class Barro extends Obstaculo{
 	
 	@Override
 	public void setLife(int lp) {
-		// TODO Auto-generated method stub		
+
 	}
 
 	@Override
@@ -40,7 +41,6 @@ public class Barro extends Obstaculo{
 
 	@Override
 	public Inteligencia getInteligencia() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -51,14 +51,12 @@ public class Barro extends Obstaculo{
 
 	@Override
 	public Obstaculo clone() {
-		// TODO Auto-generated method stub
 		return new Barro(0, 0, mapa);
 	}
 
 	@Override
 	public boolean chocaraDistancia(VisitorDistancia v) {
 		return v.serChocado(this);
-	}
-	
+	}	
 
 }

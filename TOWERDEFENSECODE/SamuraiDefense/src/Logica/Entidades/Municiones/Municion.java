@@ -2,13 +2,11 @@ package Logica.Entidades.Municiones;
 
 import Logica.Entidades.Entidad;
 import Logica.Estados.Municion.EstadoMunicion;
-import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 
 public abstract class Municion extends Entidad {
 
 	protected Mapa mapa;
-	protected Inteligencia intel;
 	protected double velocidad;
 	protected int daño;
 
@@ -16,17 +14,21 @@ public abstract class Municion extends Entidad {
 		super(x, y, m);
 		mapa = m;
 		velocidad = 5;
-		estado = new EstadoMunicion(this);
 		daño = 5;
+		estado = new EstadoMunicion(this);
+	}
+		
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();		
 	}
 	
-	public abstract int getDaño();
+	public int getDaño() {
+		return daño;
+	}
 	
 	public double getVel() {
 		return velocidad;
 	}
 	
-	public Inteligencia getIntel() {
-		return intel;
-	}
 }

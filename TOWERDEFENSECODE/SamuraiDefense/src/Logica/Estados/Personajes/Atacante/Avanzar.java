@@ -18,12 +18,13 @@ public class Avanzar extends EstadoPersonaje {
 		if (personaje.getLife() <= 0) {
 			matarPersonaje();
 		} else {
-			if (personaje.getPos().getX() == 0)
-				personaje.perdioElJugador();
 			
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.running();
 			personaje.getInteligencia().mover();
+			
+			if (personaje.getPos().getX() == 0)
+				personaje.perdioElJugador();
 
 			if (!tengoCaminoLibre()) {
 				personaje.cambiarEstado(new AtaqueEnemigo(personaje));

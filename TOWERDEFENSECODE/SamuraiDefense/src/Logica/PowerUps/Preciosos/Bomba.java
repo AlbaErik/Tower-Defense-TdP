@@ -15,7 +15,6 @@ public class Bomba extends ObjetoPrecioso{
 	
 	@Override
 	public PowerUp clone() {
-		// TODO Auto-generated method stub
 		return new Bomba(map);
 	}
 	
@@ -26,8 +25,7 @@ public class Bomba extends ObjetoPrecioso{
 
 	@Override
 	public void morir() {
-		map.eliminarPowerUp(this);
-		
+		map.eliminarPowerUp(this);		
 	}
 
 }

@@ -13,7 +13,7 @@ import Logica.Mapa.Mapa;
 public class Horda2 extends Horda {
 
 	public Horda2(Mapa m) {
-		super(m);		
+		super(m);
 		inicializarHorda();
 		crearEnemigos1();
 		crearEnemigos2();
@@ -26,7 +26,7 @@ public class Horda2 extends Horda {
 			ret.add(e);
 		return ret;
 	}
-	
+
 	public LinkedList<Atacante> crearAtacantes2() {
 		LinkedList<Atacante> ret = new LinkedList<Atacante>();
 		for (Atacante e : atacantes2)
@@ -40,16 +40,15 @@ public class Horda2 extends Horda {
 			ret.add(e);
 		return ret;
 	}
-	
-	
+
 	private void crearEnemigos1() {
 		atacantes1 = new LinkedList<Atacante>();
-		int cantEnemigos = 5 ; // 8
+		int cantEnemigos = 5; // 8
 		for (int i = 0; i < cantEnemigos; i++) {
 			atacantes1.add(crearAtacanteRandom());
 		}
 	}
-	
+
 	private void crearEnemigos2() {
 		atacantes2 = new LinkedList<Atacante>();
 		int cantEnemigos = 6; // 10
@@ -57,7 +56,7 @@ public class Horda2 extends Horda {
 			atacantes2.add(crearAtacanteRandom());
 		}
 	}
-	
+
 	private void crearEnemigos3() {
 		atacantes3 = new LinkedList<Atacante>();
 		int cantEnemigos = 7; // 12
@@ -70,8 +69,8 @@ public class Horda2 extends Horda {
 		lista.add(new Ninja(0, 0, mapa));
 		lista.add(new Espadachin(0, 0, mapa));
 		lista.add(new Arquero(0, 0, mapa));
-		lista.add(new Ejecutor(0,0,mapa));
-		lista.add(new Necromante(0,0,mapa));
+		lista.add(new Ejecutor(0, 0, mapa));
+		lista.add(new Necromante(0, 0, mapa));
 	}
 
 	private Atacante crearAtacanteRandom() {
