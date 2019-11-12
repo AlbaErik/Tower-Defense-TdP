@@ -41,7 +41,8 @@ public class Horda1 extends Horda {
 		atacantes1 = new LinkedList<Atacante>();
 		int cantEnemigos = 3; // 5
 		for (int i = 0; i < cantEnemigos; i++) {
-			atacantes1.add(crearAtacanteRandom());
+			atacantes1.add(new Ninja(0,0,mapa));
+			//atacantes1.add(crearAtacanteRandom());
 		}
 	}
 

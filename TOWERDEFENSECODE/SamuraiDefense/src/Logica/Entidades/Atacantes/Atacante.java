@@ -14,7 +14,7 @@ import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
 
-public abstract class Atacante extends Personaje implements Cloneable {
+public abstract class Atacante extends Personaje {
 	protected double movementSpeed;
 	protected InteligenciaAtacante intel;
 	protected TiendaPowerUp tiendaPowerUp;
@@ -67,7 +67,6 @@ public abstract class Atacante extends Personaje implements Cloneable {
 			int y = (int) this.getPos().getY();
 			mapa.agregarPowerUp(x, y, aleatorio);
 		}
-
 	}
 
 	public int getDireccion() {

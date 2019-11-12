@@ -78,24 +78,26 @@ public class Juego {
 				x = randomX();
 				y = randomY();
 			}
-			Obstaculo obs = misObstaculos.getFirst();
-			obs.cambiarPosLogica(x, y);
-			mapa.agregarEntidadAlCampoEnPosActual(obs);
-			misObstaculos.remove(misObstaculos.getFirst());
-		} else if (!miHorda.isEmpty()) {
-			agregarAtacante();			
-		}
-
+			agregarObstaculo(x, y);
+		} else if (!miHorda.isEmpty()) 
+			agregarAtacante();
+		
 		if (miHorda.isEmpty() && misObstaculos.isEmpty()) {// Si ya se vencio a la horda y ya se pusieron los obstaculos
-			if (nivel.haySigHorda()) {
+			if (nivel.haySigHorda())
 				miHorda = nivel.getSigHorda();
-			}
-			if (nivel.haySigObstaculos()) {
+
+			if (nivel.haySigObstaculos())
 				misObstaculos = nivel.getSigObstaculos();
-			}
 		}
 	}
 	
+	private void agregarObstaculo(int x, int y) {
+		Obstaculo obs = misObstaculos.getFirst();
+		obs.cambiarPosLogica(x, y);
+		mapa.agregarEntidadAlCampoEnPosActual(obs);
+		misObstaculos.remove(misObstaculos.getFirst());
+	}
+
 	private void agregarAtacante() {
 		Entidad atacante = miHorda.getFirst();
 		mapa.agregarEntidadAlCampo(atacante);
@@ -103,14 +105,15 @@ public class Juego {
 		contadorEnemigos++;
 		Random rand = new Random();
 		int i = rand.nextInt(10);
-		if (i % 3 == 0)
+		if (i % 1 == 0)
 			asignarEscudo(atacante);
 	}
 
 	private void asignarEscudo(Entidad ent) {
-		EscudoEnemigo escudo = new EscudoEnemigo((int) ent.getPos().getX(), (int) ent.getPos().getY(), mapa);
+		int x = (int) ent.getPos().getX();
+		int y = (int) ent.getPos().getY();
+		EscudoEnemigo escudo = new EscudoEnemigo(x, y, mapa);
 		((Atacante) ent).setEscudo(escudo);
-		;
 		mapa.agregarEntidadAlCampoEnPosActual(escudo);
 	}
 
@@ -160,7 +163,7 @@ public class Juego {
 			e.ejecutarEstado();
 	}
 
-	public void reanudar() {//METODO PARA BOTONPAUSA
+	public void reanudar() {// METODO PARA BOTONPAUSA
 	}
 
 	public Tienda getTienda() {

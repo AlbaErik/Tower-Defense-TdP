@@ -17,8 +17,7 @@ public class EscudoEnemigo extends Premio{
 
 	@Override
 	public boolean chocaraDistancia(VisitorDistancia v) {
-		// TODO Auto-generated method stub
-		return false;
+		return v.serChocado(this);
 	}
 
 	@Override
@@ -39,6 +38,5 @@ public class EscudoEnemigo extends Premio{
 	public boolean queHago(int x, int y) {
 		return false;
 	}
-
 	
 }

@@ -41,8 +41,9 @@ public abstract class EstadoPersonaje extends Estado {
 		boolean caminoLibre = true;
 		actualizarentidadesEnRango();
 		for(Entidad e : entidadesEnRango) {
-			caminoLibre = caminoLibre && e.chocaraDistancia(personaje.getVisitorDistancia());
+			boolean alt = e.chocaraDistancia(personaje.getVisitorDistancia());
+			caminoLibre = caminoLibre && alt;
 		}
 		return caminoLibre;
-	}	
+	}
 }

@@ -121,15 +121,13 @@ public class ColCaminoLibreEnem extends VisitorDistancia{
 	@Override
 	public boolean serChocado(EscudoEnemigo e) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean serChocado(EscudoDef e) {
 		// TODO Auto-generated method stub
 		return true;
-	}
-
-	
+	}	
 
 }
