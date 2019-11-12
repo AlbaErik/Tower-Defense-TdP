@@ -26,9 +26,8 @@ public class Avanzar extends EstadoPersonaje {
 			if (personaje.getPos().getX() == 0)
 				personaje.perdioElJugador();
 
-			if (personaje.getRange() > 0)
-				if (!tengoCaminoLibre())
-					personaje.cambiarEstado(new AtaqueEnemigo(personaje));
+			if (personaje.getRange() > 0 && !tengoCaminoLibre())
+				personaje.cambiarEstado(new AtaqueEnemigo(personaje));
 		}
 	}
 }

@@ -38,9 +38,8 @@ public class Espadachin extends Atacante {
 
 	@Override
 	public void atacar(Entidad aDestruir) {
-		if (aDestruir != null) {
+		if (aDestruir != null)
 			aDestruir.setLife(damage);
-		}
 	}
 
 	@Override

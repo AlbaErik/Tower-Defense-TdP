@@ -105,7 +105,7 @@ public class Juego {
 		contadorEnemigos++;
 		Random rand = new Random();
 		int i = rand.nextInt(10);
-		if (i % 1 == 0)
+		if (i % 3 == 0)
 			asignarEscudo(atacante);
 	}
 
@@ -139,20 +139,12 @@ public class Juego {
 		boolean sepuedecolocar = false;
 		int i = x;
 		while (i < x + 50 && !sepuedecolocar) {
-			if (!mapa.hayEnPos(x, y)) {
-				sepuedecolocar = true;
-			} else {
-				sepuedecolocar = false;
-			}
+			sepuedecolocar = mapa.hayEnPos(x, y);			
 			i++;
 		}
 		i = x;
 		while (i > x - 50 && !sepuedecolocar) {
-			if (!mapa.hayEnPos(x, y)) {
-				sepuedecolocar = true;
-			} else {
-				sepuedecolocar = false;
-			}
+			sepuedecolocar = mapa.hayEnPos(x, y);
 			i--;
 		}
 		return sepuedecolocar;
@@ -183,9 +175,8 @@ public class Juego {
 	}
 
 	public void setSigNivel() {
-		if (nivel.haySigNivel()) {
+		if (nivel.haySigNivel()) 
 			nivel = nivel.setSigNivel();
-		}
 	}
 
 	public Mapa getMapa() {

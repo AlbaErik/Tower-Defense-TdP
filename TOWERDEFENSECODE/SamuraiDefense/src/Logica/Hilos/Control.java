@@ -34,7 +34,6 @@ public class Control {
 					ent1.chocar(ent2.getColisionador());
 			}
 		}
-
 	}
 
 	/*
@@ -70,8 +69,6 @@ public class Control {
 			rango--;
 			x += direccion;
 		}
-
 		return lista;
 	}
-
 }
