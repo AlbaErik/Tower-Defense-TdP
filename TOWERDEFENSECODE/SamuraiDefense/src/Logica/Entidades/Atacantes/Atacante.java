@@ -13,6 +13,7 @@ import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
+import Logica.PowerUps.Preciosos.Barricada;
 import Logica.PowerUps.Temporales.CampoProteccion;
 
 public abstract class Atacante extends Personaje {
@@ -61,7 +62,7 @@ public abstract class Atacante extends Personaje {
 		Random ran = new Random();
 		int i = ran.nextInt(10);
 		if (i % 2 == 0)
-			aleatorio = new CampoProteccion(mapa);
+			aleatorio = new Barricada(mapa);
 			//aleatorio = tiendaPowerUp.getRandom();
 		
 		if (aleatorio != null) {

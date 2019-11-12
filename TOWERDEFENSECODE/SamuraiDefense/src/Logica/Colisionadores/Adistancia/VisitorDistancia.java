@@ -15,16 +15,20 @@ import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Premios.Bombita;
 import Logica.Entidades.Premios.EscudoDef;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
+import Logica.Entidades.Premios.PocionFuerza;
 
 /*
  * Determina si el personaje encontro o no un enemigo a distancia
  */
 public abstract class VisitorDistancia {
 
-	public abstract boolean serChocado(Ninja e);
+	public abstract boolean serChocado(PocionFuerza pocionFuerza);
+
+	public abstract boolean serChocado(Ninja ninja);
 
 	public abstract boolean serChocado(Ejecutor e);
 
@@ -59,5 +63,8 @@ public abstract class VisitorDistancia {
 	public abstract boolean serChocado(EscudoEnemigo e);
 	
 	public abstract boolean serChocado(EscudoDef e);
+
+	public abstract boolean serChocado(Bombita bombita);
+
 	
 }

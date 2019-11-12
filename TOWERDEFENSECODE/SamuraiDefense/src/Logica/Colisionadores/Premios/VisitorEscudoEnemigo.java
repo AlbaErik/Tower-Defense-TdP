@@ -98,7 +98,8 @@ public class VisitorEscudoEnemigo extends Colisionador{
 
 	@Override
 	public void serChocado(Piedra e) {
-		escudo.morir();		
+		escudo.morir();
+		e.morir();
 	}
 
 	@Override

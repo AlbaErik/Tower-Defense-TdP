@@ -36,7 +36,7 @@ public class EscudoEnemigo extends Premio{
 	
 	@Override
 	public boolean queHago(int x, int y) {
-		return false;
+		return true;
 	}
 	
 }

@@ -26,11 +26,12 @@ public class Control {
 				double distX = Math.abs(e1.getX() - e2.getX());
 				double y1 = e1.getY() + e1.getAlto();
 				double y2 = e2.getY() + e2.getAlto();
+				boolean colY2 = (y1 - y2) == 0;
 
 				boolean colisionX = distX < e1.getRectangle().getWidth() - 40;
 				boolean colisionY = e1.getY() == e2.getY();
 
-				if (ent1 != ent2 && colisionX && (colisionY || y1 == y2))
+				if (ent1 != ent2 && colisionX && (colisionY || colY2))
 					ent1.chocar(ent2.getColisionador());
 			}
 		}

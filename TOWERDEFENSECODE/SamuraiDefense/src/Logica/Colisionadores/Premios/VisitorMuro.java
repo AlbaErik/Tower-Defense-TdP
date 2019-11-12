@@ -133,7 +133,6 @@ public class VisitorMuro extends Colisionador{
 
 	@Override
 	public void serChocado(EscudoEnemigo e) {
-		System.out.println("VisitorMuro---me choque con escudo enemigo mato a mi muro");
 		muro.morir();
 	}
 

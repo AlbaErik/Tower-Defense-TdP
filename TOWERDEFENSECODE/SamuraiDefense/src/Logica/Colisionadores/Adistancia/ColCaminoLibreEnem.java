@@ -15,9 +15,11 @@ import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
+import Logica.Entidades.Premios.Bombita;
 import Logica.Entidades.Premios.EscudoDef;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
+import Logica.Entidades.Premios.PocionFuerza;
 
 public class ColCaminoLibreEnem extends VisitorDistancia{
 	
@@ -126,6 +128,18 @@ public class ColCaminoLibreEnem extends VisitorDistancia{
 
 	@Override
 	public boolean serChocado(EscudoDef e) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean serChocado(PocionFuerza pocionFuerza) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean serChocado(Bombita bombita) {
 		// TODO Auto-generated method stub
 		return true;
 	}	
