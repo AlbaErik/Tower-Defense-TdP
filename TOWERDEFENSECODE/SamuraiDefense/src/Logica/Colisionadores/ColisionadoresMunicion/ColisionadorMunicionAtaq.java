@@ -14,8 +14,8 @@ import Logica.Entidades.Defensores.LanceroElite;
 import Logica.Entidades.Defensores.NinjaElite;
 import Logica.Entidades.Defensores.SamuraiElite;
 import Logica.Entidades.Municiones.Municion;
-import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
-import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
+import Logica.Entidades.Municiones.MunicionesAtacante.MunicionAtacante;
+import Logica.Entidades.Municiones.MunicionesDefensor.MunicionDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Premios.Bombita;
@@ -115,19 +115,7 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void serChocado(FlechaAtacante flechaAtacante) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void serChocado(FlechaDefensor flechaAtacante) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Override
 	public void serChocado(Emperador e) {
 		// TODO Auto-generated method stub
@@ -156,5 +144,16 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 		
 	}
 
+	@Override
+	public void serChocado(MunicionAtacante m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serChocado(MunicionDefensor m) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

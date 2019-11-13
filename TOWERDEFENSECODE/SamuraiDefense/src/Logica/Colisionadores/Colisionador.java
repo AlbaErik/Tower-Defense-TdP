@@ -2,8 +2,8 @@ package Logica.Colisionadores;
 
 import Logica.Entidades.Atacantes.*;
 import Logica.Entidades.Defensores.*;
-import Logica.Entidades.Municiones.MunicionesAtacante.FlechaAtacante;
-import Logica.Entidades.Municiones.MunicionesDefensor.FlechaDefensor;
+import Logica.Entidades.Municiones.MunicionesAtacante.MunicionAtacante;
+import Logica.Entidades.Municiones.MunicionesDefensor.MunicionDefensor;
 import Logica.Entidades.Obstaculos.ConVida.Piedra;
 import Logica.Entidades.Obstaculos.Temporales.Barro;
 import Logica.Entidades.Premios.Bombita;
@@ -31,9 +31,9 @@ public abstract class Colisionador {
 	public abstract void serChocado(Piedra e);
 	public abstract void serChocado(Barro barro);
 
-	public abstract void serChocado(FlechaAtacante flechaAtacante);
-	public abstract void serChocado(FlechaDefensor flechaAtacante);
-	
+	public abstract void serChocado(MunicionAtacante m);
+	public abstract void serChocado(MunicionDefensor m);
+		
 	public abstract void serChocado(Muro m);
 	public abstract void serChocado(EscudoDef e);
 	public abstract void serChocado(EscudoEnemigo e);
