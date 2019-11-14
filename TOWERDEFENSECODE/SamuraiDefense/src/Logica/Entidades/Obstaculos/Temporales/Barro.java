@@ -25,7 +25,7 @@ public class Barro extends Obstaculo{
 	}
 	
 	@Override
-	public void setLife(int lp) {
+	public void recibirDaño(int lp) {
 
 	}
 

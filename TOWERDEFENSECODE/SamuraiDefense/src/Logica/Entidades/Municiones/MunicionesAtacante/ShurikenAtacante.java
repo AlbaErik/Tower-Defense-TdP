@@ -9,7 +9,7 @@ public class ShurikenAtacante extends MunicionAtacante {
 
 	public ShurikenAtacante(int x, int y, Mapa m) {
 		super(x, y, m);
-		velocidad = 2;
+		velocidad = 3;
 		daño = 20;
 		
 		grafico = new ShurikenAtacanteGrafico(x, y, mapa.getPanelMapa(), this);

@@ -158,6 +158,7 @@ public class ColisionadorAtacante extends Colisionador {
 	@Override
 	public void serChocado(EscudoDef e) {
 		ataq.morir();
+		e.morir();
 	}
 
 	@Override

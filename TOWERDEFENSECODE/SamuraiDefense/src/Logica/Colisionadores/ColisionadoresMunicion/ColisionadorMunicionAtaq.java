@@ -60,53 +60,59 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void serChocado(Emperador e) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public void serChocado(ArqueroElite e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(SacerdoteElite e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();			
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();		
 	}
 
@@ -116,12 +122,6 @@ public class ColisionadorMunicionAtaq extends Colisionador{
 		
 	}
 	
-	@Override
-	public void serChocado(Emperador e) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public void serChocado(Muro m) {
 		mun.morir();

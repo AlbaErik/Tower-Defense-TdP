@@ -129,7 +129,7 @@ public class Tienda {
 
 	public void actualizarOro(int o) {
 		oro = oro + o;
-		juego.getPanelJuego().getPanelStats().actualizarOro(oro);
+		juego.actualizarOro(oro);
 	}
 
 }

@@ -19,12 +19,7 @@ public class FlechaDefensor extends MunicionDefensor {
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
 	}
-
-	@Override
-	public void ejecutarEstado() {
-		estado.ejecutar();		
-	}
-
+	
 	@Override
 	public boolean chocaraDistancia(VisitorDistancia v) {
 		return v.serChocado(this);

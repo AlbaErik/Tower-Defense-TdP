@@ -37,25 +37,6 @@ public class Control {
 		}
 	}
 
-	/*
-	 * Esta funcion determina si hay entidades en un rago y direccion del mapa. La
-	 * direccion a buscar depende del personaje que invoque la funcion.
-	 */
-	public Entidad hayEntidadEnRango(int x, int y, int rango, int direccion, Entidad miEntidad) {
-		boolean avanzar = false;
-		Entidad ent = null;
-		while (rango > 0 && !avanzar) {
-			avanzar = map.hayEnPos(x, y);
-			if (avanzar) {
-				ent = map.getEntidadEnPos(x, y);
-				ent.chocar(miEntidad.getColisionador());
-			}
-			rango--;
-			x += direccion;
-		}
-		return ent;
-	}
-
 	public LinkedList<Entidad> getEntidadesEnRango(int x, int y, int rango, int direccion, Entidad miEntidad) {
 		LinkedList<Entidad> lista = new LinkedList<Entidad>();
 		Entidad ent;

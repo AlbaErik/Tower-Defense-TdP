@@ -9,7 +9,7 @@ public class ShurikenDefensor extends MunicionDefensor {
 
 	public ShurikenDefensor(int x, int y, Mapa m) {
 		super(x, y, m);
-		velocidad = 2;
+		velocidad = 3;
 		daño = 25;
 		
 		grafico = new ShurikenDefensorGrafico(x, y, mapa.getPanelMapa(), this);
@@ -20,11 +20,6 @@ public class ShurikenDefensor extends MunicionDefensor {
 		e.serChocado(this);
 	}
 	
-	@Override
-	public void ejecutarEstado() {
-		estado.ejecutar();		
-	}
-
 	@Override
 	public boolean chocaraDistancia(VisitorDistancia v) {
 		return v.serChocado(this);

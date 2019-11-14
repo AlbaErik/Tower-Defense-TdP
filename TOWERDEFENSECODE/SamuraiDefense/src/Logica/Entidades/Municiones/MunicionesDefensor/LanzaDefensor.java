@@ -21,11 +21,6 @@ public class LanzaDefensor extends MunicionDefensor {
 	}
 	
 	@Override
-	public void ejecutarEstado() {
-		estado.ejecutar();		
-	}
-
-	@Override
 	public boolean chocaraDistancia(VisitorDistancia v) {
 		return v.serChocado(this);
 	}	

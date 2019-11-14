@@ -111,7 +111,7 @@ public abstract class Entidad {
 		estado.entidadADestruir(e);
 	}
 
-	public void setLife(int lp) {
+	public void recibirDaño(int lp) {
 		life = life - lp;
 	}
 

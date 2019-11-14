@@ -31,8 +31,8 @@ public class VisitorMuro extends Colisionador{
 		muro = p;
 	}
 	
-	private void restarVida(int i) {
-		muro.setLife(i);
+	private void restarVida(int e) {
+		muro.recibirDaño(e);
 	}
 	
 	@Override
@@ -42,17 +42,18 @@ public class VisitorMuro extends Colisionador{
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		restarVida(e.getDamage());		
+		//restarVida(e.getDamage());
+		
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		restarVida(e.getDamage());		
+		//restarVida(e.getDamage());		
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		restarVida(e.getDamage());		
+		//restarVida(e.getDamage());		
 	}
 
 	@Override
@@ -63,7 +64,7 @@ public class VisitorMuro extends Colisionador{
 
 	@Override
 	public void serChocado(Emperador e) {
-		restarVida(e.getDamage());		
+		//restarVida(e.getDamage());		
 	}
 
 	@Override

@@ -18,9 +18,17 @@ public class EscudoDef extends Premio {
 		col = new VisitorEscudoDef();
 	}
 
+	private void ubicarEscudo() {
+		if (entidad != null) {
+			this.setPos(entidad.getPos());
+			int y = (int) this.getPos().getY();
+			int x = (int) this.getPos().getX() + 10;
+			this.getPos().setPos(x, y);
+		}
+	}
+
 	@Override
 	public boolean chocaraDistancia(VisitorDistancia v) {
-		// TODO Auto-generated method stub
 		return v.serChocado(this);
 	}
 
@@ -31,19 +39,14 @@ public class EscudoDef extends Premio {
 
 	@Override
 	public void ejecutarEstado() {
-		if(entidad != null) {
-			this.setPos(entidad.getPos());
-			int y = (int) this.getPos().getY();
-			int x = (int) this.getPos().getX() + 10;
-			this.getPos().setPos(x, y);
-		}
+
 	}
 
 	@Override
 	public boolean queHago(int x, int y) {
 		Entidad ent = mapa.getEntidadEnPos(x, y);
 		boolean toret = false;
-		if(ent != null) {
+		if (ent != null) {
 			setEntidad(ent);
 			toret = true;
 		}
@@ -52,6 +55,7 @@ public class EscudoDef extends Premio {
 
 	private void setEntidad(Entidad ent) {
 		entidad = ent;
+		ubicarEscudo();
 	}
 
 }

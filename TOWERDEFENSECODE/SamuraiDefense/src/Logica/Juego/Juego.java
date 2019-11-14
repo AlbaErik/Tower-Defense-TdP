@@ -105,8 +105,8 @@ public class Juego {
 		contadorEnemigos++;
 		Random rand = new Random();
 		int i = rand.nextInt(10);
-		if (i % 3 == 0)
-			asignarEscudo(atacante);
+		if (i % 3 == 0) {}
+			//asignarEscudo(atacante);
 	}
 
 	private void asignarEscudo(Entidad ent) {

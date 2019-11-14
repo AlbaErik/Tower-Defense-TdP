@@ -34,42 +34,42 @@ public class ColisionadorMunicionDef extends Colisionador{
 	@Override
 	public void serChocado(Ninja e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();		
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();		
 	}
 	
 	@Override
 	public void serChocado(Emperador e) {
 		int daño = mun.getDaño();
-		e.setLife(daño);
+		e.recibirDaño(daño);
 		mun.morir();
 		
 	}
@@ -130,7 +130,7 @@ public class ColisionadorMunicionDef extends Colisionador{
 
 	@Override
 	public void serChocado(EscudoEnemigo e) {
-		mun.morir();
+		//mun.morir();
 	}
 	
 	@Override
