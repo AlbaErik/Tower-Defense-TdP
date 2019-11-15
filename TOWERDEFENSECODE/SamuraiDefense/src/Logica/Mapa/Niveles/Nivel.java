@@ -29,7 +29,7 @@ public abstract class Nivel {
 	}
 
 	private void crearListaObstaculos() {
-		obstaculos.add(new Piedra(0, 0, juego.getMapa()));
+		//obstaculos.add(new Piedra(0, 0, juego.getMapa()));
 		obstaculos.add(new Barro(0, 0, juego.getMapa()));
 	}
 

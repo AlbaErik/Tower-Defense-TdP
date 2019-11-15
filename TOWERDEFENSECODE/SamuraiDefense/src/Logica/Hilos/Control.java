@@ -35,6 +35,7 @@ public class Control {
 					ent1.chocar(ent2.getColisionador());
 			}
 		}
+
 	}
 
 	public LinkedList<Entidad> getEntidadesEnRango(int x, int y, int rango, int direccion, Entidad miEntidad) {

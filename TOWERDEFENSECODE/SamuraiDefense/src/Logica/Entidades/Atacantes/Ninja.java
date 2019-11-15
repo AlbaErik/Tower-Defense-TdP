@@ -16,7 +16,7 @@ public class Ninja extends Atacante {
 		attackSpeed = 0.5;
 		damage = 20;
 		range = 200;
-		movementSpeed = 1;
+		movementSpeed = 2;
 
 		grafico = new NinjaGrafico(x, y, m.getPanelMapa(), this);
 		arma = new LanzadorShurikens(this, m);

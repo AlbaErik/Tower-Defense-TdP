@@ -2,6 +2,7 @@ package Logica.Entidades;
 
 public class Contador {
 	private int contador = 0;
+	
 	public void incrementarContador() {
 		contador ++;
 	}

@@ -3,20 +3,20 @@ package Logica.Inteligencia;
 import Logica.Entidades.Municiones.Municion;
 
 public class InteligenciaMunicionAtaq extends Inteligencia {
+	private Municion mun;
 
 	public InteligenciaMunicionAtaq(Municion e) {
-		entidad = e;
+		mun = e;
 	}
 
 	@Override
 	public void mover() {
-		if (entidad.getPos().getX() > -50) {
-			double x = entidad.getPos().getX() - ((Municion) entidad).getVel();
-			int y = (int) entidad.getPos().getY();
-			entidad.cambiarPosLogica(x, y);
-		}else {
-			entidad.morir();
+		if (mun.getPos().getX() > -50) {
+			double x = mun.getPos().getX() - mun.getVel();
+			int y = (int) mun.getPos().getY();
+			mun.cambiarPosLogica(x, y);
+		} else {
+			mun.morir();
 		}
 	}
-
 }

@@ -10,20 +10,21 @@ import Logica.Mapa.Posicion;
 
 public abstract class Entidad {
 	protected int life;
+	protected int lugarEnMapa;
+	protected boolean permisoCambiarEstado;
+
 	protected Posicion miCelda;
 	protected Mapa mapa;
 	protected EntidadGrafica grafico;
-	protected int lugarEnMapa;
 	protected Colisionador col;
 	protected Inteligencia intel;
 	protected Estado estado;
-	protected boolean permisoCambiarEstado;
 	protected Contador cont;
 
 	protected Entidad(int x, int y, Mapa m) {
-		mapa = m;		
+		mapa = m;
 		permisoCambiarEstado = true;
-		
+
 		miCelda = new Posicion(x, y);
 		cont = new Contador();
 	}
@@ -64,7 +65,7 @@ public abstract class Entidad {
 	}
 
 	public void cambiarEstado(Estado e) {
-		if (permisoCambiarEstado) 
+		if (permisoCambiarEstado)
 			estado = e;
 	}
 

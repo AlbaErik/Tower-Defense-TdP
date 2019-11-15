@@ -26,34 +26,34 @@ public class ColisionadorBarro extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {
-		// TODO Auto-generated method stub
-		
+		e.realentizarPersonaje(1);		
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		// TODO Auto-generated method stub
-		
+		e.realentizarPersonaje(1);		
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		// TODO Auto-generated method stub
-		
+		e.realentizarPersonaje(1);		
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		// TODO Auto-generated method stub
-		
+		e.realentizarPersonaje(1);		
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		// TODO Auto-generated method stub
-		
+		e.realentizarPersonaje(1);		
 	}
-
+	
+	@Override
+	public void serChocado(Emperador e) {
+		e.realentizarPersonaje(1);		
+	}
+	
 	@Override
 	public void serChocado(ArqueroElite e) {
 		// TODO Auto-generated method stub
@@ -102,12 +102,6 @@ public class ColisionadorBarro extends Colisionador{
 		
 	}
 	
-	@Override
-	public void serChocado(Emperador e) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public void serChocado(Muro m) {
 		// TODO Auto-generated method stub

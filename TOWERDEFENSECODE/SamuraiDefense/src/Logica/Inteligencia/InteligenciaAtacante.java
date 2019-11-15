@@ -4,19 +4,29 @@ import Logica.Entidades.Atacantes.Atacante;
 
 public class InteligenciaAtacante extends Inteligencia {
 
+	private Atacante atacante;
 	public InteligenciaAtacante(Atacante e) {
-		entidad = e;
+		atacante = e;
 	}
 
 	public void mover() {
 
-		double x = ((int) entidad.getPos().getX()) - ((Atacante) entidad).getVelocidadMov();
-		int y = (int) entidad.getPos().getY();
+		if(atacante.estoyLento()) {
+			atacante.incrementarContador();
+
+			int cuenta = atacante.getContador();
+			if(cuenta == 5) {
+				atacante.devolverVelocidad();
+				atacante.resetContador();
+			}
+		}
+		double x = ((int) atacante.getPos().getX()) - atacante.getVelocidadMov();
+		int y = (int) atacante.getPos().getY();
 		if (x > -10) {
-			entidad.cambiarPosLogica(x, y);
+			atacante.cambiarPosLogica(x, y);
 			
-			if (((Atacante) entidad).getEscudo() != null) 
-				((Atacante) entidad).getEscudo().actualizarPos(x - 10, y);
+			if ( atacante.getEscudo() != null) 
+				atacante.getEscudo().actualizarPos(x - 10, y);
 		}
 	}
 }
