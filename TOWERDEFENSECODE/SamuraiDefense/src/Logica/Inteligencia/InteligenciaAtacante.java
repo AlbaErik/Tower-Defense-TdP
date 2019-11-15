@@ -12,12 +12,12 @@ public class InteligenciaAtacante extends Inteligencia {
 	public void mover() {
 
 		if(atacante.estoyLento()) {
-			atacante.incrementarContador();
+			atacante.incrementarContadorLentitud();
 
-			int cuenta = atacante.getContador();
+			int cuenta = atacante.getContadorLentitud();
 			if(cuenta == 5) {
 				atacante.devolverVelocidad();
-				atacante.resetContador();
+				atacante.resetContadorLentitud();
 			}
 		}
 		double x = ((int) atacante.getPos().getX()) - atacante.getVelocidadMov();

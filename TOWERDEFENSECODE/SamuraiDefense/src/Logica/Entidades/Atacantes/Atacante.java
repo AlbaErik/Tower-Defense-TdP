@@ -4,6 +4,7 @@ import java.util.Random;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
+import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Premios.EscudoEnemigo;
@@ -22,6 +23,7 @@ public abstract class Atacante extends Personaje {
 	protected InteligenciaAtacante intel;
 	protected TiendaPowerUp tiendaPowerUp;
 	protected EscudoEnemigo escudo = null;
+	protected Contador cont2 = new Contador();
 
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -54,7 +56,7 @@ public abstract class Atacante extends Personaje {
 	public void realentizarPersonaje(double o) {
 		if (!estoyLento)
 			reemplazarVelocidad(o);
-		cont.resetContador();
+		cont2.resetContador();
 	}
 
 	private void reemplazarVelocidad(double i) {
@@ -86,6 +88,18 @@ public abstract class Atacante extends Personaje {
 		}
 	}
 
+	public int getContadorLentitud() {
+		return cont2.getContador();
+	}
+	
+	public void resetContadorLentitud() {
+		cont2.resetContador();
+	}
+	
+	public void incrementarContadorLentitud() {
+		cont2.incrementarContador();
+	}
+	
 	public int getDireccion() {
 		return direccion;
 	}
