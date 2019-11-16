@@ -12,11 +12,17 @@ public abstract class PersonajeGrafico extends EntidadGrafica{
 
 	public abstract void standing();
 	
+	public abstract void standingFuerza();
+	
 	public abstract void running();
 
 	public abstract void attack();
+	
+	public abstract void attackFuerza();
 
 	public abstract void death();
+	
+	
 	
 	
 
