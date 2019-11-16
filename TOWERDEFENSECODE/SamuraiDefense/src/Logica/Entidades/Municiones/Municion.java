@@ -17,6 +17,10 @@ public abstract class Municion extends Entidad {
 		daño = 5;
 		estado = new EstadoMunicion(this);
 	}
+	
+	public void setDaño(int d) {
+		daño = d;
+	}
 		
 	@Override
 	public void ejecutarEstado() {

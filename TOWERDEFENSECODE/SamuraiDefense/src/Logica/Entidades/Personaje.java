@@ -12,7 +12,6 @@ public abstract class Personaje extends Entidad {
 	protected Arma arma;
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
-	protected int direccion;
 	protected VisitorDistancia colCaminoLibre;
 
 	protected Personaje(int x, int y, Mapa m) {

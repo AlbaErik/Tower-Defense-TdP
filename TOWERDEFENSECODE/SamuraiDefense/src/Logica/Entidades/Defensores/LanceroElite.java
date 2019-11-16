@@ -31,6 +31,7 @@ public class LanceroElite extends Defensor {
 	@Override
 	public void atacar(Entidad aDestruir) {
 		Municion mun = arma.crearMunicionDefensor();
+		mun.setDaño(damage);
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 

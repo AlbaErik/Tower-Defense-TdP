@@ -12,24 +12,19 @@ public class AtaqueDefensor extends EstadoPersonaje {
 
 	@Override
 	public void ejecutar() {
-		if (personaje.getLife() <= 0) {
-
+		if (personaje.getLife() <= 0)
 			matarPersonaje();
+		else if (personaje.getContador() % 50 == 0) {
 
-		} else {
-			if (personaje.getContador() % 50 == 0) {
+			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
+			p.attack();
 
-				PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
-				p.attack();
+			personaje.atacar(aDestruir);
+			personaje.resetContador();
 
-				personaje.atacar(aDestruir);
-				personaje.resetContador();
-
-				if (tengoCaminoLibre()) {
-					personaje.cambiarEstado(new ReposoDefensor(personaje));
-				}
-			}
-			personaje.incrementarContador();
+			if (tengoCaminoLibre())
+				personaje.cambiarEstado(new ReposoDefensor(personaje));
 		}
+		personaje.incrementarContador();
 	}
 }

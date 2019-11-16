@@ -31,6 +31,7 @@ public class ArqueroElite extends Defensor {
 	@Override
 	public void atacar(Entidad e) {
 		Municion mun = arma.crearMunicionDefensor();
+		mun.setDaño(damage);
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 

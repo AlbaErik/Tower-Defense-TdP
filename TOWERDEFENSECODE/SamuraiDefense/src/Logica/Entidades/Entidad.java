@@ -69,9 +69,7 @@ public abstract class Entidad {
 			estado = e;
 	}
 
-	public void eliminarPorBoton() {
-
-	}
+	public void eliminarPorBoton() {}
 
 	/*
 	 * getters y setters

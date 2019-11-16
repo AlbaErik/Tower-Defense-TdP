@@ -27,7 +27,6 @@ public abstract class Atacante extends Personaje {
 
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
-		direccion = -1;
 
 		colCaminoLibre = new ColCaminoLibreEnem();
 		tiendaPowerUp = new TiendaPowerUp(m);
@@ -66,11 +65,15 @@ public abstract class Atacante extends Personaje {
 	}
 
 	public void morir() {
+		if(escudo != null)
+			escudo.morir();
+		
 		devolverPowerUp();
-		mapa.notificarMuerteEnemigo();
-		mapa.eliminarEntidad(this);
 		int dinero = this.dineroDropeado();
 		mapa.actualizarOroTienda(dinero);
+		
+		mapa.notificarMuerteEnemigo();
+		mapa.eliminarEntidad(this);
 	}
 
 	protected void devolverPowerUp() {
@@ -78,8 +81,7 @@ public abstract class Atacante extends Personaje {
 		Random ran = new Random();
 		int i = ran.nextInt(10);
 		if (i % 2 == 0)
-			aleatorio = new CampoProteccion(mapa);
-		// aleatorio = tiendaPowerUp.getRandom();
+			aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
 			int x = (int) this.getPos().getX();
@@ -91,17 +93,17 @@ public abstract class Atacante extends Personaje {
 	public int getContadorLentitud() {
 		return cont2.getContador();
 	}
-	
+
 	public void resetContadorLentitud() {
 		cont2.resetContador();
 	}
-	
+
 	public void incrementarContadorLentitud() {
 		cont2.incrementarContador();
 	}
-	
+
 	public int getDireccion() {
-		return direccion;
+		return -1;
 	}
 
 	public void setGrafico(AtacanteGrafico graf) {

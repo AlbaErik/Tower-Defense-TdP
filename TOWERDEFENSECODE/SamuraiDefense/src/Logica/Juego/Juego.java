@@ -79,9 +79,9 @@ public class Juego {
 				y = randomY();
 			}
 			agregarObstaculo(x, y);
-		} else if (!miHorda.isEmpty()) 
+		} else if (!miHorda.isEmpty())
 			agregarAtacante();
-		
+
 		if (miHorda.isEmpty() && misObstaculos.isEmpty()) {// Si ya se vencio a la horda y ya se pusieron los obstaculos
 			if (nivel.haySigHorda())
 				miHorda = nivel.getSigHorda();
@@ -90,7 +90,7 @@ public class Juego {
 				misObstaculos = nivel.getSigObstaculos();
 		}
 	}
-	
+
 	private void agregarObstaculo(int x, int y) {
 		Obstaculo obs = misObstaculos.getFirst();
 		obs.cambiarPosLogica(x, y);
@@ -105,8 +105,9 @@ public class Juego {
 		contadorEnemigos++;
 		Random rand = new Random();
 		int i = rand.nextInt(10);
-		if (i % 3 == 0) {}
-			//asignarEscudo(atacante);
+		if (i % 3 == 0) {
+			asignarEscudo(atacante);
+		}
 	}
 
 	private void asignarEscudo(Entidad ent) {
@@ -139,7 +140,7 @@ public class Juego {
 		boolean sepuedecolocar = false;
 		int i = x;
 		while (i < x + 50 && !sepuedecolocar) {
-			sepuedecolocar = mapa.hayEnPos(x, y);			
+			sepuedecolocar = mapa.hayEnPos(x, y);
 			i++;
 		}
 		i = x;
@@ -175,7 +176,7 @@ public class Juego {
 	}
 
 	public void setSigNivel() {
-		if (nivel.haySigNivel()) 
+		if (nivel.haySigNivel())
 			nivel = nivel.setSigNivel();
 	}
 

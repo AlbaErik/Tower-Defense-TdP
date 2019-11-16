@@ -18,12 +18,10 @@ public class ReposoDefensor extends EstadoPersonaje {
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 			p.standing();
 		}
-
 		if (personaje.getContador() % 50 == 0) {
 
-			if (personaje.getRange() > 0 && !tengoCaminoLibre()) {
+			if (personaje.getRange() > 0 && !tengoCaminoLibre())
 				personaje.cambiarEstado(new AtaqueDefensor(personaje));
-			}
 
 			personaje.resetContador();
 		}

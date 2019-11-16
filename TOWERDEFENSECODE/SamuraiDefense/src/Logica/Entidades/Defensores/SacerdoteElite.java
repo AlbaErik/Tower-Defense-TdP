@@ -29,9 +29,8 @@ public class SacerdoteElite extends Defensor {
 
 	@Override
 	public void atacar(Entidad aDestruir) {
-		if (aDestruir != null) {
+		if (aDestruir != null) 
 			aDestruir.recibirDaño(damage);
-		}
 	}
 
 	@Override
