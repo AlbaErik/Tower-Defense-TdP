@@ -25,6 +25,7 @@ import Logica.Entidades.Premios.Muro;
 public class VisitorEscudoEnemigo extends Colisionador{
 	
 	private EscudoEnemigo escudo;
+	private int cont = 0;
 	
 	public VisitorEscudoEnemigo(EscudoEnemigo esc) {
 		escudo = esc;
@@ -138,6 +139,9 @@ public class VisitorEscudoEnemigo extends Colisionador{
 	@Override
 	public void serChocado(MunicionDefensor m) {
 		m.morir();
+		cont++;
+		if(cont >=3)
+			escudo.morir();
 	}
 
 }

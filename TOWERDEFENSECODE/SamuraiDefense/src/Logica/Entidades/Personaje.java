@@ -24,6 +24,8 @@ public abstract class Personaje extends Entidad {
 	public VisitorDistancia getVisitorDistancia() {
 		return colCaminoLibre;
 	}
+	
+	public void superAtaque(Entidad e) {}
 
 	public abstract int getDireccion();
 

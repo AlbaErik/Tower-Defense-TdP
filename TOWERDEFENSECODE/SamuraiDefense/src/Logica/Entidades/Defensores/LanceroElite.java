@@ -40,4 +40,11 @@ public class LanceroElite extends Defensor {
 		return v.serChocado(this);
 	}
 
+	@Override
+	public void superAtaque(Entidad e) {
+		Municion mun = arma.crearMunicionDefensor();
+		mun.setDaño(damage*4);
+		mapa.agregarEntidadAlCampoEnPosActual(mun);		
+	}
+
 }

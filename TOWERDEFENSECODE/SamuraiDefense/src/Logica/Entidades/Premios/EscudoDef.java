@@ -15,7 +15,7 @@ public class EscudoDef extends Premio {
 		super(x, y, m);
 		clave = 1;
 		grafico = new EscudoGrafico(y, y, mapa.getPanelMapa(), this);
-		col = new VisitorEscudoDef();
+		col = new VisitorEscudoDef(this);
 	}
 
 	private void ubicarEscudo() {

@@ -38,4 +38,10 @@ public class SamuraiElite extends Defensor {
 		return v.serChocado(this);
 	}
 
+	@Override
+	public void superAtaque(Entidad aDestruir) {
+		if (aDestruir != null) 
+			aDestruir.recibirDaño(damage*4);		
+	}
+
 }

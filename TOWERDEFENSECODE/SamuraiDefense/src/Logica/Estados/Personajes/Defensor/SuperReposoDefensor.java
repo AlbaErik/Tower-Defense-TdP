@@ -5,31 +5,39 @@ import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
 import Logica.Estados.Personajes.EstadoPersonaje;
 
-public class ReposoDefensor extends EstadoPersonaje {
+public class SuperReposoDefensor extends EstadoPersonaje {
 
-	public ReposoDefensor(Personaje e) {
-		super(e);
+	Contador cont;
+
+	public SuperReposoDefensor(Personaje p, Contador c) {
+		super(p);
+		cont = c;
 	}
 
 	@Override
 	public void ejecutar() {
-		if (personaje.getLife() <= 0) {
+		controlarTiempo();
+		if (personaje.getLife() <= 0)
 			matarPersonaje();
-		} else {
+		else {
 			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
-			p.standing();
+			p.standingFuerza();
 		}
 		if (personaje.getContador() % 50 == 0) {
 
 			if (personaje.getRange() > 0 && !tengoCaminoLibre())
-				personaje.cambiarEstado(new AtaqueDefensor(personaje));
+				personaje.cambiarEstado(new SuperAtaqueDefensor(personaje, cont));
 
 			personaje.resetContador();
 		}
 		personaje.incrementarContador();
 	}
-	
-	public void cambiarAPoderoso() {
-		personaje.cambiarEstado(new SuperReposoDefensor(personaje, new Contador()));
+
+	private void controlarTiempo() {
+		if (cont.getContador() >= 500) {
+			personaje.cambiarEstado(new ReposoDefensor(personaje));
+			cont.resetContador();
+		} else
+			cont.incrementarContador();
 	}
 }

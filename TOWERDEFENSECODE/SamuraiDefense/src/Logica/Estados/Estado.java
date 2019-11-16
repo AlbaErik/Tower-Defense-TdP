@@ -8,6 +8,7 @@ public abstract class Estado {
 	protected boolean dejoPasar = false;
 
 	protected Estado() {}
+	
 	public abstract void ejecutar();
 	public void entidadADestruir(Entidad e) {
 		aDestruir = e;
@@ -16,4 +17,6 @@ public abstract class Estado {
 	public boolean getPermisoParaPasar() {
 		return dejoPasar;
 	}
+	
+	public void cambiarAPoderoso() {}
 }

@@ -20,7 +20,7 @@ public abstract class EstadoPersonaje extends Estado {
 		control = new Control(p.getMapa());
 		entidadesEnRango = new LinkedList<Entidad>();
 	}
-
+	
 	protected void matarPersonaje() {
 		PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
 		p.death();

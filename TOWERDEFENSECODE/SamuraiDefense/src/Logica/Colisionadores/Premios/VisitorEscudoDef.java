@@ -23,7 +23,12 @@ import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
 
 public class VisitorEscudoDef extends Colisionador {
-
+	private EscudoDef escudo;
+	private int cont = 0;
+	
+	public VisitorEscudoDef(EscudoDef esc) {
+		escudo = esc;
+	}
 	@Override
 	public void serChocado(Ninja e) {
 		// TODO Auto-generated method stub
@@ -133,8 +138,9 @@ public class VisitorEscudoDef extends Colisionador {
 
 	@Override
 	public void serChocado(MunicionAtacante m) {
-		// TODO Auto-generated method stub
-
+		cont++;
+		if(cont >= 3)
+			escudo.morir();
 	}
 
 	@Override

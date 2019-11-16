@@ -2,9 +2,11 @@ package Logica.Entidades.Defensores;
 
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreDef;
+import Logica.Entidades.Contador;
+import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
-import Logica.Estados.Personajes.Defensor.ReposoDefensor;
+import Logica.Estados.Personajes.Defensor.SuperReposoDefensor;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
 
@@ -17,7 +19,7 @@ public abstract class Defensor extends Personaje {
 		
 		colCaminoLibre = new ColCaminoLibreDef();
 		intel = new InteligenciaDefensor(this);
-		estado = new ReposoDefensor(this);
+		estado = new SuperReposoDefensor(this, new Contador());
 		col = new ColisionadorDefensor(this);
 	}
 	
@@ -26,8 +28,8 @@ public abstract class Defensor extends Personaje {
 		estado.ejecutar();
 	}
 	
-	public void subirFuerza(int cant) {
-		damage += cant;
+	public void subirFuerza() {
+		estado.cambiarAPoderoso();
 	}
 
 	public int getDireccion() {
@@ -37,15 +39,7 @@ public abstract class Defensor extends Personaje {
 	public int getCost() {
 		return cost;
 	}
-
-	public int getDañoArma() {
-		return arma.getDaño();
-	}
-
-	public Municion getMunicion() {
-		return arma.crearMunicionDefensor();
-	}
-
+	
 	public void eliminarPorBoton() {
 		if (life <= vida && life > vida / 2)
 			mapa.actualizarOroTienda(cost);
