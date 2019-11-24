@@ -28,9 +28,6 @@ public class Tienda {
 
 	public Tienda(Juego j) {
 		juego = j;
-		mapa = juego.getMapa();
-		tienda = new PanelTienda(this);
-		fabrica = new FabricaDefensores();
 		personajeActual = null;
 		premioActual = null;
 		eliminar = false;
@@ -38,10 +35,14 @@ public class Tienda {
 		premioParaEntidad = false;
 		oro = 5000;
 		juego.actualizarOro(oro);
-		inicializarMap();
+		
+		mapa = juego.getMapa();
+		tienda = new PanelTienda(this);
+		fabrica = new FabricaDefensores();
+		inicializarMapeo();
 	}
 
-	private void inicializarMap() {
+	private void inicializarMapeo() {
 		powerUps = new HashMap<Integer, LinkedList<Premio>>();
 		for (int i = 0; i <= cantPremios; i++) {
 			powerUps.put(i + 1, new LinkedList<Premio>());
