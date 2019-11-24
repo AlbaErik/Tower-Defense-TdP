@@ -45,8 +45,8 @@ public class PanelMapa extends JPanel {
 	public void agregarPowerUp(int x, int y, PowerUp power) {
 		JLabel nuevo = power.getGrafico().getGrafico();
 		nuevo.setBounds(x, y, 120, 120);
-		add(nuevo);
-		repaint();
+		agregarLabel(nuevo);
+
 	}
 
 	public void agregarEntidad(Entidad e) {
@@ -60,16 +60,14 @@ public class PanelMapa extends JPanel {
 		mapa.setEntidad(e);
 		JLabel nuevo = e.getGrafico().getGraficoActual();
 
-		add(nuevo);
-		repaint();
+		agregarLabel(nuevo);
+
 	}
 
 	public void agregarEntidadEnPosActual(Entidad e) {
 		mapa.setEntidad(e);
 		JLabel nuevo = e.getGrafico().getGraficoActual();
-
-		add(nuevo);
-		repaint();
+		agregarLabel(nuevo);
 	}
 	
 	private void agregarLabel(JLabel nuevo) {
