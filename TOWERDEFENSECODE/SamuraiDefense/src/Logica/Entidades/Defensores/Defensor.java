@@ -1,11 +1,9 @@
 package Logica.Entidades.Defensores;
 
+import Logica.LargaVistaDefensor;
 import Logica.Colisionadores.ColisionadorDefensor;
-import Logica.Colisionadores.Adistancia.ColCaminoLibreDef;
 import Logica.Entidades.Contador;
-import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
-import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Personajes.Defensor.SuperReposoDefensor;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -17,7 +15,7 @@ public abstract class Defensor extends Personaje {
 	protected Defensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		
-		colCaminoLibre = new ColCaminoLibreDef();
+		colCaminoLibre = new LargaVistaDefensor();
 		intel = new InteligenciaDefensor(this);
 		estado = new SuperReposoDefensor(this, new Contador());
 		col = new ColisionadorDefensor(this);
@@ -39,6 +37,8 @@ public abstract class Defensor extends Personaje {
 	public int getCost() {
 		return cost;
 	}
+	
+	public abstract Defensor clone();
 	
 	public void eliminarPorBoton() {
 		if (life <= vida && life > vida / 2)

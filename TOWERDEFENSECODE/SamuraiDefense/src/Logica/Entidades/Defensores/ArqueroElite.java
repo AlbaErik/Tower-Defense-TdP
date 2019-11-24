@@ -20,7 +20,7 @@ public class ArqueroElite extends Defensor {
 		cost = 100;
 
 		grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
-		arma = new Arco(this, m);		
+		arma = new Arco(this, m);
 	}
 
 	@Override
@@ -36,15 +36,20 @@ public class ArqueroElite extends Defensor {
 	}
 
 	@Override
-	public boolean chocaraDistancia(VisitorDistancia v) {
-		return v.serChocado(this);
+	public void chocaraDistancia(VisitorDistancia v) {
+		v.serChocado(this);
 	}
 
 	@Override
 	public void superAtaque(Entidad e) {
 		Municion mun = arma.crearMunicionDefensor();
-		mun.setDaño(damage*4);
-		mapa.agregarEntidadAlCampoEnPosActual(mun);		
+		mun.setDaño(damage * 4);
+		mapa.agregarEntidadAlCampoEnPosActual(mun);
+	}
+
+	@Override
+	public Defensor clone() {
+		return new ArqueroElite(0, 0, mapa);
 	}
 
 }

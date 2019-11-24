@@ -33,7 +33,7 @@ public abstract class Entidad {
 
 	public abstract void ejecutarEstado();
 
-	public abstract boolean chocaraDistancia(VisitorDistancia v);
+	public abstract void chocaraDistancia(VisitorDistancia v);
 
 	public void subirFuerza(int cant) {
 	}

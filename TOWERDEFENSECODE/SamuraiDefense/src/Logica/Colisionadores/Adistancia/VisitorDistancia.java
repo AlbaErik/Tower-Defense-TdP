@@ -26,45 +26,45 @@ import Logica.Entidades.Premios.PocionFuerza;
  */
 public abstract class VisitorDistancia {
 
-	public abstract boolean serChocado(PocionFuerza pocionFuerza);
+	public abstract void serChocado(PocionFuerza pocionFuerza);
 
-	public abstract boolean serChocado(Ninja ninja);
+	public abstract void serChocado(Ninja ninja);
 
-	public abstract boolean serChocado(Ejecutor e);
+	public abstract void serChocado(Ejecutor e);
 
-	public abstract boolean serChocado(Necromante e);
+	public abstract void serChocado(Necromante e);
 
-	public abstract boolean serChocado(Espadachin e);
+	public abstract void serChocado(Espadachin e);
 
-	public abstract boolean serChocado(Arquero e);
+	public abstract void serChocado(Arquero e);
 
-	public abstract boolean serChocado(Emperador e);
+	public abstract void serChocado(Emperador e);
 
-	public abstract boolean serChocado(ArqueroElite e);
+	public abstract void serChocado(ArqueroElite e);
 
-	public abstract boolean serChocado(SacerdoteElite e);
+	public abstract void serChocado(SacerdoteElite e);
 
-	public abstract boolean serChocado(EspadachinElite e);
+	public abstract void serChocado(EspadachinElite e);
 
-	public abstract boolean serChocado(LanceroElite e);
+	public abstract void serChocado(LanceroElite e);
 
-	public abstract boolean serChocado(NinjaElite e);
+	public abstract void serChocado(NinjaElite e);
 
-	public abstract boolean serChocado(SamuraiElite e);
+	public abstract void serChocado(SamuraiElite e);
 
-	public abstract boolean serChocado(Piedra e);
+	public abstract void serChocado(Piedra e);
 
-	public abstract boolean serChocado(Barro barro);
+	public abstract void serChocado(Barro barro);
 
-	public abstract boolean serChocado(Muro m);
+	public abstract void serChocado(Muro m);
 	
-	public abstract boolean serChocado(Municion m);
+	public abstract void serChocado(Municion m);
 	
-	public abstract boolean serChocado(EscudoEnemigo e);
+	public abstract void serChocado(EscudoEnemigo e);
 	
-	public abstract boolean serChocado(EscudoDef e);
+	public abstract void serChocado(EscudoDef e);
 
-	public abstract boolean serChocado(Bombita bombita);
+	public abstract void serChocado(Bombita bombita);
 
 	
 }

@@ -34,14 +34,19 @@ public class SacerdoteElite extends Defensor {
 	}
 
 	@Override
-	public boolean chocaraDistancia(VisitorDistancia v) {
-		return v.serChocado(this);
+	public void chocaraDistancia(VisitorDistancia v) {
+		v.serChocado(this);
 	}
 
 	@Override
 	public void superAtaque(Entidad aDestruir) {
 		if (aDestruir != null) 
 			aDestruir.recibirDaño(damage*4);
+	}
+
+	@Override
+	public Defensor clone() {
+		return new SacerdoteElite(0, 0, mapa);
 	}
 
 }

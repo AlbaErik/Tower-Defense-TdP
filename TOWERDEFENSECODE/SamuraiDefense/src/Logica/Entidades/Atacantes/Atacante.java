@@ -2,8 +2,8 @@ package Logica.Entidades.Atacantes;
 
 import java.util.Random;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
+import Logica.LargaVistaAtacante;
 import Logica.Colisionadores.ColisionadorAtacante;
-import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
@@ -14,11 +14,13 @@ import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
+import Logica.PowerUps.Preciosos.Barricada;
 
 public abstract class Atacante extends Personaje {
 	protected double movementSpeed;
 	protected double backupVel;
 	protected boolean estoyLento = false;
+	
 	protected InteligenciaAtacante intel;
 	protected TiendaPowerUp tiendaPowerUp;
 	protected EscudoEnemigo escudo = null;
@@ -27,7 +29,7 @@ public abstract class Atacante extends Personaje {
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
 
-		colCaminoLibre = new ColCaminoLibreEnem();
+		colCaminoLibre = new LargaVistaAtacante();
 		tiendaPowerUp = new TiendaPowerUp(m);
 		intel = new InteligenciaAtacante(this);
 		estado = new Avanzar(this);
@@ -80,7 +82,8 @@ public abstract class Atacante extends Personaje {
 		Random ran = new Random();
 		int i = ran.nextInt(10);
 		if (i % 2 == 0)
-			aleatorio = tiendaPowerUp.getRandom();
+			aleatorio = new Barricada(mapa);
+			//aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
 			int x = (int) this.getPos().getX();

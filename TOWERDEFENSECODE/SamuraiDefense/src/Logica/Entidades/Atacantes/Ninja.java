@@ -44,8 +44,8 @@ public class Ninja extends Atacante {
 	}
 
 	@Override
-	public boolean chocaraDistancia(VisitorDistancia v) {
-		return v.serChocado(this);
+	public void chocaraDistancia(VisitorDistancia v) {
+		v.serChocado(this);
 	}
 
 }

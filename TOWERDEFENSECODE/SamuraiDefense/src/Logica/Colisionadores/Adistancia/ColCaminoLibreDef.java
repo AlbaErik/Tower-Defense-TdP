@@ -1,5 +1,6 @@
 package Logica.Colisionadores.Adistancia;
 
+import Logica.LargaVistaDefensor;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Ejecutor;
 import Logica.Entidades.Atacantes.Emperador;
@@ -21,128 +22,112 @@ import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
 import Logica.Entidades.Premios.PocionFuerza;
 
-public class ColCaminoLibreDef extends VisitorDistancia{
+public class ColCaminoLibreDef extends VisitorDistancia {
 
-	@Override
-	public boolean serChocado(Ninja e) {
-		// TODO Auto-generated method stub
-		return false;
+	private LargaVistaDefensor largaVista;
+
+	public ColCaminoLibreDef(LargaVistaDefensor lar) {
+		largaVista = lar;
 	}
 
 	@Override
-	public boolean serChocado(Ejecutor e) {
-		// TODO Auto-generated method stub
-		return false;
+	public void serChocado(Ninja e) {
+		largaVista.setCaminoLibre(false);
 	}
 
 	@Override
-	public boolean serChocado(Necromante e) {
-		// TODO Auto-generated method stub
-		return false;
+	public void serChocado(Ejecutor e) {
+		largaVista.setCaminoLibre(false);
 	}
 
 	@Override
-	public boolean serChocado(Espadachin e) {
-		// TODO Auto-generated method stub
-		return false;
+	public void serChocado(Necromante e) {
+		largaVista.setCaminoLibre(false);
 	}
 
 	@Override
-	public boolean serChocado(Arquero e) {
-		// TODO Auto-generated method stub
-		return false;
+	public void serChocado(Espadachin e) {
+		largaVista.setCaminoLibre(false);
 	}
 
 	@Override
-	public boolean serChocado(Emperador e) {
-		// TODO Auto-generated method stub
-		return false;
+	public void serChocado(Arquero e) {
+		largaVista.setCaminoLibre(false);
 	}
 
 	@Override
-	public boolean serChocado(ArqueroElite e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(Emperador e) {
+		largaVista.setCaminoLibre(false);
 	}
 
 	@Override
-	public boolean serChocado(SacerdoteElite e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(ArqueroElite e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(EspadachinElite e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(SacerdoteElite e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(LanceroElite e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(EspadachinElite e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(NinjaElite e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(LanceroElite e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(SamuraiElite e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(NinjaElite e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(Piedra e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(SamuraiElite e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(Barro barro) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(Piedra e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(Muro m) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(Barro barro) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(Municion m) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(Muro m) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(EscudoEnemigo e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(Municion m) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(EscudoDef e) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(EscudoEnemigo e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(PocionFuerza pocionFuerza) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(EscudoDef e) {
+		largaVista.setCaminoLibre(true);
 	}
 
 	@Override
-	public boolean serChocado(Bombita bombita) {
-		// TODO Auto-generated method stub
-		return true;
+	public void serChocado(PocionFuerza pocionFuerza) {
+		largaVista.setCaminoLibre(true);
 	}
 
-	
+	@Override
+	public void serChocado(Bombita bombita) {
+		largaVista.setCaminoLibre(true);
+	}
 
 }

@@ -36,15 +36,20 @@ public class LanceroElite extends Defensor {
 	}
 
 	@Override
-	public boolean chocaraDistancia(VisitorDistancia v) {
-		return v.serChocado(this);
+	public void chocaraDistancia(VisitorDistancia v) {
+		v.serChocado(this);
 	}
 
 	@Override
 	public void superAtaque(Entidad e) {
 		Municion mun = arma.crearMunicionDefensor();
-		mun.setDaño(damage*4);
-		mapa.agregarEntidadAlCampoEnPosActual(mun);		
+		mun.setDaño(damage * 4);
+		mapa.agregarEntidadAlCampoEnPosActual(mun);
+	}
+
+	@Override
+	public Defensor clone() {
+		return new LanceroElite(0, 0, mapa);
 	}
 
 }

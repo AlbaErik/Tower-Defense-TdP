@@ -2,6 +2,7 @@ package Logica.Entidades;
 
 import Armas.Arma;
 import Armas.ArmaSimple;
+import Logica.LargaVista;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Mapa.Mapa;
 
@@ -12,7 +13,7 @@ public abstract class Personaje extends Entidad {
 	protected Arma arma;
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
-	protected VisitorDistancia colCaminoLibre;
+	protected LargaVista colCaminoLibre;
 
 	protected Personaje(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -22,7 +23,11 @@ public abstract class Personaje extends Entidad {
 	}
 
 	public VisitorDistancia getVisitorDistancia() {
-		return colCaminoLibre;
+		return colCaminoLibre.getVisitorDistancia();
+	}
+	
+	public boolean getCaminoLibre() {
+		return colCaminoLibre.getCaminoLibre();
 	}
 	
 	public void superAtaque(Entidad e) {}

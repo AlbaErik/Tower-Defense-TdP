@@ -9,12 +9,11 @@ public class PocionFuerza extends Premio{
 	public PocionFuerza(int x, int y, Mapa m) {
 		super(x, y, m);
 		clave = 2;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public boolean chocaraDistancia(VisitorDistancia v) {
-		return v.serChocado(this);
+	public void chocaraDistancia(VisitorDistancia v) {
+		v.serChocado(this);
 	}
 
 	@Override

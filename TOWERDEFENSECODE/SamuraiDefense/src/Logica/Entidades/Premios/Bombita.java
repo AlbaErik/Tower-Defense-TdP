@@ -70,9 +70,8 @@ public class Bombita extends Premio {
 	}
 
 	@Override
-	public boolean chocaraDistancia(VisitorDistancia v) {
-		// TODO Auto-generated method stub
-		return v.serChocado(this);
+	public void chocaraDistancia(VisitorDistancia v) {
+		v.serChocado(this);
 	}
 
 	@Override

@@ -9,23 +9,26 @@ import Logica.FabricaDefensores;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Entidades.Premios.Premio;
 import Logica.Juego.Juego;
+import Logica.Mapa.Mapa;
 
 public class Tienda {
 	protected int oro;
 	protected boolean eliminar;
 	protected boolean premio;
 	protected boolean premioParaEntidad;
+	private int cantPremios = 4;
 
+	private Mapa mapa;
 	private PanelTienda tienda;
 	private Juego juego;
 	private Defensor personajeActual;
 	protected Premio premioActual;
 	private FabricaDefensores fabrica;
 	private Map<Integer, LinkedList<Premio>> powerUps;
-	private int cantPremios = 4;
 
 	public Tienda(Juego j) {
 		juego = j;
+		mapa = juego.getMapa();
 		tienda = new PanelTienda(this);
 		fabrica = new FabricaDefensores();
 		personajeActual = null;
@@ -44,6 +47,10 @@ public class Tienda {
 			powerUps.put(i + 1, new LinkedList<Premio>());
 		}
 		
+	}
+	
+	public Mapa getMapa() {
+		return mapa;
 	}
 
 	/*
