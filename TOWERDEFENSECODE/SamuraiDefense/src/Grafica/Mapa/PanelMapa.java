@@ -37,15 +37,8 @@ public class PanelMapa extends JPanel {
 		return mapa;
 	}
 
-	public void eliminarEntidad(Entidad e) {
-		JLabel d = e.getGrafico().getGraficoActual();
-		this.remove(d);
-		repaint();
-	}
-
-	public void eliminarPowerUp(PowerUp power) {
-		JLabel p = power.getGrafico().getGrafico();
-		this.remove(p);
+	public void eliminarLabel(JLabel label) {
+		remove(label);
 		repaint();
 	}
 
@@ -75,6 +68,11 @@ public class PanelMapa extends JPanel {
 		mapa.setEntidad(e);
 		JLabel nuevo = e.getGrafico().getGraficoActual();
 
+		add(nuevo);
+		repaint();
+	}
+	
+	private void agregarLabel(JLabel nuevo) {
 		add(nuevo);
 		repaint();
 	}

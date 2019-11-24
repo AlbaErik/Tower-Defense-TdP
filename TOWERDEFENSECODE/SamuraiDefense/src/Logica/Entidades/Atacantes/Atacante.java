@@ -14,7 +14,6 @@ import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
-import Logica.PowerUps.Preciosos.Barricada;
 
 public abstract class Atacante extends Personaje {
 	protected double movementSpeed;

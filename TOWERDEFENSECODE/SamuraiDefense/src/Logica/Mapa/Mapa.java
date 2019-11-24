@@ -44,7 +44,7 @@ public class Mapa {
 	}
 	
 	public void eliminarPowerUp(PowerUp power) {
-		mapagrafico.eliminarPowerUp(power);
+		mapagrafico.eliminarLabel(power.getGrafico().getGrafico());
 	}
 	
 	public void agregarPremioTienda(int c, Premio p) {
@@ -78,7 +78,7 @@ public class Mapa {
 				actual = i;
 		}		
 		misEntidades.remove(actual);
-		mapagrafico.eliminarEntidad(actual);		
+		mapagrafico.eliminarLabel(actual.getGrafico().getGraficoActual());
 	}	
 
 	public boolean hayEntidades() {
