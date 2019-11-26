@@ -85,8 +85,10 @@ public abstract class Atacante extends Personaje {
 			aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
+			
 			int x = (int) this.getPos().getX();
 			int y = (int) this.getPos().getY();
+			aleatorio.getGrafico().getGrafico().setBounds(x, y, 120, 120);
 			mapa.agregarPowerUp(x, y, aleatorio);
 		}
 	}

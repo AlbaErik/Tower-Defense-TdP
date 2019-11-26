@@ -44,7 +44,7 @@ public class PanelMapa extends JPanel {
 
 	public void agregarPowerUp(int x, int y, PowerUp power) {
 		JLabel nuevo = power.getGrafico().getGrafico();
-		nuevo.setBounds(x, y, 120, 120);
+		//nuevo.setBounds(x, y, 120, 120);
 		agregarLabel(nuevo);
 
 	}
