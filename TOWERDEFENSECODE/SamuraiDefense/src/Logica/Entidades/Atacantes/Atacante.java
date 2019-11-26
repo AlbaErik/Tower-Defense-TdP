@@ -67,6 +67,7 @@ public abstract class Atacante extends Personaje {
 	public void morir() {
 		if(escudo != null)
 			escudo.morir();
+		System.out.println("ATACANTE---se murio: " + this.getClass());
 		
 		devolverPowerUp();
 		int dinero = this.dineroDropeado();

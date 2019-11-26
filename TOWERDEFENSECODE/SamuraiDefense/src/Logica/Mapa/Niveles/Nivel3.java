@@ -1,27 +1,24 @@
 package Logica.Mapa.Niveles;
 
 import java.util.LinkedList;
-import java.util.Random;
 
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Juego.Juego;
-import Logica.Mapa.Hordas.Horda3;
+import Logica.Mapa.Hordas.Horda;
 
 public class Nivel3 extends Nivel {
 
 	public Nivel3(Juego j) {
 		super(j);
-		horda = new Horda3(juego.getMapa());
+		crearHordas();
+
+		//horda = new Horda3(juego.getMapa());
 		siguiente = null;
-		horda1 = true;
-		horda2 = true;
-		horda3 = true;
-		obstaculos1 = true;
-		obstaculos2 = true;
-		obstaculos3 = true;
+		
 	}
 
+	/*
 	@Override
 	protected LinkedList<Entidad> crearHorda1() {
 		LinkedList<Entidad> ret = new LinkedList<Entidad>();
@@ -126,14 +123,33 @@ public class Nivel3 extends Nivel {
 
 		return toret;
 	}
+	*/
+
 
 	@Override
-	public Nivel setSigNivel() {
+	public Nivel getSigNivel() {
 		return siguiente;
 	}
 
 	@Override
 	public boolean haySigNivel() {
 		return siguiente != null;
+	}
+
+	@Override
+	protected void crearHordas() {
+		misHordas.add(new Horda(juego.getMapa(), 1));
+		misHordas.add(new Horda(juego.getMapa(), 1));
+		misHordas.add(new Horda(juego.getMapa(), 1));		
+	}
+
+	@Override
+	public LinkedList<Obstaculo> getObstaculos() {
+		return creadorObs.getObstaculosRandom(3);
+	}
+
+	@Override
+	public LinkedList<Entidad> getSigHorda() {
+		return getHorda().crearAtacantesDificiles();
 	}
 }

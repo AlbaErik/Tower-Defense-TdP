@@ -25,10 +25,8 @@ public class Game extends Thread {
 			try {
 				if (vueltas % 120 == 0) { // Da tiempo entre entidades para agregarlas al mapa
 					juego.agregarEntidades();
-					if (juego.nivelTerminado() && juego.haySiguienteNivel()) {
-						juego.setSigNivel();
-					}
-
+					if (juego.hordaVacia())
+						juego.cargarSigHorda();
 					vueltas = 0;
 				}
 
@@ -36,11 +34,9 @@ public class Game extends Thread {
 				control.chequearColision();
 
 				vueltas++;
-
 				sleep(20);
-
-				if (!juego.haySiguienteNivel() && juego.controlGanar()) {
-					System.out.println("WIN - WIN - WIN");
+				if (!juego.haySiguienteNivel() && !juego.haySigHorda() && juego.enemigosMuertos()) {
+					System.out.println("GANO EL JUGADOR 	WIN - WIN - WIN");
 					ejecutar = false;
 				}
 				if (juego.controlPerder()) {

@@ -21,6 +21,10 @@ public abstract class Personaje extends Entidad {
 		contadorDisparos = 0;
 		tiempoMuerte = 20;
 	}
+	
+	public void setCaminoLibre(boolean b) {
+		colCaminoLibre.setCaminoLibre(b);
+	}
 
 	public VisitorDistancia getVisitorDistancia() {
 		return colCaminoLibre.getVisitorDistancia();
