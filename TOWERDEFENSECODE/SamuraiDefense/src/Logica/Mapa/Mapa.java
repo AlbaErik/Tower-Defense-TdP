@@ -72,13 +72,16 @@ public class Mapa {
 	}
 	
 	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
-		Entidad actual = misEntidades.getFirst();
+		Entidad actual = null;//misEntidades.getFirst();
 		for (Entidad i : misEntidades) {
 			if (i.hashCode() == e.hashCode())
 				actual = i;
-		}		
-		misEntidades.remove(actual);
-		mapagrafico.eliminarLabel(actual.getGrafico().getGraficoActual());
+		}
+		if(actual != null) {
+			misEntidades.remove(actual);
+			mapagrafico.eliminarLabel(actual.getGrafico().getGraficoActual());
+		}
+		
 	}	
 
 	public boolean hayEntidades() {
