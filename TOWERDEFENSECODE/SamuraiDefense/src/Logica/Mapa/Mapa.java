@@ -40,7 +40,8 @@ public class Mapa {
 	}
 	
 	public void agregarPowerUp(int x, int y, PowerUp power) {
-		mapagrafico.agregarPowerUp(x,y,power);
+		mapagrafico.agregarLabel(power.getGrafico().getGrafico());
+		//mapagrafico.agregarPowerUp(x,y,power);
 	}
 	
 	public void eliminarPowerUp(PowerUp power) {
@@ -56,7 +57,9 @@ public class Mapa {
 	}
 
 	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
-		mapagrafico.agregarEntidadEnPosActual(e);
+		setEntidad(e);
+		mapagrafico.agregarLabel(e.getGrafico().getGraficoActual());
+		//mapagrafico.agregarEntidadEnPosActual(e);
 	}
 	
 	public void actualizarOroTienda(int o) {

@@ -5,126 +5,18 @@ import java.util.LinkedList;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Juego.Juego;
-import Logica.Mapa.Hordas.Horda;
+import Logica.Mapa.Hordas.HordaDificil;
 
 public class Nivel3 extends Nivel {
 
 	public Nivel3(Juego j) {
 		super(j);
 		crearHordas();
-
-		//horda = new Horda3(juego.getMapa());
+		cantidadEnems = 1;
+		cantObs = 2;
 		siguiente = null;
 		
 	}
-
-	/*
-	@Override
-	protected LinkedList<Entidad> crearHorda1() {
-		LinkedList<Entidad> ret = new LinkedList<Entidad>();
-		for (Entidad e : horda.crearAtacantes1())
-			ret.add(e);
-		horda1 = false;
-		return ret;
-
-	}
-
-	@Override
-	protected LinkedList<Entidad> crearHorda2() {
-		LinkedList<Entidad> ret = new LinkedList<Entidad>();
-		for (Entidad e : horda.crearAtacantes2())
-			ret.add(e);
-		horda2 = false;
-		return ret;
-	}
-
-	@Override
-	protected LinkedList<Entidad> crearHorda3() {
-		LinkedList<Entidad> ret = new LinkedList<Entidad>();
-		for (Entidad e : horda.crearAtacantes3())
-			ret.add(e);
-		horda3 = false;
-		return ret;
-	}
-
-	@Override
-	public LinkedList<Entidad> getSigHorda() {
-		LinkedList<Entidad> toret = new LinkedList<Entidad>();
-		if (horda1) {
-			for (Entidad e : this.crearHorda1())
-				toret.add(e);
-		} else if (horda2) {
-			for (Entidad e : this.crearHorda2())
-				toret.add(e);
-		} else if (horda3) {
-			for (Entidad e : this.crearHorda3())
-				toret.add(e);
-		}
-
-		return toret;
-
-	}
-
-	@Override
-	protected LinkedList<Obstaculo> crearObstaculos1() {
-		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 1;// 4;
-		Random rand = new Random();
-		for (int i = 0; i < cantObstaculos; i++) {
-			int k = rand.nextInt(obstaculos.size());
-			Obstaculo clone = obstaculos.get(k).clone();
-			lista.add(clone);
-		}
-		obstaculos1 = false;
-		return lista;
-	}
-
-	@Override
-	protected LinkedList<Obstaculo> crearObstaculos2() {
-		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 1;// 5;
-		Random rand = new Random();
-		for (int i = 0; i < cantObstaculos; i++) {
-			int k = rand.nextInt(obstaculos.size());
-			Obstaculo clone = obstaculos.get(k).clone();
-			lista.add(clone);
-		}
-		obstaculos2 = false;
-		return lista;
-	}
-
-	@Override
-	protected LinkedList<Obstaculo> crearObstaculos3() {
-		LinkedList<Obstaculo> lista = new LinkedList<Obstaculo>();
-		int cantObstaculos = 1;// 7;
-		Random rand = new Random();
-		for (int i = 0; i < cantObstaculos; i++) {
-			int k = rand.nextInt(obstaculos.size());
-			Obstaculo clone = obstaculos.get(k).clone();
-			lista.add(clone);
-		}
-		obstaculos3 = false;
-		return lista;
-	}
-
-	@Override
-	public LinkedList<Obstaculo> getSigObstaculos() {
-		LinkedList<Obstaculo> toret = new LinkedList<Obstaculo>();
-		if (obstaculos1) {
-			for (Obstaculo o : this.crearObstaculos1())
-				toret.add(o);
-		} else if (obstaculos2) {
-			for (Obstaculo o : this.crearObstaculos2())
-				toret.add(o);
-		} else if (obstaculos3) {
-			for (Obstaculo o : this.crearObstaculos3())
-				toret.add(o);
-		}
-
-		return toret;
-	}
-	*/
-
 
 	@Override
 	public Nivel getSigNivel() {
@@ -138,18 +30,18 @@ public class Nivel3 extends Nivel {
 
 	@Override
 	protected void crearHordas() {
-		misHordas.add(new Horda(juego.getMapa(), 1));
-		misHordas.add(new Horda(juego.getMapa(), 1));
-		misHordas.add(new Horda(juego.getMapa(), 1));		
+		misHordas.add(new HordaDificil(juego.getMapa()));
+		misHordas.add(new HordaDificil(juego.getMapa()));
+		misHordas.add(new HordaDificil(juego.getMapa()));		
 	}
 
 	@Override
 	public LinkedList<Obstaculo> getObstaculos() {
-		return creadorObs.getObstaculosRandom(3);
+		return creadorObs.getObstaculosRandom(cantObs);
 	}
 
 	@Override
 	public LinkedList<Entidad> getSigHorda() {
-		return getHorda().crearAtacantesDificiles();
+		return getHorda().crearAtacantes(cantidadEnems);
 	}
 }

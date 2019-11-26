@@ -89,6 +89,7 @@ public abstract class Atacante extends Personaje {
 			int x = (int) this.getPos().getX();
 			int y = (int) this.getPos().getY();
 			aleatorio.getGrafico().getGrafico().setBounds(x, y, 120, 120);
+			//mapa.agregarEntidadAlCampoEnPosActual(aleatorio);
 			mapa.agregarPowerUp(x, y, aleatorio);
 		}
 	}
