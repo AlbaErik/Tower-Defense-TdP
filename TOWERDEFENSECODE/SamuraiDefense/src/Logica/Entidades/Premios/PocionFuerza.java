@@ -2,12 +2,17 @@ package Logica.Entidades.Premios;
 
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
+import Logica.Colisionadores.Premios.VisitorPocionFuerza;
+import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
 
 public class PocionFuerza extends Premio{
 
+	private Colisionador col;
+	
 	public PocionFuerza(int x, int y, Mapa m) {
 		super(x, y, m);
+		col = new VisitorPocionFuerza();
 		clave = 2;
 	}
 
@@ -30,9 +35,12 @@ public class PocionFuerza extends Premio{
 
 	@Override
 	public boolean queHago(int x,int y) {
-		if(mapa.hayEnPos(x, y))
-			mapa.getEntidadEnPos(x, y).subirFuerza(8000);
-		return mapa.hayEnPos(x, y);
+		Entidad ent;
+		if(mapa.hayEnPos(x, y)) {
+			ent = mapa.getEntidadEnPos(x, y);
+			ent.chocar(col);
+		}
+		return false;
 	}
 	
 	public void cambiarPosLogica(double x, int y){

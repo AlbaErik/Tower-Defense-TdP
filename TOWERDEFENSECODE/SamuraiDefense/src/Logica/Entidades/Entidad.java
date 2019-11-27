@@ -35,8 +35,7 @@ public abstract class Entidad {
 
 	public abstract void chocaraDistancia(VisitorDistancia v);
 
-	public void subirFuerza(int cant) {
-	}
+	//public void subirFuerza(int cant) {	}
 
 	public void incrementarContador() {
 		cont.incrementarContador();

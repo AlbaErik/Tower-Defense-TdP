@@ -81,7 +81,7 @@ public abstract class Atacante extends Personaje {
 		PowerUp aleatorio = null;
 		Random ran = new Random();
 		int i = ran.nextInt(10);
-		if (i % 2 == 0)
+		if (i % 1 == 0)
 			aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
@@ -89,7 +89,6 @@ public abstract class Atacante extends Personaje {
 			int x = (int) this.getPos().getX();
 			int y = (int) this.getPos().getY();
 			aleatorio.getGrafico().getGrafico().setBounds(x, y, 120, 120);
-			//mapa.agregarEntidadAlCampoEnPosActual(aleatorio);
 			mapa.agregarPowerUp(x, y, aleatorio);
 		}
 	}
