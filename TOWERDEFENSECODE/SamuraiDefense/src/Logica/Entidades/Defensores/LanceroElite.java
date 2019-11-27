@@ -14,7 +14,6 @@ public class LanceroElite extends Defensor {
 		super(x, y, m);
 		life = 300;
 		vida = 300;
-		attackSpeed = 2;
 		damage = 50;
 		range = 300;
 		cost = 250;

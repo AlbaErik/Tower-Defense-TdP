@@ -9,7 +9,6 @@ import Logica.Mapa.Mapa;
 public abstract class Personaje extends Entidad {
 	protected int damage;
 	protected int range;
-	protected double attackSpeed;
 	protected Arma arma;
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
@@ -52,10 +51,6 @@ public abstract class Personaje extends Entidad {
 
 	public int getRange() {
 		return range;
-	}
-
-	public double getAttackSpeed() {
-		return attackSpeed;
 	}
 
 	public abstract void atacar(Entidad aDestruir);

@@ -13,7 +13,6 @@ public class SacerdoteElite extends Defensor {
 		super(x, y, m);
 		life = 350;
 		vida = 350;
-		attackSpeed = 3;
 		damage = 70;
 		range = 0;
 		cost = 300;

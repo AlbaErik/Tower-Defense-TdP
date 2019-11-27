@@ -13,7 +13,6 @@ public class SamuraiElite extends Defensor {
 		super(x, y, m);
 		life = 500;
 		vida = 500;
-		attackSpeed = 3;
 		damage = 100;
 		range = 0;
 		cost = 450;

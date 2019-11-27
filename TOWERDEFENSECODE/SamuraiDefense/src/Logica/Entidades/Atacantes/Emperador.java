@@ -12,7 +12,6 @@ public class Emperador extends Atacante {
 	public Emperador(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 450;
-		attackSpeed = 4;
 		damage = 90;
 		range = 0;
 		movementSpeed = 0.5;

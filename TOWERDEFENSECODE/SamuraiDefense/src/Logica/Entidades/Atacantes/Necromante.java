@@ -12,7 +12,6 @@ public class Necromante extends Atacante {
 	public Necromante(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 300;
-		attackSpeed = 1;
 		damage = 45;
 		range = 0;
 		movementSpeed = 1.3;

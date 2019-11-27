@@ -13,7 +13,6 @@ public class EspadachinElite extends Defensor {
 		super(x, y, m);
 		life = 250;
 		vida = 250;
-		attackSpeed = 1;
 		damage = 40;
 		range = 0;
 		cost = 200;
