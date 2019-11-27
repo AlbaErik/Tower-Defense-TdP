@@ -3,6 +3,8 @@ package Logica.Mapa.Niveles;
 import java.util.LinkedList;
 
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Personaje;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Juego.Juego;
 import Logica.Mapa.Hordas.HordaFacil;
@@ -41,7 +43,7 @@ public class Nivel1 extends Nivel {
 	}
 
 	@Override
-	public LinkedList<Entidad> getSigHorda() {
+	public LinkedList<Atacante> getSigHorda() {
 		return getHorda().crearAtacantes(cantidadEnems);
 	}
 

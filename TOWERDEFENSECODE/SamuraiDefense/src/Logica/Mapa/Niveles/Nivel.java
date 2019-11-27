@@ -7,6 +7,7 @@ import Logica.Mapa.Hordas.Horda;
 import java.util.LinkedList;
 
 import Logica.Entidades.*;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 
 public abstract class Nivel {
@@ -39,7 +40,7 @@ public abstract class Nivel {
 		return toret;
 	}
 	
-	public abstract LinkedList<Entidad> getSigHorda();
+	public abstract LinkedList<Atacante> getSigHorda();
 
 	public boolean haySigHorda() {
 		return !misHordas.isEmpty();

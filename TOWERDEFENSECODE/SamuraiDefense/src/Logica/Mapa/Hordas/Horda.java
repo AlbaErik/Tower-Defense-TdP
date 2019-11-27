@@ -3,6 +3,7 @@ package Logica.Mapa.Hordas;
 import java.util.LinkedList;
 import java.util.Random;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Fabricas.FabricaAtacantes;
 import Logica.Mapa.Mapa;
@@ -24,8 +25,8 @@ public abstract class Horda {
 		return lista.get(i).crearAtacante();
 	}
 	
-	public LinkedList<Entidad> crearAtacantes(int cantidad) {
-		LinkedList<Entidad> list = new LinkedList<Entidad>();
+	public LinkedList<Atacante> crearAtacantes(int cantidad) {
+		LinkedList<Atacante> list = new LinkedList<Atacante>();
 		while(cantidad > 0) {
 			list.add(crearAtacanteRandom());
 			cantidad--;

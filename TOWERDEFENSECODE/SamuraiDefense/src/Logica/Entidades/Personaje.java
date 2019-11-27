@@ -4,6 +4,7 @@ import Armas.Arma;
 import Armas.ArmaSimple;
 import Logica.LargaVista;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
+import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Mapa.Mapa;
 
 public abstract class Personaje extends Entidad {
@@ -58,4 +59,5 @@ public abstract class Personaje extends Entidad {
 	public void perdioElJugador() {
 		mapa.perdioElJugador();
 	}
+
 }

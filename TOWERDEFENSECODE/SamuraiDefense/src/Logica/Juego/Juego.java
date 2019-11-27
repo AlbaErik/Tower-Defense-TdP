@@ -5,6 +5,7 @@ import java.util.Random;
 
 import GUI.Paneles.PanelJuego;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Entidades.Premios.EscudoEnemigo;
@@ -18,7 +19,7 @@ public class Juego {
 	private Tienda tienda;
 	private Nivel nivel;
 	private Mapa mapa;
-	private LinkedList<Entidad> miHorda;
+	private LinkedList<Atacante> miHorda;
 	private LinkedList<Obstaculo> misObstaculos;
 	private int contadorEnemigos = 0;
 	private boolean perdio = false;
@@ -129,7 +130,7 @@ public class Juego {
 	}
 
 	private void agregarAtacante() {
-		Entidad atacante = miHorda.getFirst();
+		Atacante atacante = miHorda.getFirst();
 		mapa.agregarEntidadAlCampo(atacante);
 		miHorda.remove(miHorda.getFirst());
 		contadorEnemigos++;
@@ -154,11 +155,11 @@ public class Juego {
 			misObstaculos = nivel.getObstaculos();
 	}
 
-	private void asignarEscudo(Entidad ent) {
-		int x = (int) ent.getPos().getX();
-		int y = (int) ent.getPos().getY();
+	private void asignarEscudo(Atacante atacante) {
+		int x = (int) atacante.getPos().getX();
+		int y = (int) atacante.getPos().getY();
 		EscudoEnemigo escudo = new EscudoEnemigo(x, y, mapa);
-		((Atacante) ent).setEscudo(escudo);
+		atacante.setEscudo(escudo);
 		mapa.agregarEntidadAlCampoEnPosActual(escudo);
 	}
 
