@@ -25,10 +25,6 @@ public class Ejecutor extends Atacante {
 		e.serChocado(this);
 	}
 
-	public Atacante clone() {
-		return new Ejecutor(0, 0, super.mapa);
-	}
-
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();

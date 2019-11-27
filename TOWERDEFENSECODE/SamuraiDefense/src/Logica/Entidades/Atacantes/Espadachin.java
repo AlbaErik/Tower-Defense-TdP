@@ -27,11 +27,6 @@ public class Espadachin extends Atacante {
 	}
 
 	@Override
-	public Atacante clone() {
-		return new Espadachin(0, 0, super.mapa);
-	}
-
-	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();
 	}

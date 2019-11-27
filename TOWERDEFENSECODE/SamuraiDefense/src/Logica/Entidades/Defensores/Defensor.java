@@ -37,9 +37,7 @@ public abstract class Defensor extends Personaje {
 	public int getCost() {
 		return cost;
 	}
-	
-	public abstract Defensor clone();
-	
+		
 	public void eliminarPorBoton() {
 		if (life <= vida && life > vida / 2)
 			mapa.actualizarOroTienda(cost);

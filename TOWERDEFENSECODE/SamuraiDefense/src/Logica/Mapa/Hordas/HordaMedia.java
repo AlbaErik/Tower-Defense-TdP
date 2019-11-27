@@ -1,7 +1,7 @@
 package Logica.Mapa.Hordas;
 
-import Logica.Entidades.Atacantes.Arquero;
-import Logica.Entidades.Atacantes.Ejecutor;
+import Logica.Fabricas.Atacantes.FabricaArquero;
+import Logica.Fabricas.Atacantes.FabricaEjecutor;
 import Logica.Mapa.Mapa;
 
 public class HordaMedia extends Horda {
@@ -12,8 +12,8 @@ public class HordaMedia extends Horda {
 	}
 	
 	private void inicializarHorda() {
-		lista.add(new Arquero(0, 0, mapa));
-		lista.add(new Ejecutor(0, 0, mapa));
+		lista.add(new FabricaArquero(mapa));
+		lista.add(new FabricaEjecutor(mapa));
 		
 	}
 

@@ -27,11 +27,6 @@ public class Emperador extends Atacante {
 	}
 
 	@Override
-	public Atacante clone() {
-		return new Emperador(0, 0, super.mapa);
-	}
-
-	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();
 	}

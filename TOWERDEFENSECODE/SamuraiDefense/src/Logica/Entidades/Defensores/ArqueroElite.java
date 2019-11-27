@@ -47,9 +47,4 @@ public class ArqueroElite extends Defensor {
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 
-	@Override
-	public Defensor clone() {
-		return new ArqueroElite(0, 0, mapa);
-	}
-
 }

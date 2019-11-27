@@ -47,9 +47,4 @@ public class LanceroElite extends Defensor {
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 
-	@Override
-	public Defensor clone() {
-		return new LanceroElite(0, 0, mapa);
-	}
-
 }

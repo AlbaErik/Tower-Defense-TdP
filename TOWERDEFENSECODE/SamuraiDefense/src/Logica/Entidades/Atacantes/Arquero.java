@@ -26,10 +26,6 @@ public class Arquero extends Atacante {
 		e.serChocado(this);
 	}
 
-	public Atacante clone() {
-		return new Arquero(0, 0, super.mapa);
-	}
-
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();

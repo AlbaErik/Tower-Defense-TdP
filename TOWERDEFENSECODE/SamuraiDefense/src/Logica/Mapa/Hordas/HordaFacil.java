@@ -1,6 +1,7 @@
 package Logica.Mapa.Hordas;
 
-import Logica.Entidades.Atacantes.*;
+import Logica.Fabricas.Atacantes.FabricaEspadachin;
+import Logica.Fabricas.Atacantes.FabricaNinja;
 import Logica.Mapa.Mapa;
 
 public class HordaFacil extends Horda {
@@ -11,8 +12,8 @@ public class HordaFacil extends Horda {
 	}
 
 	private void inicializarHorda() {
-		lista.add(new Ninja(0, 0, mapa));
-		lista.add(new Espadachin(0, 0, mapa));
+		lista.add(new FabricaNinja(mapa));
+		lista.add(new FabricaEspadachin(mapa));
 	}
 
 }

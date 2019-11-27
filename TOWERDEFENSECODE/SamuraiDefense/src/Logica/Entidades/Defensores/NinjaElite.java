@@ -47,9 +47,4 @@ public class NinjaElite extends Defensor {
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 
-	@Override
-	public Defensor clone() {
-		return new NinjaElite(0, 0, mapa);
-	}
-
 }

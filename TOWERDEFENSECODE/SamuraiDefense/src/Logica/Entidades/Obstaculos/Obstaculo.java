@@ -8,5 +8,4 @@ public abstract class Obstaculo extends Entidad {
 		super(x, y, m);
 	}
 
-	public abstract Obstaculo clone();
 }

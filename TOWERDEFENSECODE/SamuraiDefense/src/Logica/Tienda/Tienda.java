@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.Map;
 
 import GUI.Paneles.PanelTienda;
-import Logica.FabricaDefensores;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Entidades.Premios.Premio;
 import Logica.Juego.Juego;
@@ -23,7 +22,6 @@ public class Tienda {
 	private Juego juego;
 	private Defensor personajeActual;
 	protected Premio premioActual;
-	private FabricaDefensores fabrica;
 	private Map<Integer, LinkedList<Premio>> powerUps;
 
 	public Tienda(Juego j) {
@@ -38,7 +36,6 @@ public class Tienda {
 		
 		mapa = juego.getMapa();
 		tienda = new PanelTienda(this);
-		fabrica = new FabricaDefensores();
 		inicializarMapeo();
 	}
 
@@ -129,10 +126,6 @@ public class Tienda {
 		Defensor toret = personajeActual;
 		personajeActual = null;
 		return toret;
-	}
-
-	public FabricaDefensores getFabrica() {
-		return fabrica;
 	}
 
 	public void actualizarOro(int o) {

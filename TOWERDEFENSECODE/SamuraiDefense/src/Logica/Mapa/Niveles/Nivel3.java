@@ -15,7 +15,6 @@ public class Nivel3 extends Nivel {
 		cantidadEnems = 1;
 		cantObs = 2;
 		siguiente = null;
-		
 	}
 
 	@Override

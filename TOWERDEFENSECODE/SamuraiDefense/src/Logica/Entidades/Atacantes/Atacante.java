@@ -121,9 +121,7 @@ public abstract class Atacante extends Personaje {
 	public Inteligencia getInteligencia() {
 		return intel;
 	}
-
-	public abstract Atacante clone();
-
+	
 	public int getDañoArma() {
 		return arma.getDaño();
 	}

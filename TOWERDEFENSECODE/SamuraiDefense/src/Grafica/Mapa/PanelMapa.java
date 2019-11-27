@@ -14,7 +14,6 @@ import Logica.Entidades.Entidad;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
-import Logica.PowerUps.PowerUp;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -41,12 +40,6 @@ public class PanelMapa extends JPanel {
 		remove(label);
 		repaint();
 	}
-	
-	private void agregarPowerUp(int x, int y, PowerUp power) {
-		JLabel nuevo = power.getGrafico().getGrafico();
-		agregarLabel(nuevo);
-
-	}
 
 	public void agregarEntidad(Entidad e) {
 
@@ -61,11 +54,6 @@ public class PanelMapa extends JPanel {
 
 		agregarLabel(nuevo);
 
-	}
-
-	private void agregarEntidadEnPosActual(Entidad e) {
-		JLabel nuevo = e.getGrafico().getGraficoActual();
-		agregarLabel(nuevo);
 	}
 	
 	public void agregarLabel(JLabel nuevo) {
@@ -100,7 +88,6 @@ public class PanelMapa extends JPanel {
 				if (mapa.hayEnPos(x, y)) {
 					Entidad aEliminar = mapa.getEntidadEnPos(x, y);
 					aEliminar.eliminarPorBoton();
-
 				}
 
 			} else if (mapa.hayPremioActual()) { // PARA PREMIOS
@@ -136,9 +123,7 @@ public class PanelMapa extends JPanel {
 					add(nuevo);
 					repaint();
 				}
-
 			}
-
 		}
 
 		@Override
@@ -157,5 +142,4 @@ public class PanelMapa extends JPanel {
 		Graphics g = this.getGraphics();
 		g.drawImage(i, 0, 0, this.getWidth(), this.getHeight(), this);
 	}
-
 }

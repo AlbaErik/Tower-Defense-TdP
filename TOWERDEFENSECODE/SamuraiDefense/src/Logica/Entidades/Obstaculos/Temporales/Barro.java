@@ -52,11 +52,6 @@ public class Barro extends Obstaculo{
 	}
 
 	@Override
-	public Obstaculo clone() {
-		return new Barro(0, 0, mapa);
-	}
-
-	@Override
 	public void chocaraDistancia(VisitorDistancia v) {
 		v.serChocado(this);
 	}	

@@ -44,9 +44,4 @@ public class EspadachinElite extends Defensor {
 			aDestruir.recibirDaño(damage * 4);
 	}
 
-	@Override
-	public Defensor clone() {
-		return new EspadachinElite(0, 0, mapa);
-	}
-
 }

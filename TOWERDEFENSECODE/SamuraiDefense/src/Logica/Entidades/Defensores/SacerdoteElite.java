@@ -44,9 +44,4 @@ public class SacerdoteElite extends Defensor {
 			aDestruir.recibirDaño(damage*4);
 	}
 
-	@Override
-	public Defensor clone() {
-		return new SacerdoteElite(0, 0, mapa);
-	}
-
 }

@@ -1,7 +1,7 @@
 package Logica.Mapa.Hordas;
 
-import Logica.Entidades.Atacantes.Emperador;
-import Logica.Entidades.Atacantes.Necromante;
+import Logica.Fabricas.Atacantes.FabricaEmperador;
+import Logica.Fabricas.Atacantes.FabricaNecromante;
 import Logica.Mapa.Mapa;
 
 public class HordaDificil extends Horda {
@@ -13,8 +13,8 @@ public class HordaDificil extends Horda {
 	}
 	
 	private void inicializarHorda() {
-		lista.add(new Necromante(0, 0, mapa));
-		lista.add(new Emperador(0, 0, mapa));
+		lista.add(new FabricaNecromante(mapa));
+		lista.add(new FabricaEmperador(mapa));
 	}
 	
 }

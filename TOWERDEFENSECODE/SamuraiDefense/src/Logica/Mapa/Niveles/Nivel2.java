@@ -24,7 +24,6 @@ public class Nivel2 extends Nivel {
 
 	@Override
 	public boolean haySigNivel() {
-		// TODO Auto-generated method stub
 		return siguiente != null;
 	}
 

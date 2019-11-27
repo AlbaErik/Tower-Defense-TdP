@@ -44,9 +44,4 @@ public class SamuraiElite extends Defensor {
 			aDestruir.recibirDaño(damage * 4);
 	}
 
-	@Override
-	public Defensor clone() {
-		return new SamuraiElite(0, 0, mapa);
-	}
-
 }
