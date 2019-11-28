@@ -13,8 +13,10 @@ public class BotonArqueroElite extends BotonDefensor {
 
 	@Override
 	public Defensor crearDefensor() {
-		//return tienda.getFabrica().crearArqueroElite(tienda.getJuego().getMapa());
-		return new ArqueroElite(0,0,map);
+
+		return new ArqueroElite(0, 0, tienda.getJuego().getMapa());
+
+
 	}
 
 }

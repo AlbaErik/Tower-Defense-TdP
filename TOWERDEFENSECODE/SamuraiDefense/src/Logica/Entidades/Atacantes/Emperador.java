@@ -12,7 +12,6 @@ public class Emperador extends Atacante {
 	public Emperador(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 450;
-		attackSpeed = 4;
 		damage = 90;
 		range = 0;
 		movementSpeed = 0.5;
@@ -24,11 +23,6 @@ public class Emperador extends Atacante {
 	@Override
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
-	}
-
-	@Override
-	public Atacante clone() {
-		return new Emperador(0, 0, super.mapa);
 	}
 
 	@Override

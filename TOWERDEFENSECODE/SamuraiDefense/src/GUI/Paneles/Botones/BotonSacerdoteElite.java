@@ -1,6 +1,7 @@
 package GUI.Paneles.Botones;
 
 import Logica.Entidades.Defensores.Defensor;
+import Logica.Entidades.Defensores.SacerdoteElite;
 import Logica.Tienda.Tienda;
 
 public class BotonSacerdoteElite extends BotonDefensor {
@@ -12,7 +13,9 @@ public class BotonSacerdoteElite extends BotonDefensor {
 
 	@Override
 	public Defensor crearDefensor() {
-		return tienda.getFabrica().crearSacerdoteElite(tienda.getJuego().getMapa());
+		return new SacerdoteElite(0, 0, tienda.getJuego().getMapa());
+
+		//return tienda.getFabrica().crearSacerdoteElite(tienda.getJuego().getMapa());
 	}
 
 }

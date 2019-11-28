@@ -14,11 +14,10 @@ public class ArqueroElite extends Defensor {
 		super(x, y, m);
 		life = 150;
 		vida = 150;
-		attackSpeed = 1;
 		damage = 35;
 		range = 400;
 		cost = 100;
-
+		
 		grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
 		arma = new Arco(this, m);
 	}
@@ -45,11 +44,6 @@ public class ArqueroElite extends Defensor {
 		Municion mun = arma.crearMunicionDefensor();
 		mun.setDaño(damage * 4);
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
-	}
-
-	@Override
-	public Defensor clone() {
-		return new ArqueroElite(0, 0, mapa);
 	}
 
 }

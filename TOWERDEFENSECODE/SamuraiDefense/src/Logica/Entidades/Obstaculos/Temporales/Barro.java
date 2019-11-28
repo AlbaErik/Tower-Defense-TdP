@@ -13,7 +13,7 @@ public class Barro extends Obstaculo{
 	private int lentitud;
 	public Barro(int x,int y,Mapa m) {
 		super(x,y,m);
-		life = 1000000000;
+		life = 1000;
 		lentitud = 1;
 		
 		grafico = new BarroGrafico(y, y, mapa.getPanelMapa(), this);
@@ -46,12 +46,9 @@ public class Barro extends Obstaculo{
 
 	@Override
 	public void ejecutarEstado() {
-
-	}
-
-	@Override
-	public Obstaculo clone() {
-		return new Barro(0, 0, mapa);
+		life--;
+		if(life <= 0 )
+			morir();
 	}
 
 	@Override

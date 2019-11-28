@@ -1,74 +1,55 @@
 package Logica.Mapa.Niveles;
 
 import Logica.Juego.Juego;
+import Logica.Mapa.HordaObstaculos.CreadorObstaculo;
 import Logica.Mapa.Hordas.Horda;
 
 import java.util.LinkedList;
 
 import Logica.Entidades.*;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
-import Logica.Entidades.Obstaculos.ConVida.Piedra;
-import Logica.Entidades.Obstaculos.Temporales.Barro;
 
 public abstract class Nivel {
 
-	// AGREGAR FONDO
-
-	protected Horda horda;
-	protected boolean horda1, horda2, horda3, obstaculos1, obstaculos2, obstaculos3;
+	protected CreadorObstaculo creadorObs;
 	protected Juego juego;
 	protected Nivel siguiente;
+	protected LinkedList<Horda> misHordas;
 	protected LinkedList<Obstaculo> obstaculos;
+	protected int cantidadEnems;
+	protected int cantObs;
 
 	protected Nivel(Juego j) {
 		juego = j;
-		juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
+		
+		//juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 		obstaculos = new LinkedList<Obstaculo>();
-		crearListaObstaculos();
-
+		misHordas = new LinkedList<Horda>();
+		creadorObs = new CreadorObstaculo(juego.getMapa());
 	}
 
-	private void crearListaObstaculos() {
-		obstaculos.add(new Piedra(0, 0, juego.getMapa()));
-		obstaculos.add(new Barro(0, 0, juego.getMapa()));
+	protected abstract void crearHordas();
+
+	protected Horda getHorda() {
+		Horda toret = null;
+		if (!misHordas.isEmpty()) {
+			toret = misHordas.getFirst();
+			misHordas.removeFirst();
+		}
+		return toret;
 	}
-
-	protected abstract LinkedList<Entidad> crearHorda1();
-
-	protected abstract LinkedList<Entidad> crearHorda2();
-
-	protected abstract LinkedList<Entidad> crearHorda3();
-
-	public abstract LinkedList<Entidad> getSigHorda();
+	
+	public abstract LinkedList<Atacante> getSigHorda();
 
 	public boolean haySigHorda() {
-		boolean toret = false;
-		if (horda1 || horda2 || horda3)
-			toret = true;
-		return toret;
+		return !misHordas.isEmpty();
 	}
+	
+	public abstract LinkedList<Obstaculo> getObstaculos();
 
-	protected abstract LinkedList<Obstaculo> crearObstaculos1();
-
-	protected abstract LinkedList<Obstaculo> crearObstaculos2();
-
-	protected abstract LinkedList<Obstaculo> crearObstaculos3();
-
-	public abstract LinkedList<Obstaculo> getSigObstaculos();
-
-	public boolean haySigObstaculos() {
-		boolean toret = false;
-		if (obstaculos1 || obstaculos2 || obstaculos3)
-			toret = true;
-		return toret;
-	}
-
-	public abstract Nivel setSigNivel();
+	public abstract Nivel getSigNivel();
 
 	public abstract boolean haySigNivel();
-
-	public Juego getJuego() {
-		return juego;
-	}
 
 }

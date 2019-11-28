@@ -13,7 +13,6 @@ public class EspadachinElite extends Defensor {
 		super(x, y, m);
 		life = 250;
 		vida = 250;
-		attackSpeed = 1;
 		damage = 40;
 		range = 0;
 		cost = 200;
@@ -42,11 +41,6 @@ public class EspadachinElite extends Defensor {
 	public void superAtaque(Entidad aDestruir) {
 		if (aDestruir != null)
 			aDestruir.recibirDaño(damage * 4);
-	}
-
-	@Override
-	public Defensor clone() {
-		return new EspadachinElite(0, 0, mapa);
 	}
 
 }

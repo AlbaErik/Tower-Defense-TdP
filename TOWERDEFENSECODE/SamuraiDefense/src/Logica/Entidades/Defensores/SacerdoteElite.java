@@ -13,7 +13,6 @@ public class SacerdoteElite extends Defensor {
 		super(x, y, m);
 		life = 350;
 		vida = 350;
-		attackSpeed = 3;
 		damage = 70;
 		range = 0;
 		cost = 300;
@@ -42,11 +41,6 @@ public class SacerdoteElite extends Defensor {
 	public void superAtaque(Entidad aDestruir) {
 		if (aDestruir != null) 
 			aDestruir.recibirDaño(damage*4);
-	}
-
-	@Override
-	public Defensor clone() {
-		return new SacerdoteElite(0, 0, mapa);
 	}
 
 }

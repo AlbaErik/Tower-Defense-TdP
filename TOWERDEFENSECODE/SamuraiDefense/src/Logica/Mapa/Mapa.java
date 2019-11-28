@@ -40,11 +40,12 @@ public class Mapa {
 	}
 	
 	public void agregarPowerUp(int x, int y, PowerUp power) {
-		mapagrafico.agregarPowerUp(x,y,power);
+		mapagrafico.agregarLabel(power.getGrafico().getGrafico());
+		//mapagrafico.agregarPowerUp(x,y,power);
 	}
 	
 	public void eliminarPowerUp(PowerUp power) {
-		mapagrafico.eliminarPowerUp(power);
+		mapagrafico.eliminarLabel(power.getGrafico().getGrafico());
 	}
 	
 	public void agregarPremioTienda(int c, Premio p) {
@@ -56,7 +57,9 @@ public class Mapa {
 	}
 
 	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
-		mapagrafico.agregarEntidadEnPosActual(e);
+		setEntidad(e);
+		mapagrafico.agregarLabel(e.getGrafico().getGraficoActual());
+		//mapagrafico.agregarEntidadEnPosActual(e);
 	}
 	
 	public void actualizarOroTienda(int o) {
@@ -72,13 +75,16 @@ public class Mapa {
 	}
 	
 	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
-		Entidad actual = misEntidades.getFirst();
+		Entidad actual = null;//misEntidades.getFirst();
 		for (Entidad i : misEntidades) {
 			if (i.hashCode() == e.hashCode())
 				actual = i;
-		}		
-		misEntidades.remove(actual);
-		mapagrafico.eliminarEntidad(actual);		
+		}
+		if(actual != null) {
+			misEntidades.remove(actual);
+			mapagrafico.eliminarLabel(actual.getGrafico().getGraficoActual());
+		}
+		
 	}	
 
 	public boolean hayEntidades() {
@@ -93,6 +99,10 @@ public class Mapa {
 
 			if ((X == (double) x) && (Y == (double) y))
 				ocupada = true;
+			else {
+				if( (X == (double) x) && (y == misEntidades.get(i).getPos().getAlto()/2))
+					ocupada = true;
+			}
 		}
 		return ocupada;
 	}

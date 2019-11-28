@@ -13,7 +13,6 @@ public class SamuraiElite extends Defensor {
 		super(x, y, m);
 		life = 500;
 		vida = 500;
-		attackSpeed = 3;
 		damage = 100;
 		range = 0;
 		cost = 450;
@@ -42,11 +41,6 @@ public class SamuraiElite extends Defensor {
 	public void superAtaque(Entidad aDestruir) {
 		if (aDestruir != null)
 			aDestruir.recibirDaño(damage * 4);
-	}
-
-	@Override
-	public Defensor clone() {
-		return new SamuraiElite(0, 0, mapa);
 	}
 
 }

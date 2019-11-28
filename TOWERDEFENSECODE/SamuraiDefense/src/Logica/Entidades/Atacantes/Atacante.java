@@ -2,8 +2,8 @@ package Logica.Entidades.Atacantes;
 
 import java.util.Random;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
-import Logica.LargaVistaAtacante;
 import Logica.Colisionadores.ColisionadorAtacante;
+import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
@@ -29,7 +29,7 @@ public abstract class Atacante extends Personaje {
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
 
-		colCaminoLibre = new LargaVistaAtacante();
+		visitorCaminoLibre = new ColCaminoLibreEnem(this);
 		tiendaPowerUp = new TiendaPowerUp(m);
 		intel = new InteligenciaAtacante(this);
 		estado = new Avanzar(this);
@@ -81,13 +81,14 @@ public abstract class Atacante extends Personaje {
 		PowerUp aleatorio = null;
 		Random ran = new Random();
 		int i = ran.nextInt(10);
-		if (i % 2 == 0)
-			aleatorio = new Barricada(mapa);
-			//aleatorio = tiendaPowerUp.getRandom();
+		if (i % 1 == 0)
+			aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
+			
 			int x = (int) this.getPos().getX();
 			int y = (int) this.getPos().getY();
+			aleatorio.getGrafico().getGrafico().setBounds(x, y, 120, 120);
 			mapa.agregarPowerUp(x, y, aleatorio);
 		}
 	}
@@ -108,26 +109,12 @@ public abstract class Atacante extends Personaje {
 		return -1;
 	}
 
-	public void setGrafico(AtacanteGrafico graf) {
-		this.grafico = graf;
-	}
-
 	public double getVelocidadMov() {
 		return movementSpeed;
 	}
 
 	public Inteligencia getInteligencia() {
 		return intel;
-	}
-
-	public abstract Atacante clone();
-
-	public int getDañoArma() {
-		return arma.getDaño();
-	}
-
-	public Municion getMunicion() {
-		return arma.crearMunicionAtacante();
 	}
 
 	public int dineroDropeado() {

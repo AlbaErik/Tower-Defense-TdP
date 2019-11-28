@@ -12,7 +12,6 @@ public class Espadachin extends Atacante {
 	public Espadachin(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 260;
-		attackSpeed = 1;
 		damage = 50;
 		range = 0;
 		movementSpeed = 1.5;
@@ -24,11 +23,6 @@ public class Espadachin extends Atacante {
 	@Override
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
-	}
-
-	@Override
-	public Atacante clone() {
-		return new Espadachin(0, 0, super.mapa);
 	}
 
 	@Override

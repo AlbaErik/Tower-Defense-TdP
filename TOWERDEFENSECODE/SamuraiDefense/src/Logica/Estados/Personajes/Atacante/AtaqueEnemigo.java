@@ -2,35 +2,36 @@ package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Personaje;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Personajes.EstadoPersonaje;
 
-public class AtaqueEnemigo extends EstadoPersonaje {
+public class AtaqueEnemigo extends EstadoAtacante {
 
-	public AtaqueEnemigo(Personaje e) {
+	public AtaqueEnemigo(Atacante e) {
 		super(e);
 		dejoPasar = false;
 	}
 
 	@Override
 	public void ejecutar() {
-		if (personaje.getLife() <= 0) {
-			matarPersonaje();
+		if (atacante.getLife() <= 0) {
+			matarPersonaje(atacante);
 		} else {
 			
-			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
+			PersonajeGrafico p = (PersonajeGrafico) atacante.getGrafico();
 			p.attack();
 
-			if (personaje.getContador() % 50 == 0) {
+			if (atacante.getContador() % 50 == 0) {
 
-				personaje.atacar(aDestruir);
+				atacante.atacar(aDestruir);
 
-				if (tengoCaminoLibre()) {
-					personaje.cambiarEstado(new Avanzar(personaje));
-					personaje.resetContador();
+				if (tengoCaminoLibre(atacante)) {
+					atacante.cambiarEstado(new Avanzar(atacante));
+					atacante.resetContador();
 				}
-				personaje.resetContador();
+				atacante.resetContador();
 			}
-			personaje.incrementarContador();
+			atacante.incrementarContador();
 		}
 	}
 }

@@ -35,9 +35,6 @@ public abstract class Entidad {
 
 	public abstract void chocaraDistancia(VisitorDistancia v);
 
-	public void subirFuerza(int cant) {
-	}
-
 	public void incrementarContador() {
 		cont.incrementarContador();
 	}
@@ -65,8 +62,9 @@ public abstract class Entidad {
 	}
 
 	public void cambiarEstado(Estado e) {
-		if (permisoCambiarEstado)
+		if (permisoCambiarEstado) {
 			estado = e;
+		}
 	}
 
 	public void eliminarPorBoton() {}

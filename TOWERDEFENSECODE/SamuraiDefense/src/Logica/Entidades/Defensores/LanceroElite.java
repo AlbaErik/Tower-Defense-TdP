@@ -14,7 +14,6 @@ public class LanceroElite extends Defensor {
 		super(x, y, m);
 		life = 300;
 		vida = 300;
-		attackSpeed = 2;
 		damage = 50;
 		range = 300;
 		cost = 250;
@@ -45,11 +44,6 @@ public class LanceroElite extends Defensor {
 		Municion mun = arma.crearMunicionDefensor();
 		mun.setDaño(damage * 4);
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
-	}
-
-	@Override
-	public Defensor clone() {
-		return new LanceroElite(0, 0, mapa);
 	}
 
 }

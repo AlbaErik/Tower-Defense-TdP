@@ -37,11 +37,6 @@ public class Piedra extends Obstaculo {
 	}
 
 	@Override
-	public Obstaculo clone() {
-		return new Piedra(0, 0, mapa);
-	}
-
-	@Override
 	public void chocaraDistancia(VisitorDistancia v) {
 		v.serChocado(this);
 	}

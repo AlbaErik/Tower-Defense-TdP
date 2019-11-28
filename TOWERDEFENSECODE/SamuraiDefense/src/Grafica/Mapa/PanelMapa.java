@@ -14,7 +14,6 @@ import Logica.Entidades.Entidad;
 import Logica.Entidades.Defensores.Defensor;
 import Logica.Entidades.Premios.Premio;
 import Logica.Mapa.Mapa;
-import Logica.PowerUps.PowerUp;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -37,22 +36,8 @@ public class PanelMapa extends JPanel {
 		return mapa;
 	}
 
-	public void eliminarEntidad(Entidad e) {
-		JLabel d = e.getGrafico().getGraficoActual();
-		this.remove(d);
-		repaint();
-	}
-
-	public void eliminarPowerUp(PowerUp power) {
-		JLabel p = power.getGrafico().getGrafico();
-		this.remove(p);
-		repaint();
-	}
-
-	public void agregarPowerUp(int x, int y, PowerUp power) {
-		JLabel nuevo = power.getGrafico().getGrafico();
-		nuevo.setBounds(x, y, 120, 120);
-		add(nuevo);
+	public void eliminarLabel(JLabel label) {
+		remove(label);
 		repaint();
 	}
 
@@ -67,14 +52,11 @@ public class PanelMapa extends JPanel {
 		mapa.setEntidad(e);
 		JLabel nuevo = e.getGrafico().getGraficoActual();
 
-		add(nuevo);
-		repaint();
+		agregarLabel(nuevo);
+
 	}
-
-	public void agregarEntidadEnPosActual(Entidad e) {
-		mapa.setEntidad(e);
-		JLabel nuevo = e.getGrafico().getGraficoActual();
-
+	
+	public void agregarLabel(JLabel nuevo) {
 		add(nuevo);
 		repaint();
 	}
@@ -106,9 +88,8 @@ public class PanelMapa extends JPanel {
 				if (mapa.hayEnPos(x, y)) {
 					Entidad aEliminar = mapa.getEntidadEnPos(x, y);
 					aEliminar.eliminarPorBoton();
-
 				}
-
+				
 			} else if (mapa.hayPremioActual()) { // PARA PREMIOS
 				int x = 0;
 				int y = 0;
@@ -142,9 +123,7 @@ public class PanelMapa extends JPanel {
 					add(nuevo);
 					repaint();
 				}
-
 			}
-
 		}
 
 		@Override
@@ -163,5 +142,4 @@ public class PanelMapa extends JPanel {
 		Graphics g = this.getGraphics();
 		g.drawImage(i, 0, 0, this.getWidth(), this.getHeight(), this);
 	}
-
 }

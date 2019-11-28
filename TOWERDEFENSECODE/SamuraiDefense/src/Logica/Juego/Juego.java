@@ -5,6 +5,7 @@ import java.util.Random;
 
 import GUI.Paneles.PanelJuego;
 import Logica.Entidades.Entidad;
+import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Entidades.Premios.EscudoEnemigo;
@@ -18,15 +19,17 @@ public class Juego {
 	private Tienda tienda;
 	private Nivel nivel;
 	private Mapa mapa;
-	private LinkedList<Entidad> miHorda;
+	private LinkedList<Atacante> miHorda;
 	private LinkedList<Obstaculo> misObstaculos;
 	private int contadorEnemigos = 0;
 	private boolean perdio = false;
+	private Random rand;
 
 	public Juego(PanelJuego g) {
 		Gui = g;
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
+		rand = new Random();
 	}
 
 	public void hacerPerderAlJugador() {
@@ -37,7 +40,7 @@ public class Juego {
 		return perdio;
 	}
 
-	public boolean controlGanar() {
+	public boolean enemigosMuertos() {
 		return contadorEnemigos == 0;
 	}
 
@@ -57,37 +60,61 @@ public class Juego {
 		miHorda = nivel.getSigHorda();
 	}
 
-	public void generarObstaculos() {
-		misObstaculos = nivel.getSigObstaculos();
-		while (!misObstaculos.isEmpty()) {
-			double x = randomX();
-			int y = randomY();
-			Obstaculo obs = misObstaculos.getFirst();
-			obs.cambiarPosLogica(x, y);
-			mapa.agregarEntidadAlCampoEnPosActual(obs);
-			misObstaculos.remove(misObstaculos.getFirst());
-		}
-
+	private int randomY() {
+		int fila = rand.nextInt(5);
+		fila = fila * 66 + 183;
+		return fila;
 	}
 
-	public void agregarEntidades() { // cambiar, que agregue de a uno y que lo mueva
-		if (!misObstaculos.isEmpty()) {
-			int x = randomX();
-			int y = randomY();
-			while (!verificarLugarEnMapa(x, y)) { // Si no se puede colocar, devuelve false
-				x = randomX();
-				y = randomY();
-			}
+	private int randomX() {
+		int x = rand.nextInt(3);
+		x = x * 100;
+		return x + 500;
+	}
+
+	private int[] buscarPosRandom() {
+		int[] toret = new int[2];
+		int x = randomX();
+		int y = randomY();
+		int intentos = 30;
+		boolean esValida = verificarLugarEnMapa(x, y);
+
+		while (intentos > 0 && !esValida) {
+			x = randomX();
+			y = randomY();
+			esValida = verificarLugarEnMapa(x, y);
+			intentos--;
+		}
+		toret[0] = x;
+		toret[1] = y;
+		return toret;
+	}
+
+	public void generarObstaculos() {
+		misObstaculos = nivel.getObstaculos();
+		while (!misObstaculos.isEmpty()) {
+			agregarObsEnPosRandom();
+		}
+	}
+	
+	private void agregarObsEnPosRandom() {
+		int x = randomX();
+		int y = randomY();
+		int intentos = 30;
+		while (intentos > 0 && mapa.hayEnPos(x, y)) { // Si no se puede colocar, devuelve false
+			x = randomX();
+			y = randomY();
+			intentos--;
+		}
+		if (intentos >= 0 && !mapa.hayEnPos(x, y))
 			agregarObstaculo(x, y);
-		} else if (!miHorda.isEmpty())
+	}
+
+	public void agregarEntidades() {
+		if (!misObstaculos.isEmpty()) {
+			agregarObsEnPosRandom();			
+		} else if (!miHorda.isEmpty()) {
 			agregarAtacante();
-
-		if (miHorda.isEmpty() && misObstaculos.isEmpty()) {// Si ya se vencio a la horda y ya se pusieron los obstaculos
-			if (nivel.haySigHorda())
-				miHorda = nivel.getSigHorda();
-
-			if (nivel.haySigObstaculos())
-				misObstaculos = nivel.getSigObstaculos();
 		}
 	}
 
@@ -99,7 +126,7 @@ public class Juego {
 	}
 
 	private void agregarAtacante() {
-		Entidad atacante = miHorda.getFirst();
+		Atacante atacante = miHorda.getFirst();
 		mapa.agregarEntidadAlCampo(atacante);
 		miHorda.remove(miHorda.getFirst());
 		contadorEnemigos++;
@@ -110,30 +137,30 @@ public class Juego {
 		}
 	}
 
-	private void asignarEscudo(Entidad ent) {
-		int x = (int) ent.getPos().getX();
-		int y = (int) ent.getPos().getY();
+	public boolean hordaVacia() {
+		return miHorda.isEmpty();
+	}
+
+	public void cargarSigHorda() {
+		System.out.println("JUEGO----se va cargar la siguiente horda");
+		if (nivel.haySigHorda())
+			miHorda = nivel.getSigHorda();
+		else
+			setSigNivel();
+		if (nivel.haySigNivel())
+			misObstaculos = nivel.getObstaculos();
+	}
+
+	private void asignarEscudo(Atacante atacante) {
+		int x = (int) atacante.getPos().getX();
+		int y = (int) atacante.getPos().getY();
 		EscudoEnemigo escudo = new EscudoEnemigo(x, y, mapa);
-		((Atacante) ent).setEscudo(escudo);
+		atacante.setEscudo(escudo);
 		mapa.agregarEntidadAlCampoEnPosActual(escudo);
 	}
 
 	public boolean nivelTerminado() {
-		return miHorda.isEmpty() && misObstaculos.isEmpty() && nivel.haySigNivel();
-	}
-
-	private int randomY() {
-		Random rand = new Random();
-		int fila = rand.nextInt(5);
-		fila = fila * 66 + 183;
-		return fila;
-	}
-
-	private int randomX() {
-		Random rand = new Random();
-		int x = rand.nextInt(3);
-		x = x * 100;
-		return x + 500;
+		return miHorda.isEmpty() && misObstaculos.isEmpty() && !nivel.haySigHorda();
 	}
 
 	private boolean verificarLugarEnMapa(int x, int y) {// Verifica si se puede colocar una entidad en ese lugar
@@ -156,9 +183,14 @@ public class Juego {
 			e.ejecutarEstado();
 	}
 
-	public void reanudar() {// METODO PARA BOTONPAUSA
+	public boolean haySiguienteNivel() {
+		return nivel.haySigNivel();
 	}
 
+	public boolean haySigHorda() {
+		return nivel.haySigHorda();
+	}
+	
 	public Tienda getTienda() {
 		return tienda;
 	}
@@ -167,21 +199,19 @@ public class Juego {
 		return Gui;
 	}
 
-	public boolean haySiguienteNivel() {
-		return nivel.haySigNivel();
-	}
-
 	public Nivel getNivel() {
 		return nivel;
 	}
 
 	public void setSigNivel() {
-		if (nivel.haySigNivel())
-			nivel = nivel.setSigNivel();
+		if (nivel.haySigNivel()) {
+			nivel = nivel.getSigNivel();
+			System.out.println("JUEGO-----Se setea siguiente nivel");
+		}
 	}
 
 	public Mapa getMapa() {
 		return mapa;
 	}
-	
+
 }

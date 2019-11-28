@@ -13,7 +13,6 @@ public class Arquero extends Atacante {
 	public Arquero(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 160;
-		attackSpeed = 1;
 		damage = 30;
 		range = 200;
 		movementSpeed = 1.5;
@@ -24,10 +23,6 @@ public class Arquero extends Atacante {
 
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
-	}
-
-	public Atacante clone() {
-		return new Arquero(0, 0, super.mapa);
 	}
 
 	@Override

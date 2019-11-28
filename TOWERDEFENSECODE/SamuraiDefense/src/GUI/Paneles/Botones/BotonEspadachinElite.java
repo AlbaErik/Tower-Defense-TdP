@@ -1,6 +1,7 @@
 package GUI.Paneles.Botones;
 
 import Logica.Entidades.Defensores.Defensor;
+import Logica.Entidades.Defensores.EspadachinElite;
 import Logica.Tienda.Tienda;
 
 public class BotonEspadachinElite extends BotonDefensor {
@@ -12,7 +13,9 @@ public class BotonEspadachinElite extends BotonDefensor {
 
 	@Override
 	public Defensor crearDefensor() {
-		return tienda.getFabrica().crearEspadachinElite(tienda.getJuego().getMapa());
+		return new EspadachinElite(0, 0, tienda.getJuego().getMapa());
+
+		//return tienda.getFabrica().crearEspadachinElite(tienda.getJuego().getMapa());
 	}
 
 }

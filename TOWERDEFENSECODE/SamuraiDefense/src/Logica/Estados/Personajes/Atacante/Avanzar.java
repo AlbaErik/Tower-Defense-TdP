@@ -1,13 +1,13 @@
 package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
-import Logica.Entidades.Personaje;
-import Logica.Estados.Personajes.EstadoPersonaje;
+import Grafica.Entidades.Atacantes.AtacanteGrafico;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Personajes.Atacante.AtaqueEnemigo;
 
-public class Avanzar extends EstadoPersonaje {
+public class Avanzar extends EstadoAtacante {
 
-	public Avanzar(Personaje e) {
+	public Avanzar(Atacante e) {
 		super(e);
 		dejoPasar = true;
 	}
@@ -15,19 +15,19 @@ public class Avanzar extends EstadoPersonaje {
 	@Override
 	public void ejecutar() {
 
-		if (personaje.getLife() <= 0) {
-			matarPersonaje();
+		if (atacante.getLife() <= 0) {
+			matarPersonaje(atacante);
 		} else {
 
-			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
+			AtacanteGrafico p = (AtacanteGrafico) atacante.getGrafico();
 			p.running();
-			personaje.getInteligencia().mover();
+			atacante.getInteligencia().mover();
 
-			if (personaje.getPos().getX() == 0)
-				personaje.perdioElJugador();
+			if (atacante.getPos().getX() == 0)
+				atacante.perdioElJugador();
 
-			if (personaje.getRange() > 0 && !tengoCaminoLibre())
-				personaje.cambiarEstado(new AtaqueEnemigo(personaje));
+			if (atacante.getRange() > 0 && !tengoCaminoLibre(atacante))
+				atacante.cambiarEstado(new AtaqueEnemigo(atacante));
 		}
 	}
 }

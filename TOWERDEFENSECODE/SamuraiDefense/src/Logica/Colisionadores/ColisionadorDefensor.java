@@ -75,36 +75,37 @@ public class ColisionadorDefensor extends Colisionador {
 
 	@Override
 	public void serChocado(Ninja e) {
-		d.cambiarEstado(new AtaqueDefensor(d));
-		d.setEntidadADestruir(e);
+		//d.cambiarEstado(new AtaqueDefensor(d));
+		d.cambiarAEstadoAtaque();
+		//d.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		d.cambiarEstado(new AtaqueDefensor(d));
+		d.cambiarAEstadoAtaque();
 		d.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		d.cambiarEstado(new AtaqueDefensor(d));
+		d.cambiarAEstadoAtaque();
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		d.cambiarEstado(new AtaqueDefensor(d));
+		d.cambiarAEstadoAtaque();
 		d.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		d.cambiarEstado(new AtaqueDefensor(d));
+		d.cambiarAEstadoAtaque();
 		d.setEntidadADestruir(e);
 	}
 
 	@Override
 	public void serChocado(Emperador e) {
-		d.cambiarEstado(new AtaqueDefensor(d));
+		d.cambiarAEstadoAtaque();
 		d.setEntidadADestruir(e);
 	}
 	

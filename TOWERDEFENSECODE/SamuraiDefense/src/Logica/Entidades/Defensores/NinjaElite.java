@@ -14,7 +14,6 @@ public class NinjaElite extends Defensor {
 		super(x, y, m);
 		life = 200;
 		vida = 200;
-		attackSpeed = 0.5;
 		damage = 25;
 		range = 200;
 		cost = 150;
@@ -45,11 +44,6 @@ public class NinjaElite extends Defensor {
 		Municion mun = arma.crearMunicionDefensor();
 		mun.setDaño(damage * 4);
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
-	}
-
-	@Override
-	public Defensor clone() {
-		return new NinjaElite(0, 0, mapa);
 	}
 
 }

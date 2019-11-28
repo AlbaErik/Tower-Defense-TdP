@@ -2,14 +2,13 @@ package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Contador;
-import Logica.Entidades.Personaje;
-import Logica.Estados.Personajes.EstadoPersonaje;
+import Logica.Entidades.Defensores.Defensor;
 
-public class SuperReposoDefensor extends EstadoPersonaje {
+public class SuperReposoDefensor extends EstadoDefensor {
 
 	Contador cont;
 
-	public SuperReposoDefensor(Personaje p, Contador c) {
+	public SuperReposoDefensor(Defensor p, Contador c) {
 		super(p);
 		cont = c;
 	}
@@ -17,27 +16,32 @@ public class SuperReposoDefensor extends EstadoPersonaje {
 	@Override
 	public void ejecutar() {
 		controlarTiempo();
-		if (personaje.getLife() <= 0)
-			matarPersonaje();
+		if (defensor.getLife() <= 0)
+			matarPersonaje(defensor);
 		else {
-			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
+			PersonajeGrafico p = (PersonajeGrafico) defensor.getGrafico();
 			p.standingFuerza();
 		}
-		if (personaje.getContador() % 50 == 0) {
+		if (defensor.getContador() % 50 == 0) {
 
-			if (personaje.getRange() > 0 && !tengoCaminoLibre())
-				personaje.cambiarEstado(new SuperAtaqueDefensor(personaje, cont));
+			if (defensor.getRange() > 0 && !tengoCaminoLibre(defensor))
+				defensor.cambiarEstado(new SuperAtaqueDefensor(defensor, cont));
 
-			personaje.resetContador();
+			defensor.resetContador();
 		}
-		personaje.incrementarContador();
+		defensor.incrementarContador();
 	}
 
 	private void controlarTiempo() {
 		if (cont.getContador() >= 500) {
-			personaje.cambiarEstado(new ReposoDefensor(personaje));
+			defensor.cambiarEstado(new ReposoDefensor(defensor));
 			cont.resetContador();
 		} else
 			cont.incrementarContador();
+	}
+
+	@Override
+	public void cambiarEstadoAtaque() {
+		defensor.cambiarEstado(new SuperAtaqueDefensor(defensor, cont));
 	}
 }

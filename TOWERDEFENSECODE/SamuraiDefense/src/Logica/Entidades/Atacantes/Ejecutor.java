@@ -12,7 +12,6 @@ public class Ejecutor extends Atacante {
 	public Ejecutor(int x, int y, Mapa m) {
 		super(x, y, m);
 		life = 360;
-		attackSpeed = 1;
 		damage = 70;
 		range = 0;
 		movementSpeed = 0.8;
@@ -23,10 +22,6 @@ public class Ejecutor extends Atacante {
 
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
-	}
-
-	public Atacante clone() {
-		return new Ejecutor(0, 0, super.mapa);
 	}
 
 	@Override
