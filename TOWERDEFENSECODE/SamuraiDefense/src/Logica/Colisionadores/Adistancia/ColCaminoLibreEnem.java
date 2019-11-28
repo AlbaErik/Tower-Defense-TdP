@@ -1,7 +1,7 @@
 package Logica.Colisionadores.Adistancia;
 
-import Logica.LargaVistaAtacante;
 import Logica.Entidades.Atacantes.Arquero;
+import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Atacantes.Ejecutor;
 import Logica.Entidades.Atacantes.Emperador;
 import Logica.Entidades.Atacantes.Espadachin;
@@ -24,110 +24,110 @@ import Logica.Entidades.Premios.PocionFuerza;
 
 public class ColCaminoLibreEnem extends VisitorDistancia {
 
-	private LargaVistaAtacante largaVista;
+	private Atacante ataq;
 
-	public ColCaminoLibreEnem(LargaVistaAtacante l) {
-		largaVista = l;
+	public ColCaminoLibreEnem(Atacante at) {
+		ataq = at;
 	}
 
 	@Override
 	public void serChocado(Ninja e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(Emperador e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(SacerdoteElite e) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(Piedra e) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(Barro barro) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(Muro m) {
-		largaVista.setCaminoLibre(false);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override
 	public void serChocado(Municion m) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(EscudoEnemigo e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(EscudoDef e) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(PocionFuerza pocionFuerza) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 	@Override
 	public void serChocado(Bombita bombita) {
-		largaVista.setCaminoLibre(true);
+		ataq.setCaminoLibre(true);
 	}
 
 }

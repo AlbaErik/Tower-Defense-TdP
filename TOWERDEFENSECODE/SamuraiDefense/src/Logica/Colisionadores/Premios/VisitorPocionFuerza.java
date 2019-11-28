@@ -62,32 +62,32 @@ public class VisitorPocionFuerza extends Colisionador{
 
 	@Override
 	public void serChocado(ArqueroElite e) {
-		e.subirFuerza();
+		e.cambiarASuperEstado();
 	}
 
 	@Override
 	public void serChocado(SacerdoteElite e) {
-		e.subirFuerza();		
+		e.cambiarASuperEstado();		
 	}
 
 	@Override
 	public void serChocado(EspadachinElite e) {
-		e.subirFuerza();		
+		e.cambiarASuperEstado();		
 	}
 
 	@Override
 	public void serChocado(LanceroElite e) {
-		e.subirFuerza();		
+		e.cambiarASuperEstado();		
 	}
 
 	@Override
 	public void serChocado(NinjaElite e) {
-		e.subirFuerza();		
+		e.cambiarASuperEstado();		
 	}
 
 	@Override
 	public void serChocado(SamuraiElite e) {
-		e.subirFuerza();		
+		e.cambiarASuperEstado();		
 	}
 
 	@Override

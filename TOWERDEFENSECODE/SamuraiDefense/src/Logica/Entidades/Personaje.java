@@ -2,18 +2,17 @@ package Logica.Entidades;
 
 import Armas.Arma;
 import Armas.ArmaSimple;
-import Logica.LargaVista;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
-import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Mapa.Mapa;
 
 public abstract class Personaje extends Entidad {
 	protected int damage;
 	protected int range;
-	protected Arma arma;
 	protected int contadorDisparos;
 	protected int tiempoMuerte;
-	protected LargaVista colCaminoLibre;
+	protected boolean tengoCaminoLibre = true;
+	protected Arma arma;
+	protected VisitorDistancia visitorCaminoLibre;
 
 	protected Personaje(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -23,15 +22,15 @@ public abstract class Personaje extends Entidad {
 	}
 	
 	public void setCaminoLibre(boolean b) {
-		colCaminoLibre.setCaminoLibre(b);
+		tengoCaminoLibre = b;
 	}
 
 	public VisitorDistancia getVisitorDistancia() {
-		return colCaminoLibre.getVisitorDistancia();
+		return visitorCaminoLibre;
 	}
 	
 	public boolean getCaminoLibre() {
-		return colCaminoLibre.getCaminoLibre();
+		return tengoCaminoLibre;
 	}
 	
 	public void superAtaque(Entidad e) {}

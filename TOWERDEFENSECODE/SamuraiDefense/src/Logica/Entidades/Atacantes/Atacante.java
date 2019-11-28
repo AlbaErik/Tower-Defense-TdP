@@ -2,8 +2,8 @@ package Logica.Entidades.Atacantes;
 
 import java.util.Random;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
-import Logica.LargaVistaAtacante;
 import Logica.Colisionadores.ColisionadorAtacante;
+import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
 import Logica.Entidades.Municiones.Municion;
@@ -28,7 +28,7 @@ public abstract class Atacante extends Personaje {
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
 
-		colCaminoLibre = new LargaVistaAtacante();
+		visitorCaminoLibre = new ColCaminoLibreEnem(this);
 		tiendaPowerUp = new TiendaPowerUp(m);
 		intel = new InteligenciaAtacante(this);
 		estado = new Avanzar(this);
@@ -67,7 +67,6 @@ public abstract class Atacante extends Personaje {
 	public void morir() {
 		if(escudo != null)
 			escudo.morir();
-		System.out.println("ATACANTE---se murio: " + this.getClass());
 		
 		devolverPowerUp();
 		int dinero = this.dineroDropeado();

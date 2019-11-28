@@ -8,7 +8,7 @@ import Logica.Mapa.Mapa;
 
 public class PocionFuerza extends Premio{
 
-	private Colisionador col;
+	//private Colisionador col;
 	
 	public PocionFuerza(int x, int y, Mapa m) {
 		super(x, y, m);

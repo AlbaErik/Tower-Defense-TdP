@@ -2,34 +2,36 @@ package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Contador;
-import Logica.Entidades.Personaje;
-import Logica.Estados.Personajes.EstadoPersonaje;
+import Logica.Entidades.Defensores.Defensor;
 
-public class AtaqueDefensor extends EstadoPersonaje {
+public class AtaqueDefensor extends EstadoDefensor {
 
-	public AtaqueDefensor(Personaje e) {
+	public AtaqueDefensor(Defensor e) {
 		super(e);
 	}
 
 	@Override
 	public void ejecutar() {
-		if (personaje.getLife() <= 0)
-			matarPersonaje();
-		else if (personaje.getContador() % 50 == 0) {
+		if (defensor.getLife() <= 0)
+			matarPersonaje(defensor);
+		else if (defensor.getContador() % 50 == 0) {
 
-			PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
+			PersonajeGrafico p = (PersonajeGrafico) defensor.getGrafico();
 			p.attack();
 
-			personaje.atacar(aDestruir);
-			personaje.resetContador();
+			defensor.atacar(aDestruir);
+			defensor.resetContador();
 
-			if (tengoCaminoLibre())
-				personaje.cambiarEstado(new ReposoDefensor(personaje));
+			if (tengoCaminoLibre(defensor))
+				defensor.cambiarEstado(new ReposoDefensor(defensor));
 		}
-		personaje.incrementarContador();
+		defensor.incrementarContador();
 	}
 	
 	public void cambiarAPoderoso() {
-		personaje.cambiarEstado(new SuperAtaqueDefensor(personaje, new Contador()));
+		defensor.cambiarEstado(new SuperAtaqueDefensor(defensor, new Contador()));
 	}
+
+	@Override
+	public void cambiarEstadoAtaque() {	}
 }

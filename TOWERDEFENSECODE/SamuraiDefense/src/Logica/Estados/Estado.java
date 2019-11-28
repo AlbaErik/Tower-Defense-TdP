@@ -18,5 +18,4 @@ public abstract class Estado {
 		return dejoPasar;
 	}
 	
-	public void cambiarAPoderoso() {}
 }

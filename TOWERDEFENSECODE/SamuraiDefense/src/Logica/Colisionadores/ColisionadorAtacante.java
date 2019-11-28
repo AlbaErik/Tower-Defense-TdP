@@ -1,6 +1,5 @@
 package Logica.Colisionadores;
 
-import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Arquero;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Atacantes.Ejecutor;
@@ -28,7 +27,7 @@ import Logica.Estados.Personajes.Atacante.ReposoEnemigo;
 public class ColisionadorAtacante extends Colisionador {
 
 	private Atacante ataq;
-	private Personaje noSeFrena;
+	private Atacante noSeFrena;
 
 	public ColisionadorAtacante(Atacante a) {
 		ataq = a;
@@ -81,9 +80,9 @@ public class ColisionadorAtacante extends Colisionador {
 		
 	}
 
-	private Personaje quienSeFrena(Personaje p) {
+	private Atacante quienSeFrena(Atacante p) {
 		double x = ataq.getPos().getX();
-		Personaje toret = ataq;
+		Atacante toret = ataq;
 		noSeFrena = p;
 		if (p.getPos().getX() > x) {
 			toret = p;
@@ -92,7 +91,7 @@ public class ColisionadorAtacante extends Colisionador {
 		return toret;
 	}
 
-	private void frenar(Personaje p) {
+	private void frenar(Atacante p) {
 		if (!(noSeFrena.puedoPasar())) {
 			p.cambiarEstado(new ReposoEnemigo(p));
 		}
@@ -100,37 +99,37 @@ public class ColisionadorAtacante extends Colisionador {
 
 	@Override
 	public void serChocado(Ninja e) {
-		Personaje p = quienSeFrena(e);
+		Atacante p = quienSeFrena(e);
 		frenar(p);
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		Personaje p = quienSeFrena(e);
+		Atacante p = quienSeFrena(e);
 		frenar(p);
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		Personaje p = quienSeFrena(e);
+		Atacante p = quienSeFrena(e);
 		frenar(p);
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		Personaje p = quienSeFrena(e);
+		Atacante p = quienSeFrena(e);
 		frenar(p);
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		Personaje p = quienSeFrena(e);
+		Atacante p = quienSeFrena(e);
 		frenar(p);
 	}
 
 	@Override
 	public void serChocado(Emperador e) {
-		Personaje p = quienSeFrena(e);
+		Atacante p = quienSeFrena(e);
 		frenar(p);
 	}
 

@@ -62,8 +62,9 @@ public abstract class Entidad {
 	}
 
 	public void cambiarEstado(Estado e) {
-		if (permisoCambiarEstado)
+		if (permisoCambiarEstado) {
 			estado = e;
+		}
 	}
 
 	public void eliminarPorBoton() {}
