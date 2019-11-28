@@ -17,7 +17,7 @@ public class ArqueroElite extends Defensor {
 		damage = 35;
 		range = 400;
 		cost = 100;
-
+		
 		grafico = new ArqueroEliteGrafico(x, y, m.getPanelMapa(), this);
 		arma = new Arco(this, m);
 	}

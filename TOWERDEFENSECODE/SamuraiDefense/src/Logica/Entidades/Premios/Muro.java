@@ -13,7 +13,7 @@ public class Muro extends Premio {
 		super(x, y, m);
 		clave = 4;
 		miCelda.setAlto(132);
-		life = 40000;
+		life = 1000;
 		col = new VisitorMuro(this);
 		grafico = new BarricadaGrafica(x, y, m.getPanelMapa(), this);
 	}

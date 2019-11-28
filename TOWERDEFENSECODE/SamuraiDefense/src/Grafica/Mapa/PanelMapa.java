@@ -89,7 +89,7 @@ public class PanelMapa extends JPanel {
 					Entidad aEliminar = mapa.getEntidadEnPos(x, y);
 					aEliminar.eliminarPorBoton();
 				}
-
+				
 			} else if (mapa.hayPremioActual()) { // PARA PREMIOS
 				int x = 0;
 				int y = 0;

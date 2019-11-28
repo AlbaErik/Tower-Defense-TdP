@@ -14,6 +14,7 @@ import Logica.Inteligencia.InteligenciaAtacante;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
+import Logica.PowerUps.Preciosos.Barricada;
 
 public abstract class Atacante extends Personaje {
 	protected double movementSpeed;
@@ -108,24 +109,12 @@ public abstract class Atacante extends Personaje {
 		return -1;
 	}
 
-	public void setGrafico(AtacanteGrafico graf) {
-		this.grafico = graf;
-	}
-
 	public double getVelocidadMov() {
 		return movementSpeed;
 	}
 
 	public Inteligencia getInteligencia() {
 		return intel;
-	}
-	
-	public int getDañoArma() {
-		return arma.getDaño();
-	}
-
-	public Municion getMunicion() {
-		return arma.crearMunicionAtacante();
 	}
 
 	public int dineroDropeado() {

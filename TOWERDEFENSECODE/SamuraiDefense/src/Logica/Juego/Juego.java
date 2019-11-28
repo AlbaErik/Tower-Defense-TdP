@@ -93,28 +93,26 @@ public class Juego {
 	public void generarObstaculos() {
 		misObstaculos = nivel.getObstaculos();
 		while (!misObstaculos.isEmpty()) {
-			double x = randomX();
-			int y = randomY();
-			Obstaculo obs = misObstaculos.getFirst();
-			obs.cambiarPosLogica(x, y);// ----------------------------------------------------------------------------------
-			mapa.agregarEntidadAlCampoEnPosActual(obs);
-			misObstaculos.removeFirst();
+			agregarObsEnPosRandom();
 		}
+	}
+	
+	private void agregarObsEnPosRandom() {
+		int x = randomX();
+		int y = randomY();
+		int intentos = 30;
+		while (intentos > 0 && mapa.hayEnPos(x, y)) { // Si no se puede colocar, devuelve false
+			x = randomX();
+			y = randomY();
+			intentos--;
+		}
+		if (intentos >= 0 && !mapa.hayEnPos(x, y))
+			agregarObstaculo(x, y);
 	}
 
 	public void agregarEntidades() {
 		if (!misObstaculos.isEmpty()) {
-			int x = randomX();
-			int y = randomY();
-			int intentos = 30;
-			while (intentos > 0 && !verificarLugarEnMapa(x, y)) { // Si no se puede colocar, devuelve false
-				x = randomX();
-				y = randomY();
-				intentos--;
-			}
-			if (intentos >= 0 && verificarLugarEnMapa(x, y))
-				agregarObstaculo(x, y);
-			
+			agregarObsEnPosRandom();			
 		} else if (!miHorda.isEmpty()) {
 			agregarAtacante();
 		}

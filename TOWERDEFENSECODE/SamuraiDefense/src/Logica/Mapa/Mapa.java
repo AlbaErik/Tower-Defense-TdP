@@ -99,6 +99,10 @@ public class Mapa {
 
 			if ((X == (double) x) && (Y == (double) y))
 				ocupada = true;
+			else {
+				if( (X == (double) x) && (y == misEntidades.get(i).getPos().getAlto()/2))
+					ocupada = true;
+			}
 		}
 		return ocupada;
 	}
