@@ -5,12 +5,14 @@ import java.awt.Rectangle;
 
 public class Posicion {
 
-	private int ancho = 100, alto = 66;
+	private int ancho;
+	private int alto;
 	private Point punto;
 	private Rectangle rectangulo;
 
 	public Posicion(double x, int y) {
-
+		alto = 66;
+		ancho = 100;
 		punto = new Point((int) x, y);
 		rectangulo = new Rectangle(punto);
 		rectangulo.setSize(ancho, alto);
@@ -18,7 +20,7 @@ public class Posicion {
 
 	public void setAlto(int i) {
 		alto = i;
-		rectangulo.setSize(ancho, alto);
+		//rectangulo.setSize(ancho, alto);
 	}
 
 	public void setPos(double x, int y) {

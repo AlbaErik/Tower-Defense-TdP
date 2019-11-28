@@ -46,7 +46,6 @@ public class Juego {
 
 	public void restarEnemigoMuerto() {
 		contadorEnemigos--;
-		System.out.println("JUEGO----cant de enemigos: " + contadorEnemigos);
 	}
 
 	public void actualizarOro(int c) {
@@ -118,7 +117,6 @@ public class Juego {
 			
 		} else if (!miHorda.isEmpty()) {
 			agregarAtacante();
-			System.out.println("JUEGO------Estoy en agregarEntidades con atacantes");
 		}
 	}
 
@@ -165,7 +163,6 @@ public class Juego {
 
 	public boolean nivelTerminado() {
 		return miHorda.isEmpty() && misObstaculos.isEmpty() && !nivel.haySigHorda();
-		// return miHorda.isEmpty() && misObstaculos.isEmpty() && nivel.haySigNivel();
 	}
 
 	private boolean verificarLugarEnMapa(int x, int y) {// Verifica si se puede colocar una entidad en ese lugar

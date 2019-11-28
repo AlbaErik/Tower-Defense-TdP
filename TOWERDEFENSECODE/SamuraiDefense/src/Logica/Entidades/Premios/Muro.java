@@ -12,7 +12,7 @@ public class Muro extends Premio {
 	public Muro(int x, int y, Mapa m) {
 		super(x, y, m);
 		clave = 4;
-		this.getPos().setAlto(132);
+		miCelda.setAlto(132);
 		life = 40000;
 		col = new VisitorMuro(this);
 		grafico = new BarricadaGrafica(x, y, m.getPanelMapa(), this);
@@ -30,8 +30,7 @@ public class Muro extends Premio {
 
 	@Override
 	public void ejecutarEstado() {
-		// TODO Auto-generated method stub
-
+		miCelda.setAlto(132);
 	}
 
 	@Override
