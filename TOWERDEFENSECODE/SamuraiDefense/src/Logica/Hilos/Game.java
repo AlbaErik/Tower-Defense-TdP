@@ -15,6 +15,10 @@ public class Game extends Thread {
 		ejecutar = true;
 
 	}
+	
+	public Control getControl() {
+		return control;
+	}
 
 	public void run() {
 		juego.inicializarHorda();

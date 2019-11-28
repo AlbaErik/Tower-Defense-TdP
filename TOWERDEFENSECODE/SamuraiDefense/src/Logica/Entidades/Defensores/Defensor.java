@@ -4,6 +4,7 @@ import Logica.LargaVistaDefensor;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
+import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Estados.Personajes.Defensor.SuperReposoDefensor;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
