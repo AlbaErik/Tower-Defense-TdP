@@ -26,7 +26,7 @@ public abstract class PowerUpGrafico extends JLabel {
 
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
-
+			
 		}
 
 		@Override

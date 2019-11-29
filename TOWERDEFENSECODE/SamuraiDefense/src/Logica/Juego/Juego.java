@@ -24,6 +24,7 @@ public class Juego {
 	private LinkedList<Obstaculo> misObstaculos;
 	private int contadorEnemigos = 0;
 	private boolean perdio = false;
+	private int filas = 6;
 	private Random rand;
 
 	public Juego(PanelJuego g) {
@@ -62,7 +63,7 @@ public class Juego {
 	}
 
 	private int randomY() {
-		int fila = rand.nextInt(5);
+		int fila = rand.nextInt(filas);
 		fila = fila * 66 + 183;
 		return fila;
 	}
@@ -71,24 +72,6 @@ public class Juego {
 		int x = rand.nextInt(3);
 		x = x * 100;
 		return x + 400;
-	}
-
-	private int[] buscarPosRandom() {
-		int[] toret = new int[2];
-		int x = randomX();
-		int y = randomY();
-		int intentos = 30;
-		boolean esValida = verificarLugarEnMapa(x, y);
-
-		while (intentos > 0 && !esValida) {
-			x = randomX();
-			y = randomY();
-			esValida = verificarLugarEnMapa(x, y);
-			intentos--;
-		}
-		toret[0] = x;
-		toret[1] = y;
-		return toret;
 	}
 
 	public void generarObstaculos() {
@@ -143,7 +126,6 @@ public class Juego {
 	}
 
 	public void cargarSigHorda() {
-		System.out.println("JUEGO----se va cargar la siguiente horda");
 		if (nivel.haySigHorda())
 			miHorda = nivel.getSigHorda();
 		else
@@ -162,21 +144,6 @@ public class Juego {
 
 	public boolean nivelTerminado() {
 		return miHorda.isEmpty() && misObstaculos.isEmpty() && !nivel.haySigHorda();
-	}
-
-	private boolean verificarLugarEnMapa(int x, int y) {// Verifica si se puede colocar una entidad en ese lugar
-		boolean sepuedecolocar = false;
-		int i = x;
-		while (i < x + 50 && !sepuedecolocar) {
-			sepuedecolocar = mapa.hayEnPos(x, y);
-			i++;
-		}
-		i = x;
-		while (i > x - 50 && !sepuedecolocar) {
-			sepuedecolocar = mapa.hayEnPos(x, y);
-			i--;
-		}
-		return sepuedecolocar;
 	}
 
 	public void accionarEstados() {

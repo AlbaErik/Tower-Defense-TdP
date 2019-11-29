@@ -21,7 +21,6 @@ import Logica.Entidades.Premios.Bombita;
 import Logica.Entidades.Premios.EscudoDef;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Entidades.Premios.Muro;
-import Logica.Estados.Personajes.Defensor.AtaqueDefensor;
 
 public class ColisionadorDefensor extends Colisionador {
 
@@ -77,7 +76,7 @@ public class ColisionadorDefensor extends Colisionador {
 	public void serChocado(Ninja e) {
 		//d.cambiarEstado(new AtaqueDefensor(d));
 		d.cambiarAEstadoAtaque();
-		//d.setEntidadADestruir(e);
+		d.setEntidadADestruir(e);
 	}
 
 	@Override
@@ -89,6 +88,7 @@ public class ColisionadorDefensor extends Colisionador {
 	@Override
 	public void serChocado(Arquero e) {
 		d.cambiarAEstadoAtaque();
+		d.setEntidadADestruir(e);
 	}
 
 	@Override

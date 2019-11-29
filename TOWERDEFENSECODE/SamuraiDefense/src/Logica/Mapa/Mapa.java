@@ -26,11 +26,11 @@ public class Mapa {
 		mapagrafico = new PanelMapa(this);
 		tienda = juego.getTienda();
 	}
-	
+
 	public void perdioElJugador() {
 		juego.hacerPerderAlJugador();
 	}
-	
+
 	public boolean hayPremioActual() {
 		return tienda.hayPremioActual();
 	}
@@ -38,20 +38,19 @@ public class Mapa {
 	public void notificarMuerteEnemigo() {
 		juego.restarEnemigoMuerto();
 	}
-	
+
 	public void agregarPowerUp(int x, int y, PowerUp power) {
-		mapagrafico.agregarLabel(power.getGrafico().getGrafico());
-		//mapagrafico.agregarPowerUp(x,y,power);
+		mapagrafico.agregarLabel(power.getGrafico());
 	}
-	
+
 	public void eliminarPowerUp(PowerUp power) {
-		mapagrafico.eliminarLabel(power.getGrafico().getGrafico());
+		mapagrafico.eliminarLabel(power.getGrafico());
 	}
-	
+
 	public void agregarPremioTienda(int c, Premio p) {
 		tienda.agregarPremio(c, p);
 	}
-	
+
 	public void agregarEntidadAlCampo(Entidad e) {
 		mapagrafico.agregarEntidad(e);
 	}
@@ -59,36 +58,26 @@ public class Mapa {
 	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
 		setEntidad(e);
 		mapagrafico.agregarLabel(e.getGrafico().getGraficoActual());
-		//mapagrafico.agregarEntidadEnPosActual(e);
 	}
-	
+
 	public void actualizarOroTienda(int o) {
 		tienda.actualizarOro(o);
 	}
-	
-	public boolean premioParaEntidad() {
-		return tienda.premioParaEntidad();
-	}
-	
+
 	public Premio getPremioActual() {
 		return tienda.getPremioActual();
 	}
-	
+
 	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
-		Entidad actual = null;//misEntidades.getFirst();
+		Entidad actual = null;
 		for (Entidad i : misEntidades) {
 			if (i.hashCode() == e.hashCode())
 				actual = i;
 		}
-		if(actual != null) {
+		if (actual != null) {
 			misEntidades.remove(actual);
 			mapagrafico.eliminarLabel(actual.getGrafico().getGraficoActual());
 		}
-		
-	}	
-
-	public boolean hayEntidades() {
-		return !misEntidades.isEmpty();
 	}
 
 	public boolean hayEnPos(int x, int y) {
@@ -100,34 +89,26 @@ public class Mapa {
 			if ((X == (double) x) && (Y == (double) y))
 				ocupada = true;
 			else {
-				//ocupada = hayALoAlto(misEntidades.get(i), y);
-				if( (X == (double) x) && (y == misEntidades.get(i).getPos().getAlto()/2))	ocupada = true;
+				if ((X == (double) x) && (y == misEntidades.get(i).getPos().getAlto() / 2))
+					ocupada = true;
 			}
 		}
 		return ocupada;
 	}
-	
-	private boolean hayALoAlto(Entidad ent, double Y) {
-		boolean hayEntidad = false;
-		int yMasAlto = (int) (ent.getPos().getY() + ent.getPos().getAlto());
-		if(Y < yMasAlto)
-			hayEntidad = true;
-		return hayEntidad;
-	}
-	
+
 	public boolean tiendaGetEliminar() {
 		return tienda.getEliminar();
 	}
-	
+
 	public Entidad getEntidadEnPos(int x, int y) {
 		Entidad toRet = null;
-		for(Entidad e : misEntidades) {
-			int X = (int)e.getPos().getX();
-			int Y = (int)e.getPos().getY();
-			if( X == x && y == Y) {
+		for (Entidad e : misEntidades) {
+			int X = (int) e.getPos().getX();
+			int Y = (int) e.getPos().getY();
+			if (X == x && y == Y) {
 				toRet = e;
 				break;
-			}				
+			}
 		}
 		return toRet;
 	}
@@ -143,15 +124,15 @@ public class Mapa {
 	public Juego getJuego() {
 		return juego;
 	}
-	
+
 	public Tienda getTienda() {
 		return tienda;
 	}
-		
+
 	public Defensor getPersonajeActual() {
 		return tienda.getPersonajeActual();
-	}	
-	
+	}
+
 	public LinkedList<Entidad> getColeccion() {
 		LinkedList<Entidad> nueva = new LinkedList<Entidad>();
 		for (Entidad e : misEntidades) {
@@ -159,11 +140,11 @@ public class Mapa {
 		}
 		return nueva;
 	}
-	
+
 	public void setEntidad(Entidad d) {
 		misEntidades.addFirst(d);
 	}
-	
+
 	public void repaintComponent(String s) {
 		mapagrafico.repaintComponent(s);
 	}

@@ -41,12 +41,10 @@ public class Game extends Thread {
 				vueltas++;
 				sleep(20);
 				if (!juego.haySiguienteNivel() && !juego.haySigHorda() && juego.enemigosMuertos()) {
-					System.out.println("GANO EL JUGADOR 	WIN - WIN - WIN");
 					juego.ganar();
 					ejecutar = false;
 				}
 				if (juego.controlPerder()) {
-					System.out.println("PERDIO EL JUGADOR");
 					juego.perder();
 					ejecutar = false;
 				}

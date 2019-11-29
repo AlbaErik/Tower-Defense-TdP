@@ -14,7 +14,6 @@ public class Tienda {
 	protected int oro;
 	protected boolean eliminar;
 	protected boolean premio;
-	protected boolean premioParaEntidad;
 	private int cantPremios = 4;
 
 	private Mapa mapa;
@@ -30,7 +29,6 @@ public class Tienda {
 		premioActual = null;
 		eliminar = false;
 		premio = false;
-		premioParaEntidad = false;
 		oro = 5000;
 		juego.actualizarOro(oro);
 		
@@ -61,7 +59,7 @@ public class Tienda {
 	}
 
 	public void setPremio(int clave) {
-		LinkedList<Premio> lista = powerUps.get(clave); // PUEDE GENERAR UN NULL POINTER POR BOTONDEF Y BOTONELIM
+		LinkedList<Premio> lista = powerUps.get(clave);
 		if (!lista.isEmpty()) {
 			premioActual = lista.getFirst();
 		} else {
@@ -84,10 +82,6 @@ public class Tienda {
 
 	public boolean hayPremioActual() {
 		return premioActual != null;
-	}
-
-	public boolean premioParaEntidad() {
-		return premioParaEntidad;
 	}
 
 	public boolean hayPremio(int clave) {

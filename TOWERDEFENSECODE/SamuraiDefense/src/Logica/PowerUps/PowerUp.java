@@ -1,5 +1,7 @@
 package Logica.PowerUps;
 
+import javax.swing.JLabel;
+
 import Grafica.PowerUps.PowerUpGrafico;
 import Logica.Mapa.Mapa;
 
@@ -12,8 +14,8 @@ public abstract class PowerUp {
 		map = m;
 	}
 	
-	public PowerUpGrafico getGrafico() {
-		return grafica;
+	public JLabel getGrafico() {
+		return grafica.getGrafico();
 	}
 	
 	public abstract void morir();

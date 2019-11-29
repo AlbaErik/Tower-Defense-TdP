@@ -5,11 +5,8 @@ import Logica.Colisionadores.Adistancia.ColCaminoLibreDef;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorEstadoAtaque;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorEstadoFuerza;
-import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
-import Logica.Estados.Personajes.Defensor.EstadoDefensor;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
-import Logica.Estados.Personajes.Defensor.SuperReposoDefensor;
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
 
@@ -24,7 +21,7 @@ public abstract class Defensor extends Personaje {
 
 		visitorCaminoLibre = new ColCaminoLibreDef(this);
 		intel = new InteligenciaDefensor(this);
-		estado = new SuperReposoDefensor(this, new Contador());
+		estado = new ReposoDefensor(this);
 		col = new ColisionadorDefensor(this);
 		visitorFuerza = new VisitorEstadoFuerza();
 		visitorAtaque = new VisitorEstadoAtaque();
@@ -41,7 +38,6 @@ public abstract class Defensor extends Personaje {
 	public void cambiarAEstadoAtaque() {
 		if (permisoCambiarEstado) {
 			estado.aceptarVisitorEstados(visitorAtaque);
-			//((EstadoDefensor) estado).cambiarEstadoAtaque();
 		}
 	}
 
@@ -51,7 +47,6 @@ public abstract class Defensor extends Personaje {
 	public void cambiarASuperEstado() {
 		if (permisoCambiarEstado) {
 			estado.aceptarVisitorEstados(visitorFuerza);
-			//((EstadoDefensor) estado).cambiarAPoderoso();
 		}			
 	}
 
