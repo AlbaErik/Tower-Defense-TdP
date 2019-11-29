@@ -3,7 +3,6 @@ package Logica.PowerUps.Temporales;
 import Grafica.PowerUps.PocionDeFuerzaGrafico;
 import Logica.Entidades.Premios.PocionFuerza;
 import Logica.Mapa.Mapa;
-import Logica.PowerUps.PowerUp;
 
 public class PocionDeFuerza extends MagiaTemporal{
 
@@ -13,11 +12,6 @@ public class PocionDeFuerza extends MagiaTemporal{
 		grafica = new PocionDeFuerzaGrafico(this);
 	}
 	
-	@Override
-	public PowerUp clone() {
-		return new PocionDeFuerza(map);
-	}
-
 	@Override
 	public void click() {
 		map.agregarPremioTienda(clave, new PocionFuerza(0, 0, map));

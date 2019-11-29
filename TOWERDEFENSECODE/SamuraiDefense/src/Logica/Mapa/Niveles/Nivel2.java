@@ -15,7 +15,7 @@ public class Nivel2 extends Nivel {
 		super(j);
 		crearHordas();
 		cantidadEnems = 1;
-		cantObs = 2;
+		cantObs = 1;
 		siguiente = new Nivel3(juego);			
 	}
 	

@@ -36,28 +36,18 @@ public class Muro extends Premio {
 	@Override
 	public boolean queHago(int x, int y) {
 		boolean puedoPonerlo = true;
-		Entidad ent1 = revisarArriba();
-		Entidad ent2 = revisarAbajo();
-
-		if (ent1 != null) {
-			puedoPonerlo = ((ent1.getPos().getY() + ent1.getPos().getAlto()) <= this.getPos().getY());
-		}
-
-		if (ent2 != null) {
-			puedoPonerlo = puedoPonerlo && ((ent2.getPos().getY() - ent2.getPos().getAlto()) >= this.getPos().getY());
-		}
+		// Entidad ent1 = revisarArriba();
+		puedoPonerlo = puedoPonerlo && revisarAbajo(x, y);
+		
 		return puedoPonerlo;
 	}
 
-	private Entidad revisarAbajo() {
-		Entidad toret = null;
-		int x = (int) this.getPos().getX();
-		int y = (int) this.getPos().getY() + 1;
-
-		for (int i = 0; i < 140; i++) {
-			if (mapa.hayEnPos(x, y) && mapa.getEntidadEnPos(x, y) != this) {
-				toret = mapa.getEntidadEnPos(x, y);
-				break;
+	private boolean revisarAbajo(int x, int y) {
+		boolean toret = true;
+	
+		for (int i = 0; i < miCelda.getAlto(); i++) {
+			if (mapa.hayEnPos(x, y)) {
+				toret = false;
 			}
 			y++;
 		}
