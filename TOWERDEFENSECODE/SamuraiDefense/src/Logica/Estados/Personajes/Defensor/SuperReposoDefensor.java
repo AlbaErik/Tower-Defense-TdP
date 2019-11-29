@@ -9,9 +9,9 @@ public class SuperReposoDefensor extends EstadoDefensor {
 
 	Contador cont;
 
-	public SuperReposoDefensor(Defensor p, Contador c) {
+	public SuperReposoDefensor(Defensor p) {
 		super(p);
-		cont = c;
+		cont = new Contador();
 	}
 
 	@Override
@@ -25,8 +25,11 @@ public class SuperReposoDefensor extends EstadoDefensor {
 		}
 		if (defensor.getContador() % 50 == 0) {
 
-			if (defensor.getRange() > 0 && !tengoCaminoLibre(defensor))
-				defensor.cambiarEstado(new SuperAtaqueDefensor(defensor, cont));
+			if (defensor.getRange() > 0 && !tengoCaminoLibre(defensor)) {
+				SuperAtaqueDefensor at  = new SuperAtaqueDefensor(defensor);
+				at.setConteo(cont.getContador());
+				defensor.cambiarEstado(new SuperAtaqueDefensor(defensor));
+			}
 
 			defensor.resetContador();
 		}
@@ -43,7 +46,14 @@ public class SuperReposoDefensor extends EstadoDefensor {
 
 	@Override
 	public void cambiarEstadoAtaque() {
-		defensor.cambiarEstado(new SuperAtaqueDefensor(defensor, cont));
+		SuperAtaqueDefensor at  = new SuperAtaqueDefensor(defensor);
+		at.setConteo(cont.getContador());
+		
+		defensor.cambiarEstado(at);
+	}
+
+	public void setConteo(int c) {
+		cont.setContador(c);
 	}
 
 	@Override

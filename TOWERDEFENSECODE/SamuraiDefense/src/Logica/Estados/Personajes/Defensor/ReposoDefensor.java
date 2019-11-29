@@ -31,7 +31,7 @@ public class ReposoDefensor extends EstadoDefensor {
 	}
 	
 	public void cambiarAPoderoso() {
-		defensor.cambiarEstado(new SuperReposoDefensor(defensor, new Contador()));
+		defensor.cambiarEstado(new SuperReposoDefensor(defensor));
 	}
 
 	@Override

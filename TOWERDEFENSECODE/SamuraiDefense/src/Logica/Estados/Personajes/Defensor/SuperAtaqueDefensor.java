@@ -9,9 +9,9 @@ public class SuperAtaqueDefensor extends EstadoDefensor {
 
 	private Contador cont;
 	
-	public SuperAtaqueDefensor(Defensor p, Contador c) {
+	public SuperAtaqueDefensor(Defensor p) {
 		super(p);
-		cont = c;
+		cont = new Contador();
 	}
 	
 	@Override
@@ -27,8 +27,12 @@ public class SuperAtaqueDefensor extends EstadoDefensor {
 			defensor.superAtaque(aDestruir);
 			defensor.resetContador();
 
-			if (tengoCaminoLibre(defensor))
-				defensor.cambiarEstado(new SuperReposoDefensor(defensor, cont));
+			if (tengoCaminoLibre(defensor)) {
+				SuperReposoDefensor sup = new SuperReposoDefensor(defensor);
+				sup.setConteo(cont.getContador());
+				defensor.cambiarEstado(sup);
+
+			}
 		}
 		defensor.incrementarContador();
 	}
@@ -41,6 +45,10 @@ public class SuperAtaqueDefensor extends EstadoDefensor {
 			cont.incrementarContador();
 	}
 
+	public void setConteo(int c) {
+		cont.setContador(c);
+	}
+	
 	@Override
 	public void cambiarEstadoAtaque() {
 		

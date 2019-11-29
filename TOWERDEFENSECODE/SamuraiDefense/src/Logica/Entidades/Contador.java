@@ -7,6 +7,10 @@ public class Contador {
 		contador ++;
 	}
 	
+	public void setContador(int c) {
+		contador = c;
+	}
+	
 	public int getContador() {
 		return contador;
 	}

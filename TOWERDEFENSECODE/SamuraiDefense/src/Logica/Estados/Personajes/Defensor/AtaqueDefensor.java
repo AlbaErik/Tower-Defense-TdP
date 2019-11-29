@@ -2,7 +2,6 @@ package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
-import Logica.Entidades.Contador;
 import Logica.Entidades.Defensores.Defensor;
 
 public class AtaqueDefensor extends EstadoDefensor {
@@ -30,7 +29,7 @@ public class AtaqueDefensor extends EstadoDefensor {
 	}
 	
 	public void cambiarAPoderoso() {
-		defensor.cambiarEstado(new SuperAtaqueDefensor(defensor, new Contador()));
+		defensor.cambiarEstado(new SuperAtaqueDefensor(defensor));
 	}
 
 	@Override
