@@ -124,7 +124,7 @@ public class PanelMapa extends JPanel {
 				insertarDefensor(x, y);
 			}
 		}
-
+		
 		@Override
 		public void mouseReleased(MouseEvent arg0) {
 

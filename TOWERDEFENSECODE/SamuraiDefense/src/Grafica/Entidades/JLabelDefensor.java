@@ -35,7 +35,7 @@ public class JLabelDefensor extends JLabel {
 			// TODO Auto-generated method stub
 			
 		}
-
+	
 		@Override
 		public void mousePressed(MouseEvent arg0) {
 			if(defensor.getMapa().tiendaGetEliminar()) {
