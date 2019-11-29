@@ -3,6 +3,7 @@ package Logica.Juego;
 import java.util.LinkedList;
 import java.util.Random;
 
+import Audio.Player;
 import GUI.Paneles.PanelJuego;
 import GUI.Paneles.PanelTienda;
 import Grafica.Mapa.PanelMapa;
@@ -25,12 +26,14 @@ public class Juego {
 	private int contadorEnemigos = 0;
 	private boolean perdio = false;
 	private Random rand;
+	private Player player;
 
 	public Juego(PanelJuego g) {
 		Gui = g;
 		tienda = new Tienda(this);
 		mapa = new Mapa(this);
 		rand = new Random();
+		player=new Player();
 	}
 
 	public void hacerPerderAlJugador() {
