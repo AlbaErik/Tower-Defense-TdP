@@ -1,31 +1,27 @@
 package Logica.Entidades.Atacantes;
 
 import java.util.Random;
-import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
-import Logica.Entidades.Municiones.Municion;
 import Logica.Entidades.Premios.EscudoEnemigo;
 import Logica.Estados.Personajes.Atacante.Avanzar;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Inteligencia.InteligenciaAtacante;
+import Logica.Inteligencia.InteligenciaAtacanteLento;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
-import Logica.PowerUps.Preciosos.Barricada;
-import Logica.PowerUps.Temporales.PocionDeFuerza;
 
 public abstract class Atacante extends Personaje {
 	protected double movementSpeed;
 	protected double backupVel;
-	protected boolean estoyLento = false;
 	
 	protected InteligenciaAtacante intel;
 	protected TiendaPowerUp tiendaPowerUp;
 	protected EscudoEnemigo escudo = null;
-	protected Contador cont2 = new Contador();
+	protected Contador contLentitud = new Contador();
 
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -37,6 +33,11 @@ public abstract class Atacante extends Personaje {
 		col = new ColisionadorAtacante(this);
 	}
 
+	@Override
+	public void ejecutarEstado() {
+		estado.ejecutar();
+	}
+	
 	public EscudoEnemigo getEscudo() {
 		return escudo;
 	}
@@ -44,26 +45,17 @@ public abstract class Atacante extends Personaje {
 	public void setEscudo(EscudoEnemigo esc) {
 		escudo = esc;
 	}
-
-	public boolean estoyLento() {
-		return estoyLento;
+	
+	public void devolverVelocidad() {		
+		intel = new InteligenciaAtacante(this);	
+	}
+	
+	private void cambiarInteligenciaLenta() {
+		intel = new InteligenciaAtacanteLento(this);
 	}
 
-	public void devolverVelocidad() {
-		estoyLento = false;
-		movementSpeed = backupVel;
-	}
-
-	public void realentizarPersonaje(double o) {
-		if (!estoyLento)
-			reemplazarVelocidad(o);
-		cont2.resetContador();
-	}
-
-	private void reemplazarVelocidad(double i) {
-		estoyLento = true;
-		backupVel = movementSpeed;
-		movementSpeed = i;
+	public void realentizarPersonaje() {		
+		cambiarInteligenciaLenta();		
 	}
 
 	public void morir() {
@@ -83,8 +75,7 @@ public abstract class Atacante extends Personaje {
 		Random ran = new Random();
 		int i = ran.nextInt(10);
 		if (i % 1 == 0)
-			aleatorio = new Barricada(mapa);
-			//aleatorio = tiendaPowerUp.getRandom();
+			aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
 			
@@ -96,15 +87,15 @@ public abstract class Atacante extends Personaje {
 	}
 
 	public int getContadorLentitud() {
-		return cont2.getContador();
+		return contLentitud.getContador();
 	}
 
 	public void resetContadorLentitud() {
-		cont2.resetContador();
+		contLentitud.resetContador();
 	}
 
 	public void incrementarContadorLentitud() {
-		cont2.incrementarContador();
+		contLentitud.incrementarContador();
 	}
 
 	public int getDireccion() {

@@ -25,11 +25,6 @@ public class Necromante extends Atacante {
 	}
 
 	@Override
-	public void ejecutarEstado() {
-		estado.ejecutar();
-	}
-
-	@Override
 	public void atacar(Entidad aDestruir) {
 		if (aDestruir != null) {
 			aDestruir.recibirDaño(damage);

@@ -24,12 +24,7 @@ public class Emperador extends Atacante {
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
 	}
-
-	@Override
-	public void ejecutarEstado() {
-		estado.ejecutar();
-	}
-
+	
 	@Override
 	public void atacar(Entidad aDestruir) {
 		if(aDestruir != null) {
