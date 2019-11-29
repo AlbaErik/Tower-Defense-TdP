@@ -24,7 +24,9 @@ public class Mapa {
 		nivel = juego.getNivel();
 		misEntidades = new LinkedList<Entidad>();
 		mapagrafico = new PanelMapa(this);
-		tienda = juego.getTienda();
+	}
+	public void setTienda(Tienda t) {
+		tienda=t;
 	}
 
 	public void perdioElJugador() {
@@ -147,5 +149,13 @@ public class Mapa {
 
 	public void repaintComponent(String s) {
 		mapagrafico.repaintComponent(s);
+	}
+	
+	public void eliminarPremio(int c) {
+		tienda.eliminarPremio(c);
+	}
+	
+	public void revisarStockPremios() {
+		tienda.revisarStockPremios();
 	}
 }

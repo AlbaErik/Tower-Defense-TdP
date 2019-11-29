@@ -44,11 +44,14 @@ public class PanelTienda extends JPanel {
 		fondo.setBounds(0, 0, ancho - 1000, alto - 50);
 		this.add(fondo);
 	}
-
+	
 	public void revisarStockPremios() {
-		for (BotonPremio b : colocablesP)
-			if (tienda.hayPremio(b.getClave()))
+		for(BotonPremio b: colocablesP)
+			if(tienda.hayPremio(b.getClave())) {
 				b.setEnabled(true);
+			}else {
+				b.setEnabled(false);
+			}
 	}
 
 	private void crearBotones() {
@@ -67,6 +70,7 @@ public class PanelTienda extends JPanel {
 		colocables[0].setContentAreaFilled(false);
 		colocables[0].setIcon(new ImageIcon("Sprites/Botones/BotonNinjaElite.png"));
 		colocables[0].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonNinjaEliteEntered.png"));
+		colocables[0].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonNinjaEliteDisable.png"));
 		colocables[0].setFocusable(false);
 		this.add(colocables[0]);
 
@@ -76,6 +80,7 @@ public class PanelTienda extends JPanel {
 		colocables[1].setContentAreaFilled(false);
 		colocables[1].setIcon(new ImageIcon("Sprites/Botones/BotonEspadachinElite.png"));
 		colocables[1].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonEspadachinEliteEntered.png"));
+		colocables[1].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonEspadachinEliteDisable.png"));
 		colocables[1].setFocusable(false);
 		this.add(colocables[1]);
 
@@ -85,6 +90,7 @@ public class PanelTienda extends JPanel {
 		colocables[2].setContentAreaFilled(false);
 		colocables[2].setIcon(new ImageIcon("Sprites/Botones/BotonArqueroElite.png"));
 		colocables[2].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonArqueroEliteEntered.png"));
+		colocables[2].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonArqueroEliteDisable.png"));
 		colocables[2].setFocusable(false);
 		this.add(colocables[2]);
 
@@ -94,6 +100,7 @@ public class PanelTienda extends JPanel {
 		colocables[3].setContentAreaFilled(false);
 		colocables[3].setIcon(new ImageIcon("Sprites/Botones/BotonLanceroElite.png"));
 		colocables[3].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonLanceroEliteEntered.png"));
+		colocables[3].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonLanceroEliteDisable.png"));
 		colocables[3].setFocusable(false);
 		this.add(colocables[3]);
 
@@ -103,6 +110,7 @@ public class PanelTienda extends JPanel {
 		colocables[4].setContentAreaFilled(false);
 		colocables[4].setIcon(new ImageIcon("Sprites/Botones/BotonSacerdoteElite.png"));
 		colocables[4].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonSacerdoteEliteEntered.png"));
+		colocables[4].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonSacerdoteEliteDisable.png"));
 		colocables[4].setFocusable(false);
 		this.add(colocables[4]);
 
@@ -112,11 +120,21 @@ public class PanelTienda extends JPanel {
 		colocables[5].setContentAreaFilled(false);
 		colocables[5].setIcon(new ImageIcon("Sprites/Botones/BotonSamuraiElite.png"));
 		colocables[5].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonSamuraiEliteEntered.png"));
+		colocables[5].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonSamuraiEliteDisable.png"));
 		colocables[5].setFocusable(false);
 		this.add(colocables[5]);
 
 		acomodarBotonesDefensores();
 
+	}
+	
+	public void revisarBotonesDefensores() {
+		for(BotonDefensor b: colocables)
+			if(tienda.puedoComprar(b.getPrecio())){
+				b.setEnabled(true);
+			}else {
+				b.setEnabled(false);
+			}
 	}
 
 	private void acomodarBotonesDefensores() {
@@ -174,6 +192,7 @@ public class PanelTienda extends JPanel {
 		colocablesP[0].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonCampoDeFuerzaEntered.png"));
 		colocablesP[0].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonCampoDeFuerzaDisable.png"));
 		colocablesP[0].setFocusable(false);
+		colocablesP[0].setEnabled(false);
 		this.add(colocablesP[0]);
 
 		colocablesP[1] = new BotonPocionDeFuerza(this.getTienda());
@@ -184,7 +203,7 @@ public class PanelTienda extends JPanel {
 		colocablesP[1].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonPocionFuerzaEntered.png"));
 		colocablesP[1].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonPocionFuerzaDisable.png"));
 		colocablesP[1].setFocusable(false);
-		//colocablesP[1].setEnabled(false);
+		colocablesP[1].setEnabled(false);
 		this.add(colocablesP[1]);
 
 		colocablesP[2] = new BotonBarricada(this.getTienda());
@@ -195,6 +214,7 @@ public class PanelTienda extends JPanel {
 		colocablesP[2].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonBarricadaEntered.png"));
 		colocablesP[2].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonBarricadaDisable.png"));
 		colocablesP[2].setFocusable(false);
+		colocablesP[2].setEnabled(false);
 		this.add(colocablesP[2]);
 
 		colocablesP[3] = new BotonBomba(this.getTienda());
@@ -205,6 +225,7 @@ public class PanelTienda extends JPanel {
 		colocablesP[3].setRolloverIcon(new ImageIcon("Sprites/Botones/BotonBombaEntered.png"));
 		colocablesP[3].setDisabledIcon(new ImageIcon("Sprites/Botones/BotonBombaDisable.png"));
 		colocablesP[3].setFocusable(false);
+		colocablesP[3].setEnabled(false);
 		this.add(colocablesP[3]);
 
 		acomodarBotonesPremios();

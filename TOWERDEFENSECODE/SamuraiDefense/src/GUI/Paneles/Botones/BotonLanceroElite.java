@@ -9,13 +9,12 @@ public class BotonLanceroElite extends BotonDefensor {
 
 	public BotonLanceroElite(Tienda t) {
 		super(t);
+		miDef=new LanceroElite(0, 0, tienda.getJuego().getMapa());
 	}
 
 	@Override
 	public Defensor crearDefensor() {
 		return new LanceroElite(0, 0, tienda.getJuego().getMapa());
-
-		//return tienda.getFabrica().crearLanceroElite(tienda.getJuego().getMapa());
 	}
 
 }

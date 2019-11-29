@@ -70,6 +70,7 @@ public class PanelMapa extends JPanel {
 			mapa.setEntidad(aColocar);
 			JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 			mapa.getTienda().eliminarPremio(aColocar.getClave());
+			mapa.revisarStockPremios();
 			add(nuevo);
 			repaint();
 		}
@@ -85,6 +86,7 @@ public class PanelMapa extends JPanel {
 			mapa.setEntidad(aColocar);
 			JLabel nuevo = aColocar.getGrafico().getGraficoActual();
 			mapa.getTienda().actualizarOro(-aColocar.getCost());
+			mapa.getTienda().getPanelTienda().revisarBotonesDefensores();
 			add(nuevo);
 			repaint();
 		}

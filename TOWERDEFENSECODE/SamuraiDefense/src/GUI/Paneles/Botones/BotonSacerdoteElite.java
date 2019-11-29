@@ -9,13 +9,12 @@ public class BotonSacerdoteElite extends BotonDefensor {
 
 	public BotonSacerdoteElite(Tienda t) {
 		super(t);
+		miDef=new SacerdoteElite(0, 0, tienda.getJuego().getMapa());
 	}
 
 	@Override
 	public Defensor crearDefensor() {
 		return new SacerdoteElite(0, 0, tienda.getJuego().getMapa());
-
-		//return tienda.getFabrica().crearSacerdoteElite(tienda.getJuego().getMapa());
 	}
 
 }

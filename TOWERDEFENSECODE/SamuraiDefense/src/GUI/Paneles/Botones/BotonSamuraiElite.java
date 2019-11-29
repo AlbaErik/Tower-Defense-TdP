@@ -9,12 +9,12 @@ public class BotonSamuraiElite extends BotonDefensor {
 
 	public BotonSamuraiElite(Tienda t) {
 		super(t);
+		miDef=new SamuraiElite(0, 0, tienda.getJuego().getMapa());
 	}
 
 	@Override
 	public Defensor crearDefensor() {
 		return new SamuraiElite(0, 0, tienda.getJuego().getMapa());
-		//return tienda.getFabrica().crearSamuraiElite(tienda.getJuego().getMapa());
 	}
 
 }

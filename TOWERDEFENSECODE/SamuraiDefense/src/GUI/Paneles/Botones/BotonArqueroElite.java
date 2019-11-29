@@ -9,6 +9,7 @@ public class BotonArqueroElite extends BotonDefensor {
 
 	public BotonArqueroElite(Tienda t) {
 		super(t);
+		miDef=new ArqueroElite(0, 0, tienda.getJuego().getMapa());
 	}
 
 	@Override

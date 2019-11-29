@@ -15,6 +15,7 @@ public class PocionDeFuerza extends MagiaTemporal{
 	@Override
 	public void click() {
 		map.agregarPremioTienda(clave, new PocionFuerza(0, 0, map));
+		map.revisarStockPremios();
 	}
 
 	@Override

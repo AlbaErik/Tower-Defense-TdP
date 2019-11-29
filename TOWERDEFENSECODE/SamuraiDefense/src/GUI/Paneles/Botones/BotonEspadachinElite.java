@@ -9,13 +9,12 @@ public class BotonEspadachinElite extends BotonDefensor {
 
 	public BotonEspadachinElite(Tienda t) {
 		super(t);
+		miDef= new EspadachinElite(0, 0, tienda.getJuego().getMapa());
 	}
 
 	@Override
 	public Defensor crearDefensor() {
 		return new EspadachinElite(0, 0, tienda.getJuego().getMapa());
-
-		//return tienda.getFabrica().crearEspadachinElite(tienda.getJuego().getMapa());
 	}
 
 }

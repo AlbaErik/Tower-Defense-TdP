@@ -43,8 +43,9 @@ public abstract class PowerUpGrafico extends JLabel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			pu.click();
+			pu.click();	
 			pu.morir();
+			
 		}
 
 		@Override

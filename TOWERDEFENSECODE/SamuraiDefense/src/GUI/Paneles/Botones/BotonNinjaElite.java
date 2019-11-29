@@ -9,13 +9,12 @@ public class BotonNinjaElite extends BotonDefensor {
 
 	public BotonNinjaElite(Tienda t) {
 		super(t);
+		miDef=new NinjaElite(0, 0, tienda.getJuego().getMapa());
 	}
 
 	@Override
 	public Defensor crearDefensor() {
 		return new NinjaElite(0, 0, tienda.getJuego().getMapa());
-
-		// return tienda.getFabrica().crearNinjaElite(tienda.getJuego().getMapa());
 	}
 
 }

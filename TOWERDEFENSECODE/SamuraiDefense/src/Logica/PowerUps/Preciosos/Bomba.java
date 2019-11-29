@@ -15,6 +15,7 @@ public class Bomba extends ObjetoPrecioso{
 	@Override
 	public void click() {
 		map.agregarPremioTienda(clave, new Bombita(0, 0, map));
+		map.revisarStockPremios();
 	}
 
 	@Override

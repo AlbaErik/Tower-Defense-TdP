@@ -27,14 +27,13 @@ public class Juego {
 	private boolean perdio = false;
 	private int filas = 6;
 	private Random rand;
-	private Player player;
 
 	public Juego(PanelJuego g) {
-		Gui = g;
-		tienda = new Tienda(this);
+		Gui = g;		
 		mapa = new Mapa(this);
+		tienda = new Tienda(this);
 		rand = new Random();
-		player=new Player();
+		mapa.setTienda(tienda);
 	}
 
 	public void hacerPerderAlJugador() {

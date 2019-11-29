@@ -15,6 +15,7 @@ public class Barricada extends ObjetoPrecioso{
 	@Override
 	public void click() {
 		map.agregarPremioTienda(clave, new Muro(0, 0, map));
+		map.revisarStockPremios();
 	}
 
 	@Override

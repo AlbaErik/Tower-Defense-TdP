@@ -15,6 +15,7 @@ public class CampoProteccion extends MagiaTemporal{
 	@Override
 	public void click() {
 		map.agregarPremioTienda(clave, new EscudoDef(0, 0, map));
+		map.revisarStockPremios();
 	}
 
 	@Override

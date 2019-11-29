@@ -13,6 +13,7 @@ public abstract class BotonDefensor extends JButton {
 	private static final long serialVersionUID = 1L;
 	protected Tienda tienda;
 	protected Mapa map;
+	protected Defensor miDef;
 
 	public BotonDefensor(Tienda t) {
 		tienda = t;
@@ -28,5 +29,9 @@ public abstract class BotonDefensor extends JButton {
 	}
 
 	public abstract Defensor crearDefensor();
+	
+	public int getPrecio() {
+		return miDef.getCost();
+	}
 
 }
