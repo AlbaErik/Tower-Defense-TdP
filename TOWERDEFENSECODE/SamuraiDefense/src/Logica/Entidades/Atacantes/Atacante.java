@@ -113,7 +113,7 @@ public abstract class Atacante extends Personaje {
 	}
 
 	public int dineroDropeado() {
-		return (int) ((Math.random() * ((100 - 40) + 1)) + 40);
+		return (int) ((Math.random() * ((500 - 100) + 1)) + 100);
 	}
 
 }

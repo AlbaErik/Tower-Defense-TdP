@@ -28,9 +28,6 @@ public class PanelMapa extends JPanel {
 		this.addMouseListener(new OyenteMouse());
 	}
 
-	public Entidad getEntidadMapa() {
-		return entidad;
-	}
 
 	public Mapa getMapa() {
 		return mapa;

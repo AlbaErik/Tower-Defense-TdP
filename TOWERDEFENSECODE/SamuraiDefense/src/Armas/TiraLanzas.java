@@ -22,7 +22,7 @@ public class TiraLanzas extends Arma {
 	public Municion crearMunicionAtacante() {
 		int x = (int) personaje.getPos().getX();
 		int y = (int) personaje.getPos().getY();
-		return new LanzaDefensor(x, y, mapa);	//MAAAAAAL
+		return new LanzaDefensor(x, y, mapa);	
 	}
 
 }

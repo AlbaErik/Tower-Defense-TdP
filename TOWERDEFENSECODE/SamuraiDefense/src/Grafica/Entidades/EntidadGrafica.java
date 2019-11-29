@@ -33,11 +33,6 @@ public abstract class EntidadGrafica {
 		return graficoActual;
 	}
 
-	public void setGraficoInicio(int x, int y) {
-		graficoActual.setIcon(graficos[0]);
-		graficoActual.setBounds(x, y, ancho, alto);
-	}
-
 	public void cambiarPos(double x, int y) {
 		Posicion p = new Posicion(x, y);
 		mientidad.setPos(p);
@@ -46,16 +41,7 @@ public abstract class EntidadGrafica {
 		graficoActual.setBounds((int) x, y, ancho, alto);
 	}
 
-	public Point getPosGrafica() {
-		return pos;
-	}
 
-	public void setX(int x) {
-		pos.x = x;
-	}
 
-	public void setY(int y) {
-		pos.y = y;
-	}
 
 }

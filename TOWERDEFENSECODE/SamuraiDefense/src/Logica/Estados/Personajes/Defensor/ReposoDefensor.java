@@ -2,7 +2,6 @@ package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
-import Logica.Entidades.Contador;
 import Logica.Entidades.Defensores.Defensor;
 
 public class ReposoDefensor extends EstadoDefensor {

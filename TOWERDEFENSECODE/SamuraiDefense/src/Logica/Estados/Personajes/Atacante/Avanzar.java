@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes.Atacante;
 
-import Grafica.Entidades.PersonajeGrafico;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Personajes.Atacante.AtaqueEnemigo;

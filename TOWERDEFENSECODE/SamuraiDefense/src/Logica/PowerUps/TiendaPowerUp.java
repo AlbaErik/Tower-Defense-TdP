@@ -10,8 +10,6 @@ import Logica.Fabricas.PowerUps.FabricaBomba;
 import Logica.Fabricas.PowerUps.FabricaCampoDeProteccion;
 import Logica.Fabricas.PowerUps.FabricaPocionDeFuerza;
 import Logica.Mapa.Mapa;
-import Logica.PowerUps.Preciosos.*;
-import Logica.PowerUps.Temporales.*;
 
 public class TiendaPowerUp {
 

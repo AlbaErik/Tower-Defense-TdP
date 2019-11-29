@@ -24,9 +24,4 @@ public class EjecutorGrafico extends AtacanteGrafico {
 		graficoActual.setBounds(x, y, 120, 120);
 	}
 
-	public void cambiarPos(int x, int y) {// Tiene que estar si o si en cada clase
-		pos.setLocation(x, y);
-		graficoActual.setBounds(x, y, 120, 120);// 80
-	}
-
 }

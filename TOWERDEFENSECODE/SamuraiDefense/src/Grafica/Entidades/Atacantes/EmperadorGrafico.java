@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
-import Logica.Mapa.Posicion;
 
 public class EmperadorGrafico extends AtacanteGrafico {
 	private String palabras[] = { "EmperadorStanding","EmperadorRunning", "EmperadorAttacking", "EmperadorDying" };
@@ -24,11 +23,4 @@ public class EmperadorGrafico extends AtacanteGrafico {
 		graficoActual.setBounds(x, y, 120, 120);//80
 	}
 	
-	public void cambiarPos(double x,int y) {//Tiene que estar si o si en cada clase
-		Posicion p = new Posicion(x, y);
-		mientidad.setPos(p);
-		
-		pos.setLocation(x,y);
-		graficoActual.setBounds((int)x,y, 120, 120);//80	
-	}
 }
