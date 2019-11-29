@@ -44,7 +44,7 @@ public class PanelMapa extends JPanel {
 	public void agregarEntidad(Entidad e) {
 
 		Random rand = new Random();
-		int fila = rand.nextInt(5);
+		int fila = rand.nextInt(6);
 		fila = fila * 66 + 183;
 		int x = 900;
 
@@ -55,30 +55,30 @@ public class PanelMapa extends JPanel {
 		agregarLabel(nuevo);
 
 	}
-	
+
 	public void agregarLabel(JLabel nuevo) {
 		add(nuevo);
 		repaint();
 	}
-	
+
 	public void insertarPremio(double X, double Y) {
-		        int x=(int)X;
-		        int y=(int)Y;
-				Premio aColocar = mapa.getPremioActual();
-				if (y != 0 && aColocar != null && aColocar.queHago(x, y)) {
-					aColocar.cambiarPosLogica(x, y);
-					mapa.setEntidad(aColocar);
-					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
-					mapa.getTienda().eliminarPremio(aColocar.getClave());
-					add(nuevo);
-					repaint();
-				}
-				System.out.println("PANELMAPA: SE SETEO PREMIO");
+		int x = (int) X;
+		int y = (int) Y;
+		Premio aColocar = mapa.getPremioActual();
+		if (y != 0 && aColocar != null && aColocar.queHago(x, y)) {
+			aColocar.cambiarPosLogica(x, y);
+			mapa.setEntidad(aColocar);
+			JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+			mapa.getTienda().eliminarPremio(aColocar.getClave());
+			add(nuevo);
+			repaint();
+		}
+		System.out.println("PANELMAPA: SE SETEO PREMIO");
 	}
-	
+
 	public void insertarDefensor(double X, double Y) {
-		int x=(int)X;
-        int y=(int)Y;
+		int x = (int) X;
+		int y = (int) Y;
 		Defensor aColocar = mapa.getPersonajeActual();
 		if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 			aColocar.cambiarPosLogica(x, y);
@@ -117,11 +117,11 @@ public class PanelMapa extends JPanel {
 				x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
 				y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
 			}
-			 if (mapa.hayPremioActual()) { // PARA PREMIOS		
-				insertarPremio(x,y);
-				
+			if (mapa.hayPremioActual()) { // PARA PREMIOS
+				insertarPremio(x, y);
+
 			} else {// PARA DEFENSORES
-				insertarDefensor(x,y);
+				insertarDefensor(x, y);
 			}
 		}
 
@@ -140,7 +140,7 @@ public class PanelMapa extends JPanel {
 	public void repaintComponent(String s) {// Para ponerle otro fondo al mapa
 		Graphics g = this.getGraphics();
 		super.paintComponent(g);
-		fondo=new ImageIcon(s).getImage();
+		fondo = new ImageIcon(s).getImage();
 		g.drawImage(fondo, 0, 0, this.getWidth(), this.getHeight(), this);
 		repaint();
 		System.out.println("PANELMAPA: Se seteo el fondo del siguiente nivel");

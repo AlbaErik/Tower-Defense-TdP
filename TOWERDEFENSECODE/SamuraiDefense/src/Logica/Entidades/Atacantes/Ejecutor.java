@@ -14,7 +14,7 @@ public class Ejecutor extends Atacante {
 		life = 360;
 		damage = 70;
 		range = 0;
-		movementSpeed = 0.8;
+		movementSpeed = 1.5;
 
 		grafico = new EjecutorGrafico(x, y, m.getPanelMapa(), this);
 		arma = new ArmaSimple(this, m);
@@ -22,12 +22,6 @@ public class Ejecutor extends Atacante {
 
 	public void chocar(Colisionador e) {
 		e.serChocado(this);
-	}
-
-	@Override
-	public void ejecutarEstado() {
-		estado.ejecutar();
-
 	}
 
 	@Override

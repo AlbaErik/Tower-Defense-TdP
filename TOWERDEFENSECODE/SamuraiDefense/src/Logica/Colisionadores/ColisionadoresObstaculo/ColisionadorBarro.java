@@ -26,32 +26,32 @@ public class ColisionadorBarro extends Colisionador{
 
 	@Override
 	public void serChocado(Ninja e) {
-		e.realentizarPersonaje(1);		
+		e.realentizarPersonaje();		
 	}
 
 	@Override
 	public void serChocado(Ejecutor e) {
-		e.realentizarPersonaje(1);		
+		e.realentizarPersonaje();		
 	}
 
 	@Override
 	public void serChocado(Necromante e) {
-		e.realentizarPersonaje(1);		
+		e.realentizarPersonaje();		
 	}
 
 	@Override
 	public void serChocado(Espadachin e) {
-		e.realentizarPersonaje(1);		
+		e.realentizarPersonaje();		
 	}
 
 	@Override
 	public void serChocado(Arquero e) {
-		e.realentizarPersonaje(1);		
+		e.realentizarPersonaje();		
 	}
 	
 	@Override
 	public void serChocado(Emperador e) {
-		e.realentizarPersonaje(1);		
+		e.realentizarPersonaje();		
 	}
 	
 	@Override

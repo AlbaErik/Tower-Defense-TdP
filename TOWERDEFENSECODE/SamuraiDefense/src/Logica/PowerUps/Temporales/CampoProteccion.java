@@ -3,7 +3,6 @@ package Logica.PowerUps.Temporales;
 import Grafica.PowerUps.CampoProteccionGrafico;
 import Logica.Entidades.Premios.EscudoDef;
 import Logica.Mapa.Mapa;
-import Logica.PowerUps.PowerUp;
 
 public class CampoProteccion extends MagiaTemporal{
 
@@ -11,11 +10,6 @@ public class CampoProteccion extends MagiaTemporal{
 		super(m);
 		clave = 1;
 		grafica = new CampoProteccionGrafico(this);
-	}
-	
-	@Override
-	public PowerUp clone() {
-		return new CampoProteccion(map);
 	}
 
 	@Override

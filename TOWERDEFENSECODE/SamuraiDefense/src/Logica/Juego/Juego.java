@@ -70,7 +70,7 @@ public class Juego {
 	private int randomX() {
 		int x = rand.nextInt(3);
 		x = x * 100;
-		return x + 500;
+		return x + 400;
 	}
 
 	private int[] buscarPosRandom() {

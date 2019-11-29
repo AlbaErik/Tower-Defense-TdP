@@ -3,7 +3,6 @@ package Logica.PowerUps.Preciosos;
 import Grafica.PowerUps.BarricadaGrafico;
 import Logica.Entidades.Premios.Muro;
 import Logica.Mapa.Mapa;
-import Logica.PowerUps.PowerUp;
 
 public class Barricada extends ObjetoPrecioso{
 	
@@ -11,11 +10,6 @@ public class Barricada extends ObjetoPrecioso{
 		super(m);
 		clave = 4;
 		grafica = new BarricadaGrafico(this);
-	}
-
-	@Override
-	public PowerUp clone() {
-		return new Barricada(map);
 	}
 
 	@Override

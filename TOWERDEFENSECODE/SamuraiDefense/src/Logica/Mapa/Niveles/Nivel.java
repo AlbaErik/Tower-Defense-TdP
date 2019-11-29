@@ -21,7 +21,6 @@ public abstract class Nivel {
 
 	protected Nivel(Juego j) {
 		juego = j;
-		//juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 		obstaculos = new LinkedList<Obstaculo>();
 		misHordas = new LinkedList<Horda>();
 		creadorObs = new CreadorObstaculo(juego.getMapa());

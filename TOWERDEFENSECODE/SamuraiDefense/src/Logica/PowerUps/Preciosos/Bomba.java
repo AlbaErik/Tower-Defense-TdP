@@ -3,7 +3,6 @@ package Logica.PowerUps.Preciosos;
 import Grafica.PowerUps.BombaGrafico;
 import Logica.Entidades.Premios.Bombita;
 import Logica.Mapa.Mapa;
-import Logica.PowerUps.PowerUp;
 
 public class Bomba extends ObjetoPrecioso{
 	
@@ -11,11 +10,6 @@ public class Bomba extends ObjetoPrecioso{
 		super(m);
 		clave = 3;
 		grafica = new BombaGrafico(this);
-	}
-	
-	@Override
-	public PowerUp clone() {
-		return new Bomba(map);
 	}
 	
 	@Override

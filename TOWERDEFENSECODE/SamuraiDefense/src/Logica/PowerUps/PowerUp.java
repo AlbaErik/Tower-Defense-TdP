@@ -20,6 +20,4 @@ public abstract class PowerUp {
 	
 	public abstract void click();
 	
-	public abstract PowerUp clone();
-
 }
