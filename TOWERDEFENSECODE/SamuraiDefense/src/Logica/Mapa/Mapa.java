@@ -1,6 +1,7 @@
 package Logica.Mapa;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.*;
@@ -54,12 +55,19 @@ public class Mapa {
 	}
 
 	public void agregarEntidadAlCampo(Entidad e) {
-		mapagrafico.agregarEntidad(e);
+		Random rand = new Random();
+		int fila = rand.nextInt(6);
+		fila = fila * 66 + 183;
+		int x = 900;
+
+		e.cambiarPosLogica(x, fila);
+		setEntidad(e);
+		mapagrafico.agregarEntidad(e.getGrafico().getGraficoActual());//------------------
 	}
 
 	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
 		setEntidad(e);
-		mapagrafico.agregarLabel(e.getGrafico().getGraficoActual());
+		mapagrafico.agregarLabel(e.getGrafico().getGraficoActual());//-------------------------
 	}
 
 	public void actualizarOroTienda(int o) {
@@ -70,7 +78,7 @@ public class Mapa {
 		return tienda.getPremioActual();
 	}
 
-	public void eliminarEntidad(Entidad e) {// Elimina al defensor de la lista de defensores
+	public void eliminarEntidad(Entidad e) {//------------
 		Entidad actual = null;
 		for (Entidad i : misEntidades) {
 			if (i.hashCode() == e.hashCode())

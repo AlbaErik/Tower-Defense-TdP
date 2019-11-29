@@ -29,7 +29,7 @@ public class Tienda {
 		premioActual = null;
 		eliminar = false;
 		premio = false;
-		oro = 1000;
+		oro = 3000;
 		juego.actualizarOro(oro);
 		
 		mapa = juego.getMapa();

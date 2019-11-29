@@ -14,7 +14,6 @@ public abstract class Municion extends Entidad {
 		super(x, y, m);
 		mapa = m;
 		velocidad = 5;
-		daño = 5;
 		estado = new EstadoMunicion(this);
 	}
 	

@@ -1,5 +1,7 @@
 package Logica.Entidades;
 
+import javax.swing.JLabel;
+
 import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
@@ -67,6 +69,8 @@ public abstract class Entidad {
 			estado = e;
 		}
 	}
+	
+	//public JLabel getJLabel();
 
 	/*
 	 * getters y setters

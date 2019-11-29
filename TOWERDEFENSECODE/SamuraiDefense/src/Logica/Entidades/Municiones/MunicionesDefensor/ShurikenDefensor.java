@@ -10,7 +10,6 @@ public class ShurikenDefensor extends MunicionDefensor {
 	public ShurikenDefensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		velocidad = 3;
-		daño = 25;
 		
 		grafico = new ShurikenDefensorGrafico(x, y, mapa.getPanelMapa(), this);
 	}

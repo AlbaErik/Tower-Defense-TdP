@@ -10,7 +10,6 @@ public class FlechaAtacante extends MunicionAtacante {
 	public FlechaAtacante(int x, int y, Mapa m) {
 		super(x, y, m);
 		velocidad = 12.5;
-		daño = 30;
 
 		grafico = new FlechaAtacanteGrafico(x, y, mapa.getPanelMapa(), this);
 	}

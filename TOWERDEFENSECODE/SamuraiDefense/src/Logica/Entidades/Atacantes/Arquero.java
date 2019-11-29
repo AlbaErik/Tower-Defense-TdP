@@ -28,6 +28,7 @@ public class Arquero extends Atacante {
 	@Override
 	public void atacar(Entidad e) {
 		Municion mun = arma.crearMunicionAtacante();
+		mun.setDaño(damage);
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 

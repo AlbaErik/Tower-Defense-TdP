@@ -30,11 +30,6 @@ public class Barro extends Obstaculo{
 	}
 
 	@Override
-	public EntidadGrafica getGrafico() {
-		return grafico;
-	}
-
-	@Override
 	public void chocar(Colisionador e) {
 		e.serChocado(this);		
 	}

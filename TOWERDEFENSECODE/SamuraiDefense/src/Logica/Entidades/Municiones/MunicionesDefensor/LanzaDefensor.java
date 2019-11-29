@@ -10,7 +10,6 @@ public class LanzaDefensor extends MunicionDefensor {
 	public LanzaDefensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		velocidad = 2;
-		daño =50;
 		
 		grafico = new LanzaDefensorGrafico(x, y, mapa.getPanelMapa(), this);
 	}

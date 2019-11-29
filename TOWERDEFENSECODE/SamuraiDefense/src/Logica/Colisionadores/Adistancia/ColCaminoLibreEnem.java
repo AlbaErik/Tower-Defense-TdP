@@ -117,7 +117,7 @@ public class ColCaminoLibreEnem extends VisitorDistancia {
 
 	@Override
 	public void serChocado(EscudoDef e) {
-		ataq.setCaminoLibre(true);
+		ataq.setCaminoLibre(false);
 	}
 
 	@Override

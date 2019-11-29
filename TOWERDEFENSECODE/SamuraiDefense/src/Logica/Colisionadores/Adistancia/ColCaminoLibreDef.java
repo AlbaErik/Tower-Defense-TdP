@@ -112,7 +112,7 @@ public class ColCaminoLibreDef extends VisitorDistancia {
 
 	@Override
 	public void serChocado(EscudoEnemigo e) {
-		def.setCaminoLibre(true);
+		def.setCaminoLibre(false);
 	}
 
 	@Override

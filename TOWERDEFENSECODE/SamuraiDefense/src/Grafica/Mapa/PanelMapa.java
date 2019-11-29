@@ -41,19 +41,8 @@ public class PanelMapa extends JPanel {
 		repaint();
 	}
 
-	public void agregarEntidad(Entidad e) {
-
-		Random rand = new Random();
-		int fila = rand.nextInt(6);
-		fila = fila * 66 + 183;
-		int x = 900;
-
-		e.cambiarPosLogica(x, fila);
-		mapa.setEntidad(e);
-		JLabel nuevo = e.getGrafico().getGraficoActual();
-
-		agregarLabel(nuevo);
-
+	public void agregarEntidad(JLabel e) {
+		agregarLabel(e);
 	}
 
 	public void agregarLabel(JLabel nuevo) {

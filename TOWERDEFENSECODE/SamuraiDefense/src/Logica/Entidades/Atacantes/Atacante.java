@@ -13,7 +13,6 @@ import Logica.Inteligencia.InteligenciaAtacanteLento;
 import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
-import Logica.PowerUps.Temporales.PocionDeFuerza;
 
 public abstract class Atacante extends Personaje {
 	protected double movementSpeed;
@@ -76,11 +75,9 @@ public abstract class Atacante extends Personaje {
 		Random ran = new Random();
 		int i = ran.nextInt(10);
 		if (i % 1 == 0)
-			aleatorio = new PocionDeFuerza(mapa);
-			//aleatorio = tiendaPowerUp.getRandom();
+			aleatorio = tiendaPowerUp.getRandom();
 
-		if (aleatorio != null) {
-			
+		if (aleatorio != null) {			
 			int x = (int) this.getPos().getX();
 			int y = (int) this.getPos().getY();
 			aleatorio.getGrafico().setBounds(x, y, 120, 120);

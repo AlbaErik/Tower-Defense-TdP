@@ -10,7 +10,6 @@ public class FlechaDefensor extends MunicionDefensor {
 	public FlechaDefensor(int x, int y, Mapa m) {
 		super(x, y, m);
 		velocidad = 12.5;
-		daño = 35;
 		
 		grafico = new FlechaDefensorGrafico(x, y, mapa.getPanelMapa(), this);
 	}

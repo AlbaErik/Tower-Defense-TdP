@@ -29,6 +29,7 @@ public class Ninja extends Atacante {
 	@Override
 	public void atacar(Entidad aDestruir) {
 		Municion mun = arma.crearMunicionAtacante();
+		mun.setDaño(damage);
 		mapa.agregarEntidadAlCampoEnPosActual(mun);
 	}
 

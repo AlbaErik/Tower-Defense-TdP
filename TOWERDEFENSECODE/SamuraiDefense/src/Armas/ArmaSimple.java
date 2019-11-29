@@ -9,13 +9,12 @@ public class ArmaSimple extends Arma{
 	
 	public ArmaSimple(Personaje p, Mapa m) {
 		super(p, m);
-		super.daño = 80;
 	}
 
 	@Override
 	public Municion crearMunicionDefensor() {
 		// TODO Auto-generated method stub
-		return new FlechaDefensor(daño, daño, mapa);
+		return new FlechaDefensor(0, 0, mapa);
 	}
 
 	@Override
