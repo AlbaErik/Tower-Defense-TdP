@@ -1,9 +1,7 @@
 package Logica.Estados.Personajes.Atacante;
 
 import Grafica.Entidades.PersonajeGrafico;
-import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Atacante;
-import Logica.Estados.Personajes.EstadoPersonaje;
 
 public class AtaqueEnemigo extends EstadoAtacante {
 

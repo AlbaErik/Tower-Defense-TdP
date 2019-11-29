@@ -2,8 +2,6 @@ package Logica.Mapa.Hordas;
 
 import java.util.LinkedList;
 import java.util.Random;
-import Logica.Entidades.Entidad;
-import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Fabricas.FabricaAtacantes;
 import Logica.Mapa.Mapa;

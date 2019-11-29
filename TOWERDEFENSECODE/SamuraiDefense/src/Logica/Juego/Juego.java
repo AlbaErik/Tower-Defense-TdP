@@ -3,7 +3,6 @@ package Logica.Juego;
 import java.util.LinkedList;
 import java.util.Random;
 
-import Audio.Player;
 import GUI.Paneles.PanelJuego;
 import GUI.Paneles.PanelTienda;
 import Grafica.Mapa.PanelMapa;

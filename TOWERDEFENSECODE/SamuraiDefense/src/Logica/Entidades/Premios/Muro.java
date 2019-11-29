@@ -4,7 +4,6 @@ import Grafica.Entidades.Premios.BarricadaGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.Premios.VisitorMuro;
-import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
 
 public class Muro extends Premio {
@@ -54,19 +53,5 @@ public class Muro extends Premio {
 		return toret;
 	}
 
-	private Entidad revisarArriba() {
-		Entidad toret = null;
-		int x = (int) this.getPos().getX();
-		int y = (int) this.getPos().getY() - 1;
-
-		for (int i = 0; i < 140; i++) {
-			if (mapa.hayEnPos(x, y) && mapa.getEntidadEnPos(x, y) != this) {
-				toret = mapa.getEntidadEnPos(x, y);
-				break;
-			}
-			y--;
-		}
-		return toret;
-	}
 
 }
