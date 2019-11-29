@@ -207,6 +207,8 @@ public class Juego {
 		if (nivel.haySigNivel()) {
 			nivel = nivel.getSigNivel();
 			System.out.println("JUEGO-----Se setea siguiente nivel");
+			System.out.println("JUEGO-----: "+nivel.getClass().getName());
+			mapa.getPanelMapa().repaintComponent(nivel.getFondo());
 		}
 	}
 

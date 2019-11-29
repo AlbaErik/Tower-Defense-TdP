@@ -1,5 +1,7 @@
 package Logica.Hilos;
 
+import java.awt.Graphics;
+
 import Logica.Juego.Juego;
 
 public class Game extends Thread {
@@ -13,7 +15,6 @@ public class Game extends Thread {
 		juego.crearNivel();
 		control = new Control(juego.getMapa());
 		ejecutar = true;
-
 	}
 	
 	public Control getControl() {
@@ -23,6 +24,7 @@ public class Game extends Thread {
 	public void run() {
 		juego.inicializarHorda();
 		juego.generarObstaculos();
+		
 		int vueltas = 0;
 
 		while (ejecutar) {

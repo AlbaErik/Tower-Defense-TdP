@@ -30,14 +30,15 @@ public class PanelJuego extends JPanel {
 
 	public void ejecutar() {
 		if (juego == null) {
+			
 			panelStats = new PanelStats(AnchoVentana, AltoVentana, this);
-			juego = new Juego(this);
+			juego = new Juego(this);	
 			this.add(panelStats);
 			this.add(juego.getTienda().getPanelTienda());
 			mapag = juego.getMapa().getPanelMapa();
 			this.add(mapag);
-
-			game = new Game(juego);
+			
+			game = new Game(juego);	
 
 			game.start();
 			

@@ -21,6 +21,7 @@ public abstract class Entidad {
 	protected Estado estado;
 	protected Contador cont;
 	
+	
 	protected Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		permisoCambiarEstado = true;
@@ -109,5 +110,7 @@ public abstract class Entidad {
 	public void recibirDaño(int lp) {
 		life = life - lp;
 	}
+	
+	
 
 }

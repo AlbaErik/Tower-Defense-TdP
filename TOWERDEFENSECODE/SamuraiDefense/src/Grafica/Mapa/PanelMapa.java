@@ -60,6 +60,35 @@ public class PanelMapa extends JPanel {
 		add(nuevo);
 		repaint();
 	}
+	
+	public void insertarPremio(double X, double Y) {
+		        int x=(int)X;
+		        int y=(int)Y;
+				Premio aColocar = mapa.getPremioActual();
+				if (y != 0 && aColocar != null && aColocar.queHago(x, y)) {
+					aColocar.cambiarPosLogica(x, y);
+					mapa.setEntidad(aColocar);
+					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+					mapa.getTienda().eliminarPremio(aColocar.getClave());
+					add(nuevo);
+					repaint();
+				}
+				System.out.println("PANELMAPA: SE SETEO PREMIO");
+	}
+	
+	public void insertarDefensor(double X, double Y) {
+		int x=(int)X;
+        int y=(int)Y;
+		Defensor aColocar = mapa.getPersonajeActual();
+		if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
+			aColocar.cambiarPosLogica(x, y);
+			mapa.setEntidad(aColocar);
+			JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+			mapa.getTienda().actualizarOro(-aColocar.getCost());
+			add(nuevo);
+			repaint();
+		}
+	}
 
 	private class OyenteMouse implements MouseListener {
 
@@ -82,39 +111,17 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			 if (mapa.hayPremioActual()) { // PARA PREMIOS
-				int x = 0;
-				int y = 0;
-				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
-					x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
-					y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
-				}
-				Premio aColocar = mapa.getPremioActual();
-				if (y != 0 && aColocar != null && aColocar.queHago(x, y)) {
-					aColocar.cambiarPosLogica(x, y);
-					mapa.setEntidad(aColocar);
-					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
-					mapa.getTienda().eliminarPremio(aColocar.getClave());
-					add(nuevo);
-					repaint();
-				}
+			int x = 0;
+			int y = 0;
+			if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
+				x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
+				y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
+			}
+			 if (mapa.hayPremioActual()) { // PARA PREMIOS		
+				insertarPremio(x,y);
+				
 			} else {// PARA DEFENSORES
-				int x = 0;
-				int y = 0;
-				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
-					x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
-					y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
-				}
-				Defensor aColocar = mapa.getPersonajeActual();
-
-				if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
-					aColocar.cambiarPosLogica(x, y);
-					mapa.setEntidad(aColocar);
-					JLabel nuevo = aColocar.getGrafico().getGraficoActual();
-					mapa.getTienda().actualizarOro(-aColocar.getCost());
-					add(nuevo);
-					repaint();
-				}
+				insertarDefensor(x,y);
 			}
 		}
 
@@ -125,13 +132,23 @@ public class PanelMapa extends JPanel {
 
 	}
 
-	protected void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(fondo, 0, 0, this.getWidth(), this.getHeight(), this);
 	}
+	
+	private void paintComponents(Graphics g, String s) {
+		super.paintComponent(g);
+		Image fondo1=new ImageIcon(s).getImage();
+		System.out.println(s);
+		System.out.println(fondo1);
+		g.drawImage(fondo1, 0, 0, this.getWidth(), this.getHeight(), this);
+	}
 
-	protected void repaintComponent(Image i) {// Para ponerle otro fondo al mapa
+	public void repaintComponent(Image s) {// Para ponerle otro fondo al mapa
 		Graphics g = this.getGraphics();
-		g.drawImage(i, 0, 0, this.getWidth(), this.getHeight(), this);
+		super.paintComponent(g);
+		g.drawImage(s, 0, 0, this.getWidth(), this.getHeight(), this);
+		System.out.println("PANELMAPA: Se seteo el fondo del siguiente nivel");
 	}
 }

@@ -62,9 +62,7 @@ public abstract class Defensor extends Personaje {
 	public int getCost() {
 		return cost;
 	}
-	
 	public int getVida() {
 		return vida;
 	}
-
 }

@@ -4,9 +4,9 @@ import Logica.Juego.Juego;
 import Logica.Mapa.HordaObstaculos.CreadorObstaculo;
 import Logica.Mapa.Hordas.Horda;
 
+import java.awt.Image;
 import java.util.LinkedList;
 
-import Logica.Entidades.*;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 
@@ -22,7 +22,6 @@ public abstract class Nivel {
 
 	protected Nivel(Juego j) {
 		juego = j;
-		
 		//juego.getPanelJuego().getVentanaInicial().add(juego.getMapa().getPanelMapa());
 		obstaculos = new LinkedList<Obstaculo>();
 		misHordas = new LinkedList<Horda>();
@@ -51,5 +50,7 @@ public abstract class Nivel {
 	public abstract Nivel getSigNivel();
 
 	public abstract boolean haySigNivel();
+	
+	public abstract Image getFondo();
 
 }

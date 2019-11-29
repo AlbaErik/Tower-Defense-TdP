@@ -1,9 +1,10 @@
 package Logica.Mapa.Niveles;
 
+import java.awt.Image;
 import java.util.LinkedList;
 
-import Logica.Entidades.Entidad;
-import Logica.Entidades.Personaje;
+import javax.swing.ImageIcon;
+
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Juego.Juego;
@@ -18,6 +19,7 @@ public class Nivel1 extends Nivel {
 		cantidadEnems = 1;
 		cantObs = 2;
 		siguiente = new Nivel2(juego);
+
 	}
 	
 	@Override
@@ -45,6 +47,11 @@ public class Nivel1 extends Nivel {
 	@Override
 	public LinkedList<Atacante> getSigHorda() {
 		return getHorda().crearAtacantes(cantidadEnems);
+	}
+
+	@Override
+	public Image getFondo() {
+		return new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
 	}
 
 }
