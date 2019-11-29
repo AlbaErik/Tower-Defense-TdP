@@ -44,6 +44,10 @@ public class PanelJuego extends JPanel {
 		} 
 
 	}
+	
+	public Game getgame() {
+		return game;
+	}
 
 	public VentanaInicial getVentanaInicial() {
 		return vInicial;

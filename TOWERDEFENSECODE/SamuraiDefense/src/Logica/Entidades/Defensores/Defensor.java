@@ -7,7 +7,6 @@ import Logica.Colisionadores.VisitorsDeEstados.VisitorEstadoAtaque;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorEstadoFuerza;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Personaje;
-import Logica.Estados.Personajes.Defensor.EstadoDefensor;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
 import Logica.Estados.Personajes.Defensor.SuperReposoDefensor;
 import Logica.Inteligencia.InteligenciaDefensor;
