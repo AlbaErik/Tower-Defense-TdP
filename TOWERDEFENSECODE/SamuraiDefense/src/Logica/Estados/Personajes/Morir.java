@@ -1,5 +1,6 @@
 package Logica.Estados.Personajes;
 
+import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Personaje;
 
 public class Morir extends EstadoPersonaje {
@@ -17,6 +18,11 @@ public class Morir extends EstadoPersonaje {
 
 		if (personaje.getTiempoMuerte() <= 0)
 			personaje.morir();
+	}
+
+	@Override
+	public void aceptarVisitorEstados(VisitorDeEstados vis) {
+		vis.cambiarEstado(this);
 	}
 
 }

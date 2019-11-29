@@ -28,7 +28,7 @@ public abstract class EstadoPersonaje extends Estado {
 		personaje.cambiarEstado(new Morir(personaje));
 		personaje.prohibidoCambiarEstado();
 	}
-
+	
 	/*
 	 * Se encarga de cambiar el contenido de la lista "entidadesEnRango" con las entidades encontradas.
 	 */

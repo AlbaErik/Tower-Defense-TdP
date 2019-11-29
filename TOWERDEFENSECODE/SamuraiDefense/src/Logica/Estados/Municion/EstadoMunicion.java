@@ -1,5 +1,6 @@
 package Logica.Estados.Municion;
 
+import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Municiones.Municion;
 import Logica.Estados.Estado;
@@ -20,6 +21,11 @@ public class EstadoMunicion extends Estado{
 	public void entidadADestruir(Entidad e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void aceptarVisitorEstados(VisitorDeEstados vis) {
+		vis.cambiarEstado(this);
 	}
 
 }

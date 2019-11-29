@@ -40,6 +40,8 @@ public class PocionFuerza extends Premio{
 			ent = mapa.getEntidadEnPos(x, y);
 			ent.chocar(col);
 		}
+		mapa.getTienda().eliminarPremio(clave);
+
 		return false;
 	}
 	

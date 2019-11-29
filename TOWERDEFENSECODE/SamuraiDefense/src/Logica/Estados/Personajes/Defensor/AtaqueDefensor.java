@@ -1,6 +1,7 @@
 package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
+import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Defensores.Defensor;
 
@@ -34,4 +35,9 @@ public class AtaqueDefensor extends EstadoDefensor {
 
 	@Override
 	public void cambiarEstadoAtaque() {	}
+
+	@Override
+	public void aceptarVisitorEstados(VisitorDeEstados vis) {
+		vis.cambiarEstado(this);
+	}
 }

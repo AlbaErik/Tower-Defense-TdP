@@ -20,7 +20,7 @@ public abstract class Entidad {
 	protected Inteligencia intel;
 	protected Estado estado;
 	protected Contador cont;
-
+	
 	protected Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		permisoCambiarEstado = true;

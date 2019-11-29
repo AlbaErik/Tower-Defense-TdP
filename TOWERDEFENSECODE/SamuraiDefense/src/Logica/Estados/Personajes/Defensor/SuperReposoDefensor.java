@@ -1,6 +1,7 @@
 package Logica.Estados.Personajes.Defensor;
 
 import Grafica.Entidades.PersonajeGrafico;
+import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Defensores.Defensor;
 
@@ -43,5 +44,10 @@ public class SuperReposoDefensor extends EstadoDefensor {
 	@Override
 	public void cambiarEstadoAtaque() {
 		defensor.cambiarEstado(new SuperAtaqueDefensor(defensor, cont));
+	}
+
+	@Override
+	public void aceptarVisitorEstados(VisitorDeEstados vis) {
+		vis.cambiarEstado(this);
 	}
 }
