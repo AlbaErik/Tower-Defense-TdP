@@ -17,7 +17,7 @@ public abstract class EntidadGrafica {
 	protected Entidad mientidad;
 	protected int ancho = 120, alto = 120;
 
-	public EntidadGrafica(int x, int y, PanelMapa m, Entidad e) {
+	public EntidadGrafica(int x, int y, PanelMapa m, Entidad e){
 		mientidad = e;
 		mapaPanel = m;
 		pos = new Point(x, y);

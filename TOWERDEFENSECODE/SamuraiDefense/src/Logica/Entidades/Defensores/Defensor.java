@@ -3,8 +3,8 @@ package Logica.Entidades.Defensores;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreDef;
 import Logica.Entidades.Personaje;
+import Logica.Estados.Personajes.Defensor.EstadoDefensor;
 import Logica.Estados.Personajes.Defensor.ReposoDefensor;
-import Logica.Estados.Personajes.Defensor.SuperReposoDefensor;
 
 import Logica.Inteligencia.InteligenciaDefensor;
 import Logica.Mapa.Mapa;
@@ -45,12 +45,9 @@ public abstract class Defensor extends Personaje {
 	public int getCost() {
 		return cost;
 	}
-
-	public void eliminarPorBoton() {
-		if (life <= vida && life > vida / 2)
-			mapa.actualizarOroTienda(cost);
-		if (life <= vida / 2)
-			mapa.actualizarOroTienda(cost / 2);
-		mapa.eliminarEntidad(this);
+	
+	public int getVida() {
+		return vida;
 	}
+
 }

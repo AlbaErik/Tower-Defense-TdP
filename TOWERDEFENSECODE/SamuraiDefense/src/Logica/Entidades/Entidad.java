@@ -67,8 +67,6 @@ public abstract class Entidad {
 		}
 	}
 
-	public void eliminarPorBoton() {}
-
 	/*
 	 * getters y setters
 	 */

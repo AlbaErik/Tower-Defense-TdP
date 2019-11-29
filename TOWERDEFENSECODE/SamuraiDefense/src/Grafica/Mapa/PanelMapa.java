@@ -82,15 +82,7 @@ public class PanelMapa extends JPanel {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if (mapa.tiendaGetEliminar()) {// BOTONELIMINAR
-				int x = (e.getX() / 100) * 100; // Lo posiciona en el eje x
-				int y = ((e.getY() / 66) - 3) * 66 + 183;// Lo posiciona en el eje y
-				if (mapa.hayEnPos(x, y)) {
-					Entidad aEliminar = mapa.getEntidadEnPos(x, y);
-					aEliminar.eliminarPorBoton();
-				}
-				
-			} else if (mapa.hayPremioActual()) { // PARA PREMIOS
+			 if (mapa.hayPremioActual()) { // PARA PREMIOS
 				int x = 0;
 				int y = 0;
 				if (e.getY() > 200 && e.getY() < 590 && e.getX() < 600) {
