@@ -17,10 +17,8 @@ public class PanelStats extends JPanel {
 	private JLabel nivel;
 	private String [] niveles= {"Nivel-1","Nivel-2","Nivel-3"};
 	private int indice;
-	//private PanelJuego Gui;
-
+	
 	public PanelStats(int AnchoVentana, int AltoVentana, PanelJuego g) {
-		//Gui = g;
 		this.setLayout(null);
 		this.setBounds(0, 0, AnchoVentana, 50);// Seteo espacio para el panel
 
@@ -32,7 +30,7 @@ public class PanelStats extends JPanel {
 
 		pauseButton();
 		indice=0;
-		nivel=new JLabel(new ImageIcon("Sprites/Botones/"+niveles[indice]+".png"));
+		nivel=new JLabel(new ImageIcon("Sprites/Otros/"+niveles[indice]+".png"));
 		nivel.setBounds(500,0,120,50);
 		add(nivel);
 		add(oro);
@@ -65,7 +63,7 @@ public class PanelStats extends JPanel {
 	
 	public void cambiarNivel() {
 		indice++;
-		nivel.setIcon(new ImageIcon("Sprites/Botones/"+niveles[indice]+".png"));
+		nivel.setIcon(new ImageIcon("Sprites/Otros/"+niveles[indice]+".png"));
 		nivel.setBounds(500,0,120,50);
 		repaint();
 	}
@@ -78,8 +76,8 @@ public class PanelStats extends JPanel {
 	private void inicializarLabelOro(int anchoV) {
 		oro.setIcon(new ImageIcon("Sprites/Otros/Monedas.png"));
 		oro.setBounds(anchoV - 360, 0, 400, 50);
-		oro.setText("0");// Gui.getJuego().getPuntaje()
-		oro.setVerticalTextPosition(JLabel.TOP);// Deja alineado el texto con la imagen
+		oro.setText("0");
+		oro.setVerticalTextPosition(JLabel.TOP);
 		oro.setHorizontalAlignment(JLabel.LEFT);
 		oro.setVerticalAlignment(JLabel.CENTER);
 		oro.setForeground(Color.BLACK);

@@ -224,4 +224,11 @@ public class Juego {
 		return mapa.getPanelMapa();
 	}
 
+	public void ganar() {
+		Gui.ganar();	
+	}
+	
+	public void perder() {
+		Gui.perder();
+	}
 }

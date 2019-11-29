@@ -73,5 +73,14 @@ public class PanelJuego extends JPanel {
 	public PanelMapa getPanelMapa() {
 		return mapag;
 	}
+	
+	public void ganar() {
+		vInicial.cambiarPanel(this, new PanelGanar(vInicial));
+	}
+	
+	public void perder() {
+		vInicial.cambiarPanel(this, new PanelPerder(vInicial));
+	}
+	
 
 }

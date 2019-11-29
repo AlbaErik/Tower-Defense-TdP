@@ -83,7 +83,7 @@ public abstract class Atacante extends Personaje {
 		Random ran = new Random();
 		int i = ran.nextInt(10);
 		if (i % 1 == 0)
-			//aleatorio = new PocionDeFuerza(mapa);
+			//aleatorio = new Barricada(mapa);
 			aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
