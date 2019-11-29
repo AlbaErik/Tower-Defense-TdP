@@ -1,5 +1,6 @@
 package Logica.Estados;
 
+import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Entidad;
 
 public abstract class Estado {
@@ -17,5 +18,7 @@ public abstract class Estado {
 	public boolean getPermisoParaPasar() {
 		return dejoPasar;
 	}
+	
+	public abstract void aceptarVisitorEstados(VisitorDeEstados vis);
 	
 }

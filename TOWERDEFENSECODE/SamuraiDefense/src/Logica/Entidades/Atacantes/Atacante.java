@@ -15,6 +15,7 @@ import Logica.Mapa.Mapa;
 import Logica.PowerUps.PowerUp;
 import Logica.PowerUps.TiendaPowerUp;
 import Logica.PowerUps.Preciosos.Barricada;
+import Logica.PowerUps.Temporales.PocionDeFuerza;
 
 public abstract class Atacante extends Personaje {
 	protected double movementSpeed;
@@ -82,7 +83,8 @@ public abstract class Atacante extends Personaje {
 		Random ran = new Random();
 		int i = ran.nextInt(10);
 		if (i % 1 == 0)
-			aleatorio = tiendaPowerUp.getRandom();
+			aleatorio = new PocionDeFuerza(mapa);
+			//aleatorio = tiendaPowerUp.getRandom();
 
 		if (aleatorio != null) {
 			
