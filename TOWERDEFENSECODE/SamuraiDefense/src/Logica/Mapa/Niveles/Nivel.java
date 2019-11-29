@@ -4,7 +4,6 @@ import Logica.Juego.Juego;
 import Logica.Mapa.HordaObstaculos.CreadorObstaculo;
 import Logica.Mapa.Hordas.Horda;
 
-import java.awt.Image;
 import java.util.LinkedList;
 
 import Logica.Entidades.Atacantes.Atacante;
@@ -51,6 +50,7 @@ public abstract class Nivel {
 
 	public abstract boolean haySigNivel();
 	
-	public abstract Image getFondo();
+	public abstract String getFondo();
+	
 
 }

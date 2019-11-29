@@ -17,7 +17,7 @@ import Logica.Mapa.Mapa;
 
 public class PanelMapa extends JPanel {
 	private static final long serialVersionUID = 1L;
-	protected Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
+	protected Image fondo = new ImageIcon("Sprites/Fondos/FondoMapa1.png").getImage();
 	protected Entidad entidad;
 	protected Mapa mapa;
 
@@ -136,19 +136,13 @@ public class PanelMapa extends JPanel {
 		super.paintComponent(g);
 		g.drawImage(fondo, 0, 0, this.getWidth(), this.getHeight(), this);
 	}
-	
-	private void paintComponents(Graphics g, String s) {
-		super.paintComponent(g);
-		Image fondo1=new ImageIcon(s).getImage();
-		System.out.println(s);
-		System.out.println(fondo1);
-		g.drawImage(fondo1, 0, 0, this.getWidth(), this.getHeight(), this);
-	}
 
-	public void repaintComponent(Image s) {// Para ponerle otro fondo al mapa
+	public void repaintComponent(String s) {// Para ponerle otro fondo al mapa
 		Graphics g = this.getGraphics();
 		super.paintComponent(g);
-		g.drawImage(s, 0, 0, this.getWidth(), this.getHeight(), this);
+		fondo=new ImageIcon(s).getImage();
+		g.drawImage(fondo, 0, 0, this.getWidth(), this.getHeight(), this);
+		repaint();
 		System.out.println("PANELMAPA: Se seteo el fondo del siguiente nivel");
 	}
 }

@@ -14,6 +14,9 @@ import javax.swing.JPanel;
 public class PanelStats extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JLabel oro;
+	private JLabel nivel;
+	private String [] niveles= {"Nivel-1","Nivel-2","Nivel-3"};
+	private int indice;
 	//private PanelJuego Gui;
 
 	public PanelStats(int AnchoVentana, int AltoVentana, PanelJuego g) {
@@ -28,6 +31,10 @@ public class PanelStats extends JPanel {
 		fondo.setBounds(0, 0, AnchoVentana, 50);
 
 		pauseButton();
+		indice=0;
+		nivel=new JLabel(new ImageIcon("Sprites/Botones/"+niveles[indice]+".png"));
+		nivel.setBounds(500,0,120,50);
+		add(nivel);
 		add(oro);
 		add(fondo);
 
@@ -54,6 +61,13 @@ public class PanelStats extends JPanel {
 		pause.setIcon(new ImageIcon("Sprites/Botones/BotonPausa.png"));
 		pause.setRolloverIcon(new ImageIcon("Sprites/Botones/BotonPausaEntered.png"));
 		add(pause);
+	}
+	
+	public void cambiarNivel() {
+		indice++;
+		nivel.setIcon(new ImageIcon("Sprites/Botones/"+niveles[indice]+".png"));
+		nivel.setBounds(500,0,120,50);
+		repaint();
 	}
 
 

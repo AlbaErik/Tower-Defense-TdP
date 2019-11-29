@@ -4,8 +4,9 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import GUI.Paneles.PanelJuego;
+import GUI.Paneles.PanelTienda;
+import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Personaje;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Entidades.Premios.EscudoEnemigo;
@@ -198,6 +199,10 @@ public class Juego {
 	public PanelJuego getPanelJuego() {
 		return Gui;
 	}
+	
+	public PanelTienda getPanelTienda() {
+		return tienda.getPanelTienda();
+	}
 
 	public Nivel getNivel() {
 		return nivel;
@@ -206,14 +211,17 @@ public class Juego {
 	public void setSigNivel() {
 		if (nivel.haySigNivel()) {
 			nivel = nivel.getSigNivel();
-			System.out.println("JUEGO-----Se setea siguiente nivel");
-			System.out.println("JUEGO-----: "+nivel.getClass().getName());
-			mapa.getPanelMapa().repaintComponent(nivel.getFondo());
+			Gui.cambiarNivel();
+			mapa.repaintComponent(nivel.getFondo());
 		}
 	}
 
 	public Mapa getMapa() {
 		return mapa;
+	}
+	
+	public PanelMapa getPanelMapa() {
+		return mapa.getPanelMapa();
 	}
 
 }

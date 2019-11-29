@@ -1,9 +1,9 @@
 package Logica.Mapa.Niveles;
 
-import java.awt.Image;
+
 import java.util.LinkedList;
 
-import javax.swing.ImageIcon;
+
 
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Entidades.Obstaculos.Obstaculo;
@@ -50,8 +50,8 @@ public class Nivel1 extends Nivel {
 	}
 
 	@Override
-	public Image getFondo() {
-		return new ImageIcon("Sprites/Fondos/FondoMapa2.png").getImage();
+	public String getFondo() {
+		return "Sprites/Fondos/FondoMapa1.png";
 	}
 
 }

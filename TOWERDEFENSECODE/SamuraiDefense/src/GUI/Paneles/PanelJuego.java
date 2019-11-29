@@ -27,6 +27,10 @@ public class PanelJuego extends JPanel {
 	public void actualizarOroStats(int o) {
 		panelStats.actualizarOro(o);
 	}
+	
+	public void cambiarNivel() {
+		panelStats.cambiarNivel();
+	}
 
 	public void ejecutar() {
 		if (juego == null) {
@@ -34,8 +38,8 @@ public class PanelJuego extends JPanel {
 			panelStats = new PanelStats(AnchoVentana, AltoVentana, this);
 			juego = new Juego(this);	
 			this.add(panelStats);
-			this.add(juego.getTienda().getPanelTienda());
-			mapag = juego.getMapa().getPanelMapa();
+			this.add(juego.getPanelTienda());
+			mapag = juego.getPanelMapa();
 			this.add(mapag);
 			
 			game = new Game(juego);	

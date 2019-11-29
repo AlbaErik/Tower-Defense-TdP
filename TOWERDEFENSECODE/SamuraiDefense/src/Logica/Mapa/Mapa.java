@@ -163,4 +163,8 @@ public class Mapa {
 	public void setEntidad(Entidad d) {
 		misEntidades.addFirst(d);
 	}
+	
+	public void repaintComponent(String s) {
+		mapagrafico.repaintComponent(s);
+	}
 }

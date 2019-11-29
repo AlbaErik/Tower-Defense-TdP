@@ -1,6 +1,5 @@
 package Logica.Hilos;
 
-import java.awt.Graphics;
 
 import Logica.Juego.Juego;
 
