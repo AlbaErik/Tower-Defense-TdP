@@ -35,9 +35,7 @@ public class Muro extends Premio {
 	@Override
 	public boolean queHago(int x, int y) {
 		boolean puedoPonerlo = true;
-		// Entidad ent1 = revisarArriba();
 		puedoPonerlo = puedoPonerlo && revisarAbajo(x, y);
-		
 		return puedoPonerlo;
 	}
 

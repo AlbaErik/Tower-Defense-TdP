@@ -20,7 +20,6 @@ public class Posicion {
 
 	public void setAlto(int i) {
 		alto = i;
-		//rectangulo.setSize(ancho, alto);
 	}
 
 	public void setPos(double x, int y) {

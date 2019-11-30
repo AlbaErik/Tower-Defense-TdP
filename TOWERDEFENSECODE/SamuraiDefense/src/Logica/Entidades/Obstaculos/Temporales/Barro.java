@@ -8,18 +8,12 @@ import Logica.Mapa.Mapa;
 
 public class Barro extends ObstaculoTemporal{
 
-	private int lentitud;
 	public Barro(int x,int y,Mapa m) {
 		super(x,y,m);
 		life = 1000;
-		lentitud = 1;
 		
 		grafico = new BarroGrafico(y, y, mapa.getPanelMapa(), this);
 		col = new ColisionadorBarro();
-	}
-
-	public int getLentitud() {
-		return lentitud;
 	}
 	
 	@Override
