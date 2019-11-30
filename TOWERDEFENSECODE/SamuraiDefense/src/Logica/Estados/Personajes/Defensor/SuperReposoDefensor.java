@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes.Defensor;
 
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Defensores.Defensor;
@@ -17,11 +16,12 @@ public class SuperReposoDefensor extends EstadoDefensor {
 	@Override
 	public void ejecutar() {
 		controlarTiempo();
-		if (defensor.getLife() <= 0)
+		if (defensor.getLife() <= 0) {
+			defensor.getGrafico().death();
 			matarPersonaje(defensor);
+		}
 		else {
-			PersonajeGrafico p = (PersonajeGrafico) defensor.getGrafico();
-			p.standingFuerza();
+			defensor.getGrafico().standingFuerza();;
 		}
 		if (defensor.getContador() % 50 == 0) {
 

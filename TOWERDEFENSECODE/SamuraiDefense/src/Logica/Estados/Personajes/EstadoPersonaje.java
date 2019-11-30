@@ -1,7 +1,6 @@
 package Logica.Estados.Personajes;
 
 import java.util.LinkedList;
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Entidades.Entidad;
 import Logica.Entidades.Personaje;
@@ -11,20 +10,17 @@ import Logica.Mapa.Mapa;
 
 public abstract class EstadoPersonaje extends Estado {
 
-	//protected Personaje personaje;
 	protected Control control;
 	protected LinkedList<Entidad> entidadesEnRango;
 	protected VisitorDistancia visitorRangoVacio;
 
 	protected EstadoPersonaje(Mapa m) {
-		//personaje = p;
 		control = new Control(m);
 		entidadesEnRango = new LinkedList<Entidad>();
 	}
 	
 	protected void matarPersonaje(Personaje personaje) {
-		PersonajeGrafico p = (PersonajeGrafico) personaje.getGrafico();
-		p.death();
+		
 		personaje.cambiarEstado(new Morir(personaje));
 		personaje.prohibidoCambiarEstado();
 	}

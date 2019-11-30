@@ -1,5 +1,9 @@
 package Logica.Entidades.Defensores;
 
+import javax.swing.JLabel;
+
+import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Defensores.DefensorGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreDef;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
@@ -15,6 +19,7 @@ public abstract class Defensor extends Personaje {
 	protected int vida;
 	protected VisitorDeEstados visitorFuerza;
 	protected VisitorDeEstados visitorAtaque;
+	protected DefensorGrafico grafico;
 
 	protected Defensor(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -26,7 +31,21 @@ public abstract class Defensor extends Personaje {
 		visitorFuerza = new VisitorEstadoFuerza();
 		visitorAtaque = new VisitorEstadoAtaque();
 	}
+	
+	public DefensorGrafico getGrafico() {
+		return grafico;
+	}
 
+	public void cambiarPosLogica(double x, int y){
+		miCelda.setPos(x, y);
+		grafico.cambiarPos(x, y);
+		mapa.getPanelMapa().repaint();
+	}
+
+	public JLabel getJLabel() {
+		return grafico.getGraficoActual();
+	}
+	
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();

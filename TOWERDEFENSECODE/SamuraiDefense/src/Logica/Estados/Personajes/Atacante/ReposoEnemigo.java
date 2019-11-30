@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes.Atacante;
 
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Entidades.Atacantes.Atacante;
 
 public class ReposoEnemigo extends EstadoAtacante {
@@ -13,11 +12,11 @@ public class ReposoEnemigo extends EstadoAtacante {
 	@Override
 	public void ejecutar() {
 		if (atacante.getLife() <= 0) {
+			atacante.getGrafico().death();
 			matarPersonaje(atacante);
 
 		} else {
-			PersonajeGrafico p = (PersonajeGrafico) atacante.getGrafico();
-			p.standing();
+			atacante.getGrafico().standing();
 
 			if (atacante.getContador() % 50 == 0) {
 				if (tengoCaminoLibre(atacante)) {

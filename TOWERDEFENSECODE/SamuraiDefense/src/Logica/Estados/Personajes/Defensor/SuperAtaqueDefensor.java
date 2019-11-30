@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes.Defensor;
 
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Contador;
 import Logica.Entidades.Defensores.Defensor;
@@ -17,12 +16,13 @@ public class SuperAtaqueDefensor extends EstadoDefensor {
 	@Override
 	public void ejecutar() {
 		controlarTiempo();
-		if (defensor.getLife() <= 0)
+		if (defensor.getLife() <= 0) {
+			defensor.getGrafico().death();
 			matarPersonaje(defensor);
+		}
 		else if (defensor.getContador() % 50 == 0) {
 
-			PersonajeGrafico p = (PersonajeGrafico) defensor.getGrafico();
-			p.attackFuerza();
+			defensor.getGrafico().attackFuerza();
 
 			defensor.superAtaque(aDestruir);
 			defensor.resetContador();

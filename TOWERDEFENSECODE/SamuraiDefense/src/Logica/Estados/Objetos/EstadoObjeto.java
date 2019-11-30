@@ -1,13 +1,13 @@
 package Logica.Estados.Objetos;
 
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
-import Logica.Entidades.Obstaculos.Obstaculo;
+import Logica.Entidades.Obstaculos.ConVida.ObstaculoConVida;
 import Logica.Estados.Estado;
 
 public abstract class EstadoObjeto extends Estado{
-	protected Obstaculo obs;
+	protected ObstaculoConVida obs;
 	
-	public EstadoObjeto(Obstaculo o) {
+	public EstadoObjeto(ObstaculoConVida o) {
 		obs = o;
 	}
 

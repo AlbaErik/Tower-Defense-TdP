@@ -6,7 +6,7 @@ import Grafica.Entidades.EntidadGrafica;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
-public class BarroGrafico extends EntidadGrafica{
+public class BarroGrafico extends ObstaculoGraficoTemporal{
 
 	public BarroGrafico(int x, int y, PanelMapa m, Entidad e) {
 		super(x, y, m, e);

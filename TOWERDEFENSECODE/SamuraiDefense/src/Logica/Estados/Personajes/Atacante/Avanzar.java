@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes.Atacante;
 
-import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Entidades.Atacantes.Atacante;
 import Logica.Estados.Personajes.Atacante.AtaqueEnemigo;
 
@@ -15,11 +14,11 @@ public class Avanzar extends EstadoAtacante {
 	public void ejecutar() {
 
 		if (atacante.getLife() <= 0) {
+			atacante.getGrafico().death();
 			matarPersonaje(atacante);
 		} else {
 
-			AtacanteGrafico p = (AtacanteGrafico) atacante.getGrafico();
-			p.running();
+			atacante.getGrafico().running();;
 			atacante.getInteligencia().mover();
 
 			if (atacante.getPos().getX() == 0)

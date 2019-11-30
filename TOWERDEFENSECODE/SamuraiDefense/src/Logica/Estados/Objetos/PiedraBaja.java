@@ -1,12 +1,11 @@
 package Logica.Estados.Objetos;
 
-import Grafica.Entidades.Obstaculos.VidaFinita.ObstaculoGrafico;
 import Logica.Entidades.Entidad;
-import Logica.Entidades.Obstaculos.Obstaculo;
+import Logica.Entidades.Obstaculos.ConVida.ObstaculoConVida;
 
 public class PiedraBaja extends EstadoObjeto {
 
-	public PiedraBaja(Obstaculo e) {
+	public PiedraBaja(ObstaculoConVida e) {
 		super(e);
 		// TODO Auto-generated constructor stub
 	}
@@ -14,7 +13,7 @@ public class PiedraBaja extends EstadoObjeto {
 	@Override
 	public void ejecutar() {
 		
-		((ObstaculoGrafico) obs.getGrafico()).vidaBaja(); 		
+		obs.getGrafico().vidaBaja(); 		
 		if(obs.getLife() <= 0) {
 			obs.morir();
 		}

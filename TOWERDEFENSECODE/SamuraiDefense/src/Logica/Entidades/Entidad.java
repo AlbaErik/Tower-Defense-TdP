@@ -2,7 +2,6 @@ package Logica.Entidades;
 
 import javax.swing.JLabel;
 
-import Grafica.Entidades.EntidadGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Estados.Estado;
@@ -11,19 +10,18 @@ import Logica.Mapa.Mapa;
 import Logica.Mapa.Posicion;
 
 public abstract class Entidad {
+	
 	protected int life;
 	protected int lugarEnMapa;
 	protected boolean permisoCambiarEstado;
 
 	protected Posicion miCelda;
 	protected Mapa mapa;
-	protected EntidadGrafica grafico;
 	protected Colisionador col;
 	protected Inteligencia intel;
 	protected Estado estado;
 	protected Contador cont;
-	
-	
+
 	protected Entidad(int x, int y, Mapa m) {
 		mapa = m;
 		permisoCambiarEstado = true;
@@ -54,11 +52,7 @@ public abstract class Entidad {
 		mapa.eliminarEntidad(this);
 	}
 
-	public void cambiarPosLogica(double x, int y) {
-		miCelda.setPos(x, y);
-		grafico.cambiarPos(x, y);
-		mapa.getPanelMapa().repaint();
-	}
+	public abstract void cambiarPosLogica(double x, int y);
 
 	public void prohibidoCambiarEstado() {
 		permisoCambiarEstado = false;
@@ -69,8 +63,8 @@ public abstract class Entidad {
 			estado = e;
 		}
 	}
-	
-	//public JLabel getJLabel();
+
+	public abstract JLabel getJLabel();
 
 	/*
 	 * getters y setters
@@ -79,9 +73,9 @@ public abstract class Entidad {
 		return cont.getContador();
 	}
 
-	public EntidadGrafica getGrafico() {
-		return grafico;
-	}
+	/*
+	 * private EntidadGrafica getGrafico() { return grafico; }
+	 */
 
 	public Mapa getMapa() {
 		return mapa;
@@ -114,7 +108,5 @@ public abstract class Entidad {
 	public void recibirDaño(int lp) {
 		life = life - lp;
 	}
-	
-	
 
 }

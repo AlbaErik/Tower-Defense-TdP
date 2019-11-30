@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 
-public class PiedraGrafica extends ObstaculoGrafico {
+public class PiedraGrafica extends ObstaculoGraficoFinito {
 	private String palabras[] = { "PiedraVidaAlta", "PiedraVidaMedia", "PiedraVidaBaja" };
 
 	public PiedraGrafica(int x, int y, PanelMapa m, Entidad e) {

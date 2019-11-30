@@ -62,12 +62,14 @@ public class Mapa {
 
 		e.cambiarPosLogica(x, fila);
 		setEntidad(e);
-		mapagrafico.agregarEntidad(e.getGrafico().getGraficoActual());//------------------
+		mapagrafico.agregarEntidad(e.getJLabel());
+		//mapagrafico.agregarEntidad(e.getGrafico().getGraficoActual());//------------------
 	}
 
 	public void agregarEntidadAlCampoEnPosActual(Entidad e) {
 		setEntidad(e);
-		mapagrafico.agregarLabel(e.getGrafico().getGraficoActual());//-------------------------
+		mapagrafico.agregarLabel(e.getJLabel());
+		//mapagrafico.agregarLabel(e.getGrafico().getGraficoActual());//-------------------------
 	}
 
 	public void actualizarOroTienda(int o) {
@@ -86,7 +88,8 @@ public class Mapa {
 		}
 		if (actual != null) {
 			misEntidades.remove(actual);
-			mapagrafico.eliminarLabel(actual.getGrafico().getGraficoActual());
+			mapagrafico.eliminarLabel(actual.getJLabel());
+			//mapagrafico.eliminarLabel(actual.getGrafico().getGraficoActual());
 		}
 	}
 

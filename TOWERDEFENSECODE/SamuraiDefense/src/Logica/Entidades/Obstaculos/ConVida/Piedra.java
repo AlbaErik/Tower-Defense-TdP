@@ -9,7 +9,7 @@ import Logica.Estados.Objetos.PiedraAlta;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 
-public class Piedra extends Obstaculo {
+public class Piedra extends ObstaculoConVida {
 
 	public Piedra(int x, int y, Mapa m) {
 		super(x, y, m);

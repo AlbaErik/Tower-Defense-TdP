@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes.Defensor;
 
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Defensores.Defensor;
 
@@ -13,10 +12,10 @@ public class ReposoDefensor extends EstadoDefensor {
 	@Override
 	public void ejecutar() {
 		if (defensor.getLife() <= 0) {
+			defensor.getGrafico().death();
 			matarPersonaje(defensor);
 		} else {
-			PersonajeGrafico p = (PersonajeGrafico) defensor.getGrafico();
-			p.standing();
+			defensor.getGrafico().standing();
 		}
 		if (defensor.getContador() % 50 == 0) {
 

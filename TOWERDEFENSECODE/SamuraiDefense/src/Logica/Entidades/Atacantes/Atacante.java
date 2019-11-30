@@ -1,6 +1,11 @@
 package Logica.Entidades.Atacantes;
 
 import java.util.Random;
+
+import javax.swing.JLabel;
+
+import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;
 import Logica.Entidades.Contador;
@@ -22,6 +27,7 @@ public abstract class Atacante extends Personaje {
 	protected TiendaPowerUp tiendaPowerUp;
 	protected EscudoEnemigo escudo = null;
 	protected Contador contLentitud = new Contador();
+	protected AtacanteGrafico grafico;
 
 	protected Atacante(int x, int y, Mapa m) {
 		super(x, y, m);
@@ -32,7 +38,21 @@ public abstract class Atacante extends Personaje {
 		estado = new Avanzar(this);
 		col = new ColisionadorAtacante(this);
 	}
+	
+	public AtacanteGrafico getGrafico() {
+		return grafico;
+	}
+	
+	public void cambiarPosLogica(double x, int y){
+		miCelda.setPos(x, y);
+		grafico.cambiarPos(x, y);
+		mapa.getPanelMapa().repaint();
+	}
 
+	public JLabel getJLabel() {
+		return grafico.getGraficoActual();
+	}
+	
 	@Override
 	public void ejecutarEstado() {
 		estado.ejecutar();

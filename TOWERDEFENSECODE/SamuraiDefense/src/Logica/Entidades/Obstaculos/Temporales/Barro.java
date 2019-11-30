@@ -1,14 +1,12 @@
 package Logica.Entidades.Obstaculos.Temporales;
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Obstaculos.VidaFinita.BarroGrafico;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorBarro;
-import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;
 
-public class Barro extends Obstaculo{
+public class Barro extends ObstaculoTemporal{
 
 	private int lentitud;
 	public Barro(int x,int y,Mapa m) {

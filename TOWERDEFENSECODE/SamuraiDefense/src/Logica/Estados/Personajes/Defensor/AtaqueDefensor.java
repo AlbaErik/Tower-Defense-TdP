@@ -1,6 +1,5 @@
 package Logica.Estados.Personajes.Defensor;
 
-import Grafica.Entidades.PersonajeGrafico;
 import Logica.Colisionadores.VisitorsDeEstados.VisitorDeEstados;
 import Logica.Entidades.Defensores.Defensor;
 
@@ -12,12 +11,12 @@ public class AtaqueDefensor extends EstadoDefensor {
 
 	@Override
 	public void ejecutar() {
-		if (defensor.getLife() <= 0)
+		if (defensor.getLife() <= 0) {
+			defensor.getGrafico().death();
 			matarPersonaje(defensor);
-		else if (defensor.getContador() % 50 == 0) {
+		} else if (defensor.getContador() % 50 == 0) {
 
-			PersonajeGrafico p = (PersonajeGrafico) defensor.getGrafico();
-			p.attack();
+			defensor.getGrafico().attack();
 
 			defensor.atacar(aDestruir);
 			defensor.resetContador();
@@ -27,13 +26,14 @@ public class AtaqueDefensor extends EstadoDefensor {
 		}
 		defensor.incrementarContador();
 	}
-	
+
 	public void cambiarAPoderoso() {
 		defensor.cambiarEstado(new SuperAtaqueDefensor(defensor));
 	}
 
 	@Override
-	public void cambiarEstadoAtaque() {	}
+	public void cambiarEstadoAtaque() {
+	}
 
 	@Override
 	public void aceptarVisitorEstados(VisitorDeEstados vis) {

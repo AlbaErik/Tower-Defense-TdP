@@ -54,7 +54,7 @@ public class PanelMapa extends JPanel {
 		if (y != 0 && aColocar != null && aColocar.queHago(x, y)) {
 			aColocar.cambiarPosLogica(x, y);
 			mapa.setEntidad(aColocar);
-			JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+			JLabel nuevo = aColocar.getJLabel();
 			mapa.getTienda().eliminarPremio(aColocar.getClave());
 			mapa.revisarStockPremios();
 			add(nuevo);
@@ -70,7 +70,7 @@ public class PanelMapa extends JPanel {
 		if (y != 0 && aColocar != null && !mapa.hayEnPos(x, y)) {
 			aColocar.cambiarPosLogica(x, y);
 			mapa.setEntidad(aColocar);
-			JLabel nuevo = aColocar.getGrafico().getGraficoActual();
+			JLabel nuevo = aColocar.getJLabel();
 			mapa.getTienda().actualizarOro(-aColocar.getCost());
 			mapa.getTienda().getPanelTienda().revisarBotonesDefensores();
 			add(nuevo);
