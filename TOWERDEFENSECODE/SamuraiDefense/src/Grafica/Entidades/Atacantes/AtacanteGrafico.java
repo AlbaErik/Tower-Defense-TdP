@@ -14,18 +14,12 @@ public abstract class AtacanteGrafico extends PersonajeGrafico {
 		getGraficoActual().setIcon(graficos[0]);
 	}
 	
-	public void standingFuerza() {
-	}
-	
 	public void running() {
 		getGraficoActual().setIcon(graficos[1]);
 	}
 	
 	public void attack() {
 		getGraficoActual().setIcon(graficos[2]);
-	}
-	
-	public void attackFuerza() {
 	}
 
 	public void death() {

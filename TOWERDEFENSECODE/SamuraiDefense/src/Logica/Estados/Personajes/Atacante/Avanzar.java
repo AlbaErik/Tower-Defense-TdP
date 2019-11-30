@@ -18,7 +18,8 @@ public class Avanzar extends EstadoAtacante {
 			matarPersonaje(atacante);
 		} else {
 
-			atacante.getGrafico().running();;
+			atacante.getGrafico().running();
+			;
 			atacante.getInteligencia().mover();
 
 			if (atacante.getPos().getX() == 0)

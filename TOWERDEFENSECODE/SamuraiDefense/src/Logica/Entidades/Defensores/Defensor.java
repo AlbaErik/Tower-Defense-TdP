@@ -2,7 +2,6 @@ package Logica.Entidades.Defensores;
 
 import javax.swing.JLabel;
 
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Defensores.DefensorGrafico;
 import Logica.Colisionadores.ColisionadorDefensor;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreDef;

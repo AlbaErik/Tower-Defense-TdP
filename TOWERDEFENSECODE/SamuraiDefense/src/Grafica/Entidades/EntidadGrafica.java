@@ -10,6 +10,7 @@ import Logica.Entidades.Entidad;
 import Logica.Mapa.Posicion;
 
 public abstract class EntidadGrafica {
+	
 	protected PanelMapa mapaPanel;
 	protected ImageIcon graficos[];
 	protected JLabel graficoActual;
@@ -40,8 +41,5 @@ public abstract class EntidadGrafica {
 		pos.setLocation(x, y);
 		graficoActual.setBounds((int) x, y, ancho, alto);
 	}
-
-
-
 
 }

@@ -73,10 +73,6 @@ public abstract class Entidad {
 		return cont.getContador();
 	}
 
-	/*
-	 * private EntidadGrafica getGrafico() { return grafico; }
-	 */
-
 	public Mapa getMapa() {
 		return mapa;
 	}

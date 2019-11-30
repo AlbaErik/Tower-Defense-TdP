@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -60,7 +59,6 @@ public class PanelMapa extends JPanel {
 			add(nuevo);
 			repaint();
 		}
-		System.out.println("PANELMAPA: SE SETEO PREMIO");
 	}
 
 	public void insertarDefensor(double X, double Y) {
@@ -131,6 +129,5 @@ public class PanelMapa extends JPanel {
 		fondo = new ImageIcon(s).getImage();
 		g.drawImage(fondo, 0, 0, this.getWidth(), this.getHeight(), this);
 		repaint();
-		System.out.println("PANELMAPA: Se seteo el fondo del siguiente nivel");
 	}
 }

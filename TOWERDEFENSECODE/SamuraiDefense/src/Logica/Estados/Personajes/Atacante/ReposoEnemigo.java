@@ -21,7 +21,7 @@ public class ReposoEnemigo extends EstadoAtacante {
 			if (atacante.getContador() % 50 == 0) {
 				if (tengoCaminoLibre(atacante)) {
 					atacante.cambiarEstado(new Avanzar(atacante));
-				} 
+				}
 				atacante.resetContador();
 			}
 			atacante.incrementarContador();

@@ -86,7 +86,7 @@ public class Juego {
 		int x = randomX();
 		int y = randomY();
 		int intentos = 30;
-		while (intentos > 0 && mapa.hayEnPos(x, y)) { // Si no se puede colocar, devuelve false
+		while (intentos > 0 && mapa.hayEnPos(x, y)) {
 			x = randomX();
 			y = randomY();
 			intentos--;

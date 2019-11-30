@@ -4,7 +4,6 @@ import Grafica.Entidades.Obstaculos.VidaFinita.PiedraGrafica;
 import Logica.Colisionadores.Colisionador;
 import Logica.Colisionadores.Adistancia.VisitorDistancia;
 import Logica.Colisionadores.ColisionadoresObstaculo.ColisionadorPiedra;
-import Logica.Entidades.Obstaculos.Obstaculo;
 import Logica.Estados.Objetos.PiedraAlta;
 import Logica.Inteligencia.Inteligencia;
 import Logica.Mapa.Mapa;

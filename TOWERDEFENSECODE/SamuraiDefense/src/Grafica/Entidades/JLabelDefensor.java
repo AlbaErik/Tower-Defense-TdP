@@ -44,10 +44,8 @@ public class JLabelDefensor extends JLabel {
 				if (defensor.getLife() <= (defensor.getVida() / 2))
 					defensor.getMapa().actualizarOroTienda(defensor.getCost() / 2);
 				defensor.getMapa().eliminarEntidad(defensor);
-				System.out.println("JLABELDEFENSOR: Exito eliminar");
 			}else if(defensor.getMapa().hayPremioActual()) {
 				   defensor.getMapa().getPanelMapa().insertarPremio(defensor.getPos().getX(),defensor.getPos().getY());
-				   System.out.println("JLABELDEFENSOR: Exito premio");
 			}
 			
 		}

@@ -19,14 +19,14 @@ public class SuperReposoDefensor extends EstadoDefensor {
 		if (defensor.getLife() <= 0) {
 			defensor.getGrafico().death();
 			matarPersonaje(defensor);
-		}
-		else {
-			defensor.getGrafico().standingFuerza();;
+		} else {
+			defensor.getGrafico().standingFuerza();
+			;
 		}
 		if (defensor.getContador() % 50 == 0) {
 
 			if (defensor.getRange() > 0 && !tengoCaminoLibre(defensor)) {
-				SuperAtaqueDefensor at  = new SuperAtaqueDefensor(defensor);
+				SuperAtaqueDefensor at = new SuperAtaqueDefensor(defensor);
 				at.setConteo(cont.getContador());
 				defensor.cambiarEstado(new SuperAtaqueDefensor(defensor));
 			}
@@ -46,9 +46,9 @@ public class SuperReposoDefensor extends EstadoDefensor {
 
 	@Override
 	public void cambiarEstadoAtaque() {
-		SuperAtaqueDefensor at  = new SuperAtaqueDefensor(defensor);
+		SuperAtaqueDefensor at = new SuperAtaqueDefensor(defensor);
 		at.setConteo(cont.getContador());
-		
+
 		defensor.cambiarEstado(at);
 	}
 

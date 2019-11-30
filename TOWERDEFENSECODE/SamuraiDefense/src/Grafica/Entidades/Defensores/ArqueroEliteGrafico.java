@@ -22,6 +22,4 @@ public class ArqueroEliteGrafico extends DefensorGrafico {
 		graficoActual.setIcon(graficos[0]);
 		graficoActual.setBounds(x, y, ancho, 80);// 80
 	}
-
-
 }

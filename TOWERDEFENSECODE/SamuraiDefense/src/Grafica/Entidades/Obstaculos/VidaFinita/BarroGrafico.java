@@ -1,8 +1,6 @@
 package Grafica.Entidades.Obstaculos.VidaFinita;
 
 import javax.swing.ImageIcon;
-
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Mapa.PanelMapa;
 import Logica.Entidades.Entidad;
 

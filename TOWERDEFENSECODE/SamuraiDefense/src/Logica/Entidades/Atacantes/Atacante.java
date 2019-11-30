@@ -4,7 +4,6 @@ import java.util.Random;
 
 import javax.swing.JLabel;
 
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Entidades.Atacantes.AtacanteGrafico;
 import Logica.Colisionadores.ColisionadorAtacante;
 import Logica.Colisionadores.Adistancia.ColCaminoLibreEnem;

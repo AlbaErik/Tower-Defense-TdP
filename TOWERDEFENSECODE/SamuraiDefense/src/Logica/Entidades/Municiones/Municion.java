@@ -20,12 +20,12 @@ public abstract class Municion extends Entidad {
 		velocidad = 5;
 		estado = new EstadoMunicion(this);
 	}
-	
+
 	public EntidadGrafica getGrafico() {
 		return grafico;
 	}
-	
-	public void cambiarPosLogica(double x, int y){
+
+	public void cambiarPosLogica(double x, int y) {
 		miCelda.setPos(x, y);
 		grafico.cambiarPos(x, y);
 		mapa.getPanelMapa().repaint();
@@ -34,22 +34,22 @@ public abstract class Municion extends Entidad {
 	public JLabel getJLabel() {
 		return grafico.getGraficoActual();
 	}
-	
+
 	public void setDaño(int d) {
 		daño = d;
 	}
-		
+
 	@Override
 	public void ejecutarEstado() {
-		estado.ejecutar();		
+		estado.ejecutar();
 	}
-	
+
 	public int getDaño() {
 		return daño;
 	}
-	
+
 	public double getVel() {
 		return velocidad;
 	}
-	
+
 }

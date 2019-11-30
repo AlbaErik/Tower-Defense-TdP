@@ -7,20 +7,19 @@ import Logica.Entidades.Defensores.Defensor;
 public class SuperAtaqueDefensor extends EstadoDefensor {
 
 	private Contador cont;
-	
+
 	public SuperAtaqueDefensor(Defensor p) {
 		super(p);
 		cont = new Contador();
 	}
-	
+
 	@Override
 	public void ejecutar() {
 		controlarTiempo();
 		if (defensor.getLife() <= 0) {
 			defensor.getGrafico().death();
 			matarPersonaje(defensor);
-		}
-		else if (defensor.getContador() % 50 == 0) {
+		} else if (defensor.getContador() % 50 == 0) {
 
 			defensor.getGrafico().attackFuerza();
 
@@ -38,20 +37,20 @@ public class SuperAtaqueDefensor extends EstadoDefensor {
 	}
 
 	private void controlarTiempo() {
-		if(cont.getContador() >= 500) {
+		if (cont.getContador() >= 500) {
 			defensor.cambiarEstado(new AtaqueDefensor(defensor));
 			cont.resetContador();
-		}else
+		} else
 			cont.incrementarContador();
 	}
 
 	public void setConteo(int c) {
 		cont.setContador(c);
 	}
-	
+
 	@Override
 	public void cambiarEstadoAtaque() {
-		
+
 	}
 
 	@Override
