@@ -3,12 +3,12 @@ package Grafica.Entidades.Obstaculos.VidaFinita;
 import javax.swing.ImageIcon;
 
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Obstaculos.Obstaculo;
 
 public class PiedraGrafica extends ObstaculoGraficoFinito {
 	private String palabras[] = { "PiedraVidaAlta", "PiedraVidaMedia", "PiedraVidaBaja" };
 
-	public PiedraGrafica(int x, int y, PanelMapa m, Entidad e) {
+	public PiedraGrafica(int x, int y, PanelMapa m, Obstaculo e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[3];
 		for (int i = 0; i < palabras.length; i++) {

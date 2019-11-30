@@ -3,12 +3,12 @@ package Grafica.Entidades.Atacantes;
 import javax.swing.ImageIcon;
 
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Atacante;
 
 public class NinjaGrafico extends AtacanteGrafico {
 	private String palabras[] = { "NinjaStanding", "NinjaRunning", "NinjaAttacking", "NinjaDying" };
 
-	public NinjaGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public NinjaGrafico(int x, int y, PanelMapa m, Atacante e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[4];
 

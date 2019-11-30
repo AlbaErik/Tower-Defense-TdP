@@ -2,11 +2,11 @@ package Grafica.Entidades.Obstaculos.VidaFinita;
 
 import javax.swing.ImageIcon;
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Obstaculos.Obstaculo;
 
 public class BarroGrafico extends ObstaculoGraficoTemporal{
 
-	public BarroGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public BarroGrafico(int x, int y, PanelMapa m, Obstaculo e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[1];
 

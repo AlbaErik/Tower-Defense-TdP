@@ -2,13 +2,13 @@ package Logica.Entidades.Premios;
 
 import javax.swing.JLabel;
 
-import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Premios.PremioGrafico;
 import Logica.Entidades.Entidad;
 import Logica.Mapa.Mapa;
 
 public abstract class Premio extends Entidad{
     protected int clave;
-    protected EntidadGrafica grafico;
+    protected PremioGrafico grafico;
     
 	protected Premio(int x, int y, Mapa m) {
 		super(x, y, m);

@@ -2,13 +2,12 @@ package Grafica.Entidades.Premios;
 
 import javax.swing.ImageIcon;
 
-import Grafica.Entidades.EntidadGrafica;
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Premios.Premio;
 
-public class BombaGrafica extends EntidadGrafica{
+public class BombaGrafica extends PremioGrafico{
 
-	public BombaGrafica(int x, int y, PanelMapa m, Entidad e) {
+	public BombaGrafica(int x, int y, PanelMapa m, Premio e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[1];
 

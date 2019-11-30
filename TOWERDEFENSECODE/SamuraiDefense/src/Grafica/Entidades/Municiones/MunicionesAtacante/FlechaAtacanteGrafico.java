@@ -2,13 +2,13 @@ package Grafica.Entidades.Municiones.MunicionesAtacante;
 
 import javax.swing.ImageIcon;
 
-import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Municiones.MunicionGrafica;
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Municiones.Municion;
 
-public class FlechaAtacanteGrafico extends EntidadGrafica {
+public class FlechaAtacanteGrafico extends MunicionGrafica {
 
-	public FlechaAtacanteGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public FlechaAtacanteGrafico(int x, int y, PanelMapa m, Municion e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[1];
 

@@ -2,13 +2,13 @@ package Grafica.Entidades.Municiones.MunicionesDefensor;
 
 import javax.swing.ImageIcon;
 
-import Grafica.Entidades.EntidadGrafica;
+import Grafica.Entidades.Municiones.MunicionGrafica;
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Municiones.Municion;
 
-public class ShurikenDefensorGrafico extends EntidadGrafica{
+public class ShurikenDefensorGrafico extends MunicionGrafica{
 	
-	public ShurikenDefensorGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public ShurikenDefensorGrafico(int x, int y, PanelMapa m, Municion e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[1];
 

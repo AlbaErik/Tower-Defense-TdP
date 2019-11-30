@@ -3,12 +3,12 @@ package Grafica.Entidades.Defensores;
 import javax.swing.ImageIcon;
 
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Defensores.Defensor;
 
 public class SacerdoteEliteGrafico extends DefensorGrafico {
 	private String palabras[] = { "SacerdoteEliteStanding", "SacerdoteEliteAttacking", "SacerdoteEliteDying","SacerdoteEliteStandingFuerza", "SacerdoteEliteAttackingFuerza" };
 
-	public SacerdoteEliteGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public SacerdoteEliteGrafico(int x, int y, PanelMapa m, Defensor e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[5];
 

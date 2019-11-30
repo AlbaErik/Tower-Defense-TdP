@@ -1,20 +1,20 @@
-package Grafica.Entidades.Obstaculos.VidaFinita;
+package Grafica.Entidades.Municiones;
 
 import Grafica.Entidades.EntidadGrafica;
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Obstaculos.Obstaculo;
+import Logica.Entidades.Municiones.Municion;
 import Logica.Mapa.Posicion;
 
-public abstract class ObstaculoGrafico extends EntidadGrafica {
+public abstract class MunicionGrafica extends EntidadGrafica {
 
-	protected Obstaculo miEntidad;
+	protected Municion miEntidad;
 
-	public ObstaculoGrafico(int x, int y, PanelMapa m, Obstaculo e) {
+	public MunicionGrafica(int x, int y, PanelMapa m, Municion e) {
 		super(x, y, m);
 		miEntidad = e;
 	}
 
-	public Obstaculo getEntidad() {
+	public Municion getEntidad() {
 		return miEntidad;
 	}
 

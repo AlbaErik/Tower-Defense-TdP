@@ -3,12 +3,12 @@ package Grafica.Entidades.Atacantes;
 import javax.swing.ImageIcon;
 
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Atacantes.Atacante;
 
 public class NecromanteGrafico extends AtacanteGrafico{
 	private String palabras[] = { "NecromanteStanding", "NecromanteRunning", "NecromanteAttacking", "NecromanteDying" };
 
-	public NecromanteGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public NecromanteGrafico(int x, int y, PanelMapa m, Atacante e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[4];
 

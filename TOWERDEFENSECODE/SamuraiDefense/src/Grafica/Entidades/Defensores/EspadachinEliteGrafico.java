@@ -3,12 +3,12 @@ package Grafica.Entidades.Defensores;
 import javax.swing.ImageIcon;
 
 import Grafica.Mapa.PanelMapa;
-import Logica.Entidades.Entidad;
+import Logica.Entidades.Defensores.Defensor;
 
 public class EspadachinEliteGrafico extends DefensorGrafico {
 	private String palabras[] = { "EspadachinEliteStanding", "EspadachinEliteAttacking", "EspadachinEliteDying","EspadachinEliteStandingFuerza", "EspadachinEliteAttackingFuerza"};
 
-	public EspadachinEliteGrafico(int x, int y, PanelMapa m, Entidad e) {
+	public EspadachinEliteGrafico(int x, int y, PanelMapa m, Defensor e) {
 		super(x, y, m, e);
 		graficos = new ImageIcon[5];
 
